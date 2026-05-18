@@ -5,8 +5,8 @@ export const SITE = {
   phone: "010-3854-6887",
   phoneIntl: "+82-10-3854-6887",
   phoneHref: "tel:010-3854-6887",
-  url: "https://changwon-lululalala.com",
-  domain: "changwon-lululalala.com",
+  url: "https://changwon.pages.dev",
+  domain: "changwon.pages.dev",
   city: "창원시",
   region: "경상남도",
   description:
