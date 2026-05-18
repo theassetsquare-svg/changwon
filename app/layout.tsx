@@ -35,6 +35,7 @@ export const metadata: Metadata = {
   },
   formatDetection: { telephone: true },
   verification: {
+    google: "HJjm7MRxykCQ7d_9L7glaTeeaWrmJIzAKY0BcNcfm88",
     other: {
       "naver-site-verification": "f0a71234d6699a73a4134c4ad4532a0358588111",
     },
