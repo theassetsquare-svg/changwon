@@ -1,40 +1,45 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
-import { SITE } from "@/lib/site";
+import { PAGE_META, SITE } from "@/lib/site";
 
+const m = PAGE_META["/review"];
 export const metadata: Metadata = {
-  title: "손님 후기",
-  description: `${SITE.name} 실제 후기 모음. 가짜 후기 X.`,
+  title: m.title,
+  description: m.description,
   alternates: { canonical: "/review" },
+  openGraph: { title: m.title, description: m.description },
 };
 
 export default function ReviewPage() {
   return (
-    <PageShell
-      title="손님 후기"
-      subtitle="실제 손님에게 받은 후기만 게시합니다. 가짜 후기 / 가짜 별점 사용하지 않습니다."
-    >
-      <div className="rounded-lg border border-dashed border-gray-700 bg-gray-900 p-8 text-center text-gray-400">
-        <p className="text-base">아직 게시 가능한 실제 후기가 등록되지 않았습니다.</p>
+    <PageShell title="후기" hook={m.hook} pathname="/review">
+      <p>
+        솔직하게 말씀드립니다. 이 페이지에 가짜 후기는 절대 안 올립니다.
+        가짜 별점도 안 만듭니다. 받은 것만 그대로 올립니다.
+      </p>
+
+      <div className="rounded-2xl border border-dashed border-line bg-elev p-8 text-center text-gray-400">
+        <p className="text-base">아직 게시 가능한 실제 후기가 모이지 않았습니다.</p>
         <p className="mt-2 text-sm">
-          매장에서 동의를 받은 실제 후기가 모이는 대로 이곳에 게시됩니다.
+          매장에서 동의 받은 진짜 후기가 모이는 대로 여기 그대로 올립니다.
         </p>
       </div>
 
-      <h2 className="text-xl font-bold text-gold">후기 수집 원칙</h2>
-      <ul className="list-disc space-y-1 pl-6 text-gray-300">
-        <li>방문 손님께 직접 받은 후기만 게시합니다.</li>
-        <li>가짜 별점 / 평균 부풀리기는 하지 않습니다.</li>
-        <li>출처(매장 카카오톡, 네이버 플레이스 등)를 함께 표기합니다.</li>
-        <li>비공개 요청 시 즉시 내림 처리합니다.</li>
+      <h2 className="pt-2 text-xl font-bold text-white">제가 후기를 다루는 방식</h2>
+      <ul className="space-y-2 text-gray-300">
+        <li>방문하신 손님께 직접 받은 후기만 올립니다.</li>
+        <li>출처(카카오톡, 네이버 플레이스 등) 함께 표기합니다.</li>
+        <li>평점 평균 부풀리기 안 합니다. 실제 평균만 표시합니다.</li>
+        <li>비공개로 해달라 하시면 그 자리에서 내립니다.</li>
+        <li>저희 입장에 불리한 후기도 그대로 남깁니다. 그게 정직이니까요.</li>
       </ul>
 
-      <p className="text-sm text-gray-500">
-        후기를 남기고 싶으시면{" "}
-        <a href={SITE.phoneHref} className="text-gold underline">
-          {SITE.phone}
-        </a>{" "}
-        짱구 매니저에게 알려주세요.
+      <h2 className="pt-2 text-xl font-bold text-white">후기 남기시려면</h2>
+      <p>
+        손님이 후기를 직접 보내주시는 게 가장 좋습니다. 카카오톡, 문자, 전화 어떤
+        방법이든 좋아요. 짱구한테 한마디 해 주세요 —{" "}
+        <a href={SITE.phoneHref} className="font-bold text-gold underline">{SITE.phone}</a>.
+        후기를 좋게 써달라 부탁 안 합니다. 그냥 솔직히 적어주시면 됩니다.
       </p>
     </PageShell>
   );

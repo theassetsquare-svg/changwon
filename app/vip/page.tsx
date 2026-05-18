@@ -1,41 +1,47 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
 import Placeholder from "@/components/Placeholder";
-import { SITE } from "@/lib/site";
+import { PAGE_META, SITE } from "@/lib/site";
 
+const m = PAGE_META["/vip"];
 export const metadata: Metadata = {
-  title: "VIP 안내",
-  description: `${SITE.name} VIP 룸 안내. 운영 중인 경우에만 게시합니다.`,
+  title: m.title,
+  description: m.description,
   alternates: { canonical: "/vip" },
+  openGraph: { title: m.title, description: m.description },
 };
 
 export default function VipPage() {
   return (
-    <PageShell title="VIP 안내" subtitle="VIP 룸은 운영 중인 경우에만 게시합니다.">
-      <h2 className="text-xl font-bold text-gold">운영 여부</h2>
+    <PageShell title="VIP 룸" hook={m.hook} pathname="/vip">
       <p>
-        VIP 룸 운영 여부: <Placeholder>입력필요</Placeholder>
+        VIP 룸은 운영할 때만 안내합니다. 없는 룸을 있는 척 광고하지 않습니다.
+        사람 보고 자리 잡아드리는 거니까, 일단 전화 주세요.
       </p>
 
-      <h2 className="text-xl font-bold text-gold">수용 인원 / 구성</h2>
-      <ul className="list-disc space-y-1 pl-6 text-gray-300">
+      <h2 className="pt-2 text-xl font-bold text-white">운영 여부</h2>
+      <p>
+        현재 운영 — <Placeholder>입력필요</Placeholder>.
+      </p>
+
+      <h2 className="pt-2 text-xl font-bold text-white">수용 인원 / 구성</h2>
+      <ul className="space-y-2 text-gray-300">
         <li>
-          수용 인원: <Placeholder>입력필요</Placeholder>
+          수용 인원 — <Placeholder>입력필요</Placeholder>
         </li>
         <li>
-          구성: <Placeholder>입력필요</Placeholder>
+          구성 — <Placeholder>입력필요</Placeholder>
         </li>
         <li>
-          별도 입장 동선: <Placeholder>입력필요</Placeholder>
+          별도 입장 동선 — <Placeholder>입력필요</Placeholder>
         </li>
       </ul>
 
-      <p className="text-sm text-gray-400">
-        VIP 룸 예약은 일반 예약과 동일하게{" "}
-        <a href={SITE.phoneHref} className="text-gold underline">
-          {SITE.phone}
-        </a>{" "}
-        짱구 매니저에게 전화 주시면 됩니다.
+      <h2 className="pt-2 text-xl font-bold text-white">VIP 예약은</h2>
+      <p>
+        일반 예약과 같습니다. 그냥 “VIP 룸으로 잡아주세요” 한마디 하시면 됩니다 —{" "}
+        <a href={SITE.phoneHref} className="font-bold text-gold underline">{SITE.phone}</a>.
+        룸 상황 봐서 가능한 시간 알려드립니다.
       </p>
     </PageShell>
   );

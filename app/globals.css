@@ -1,23 +1,121 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
   color-scheme: dark;
+  --bg: #0A0A0F;
+  --bg-elev: #14141C;
+  --bg-elev-2: #1E1E2A;
+  --gold: #FCD34D;
+  --gold-deep: #F59E0B;
+  --text: #F5F5F5;
+  --text-mute: #9CA3AF;
+  --line: #2A2A38;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html, body {
-  background-color: #0B0F19;
-  color: #F9FAFB;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+    system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo",
+    "Noto Sans KR", sans-serif;
+  font-feature-settings: "ss01", "ss02";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
 }
 
 a { color: inherit; }
 
+p {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
 .placeholder {
   display: inline-block;
-  padding: 0 0.4rem;
-  background-color: #374151;
+  padding: 0.05rem 0.45rem;
+  background-color: #2A2A38;
   color: #FCD34D;
-  border-radius: 0.25rem;
+  border-radius: 0.3rem;
   font-size: 0.85em;
+  font-weight: 600;
+}
+
+.gold-grad {
+  background: linear-gradient(135deg, #FCD34D 0%, #F59E0B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cta-pulse {
+  position: relative;
+}
+.cta-pulse::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 9999px;
+  background: rgba(252, 211, 77, 0.4);
+  z-index: -1;
+  animation: pulse 2.2s ease-out infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+.fade-up {
+  animation: fadeUp 0.5s ease-out both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.scroll-cue {
+  animation: bounce 1.6s ease-in-out infinite;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* 모바일 하단 sticky 통화 바를 위한 footer padding */
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 72px;
+  }
+}
+
+details > summary {
+  list-style: none;
+  cursor: pointer;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+details > summary::after {
+  content: "+";
+  float: right;
+  font-size: 1.4em;
+  line-height: 1;
+  color: #FCD34D;
+  transition: transform 0.2s;
+}
+details[open] > summary::after {
+  content: "−";
 }

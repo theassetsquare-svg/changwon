@@ -1,42 +1,66 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
 import Placeholder from "@/components/Placeholder";
-import { PLACEHOLDERS, SITE } from "@/lib/site";
+import { PAGE_META, PLACEHOLDERS, SITE } from "@/lib/site";
 
+const m = PAGE_META["/jjanggu"];
 export const metadata: Metadata = {
-  title: `매니저 ${SITE.manager}`,
-  description: `${SITE.name} 매니저 ${SITE.manager} 소개. 예약은 ${SITE.phone}.`,
+  title: m.title,
+  description: m.description,
   alternates: { canonical: "/jjanggu" },
+  openGraph: { title: m.title, description: m.description },
 };
 
 export default function JjangguPage() {
   return (
-    <PageShell title={`매니저 ${SITE.manager}`} subtitle="실제 매니저 한 분이 직접 운영합니다.">
+    <PageShell
+      title="짱구가 직접 받습니다"
+      hook={m.hook}
+      pathname="/jjanggu"
+    >
       <p>
-        <strong className="text-gold">{SITE.manager}</strong>는 {SITE.name}의
-        실제 운영 매니저입니다. 모든 예약과 안내를 직접 받습니다.
+        안녕하세요. <strong className="text-white">{SITE.name}</strong> 매니저{" "}
+        <strong className="text-white">짱구</strong>입니다. 010-3854-6887,
+        이 번호로 오시는 전화 거의 다 제가 직접 받습니다.
       </p>
 
-      <h2 className="text-xl font-bold text-gold">짱구 매니저 경력</h2>
-      <p className="text-gray-300">
-        <Placeholder>{PLACEHOLDERS.jjangguCareer}</Placeholder>
+      <p>
+        “전화하면 다른 사람이 받고 다시 연락 준다” 같은 거 없습니다. 그래서 빠르고,
+        그래서 약속한 거 그대로 갑니다. 인원·날짜·시간 말씀하시면 그 자리에서 자리
+        잡아드려요.
       </p>
 
-      <h2 className="text-xl font-bold text-gold">전화 예약 안내</h2>
-      <ol className="list-decimal space-y-2 pl-6 text-gray-300">
+      <h2 className="pt-2 text-xl font-bold text-white">전화 거실 때 이렇게만</h2>
+      <ol className="space-y-3 rounded-2xl border border-line bg-elev p-5 text-gray-200">
         <li>
-          <a href={SITE.phoneHref} className="text-gold underline">
-            {SITE.phone}
-          </a>{" "}
-          로 전화 주세요.
+          <strong className="text-gold">1.</strong>{" "}
+          <a href={SITE.phoneHref} className="font-bold text-gold underline">{SITE.phone}</a> 누르세요.
         </li>
-        <li>“짱구 매니저 부탁드립니다” 라고 말씀하시면 됩니다.</li>
-        <li>인원·날짜·시간·요청 사항을 알려주세요.</li>
-        <li>입장 시 신분증을 준비해 주세요 (19세 이상).</li>
+        <li>
+          <strong className="text-gold">2.</strong> “짱구 매니저요” 한마디면 됩니다.
+        </li>
+        <li>
+          <strong className="text-gold">3.</strong> 인원 / 날짜 / 시간 알려주세요.
+        </li>
+        <li>
+          <strong className="text-gold">4.</strong> 신분증 챙겨서 도착하시면 됩니다.
+        </li>
       </ol>
 
-      <p className="text-sm text-gray-500">
-        ※ 짱구 매니저의 실제 사진과 경력은 매장에서 검토 후 추가됩니다.
+      <h2 className="pt-2 text-xl font-bold text-white">제 소개</h2>
+      <p>
+        경력은 <Placeholder>{PLACEHOLDERS.jjangguCareer}</Placeholder>입니다. 매장에서
+        확인된 경력만 여기 적습니다. 부풀려서 적는 거 안 좋아합니다.
+      </p>
+
+      <h2 className="pt-2 text-xl font-bold text-white">자주 듣는 질문 두 개</h2>
+      <p>
+        <strong className="text-white">“처음인데 어색해요”</strong> — 첫 손님이 어색한 게
+        가장 정상이에요. 그래서 전화로 어떤 자리가 좋을지 같이 정합니다.
+      </p>
+      <p>
+        <strong className="text-white">“가격 부담돼요”</strong> — 그 자리에서 정확하게
+        말씀드립니다. 부풀려서 말 안 합니다. 보고 결정하시면 됩니다.
       </p>
     </PageShell>
   );
