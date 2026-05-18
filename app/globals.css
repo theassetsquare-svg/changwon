@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html, body {
+  background-color: #0B0F19;
+  color: #F9FAFB;
+}
+
+a { color: inherit; }
+
+.placeholder {
+  display: inline-block;
+  padding: 0 0.4rem;
+  background-color: #374151;
+  color: #FCD34D;
+  border-radius: 0.25rem;
+  font-size: 0.85em;
+}
