@@ -34,6 +34,11 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, "max-snippet": -1, "max-image-preview": "large" },
   },
   formatDetection: { telephone: true },
+  verification: {
+    other: {
+      "naver-site-verification": "f0a71234d6699a73a4134c4ad4532a0358588111",
+    },
+  },
 };
 
 export const viewport: Viewport = {
