@@ -1,7 +1,6 @@
 import { ImageResponse } from "next/og";
 import { SITE } from "@/lib/site";
 
-export const runtime = "edge";
 export const alt = `${SITE.name} 매니저 ${SITE.manager} ${SITE.phone}`;
 export const size = { width: 1200, height: 1200 };
 export const contentType = "image/png";
@@ -17,7 +16,7 @@ export default async function Image() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: "linear-gradient(135deg, #111827 0%, #1F2937 100%)",
+          background: "linear-gradient(135deg, #0A0A0F 0%, #1F2937 100%)",
           color: "#FFFFFF",
           padding: 80,
           fontFamily: "sans-serif",
@@ -52,7 +51,7 @@ export default async function Image() {
             color: "#FFFFFF",
           }}
         >
-          매니저 {SITE.manager}
+          {`매니저 ${SITE.manager}`}
         </div>
         <div
           style={{
@@ -63,7 +62,7 @@ export default async function Image() {
             letterSpacing: 2,
           }}
         >
-          📞 {SITE.phone}
+          {`📞 ${SITE.phone}`}
         </div>
         <div
           style={{
