@@ -12,9 +12,9 @@ export default function Footer() {
           </a>
         </p>
         <p>
-          위치: {SITE.city} {SITE.region} · 주소{" "}
-          <span className="placeholder">{PLACEHOLDERS.address}</span>
+          {SITE.region} {SITE.city} {PLACEHOLDERS.address}
         </p>
+        <p className="text-xs text-gray-500">도로명 — {PLACEHOLDERS.addressRoad}</p>
         <p>
           사업자번호 <span className="placeholder">{PLACEHOLDERS.businessNumber}</span>
         </p>
