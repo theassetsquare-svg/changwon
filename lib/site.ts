@@ -81,6 +81,7 @@ export const SITE = {
     longitude: 128.681,
   },
   lastModified: new Date().toISOString(),
+  // SEO automation: keyword-guard 워크플로우가 푸시마다 키워드 밀도를 자동 감시함
 } as const;
 
 export const PLACEHOLDER = "[입력필요]";
