@@ -1,0 +1,73 @@
+name: Daily SEO Automation
+
+on:
+  schedule:
+    # 매일 KST 03:00 (UTC 18:00 전일)
+    - cron: "0 18 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  refresh-and-ping:
+    name: Refresh sitemap stamp + IndexNow ping
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Refresh sitemap build stamp
+        run: node scripts/seo/refresh-sitemap-stamp.mjs
+
+      - name: Commit stamp (if changed)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git add app/.last-sync
+            git commit -m "chore(seo): daily sitemap stamp refresh [skip ci]"
+            git push
+          else
+            echo "no changes"
+          fi
+
+      - name: Wait for Cloudflare Pages deploy
+        run: sleep 60
+
+      - name: IndexNow + sitemap ping
+        run: node scripts/seo/indexnow-ping.mjs
+
+      - name: Healthcheck 14 pages
+        id: hc
+        continue-on-error: true
+        run: node scripts/seo/healthcheck.mjs
+
+      - name: Open issue on healthcheck failure
+        if: steps.hc.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const today = new Date().toISOString().slice(0,10);
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `[Healthcheck] 라이브 페이지 문제 감지 (${today})`,
+              body: [
+                '## 자동 헬스체크 실패',
+                '',
+                `워크플로우 로그를 확인해 주세요: ${context.payload.repository.html_url}/actions/runs/${context.runId}`,
+                '',
+                '- 14페이지 중 1개 이상에서 HTTP 200, <title>, JSON-LD, canonical, og:title 중 누락이 감지되었습니다.',
+                '- 다음 cron 실행까지 기다리지 마시고, 콘솔 출력으로 어떤 페이지가 실패했는지 확인해 주세요.',
+              ].join('\n'),
+              labels: ['seo','healthcheck','auto'],
+            });
