@@ -1,0 +1,48 @@
+name: Keyword Stuffing Guard
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "app/**"
+      - "lib/site.ts"
+      - "scripts/audit-keywords.mjs"
+  pull_request:
+    branches: [main]
+    paths:
+      - "app/**"
+      - "lib/site.ts"
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  audit:
+    name: Audit keyword density
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run keyword stuffing audit
+        run: node scripts/audit-keywords.mjs | tee audit.out
+
+      - name: Fail if STUFFING_HIGH detected
+        run: |
+          if grep -q "STUFFING_HIGH" audit.out; then
+            echo "::error::키워드 밀도가 위험 수준(4%+). 본문에서 핵심 키워드 반복을 줄여 주세요."
+            exit 1
+          fi
+          if grep -q "STUFFING_WARN" audit.out; then
+            echo "::warning::키워드 밀도 경고(3-4%). 본문 자연어 조정 권장."
+          fi
+
+      - name: Upload report artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: keyword-report
+          path: scripts/keyword-report.json
