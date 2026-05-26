@@ -47,10 +47,14 @@ async function pingSitemap(endpoint) {
 
 (async () => {
   const results = [];
+  // IndexNow는 Bing(MS), Yandex, Naver(예정)가 공통 지원하는 표준.
+  // Google의 sitemap ping 엔드포인트는 2023-06 폐지되어 제외함.
+  // Google은 Search Console의 sitemap 자동 재크롤에 위임.
   results.push(await postIndexNow("https://api.indexnow.org/indexnow").catch((e) => ({ endpoint: "indexnow", status: "ERR", ok: false, error: String(e) })));
   results.push(await postIndexNow("https://www.bing.com/indexnow").catch((e) => ({ endpoint: "bing", status: "ERR", ok: false, error: String(e) })));
   results.push(await postIndexNow("https://yandex.com/indexnow").catch((e) => ({ endpoint: "yandex", status: "ERR", ok: false, error: String(e) })));
-  results.push(await pingSitemap(`https://www.google.com/ping?sitemap=${encodeURIComponent(SITE + "/sitemap.xml")}`).catch((e) => ({ endpoint: "google", status: "ERR", ok: false, error: String(e) })));
+  // 사이트맵 자체에 GET 핑 (일부 검색엔진은 sitemap URL의 접근을 신호로 사용)
+  results.push(await pingSitemap(`${SITE}/sitemap.xml`).catch((e) => ({ endpoint: "self-sitemap", status: "ERR", ok: false, error: String(e) })));
 
   console.log("[IndexNow / Sitemap Ping]");
   for (const r of results) {
