@@ -34,7 +34,7 @@ export default function NewsPage() {
     >
       <p>
         급한 휴무, 행사 변경, 단축 영업 같은 거 있을 때 여기 먼저 올립니다.
-        가셨다가 헛걸음하시면 제 마음이 더 안 좋습니다.{" "}
+        가셨다가 헛걸음하시면 매니저 짱구 마음이 더 안 좋습니다.{" "}
         <strong className="text-white">창원 룰루랄라 나이트</strong> 영업 일정 변동
         사항은 본 페이지를 가장 먼저 갱신합니다.
       </p>
@@ -58,7 +58,8 @@ export default function NewsPage() {
 
       <h2 className="pt-2 text-xl font-bold text-white">정말 헷갈리시면</h2>
       <p>
-        어디 출발하시기 전에 전화 한 통이면 가장 정확합니다 —{" "}
+        어디 출발하시기 전에 전화 한 통이면 가장 정확합니다. 짱구가 직접 받으니까
+        몇 초 안에 답 나옵니다 —{" "}
         <a href={SITE.phoneHref} className="font-bold text-gold underline">
           {SITE.phone}
         </a>

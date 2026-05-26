@@ -28,12 +28,11 @@ export default function AboutPage() {
       </p>
 
       <p>
-        매장 이름은 “룰루랄라 나이트”, 도시 이름 붙여서 부르는 게{" "}
-        <strong className="text-white">창원 룰루랄라 나이트</strong>입니다. 매니저는
-        저, <strong className="text-white">{SITE.manager}</strong>입니다. 직원이 따로
-        받아서 메모 남기고 다시 콜백하는 시스템 같은 거 안 합니다. 저희 번호로 오시는
-        전화 거의 다 제가 직접 받습니다. 그래서 “창원 룰루랄라 짱구” 검색해서 들어오신
-        분들, 그 분 본인 맞습니다.
+        매장 이름은 “룰루랄라 나이트”, 도시 이름 붙여서 부르면 그게 저희 가게입니다.
+        매니저는 저, <strong className="text-white">{SITE.manager}</strong>입니다.
+        직원이 따로 받아서 메모 남기고 다시 콜백하는 시스템 같은 거 안 합니다. 저희
+        번호로 오시는 전화 거의 다 제가 직접 받아요. 그래서 “창원 룰루랄라 짱구” 또는
+        “창원나이트 짱구”로 검색해서 들어오신 분들, 그분 본인 맞습니다.
       </p>
 
       <h2 className="pt-2 text-xl font-bold text-white">한 줄로 말하면</h2>
@@ -77,12 +76,12 @@ export default function AboutPage() {
       </ul>
 
       <h2 className="pt-2 text-xl font-bold text-white">
-        “창원 룰루랄라 나이트” 라는 이름을 정한 이유
+        이름을 “룰루랄라”라고 정한 이유
       </h2>
       <p>
-        나이트 가는 거 자체가 무겁게 느껴지는 분들 많죠. 가게 이름이라도 가볍게
-        가자고 “룰루랄라” 붙였습니다. 손님이 들어와서 어깨에 힘 빠지는 게 목적이에요.
-        창원에서 룰루랄라 한 곳, 그게 저희 가게입니다.
+        창원 나이트 처음 가시는 분들, 그 자체가 무겁게 느껴진다고 하시더라고요.
+        그래서 가게 이름이라도 가볍게 가자고 “룰루랄라”라고 붙였습니다. 들어와서
+        어깨에 힘 빠지는 게 목적이에요. 창원에서 룰루랄라 한 곳, 그게 저희 매장입니다.
       </p>
 
       <h2 className="pt-2 text-xl font-bold text-white">

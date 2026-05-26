@@ -66,9 +66,11 @@ export default function EventPage() {
       </ul>
 
       <p>
-        지금 진행 중인 혜택 여부가 궁금하시면 전화 주세요. 그 자리에서 솔직히
-        말씀드립니다 —{" "}
+        지금 진행 중인 혜택 여부가 궁금하시면 전화 주세요. 매니저 짱구가 그 자리에서
+        솔직히 말씀드립니다 —{" "}
         <a href={SITE.phoneHref} className="font-bold text-gold underline">{SITE.phone}</a>.
+        창원 나이트 중에서 “하지 않는 이벤트”를 광고에 적는 가게는 많은데, 저희는
+        반대로 갑니다.
       </p>
 
       <h2 className="pt-2 text-xl font-bold text-white">이벤트 관련 자주 묻는 질문</h2>

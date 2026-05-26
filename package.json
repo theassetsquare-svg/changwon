@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "audit:keywords": "node scripts/audit-keywords.mjs",
+    "seo:indexnow": "node scripts/seo/indexnow-ping.mjs",
+    "seo:healthcheck": "node scripts/seo/healthcheck.mjs",
+    "seo:stamp": "node scripts/seo/refresh-sitemap-stamp.mjs"
   },
   "dependencies": {
     "next": "14.2.18",

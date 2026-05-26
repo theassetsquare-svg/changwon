@@ -44,17 +44,23 @@ export default function HomePage() {
 
       <section className="relative overflow-hidden">
         <div
-          className="pointer-events-none absolute inset-0 opacity-30"
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-40"
           style={{
             background:
-              "radial-gradient(60% 50% at 50% 0%, rgba(252,211,77,0.25) 0%, rgba(252,211,77,0) 60%)",
+              "radial-gradient(60% 50% at 50% 0%, rgba(252,211,77,0.35) 0%, rgba(252,211,77,0) 60%)",
           }}
         />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -top-32 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-gold/20 blur-3xl"
+        />
         <div className="relative mx-auto max-w-3xl px-4 py-12 text-center sm:py-20">
-          <p className="fade-up text-xs font-bold uppercase tracking-[0.4em] text-gold sm:text-sm">
-            창원 · 공식 사이트
+          <p className="fade-up inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/5 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.3em] text-gold sm:text-xs">
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-gold" />
+            창원 공식 사이트
           </p>
-          <h1 className="fade-up mt-3 text-4xl font-extrabold leading-tight text-white sm:text-6xl">
+          <h1 className="fade-up mt-4 text-4xl font-extrabold leading-tight text-white sm:text-6xl">
             <span className="gold-grad">창원 룰루랄라</span>
             <br />
             나이트
@@ -72,7 +78,7 @@ export default function HomePage() {
             19세 이상 합법 영업장 · 입장 시 신분증 확인
           </p>
 
-          <div className="fade-up mt-12 flex justify-center text-gold">
+          <div className="fade-up mt-12 flex justify-center text-gold" aria-hidden>
             <span className="scroll-cue text-2xl">↓</span>
           </div>
         </div>
