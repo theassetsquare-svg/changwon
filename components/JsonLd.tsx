@@ -147,7 +147,7 @@ export default function JsonLd() {
         "@type": "HowToStep",
         position: 1,
         name: "전화 걸기",
-        text: "010-3854-6887 번호로 전화를 겁니다.",
+        text: " 번호로 전화를 겁니다.",
         url: `${SITE.url}/reserve#step1`,
       },
       {
