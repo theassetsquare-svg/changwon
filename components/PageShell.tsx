@@ -28,7 +28,7 @@ export default function PageShell({
 
       <header className="mb-6 fade-up">
         <p className="text-xs font-bold uppercase tracking-[0.3em] text-gold">
-          창원 룰루랄라 나이트
+          룰루랄라 나이트 · 창원 성산구 상남동
         </p>
         <h1 className="mt-2 text-3xl font-extrabold text-white sm:text-4xl">
           {title}

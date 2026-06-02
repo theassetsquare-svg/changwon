@@ -48,7 +48,7 @@ export default function PhotoPage() {
             key={i}
             className="flex aspect-square items-center justify-center rounded-2xl border border-dashed border-line bg-elev text-xs text-gray-500"
           >
-            창원 룰루랄라 나이트 매장 사진 {i + 1} [업로드 대기]
+            매장 내부 사진 {i + 1} · 준비 중
           </div>
         ))}
       </div>
