@@ -37,8 +37,8 @@ export function GET() {
     <description>${esc(SITE.description)}</description>
     <language>ko-KR</language>
     <copyright>© ${new Date().getFullYear()} ${esc(SITE.name)}</copyright>
-    <managingEditor>noreply@${SITE.domain} (${esc(SITE.manager)} 매니저)</managingEditor>
-    <webMaster>noreply@${SITE.domain} (${esc(SITE.manager)} 매니저)</webMaster>
+    <managingEditor>noreply@${SITE.domain} (매니저)</managingEditor>
+    <webMaster>noreply@${SITE.domain} (매니저)</webMaster>
     <lastBuildDate>${now}</lastBuildDate>
     <pubDate>${now}</pubDate>
     <ttl>1440</ttl>

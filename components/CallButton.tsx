@@ -21,12 +21,12 @@ export default function CallButton({
           : "text-base px-5 py-3";
   return (
     <a
-      href={SITE.phoneHref}
-      className={`${block ? "flex w-full" : "inline-flex"} ${pulse ? "cta-pulse" : ""} items-center justify-center gap-2 rounded-full bg-gold font-extrabold text-bg shadow-lg shadow-gold/20 transition hover:brightness-110 active:scale-[0.98] ${sizeClass}`}
-      aria-label={`${SITE.manager} 매니저 전화 ${SITE.phone}`}
+      href={SITE.kakaoHref}
+      className={`${block ? "flex w-full" : "inline-flex"} ${pulse ? "cta-pulse" : ""} items-center justify-center gap-2 rounded-full bg-[#FEE500] font-extrabold text-[#3C1E1E] shadow-lg shadow-yellow-400/20 transition hover:brightness-105 active:scale-[0.98] ${sizeClass}`}
+      aria-label="카카오톡 광고문의 besta12"
     >
-      <span aria-hidden>📞</span>
-      <span>{label ?? `${SITE.manager} ${SITE.phone}`}</span>
+      <span aria-hidden>💬</span>
+      <span>{label ?? `카카오톡 ${SITE.kakao}`}</span>
     </a>
   );
 }

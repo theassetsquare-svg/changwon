@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { SITE } from "@/lib/site";
 
-export const alt = `${SITE.name} 매니저 ${SITE.manager} ${SITE.phone}`;
+export const alt = `${SITE.name} 공식 사이트 · 카카오톡 ${SITE.kakao}`;
 export const size = { width: 1200, height: 1200 };
 export const contentType = "image/png";
 
@@ -51,18 +51,18 @@ export default async function Image() {
             color: "#FFFFFF",
           }}
         >
-          {`매니저 ${SITE.manager}`}
+          카카오톡 문의
         </div>
         <div
           style={{
             marginTop: 56,
             fontSize: 120,
             fontWeight: 900,
-            color: "#FCD34D",
+            color: "#FEE500",
             letterSpacing: 2,
           }}
         >
-          {`📞 ${SITE.phone}`}
+          {`💬 ${SITE.kakao}`}
         </div>
         <div
           style={{

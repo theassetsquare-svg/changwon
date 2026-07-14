@@ -6,9 +6,9 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl space-y-3 px-4 py-10 text-sm text-gray-400">
         <p className="text-base font-extrabold text-gold">{SITE.name}</p>
         <p>
-          매니저 {SITE.manager} ·{" "}
-          <a href={SITE.phoneHref} className="font-bold text-gold underline">
-            {SITE.phone}
+          카카오톡{" "}
+          <a href={SITE.kakaoHref} className="font-bold text-[#c9a800] underline">
+            {SITE.kakao}
           </a>
         </p>
         <p>

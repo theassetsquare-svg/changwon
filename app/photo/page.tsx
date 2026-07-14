@@ -17,7 +17,7 @@ const PHOTO_FAQ = [
   },
   {
     q: "사진을 미리 더 보고 싶으면 어떻게 하나요?",
-    a: "010-3854-6887로 전화 주시면 영상통화로 매장 내부를 보여드릴 수 있습니다. 짱구 매니저가 직접 안내합니다.",
+    a: "카카오톡 besta12로 문의 주시면 매장 내부 사진을 보내드릴 수 있습니다. 매니저가 직접 안내합니다.",
   },
   {
     q: "사진이랑 실제 매장이 다른 경우 있나요?",
@@ -36,7 +36,7 @@ export default function PhotoPage() {
         다른 가게 사진 갖다 쓰는 데 많죠. 저희는 안 합니다. 여기 올리는 사진은
         전부 저희 매장에서 찍은 진짜입니다. 합성도 안 합니다.{" "}
         <strong className="text-white">창원 룰루랄라 나이트</strong> 매장 모습 그대로,
-        매니저 짱구가 직접 촬영한 사진만 게시합니다.
+        매니저가 직접 촬영한 사진만 게시합니다.
       </p>
 
       <div
@@ -55,17 +55,17 @@ export default function PhotoPage() {
 
       <h2 className="pt-2 text-xl font-bold text-white">사진이 비어있는 이유</h2>
       <p>
-        다른 가게 사진을 빌려와서 채울 수도 있었지만, 그러면 가셨을 때 “사진이랑
-        다르네” 소리 듣습니다. 저희는 그런 거 안 합니다. 매장 사진 제대로 찍어서
+        다른 가게 사진을 빌려와서 채울 수도 있었지만, 그러면 가셨을 때 "사진이랑
+        다르네" 소리 듣습니다. 저희는 그런 거 안 합니다. 매장 사진 제대로 찍어서
         하나씩 올려둘게요. 입구·룸·테이블·바·VIP 자리 등 손님 동선 순으로 정리할
         예정입니다.
       </p>
 
       <h2 className="pt-2 text-xl font-bold text-white">미리 보고 싶으시면</h2>
       <p>
-        영상통화로 보여드릴 수도 있어요. 어색하지 않으시면 전화 주세요 —{" "}
-        <a href={SITE.phoneHref} className="font-bold text-gold underline">
-          {SITE.phone}
+        카카오톡으로 문의 주시면 보내드릴 수 있어요 —{" "}
+        <a href={SITE.kakaoHref} className="font-bold text-[#c9a800] underline">
+          {SITE.kakao}
         </a>
         . 가실 자리 미리 보고 결정하시면 도착했을 때 어색함이 훨씬 줄어듭니다.
       </p>

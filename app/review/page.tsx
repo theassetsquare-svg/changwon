@@ -25,7 +25,7 @@ const REVIEW_FAQ = [
   },
   {
     q: "후기 남기려면 어떻게 해야 하나요?",
-    a: "매장에서 직접 말씀하시거나, 010-3854-6887로 짱구 매니저에게 보내주시면 됩니다. 비공개 요청은 그 자리에서 반영됩니다.",
+    a: "매장에서 직접 말씀하시거나, 카카오톡 besta12로 보내주시면 됩니다. 비공개 요청은 그 자리에서 반영됩니다.",
   },
 ];
 
@@ -58,7 +58,7 @@ export default function ReviewPage() {
         <li>평점 평균 부풀리기 안 합니다. 실제 평균만 표시합니다.</li>
         <li>비공개로 해달라 하시면 그 자리에서 내립니다.</li>
         <li>저희 입장에 불리한 후기도 그대로 남깁니다. 그게 정직이니까요.</li>
-        <li>“알바생 후기”, “지인 후기” 같은 거 못 끼게 합니다.</li>
+        <li>"알바생 후기", "지인 후기" 같은 거 못 끼게 합니다.</li>
       </ul>
 
       <h2 className="pt-2 text-xl font-bold text-white">왜 이렇게 까다롭게 하느냐면</h2>
@@ -71,10 +71,12 @@ export default function ReviewPage() {
 
       <h2 className="pt-2 text-xl font-bold text-white">후기 남기시려면</h2>
       <p>
-        손님이 후기를 직접 보내주시는 게 가장 좋습니다. 카카오톡, 문자, 전화 어떤
-        방법이든 좋아요. 짱구한테 한마디 해 주세요 —{" "}
-        <a href={SITE.phoneHref} className="font-bold text-gold underline">{SITE.phone}</a>.
-        후기를 좋게 써달라 부탁 안 합니다. 그냥 솔직히 적어주시면 됩니다.
+        손님이 후기를 직접 보내주시는 게 가장 좋습니다. 카카오톡, 문자, 직접 어떤
+        방법이든 좋아요. 매니저한테 한마디 해 주세요 —{" "}
+        <a href={SITE.kakaoHref} className="font-bold text-[#c9a800] underline">
+          카카오톡 {SITE.kakao}
+        </a>
+        . 후기를 좋게 써달라 부탁 안 합니다. 그냥 솔직히 적어주시면 됩니다.
       </p>
 
       <h2 className="pt-2 text-xl font-bold text-white">후기 관련 자주 묻는 질문</h2>

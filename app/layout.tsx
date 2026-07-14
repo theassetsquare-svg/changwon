@@ -9,14 +9,14 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: `${SITE.name}, 짱구가 직접 받는 공식 자리`,
+    default: `${SITE.name} 공식 사이트`,
     template: `%s`,
   },
   description: SITE.description,
   keywords: [...SITE.keywords],
   applicationName: SITE.name,
-  authors: [{ name: `${SITE.manager} 매니저`, url: `${SITE.url}/jjanggu` }],
-  creator: `${SITE.manager} 매니저`,
+  authors: [{ name: "매니저", url: `${SITE.url}/jjanggu` }],
+  creator: "매니저",
   publisher: SITE.name,
   category: "Local Business",
   alternates: {
@@ -32,12 +32,12 @@ export const metadata: Metadata = {
     locale: "ko_KR",
     url: SITE.url,
     siteName: SITE.name,
-    title: `${SITE.name}, 짱구가 직접 받는 공식 자리`,
+    title: `${SITE.name} 공식 사이트`,
     description: SITE.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE.name}, 짱구가 직접 받는 공식 자리`,
+    title: `${SITE.name} 공식 사이트`,
     description: SITE.description,
   },
   robots: {
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  formatDetection: { telephone: true, address: true },
+  formatDetection: { telephone: false, address: true },
   verification: {
     google: "HJjm7MRxykCQ7d_9L7glaTeeaWrmJIzAKY0BcNcfm88",
     other: {
@@ -65,16 +65,16 @@ export const metadata: Metadata = {
     ICBM: `${SITE.geo.latitude}, ${SITE.geo.longitude}`,
     "naver-site-verification": "f0a71234d6699a73a4134c4ad4532a0358588111",
     "dc.title": SITE.name,
-    "dc.creator": `${SITE.manager} 매니저`,
+    "dc.creator": "매니저",
     "dc.subject": "창원 룰루랄라 나이트",
     "dc.language": "ko-KR",
     "og:locality": "창원시",
     "og:region": "경상남도",
     "og:country-name": "대한민국",
-    "twitter:label1": "전화",
-    "twitter:data1": SITE.phone,
-    "twitter:label2": "매니저",
-    "twitter:data2": SITE.manager,
+    "twitter:label1": "카카오톡",
+    "twitter:data1": SITE.kakao,
+    "twitter:label2": "문의",
+    "twitter:data2": "광고문의",
   },
 };
 

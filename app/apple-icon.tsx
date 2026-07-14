@@ -36,7 +36,7 @@ export default function AppleIcon() {
             letterSpacing: 1,
           }}
         >
-          짱구
+          룰루랄라
         </div>
       </div>
     ),

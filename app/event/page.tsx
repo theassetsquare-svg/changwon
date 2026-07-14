@@ -20,8 +20,8 @@ const EVENT_FAQ = [
     a: "쿠폰 형태로 따로 운영하지 않습니다. 진행 중인 혜택이 있다면 본 페이지와 매장에서 동일하게 안내됩니다.",
   },
   {
-    q: "광고만 보고 갔다가 ‘그런 이벤트 없다’ 들어본 적 있어서 의심돼요.",
-    a: "매장 정책상 종료된 이벤트나 ‘하지 않는 이벤트’를 광고에 적지 않습니다. 010-3854-6887로 전화하면 그 자리에서 실제 진행 여부를 솔직히 답해드립니다.",
+    q: "광고만 보고 갔다가 '그런 이벤트 없다' 들어본 적 있어서 의심돼요.",
+    a: "매장 정책상 종료된 이벤트나 '하지 않는 이벤트'를 광고에 적지 않습니다. 카카오톡 besta12로 문의하시면 그 자리에서 실제 진행 여부를 솔직히 답해드립니다.",
   },
 ];
 
@@ -33,7 +33,7 @@ export default function EventPage() {
       pathname="/event"
     >
       <p>
-        “30% 할인” 같은 거 사이트에 안 적습니다. 보고 오셨는데 막상 가니까 그런
+        "30% 할인" 같은 거 사이트에 안 적습니다. 보고 오셨는데 막상 가니까 그런
         할인 없는 가게, 흔하잖아요. 저희는 그게 손님한테 가장 미안한 일이라고
         생각해요. <strong className="text-white">창원 룰루랄라 나이트</strong>는
         실제 진행 중인 이벤트만 게시합니다. 끝난 건 즉시 내립니다.
@@ -42,7 +42,7 @@ export default function EventPage() {
       <div className="rounded-2xl border border-dashed border-line bg-elev p-8 text-center text-gray-400">
         <p className="text-base">지금 게시 가능한 진행 중 이벤트가 없습니다.</p>
         <p className="mt-2 text-sm">
-          시작하면 본 페이지와 ‘매장 소식’에 같이 올립니다.
+          시작하면 본 페이지와 '매장 소식'에 같이 올립니다.
         </p>
       </div>
 
@@ -51,7 +51,7 @@ export default function EventPage() {
       </h2>
       <p>
         사이트로 손님 끌어모으는 가게보다, 단골이 다시 부르는 가게가 더 오래 갑니다.
-        그래서 이벤트를 “안 하는” 게 아니라, “하는 것만” 올립니다. 한다고 적었는데
+        그래서 이벤트를 "안 하는" 게 아니라, "하는 것만" 올립니다. 한다고 적었는데
         막상 가니 없는 가게, 저희는 안 하고 싶어요. 손님이 매장 입구에서 한 번 실망
         하면 그 다음은 없으니까요.
       </p>
@@ -59,17 +59,19 @@ export default function EventPage() {
       <h2 className="pt-2 text-xl font-bold text-white">이벤트 표기 룰</h2>
       <ul className="space-y-2 text-gray-300">
         <li>진행 중인 이벤트만 게시. 종료된 이벤트는 즉시 내림.</li>
-        <li>“역대급”, “최대”, “단 하루” 등 자극적 표현 사용 안 함.</li>
+        <li>"역대급", "최대", "단 하루" 등 자극적 표현 사용 안 함.</li>
         <li>할인율 / 적용 조건 / 종료 일자 함께 표기.</li>
         <li>매장 내 안내 문구와 사이트 게시 내용이 일치.</li>
         <li>광고비 받고 외부 업체 끼워 넣는 이벤트 게시 안 함.</li>
       </ul>
 
       <p>
-        지금 진행 중인 혜택 여부가 궁금하시면 전화 주세요. 매니저 짱구가 그 자리에서
+        지금 진행 중인 혜택 여부가 궁금하시면 카카오톡 주세요. 매니저가 그 자리에서
         솔직히 말씀드립니다 —{" "}
-        <a href={SITE.phoneHref} className="font-bold text-gold underline">{SITE.phone}</a>.
-        창원 나이트 중에서 “하지 않는 이벤트”를 광고에 적는 가게는 많은데, 저희는
+        <a href={SITE.kakaoHref} className="font-bold text-[#c9a800] underline">
+          {SITE.kakao}
+        </a>
+        . 창원 나이트 중에서 "하지 않는 이벤트"를 광고에 적는 가게는 많은데, 저희는
         반대로 갑니다.
       </p>
 

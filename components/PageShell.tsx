@@ -58,8 +58,8 @@ export default function PageShell({
       </div>
 
       <div className="mt-12 rounded-2xl border border-line bg-elev p-6 text-center">
-        <p className="text-sm text-gray-400">읽으셨으면 전화 한 통이면 됩니다.</p>
-        <p className="mt-1 text-base font-bold text-white">짱구가 직접 받습니다.</p>
+        <p className="text-sm text-gray-400">읽으셨으면 카카오톡 한 통이면 됩니다.</p>
+        <p className="mt-1 text-base font-bold text-white">매니저가 직접 받습니다.</p>
         <div className="mt-4 flex justify-center">
           <CallButton size="lg" pulse />
         </div>

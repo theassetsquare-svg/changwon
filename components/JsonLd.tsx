@@ -12,14 +12,11 @@ export default function JsonLd() {
       "창원룰루랄라",
       "룰루랄라 나이트",
       "룰루랄라나이트",
-      "창원 짱구 나이트",
-      "창원 나이트 짱구",
       "상남동 룰루랄라",
       "창원 상남동 룰루랄라 나이트",
     ],
     description: SITE.description,
     url: SITE.url,
-    telephone: SITE.phoneIntl,
     priceRange: SITE.priceRange,
     currenciesAccepted: "KRW",
     paymentAccepted: "Cash, Credit Card",
@@ -50,10 +47,8 @@ export default function JsonLd() {
     smokingAllowed: false,
     publicAccess: true,
     isAccessibleForFree: false,
-    employee: { "@id": `${SITE.url}/#jjanggu` },
     sameAs: SITE.sameAs,
     knowsLanguage: ["ko", "ko-KR"],
-    slogan: "짱구가 직접 받습니다",
     foundingDate: SITE.foundingDate,
     foundingLocation: {
       "@type": "Place",
@@ -73,44 +68,22 @@ export default function JsonLd() {
     name: SITE.name,
     alternateName: ["창원룰루랄라나이트", "룰루랄라 나이트", "상남동 룰루랄라"],
     url: SITE.url,
-    telephone: SITE.phoneIntl,
     description: SITE.description,
     sameAs: SITE.sameAs,
     foundingDate: SITE.foundingDate,
     contactPoint: [
       {
         "@type": "ContactPoint",
-        telephone: SITE.phoneIntl,
         contactType: "reservations",
         areaServed: "KR",
         availableLanguage: ["Korean", "ko-KR"],
       },
       {
         "@type": "ContactPoint",
-        telephone: SITE.phoneIntl,
         contactType: "customer service",
         areaServed: "KR",
         availableLanguage: ["Korean", "ko-KR"],
       },
-    ],
-  };
-
-  const person = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": `${SITE.url}/#jjanggu`,
-    name: SITE.manager,
-    alternateName: ["짱구 매니저", "창원 룰루랄라 짱구"],
-    jobTitle: "매니저",
-    telephone: SITE.phoneIntl,
-    worksFor: { "@id": `${SITE.url}/#business` },
-    url: `${SITE.url}/jjanggu`,
-    knowsLanguage: ["ko-KR"],
-    knowsAbout: [
-      "창원 룰루랄라 나이트 예약",
-      "창원 나이트 자리 안내",
-      "창원 룰루랄라 가격 안내",
-      "상남동 나이트 입장 안내",
     ],
   };
 
@@ -139,29 +112,29 @@ export default function JsonLd() {
     "@id": `${SITE.url}/#how-to-reserve`,
     name: "창원 룰루랄라 나이트 예약 방법",
     description:
-      "창원 룰루랄라 나이트 예약은 전화 한 통이면 끝납니다. 짱구 매니저가 직접 받습니다.",
+      "창원 룰루랄라 나이트 예약은 카카오톡 besta12로 한 번이면 끝납니다.",
     totalTime: "PT30S",
-    tool: [{ "@type": "HowToTool", name: "전화" }],
+    tool: [{ "@type": "HowToTool", name: "카카오톡" }],
     step: [
       {
         "@type": "HowToStep",
         position: 1,
-        name: "전화 걸기",
-        text: "010-3854-6887 번호로 전화를 겁니다.",
+        name: "카카오톡 열기",
+        text: "카카오톡에서 ID besta12를 검색합니다.",
         url: `${SITE.url}/reserve#step1`,
       },
       {
         "@type": "HowToStep",
         position: 2,
-        name: "매니저 호출",
-        text: "‘짱구 매니저 부탁드립니다’라고 말합니다.",
+        name: "예약 정보 전달",
+        text: "인원·날짜·시간·요청사항을 메시지로 보냅니다.",
         url: `${SITE.url}/reserve#step2`,
       },
       {
         "@type": "HowToStep",
         position: 3,
-        name: "예약 정보 전달",
-        text: "인원·날짜·시간·요청사항을 전합니다.",
+        name: "자리 확정",
+        text: "매니저가 확인 후 자리를 확정해 드립니다.",
         url: `${SITE.url}/reserve#step3`,
       },
       {
@@ -183,10 +156,6 @@ export default function JsonLd() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(person) }}
       />
       <script
         type="application/ld+json"
