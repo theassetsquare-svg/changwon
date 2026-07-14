@@ -112,22 +112,22 @@ export default function JsonLd() {
     "@id": `${SITE.url}/#how-to-reserve`,
     name: "창원 룰루랄라 나이트 예약 방법",
     description:
-      "창원 룰루랄라 나이트 예약은 카카오톡 besta12로 한 번이면 끝납니다.",
+      "창원 룰루랄라 나이트 예약은 매장 문의 한 번이면 끝납니다.",
     totalTime: "PT30S",
-    tool: [{ "@type": "HowToTool", name: "카카오톡" }],
+    tool: [{ "@type": "HowToTool", name: "문의" }],
     step: [
       {
         "@type": "HowToStep",
         position: 1,
-        name: "카카오톡 열기",
-        text: "카카오톡에서 ID besta12를 검색합니다.",
+        name: "매장 문의",
+        text: "매장에 인원·날짜·시간을 알려주시면 됩니다.",
         url: `${SITE.url}/reserve#step1`,
       },
       {
         "@type": "HowToStep",
         position: 2,
         name: "예약 정보 전달",
-        text: "인원·날짜·시간·요청사항을 메시지로 보냅니다.",
+        text: "인원·날짜·시간·요청사항을 전달합니다.",
         url: `${SITE.url}/reserve#step2`,
       },
       {
