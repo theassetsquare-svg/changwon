@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import CallButton from "@/components/CallButton";
 import PageJsonLd from "@/components/PageJsonLd";
 import Placeholder from "@/components/Placeholder";
 import { NAV, PAGE_META, PLACEHOLDERS, SITE } from "@/lib/site";
@@ -70,11 +69,7 @@ export default function HomePage() {
             <br className="sm:hidden" /> 카카오톡 한 통이면 끝납니다.
           </p>
 
-          <div className="fade-up mt-8 flex justify-center">
-            <CallButton size="xl" pulse />
-          </div>
-
-          <p className="fade-up mt-4 text-xs text-gray-500">
+          <p className="fade-up mt-8 text-xs text-gray-500">
             19세 이상 합법 영업장 · 입장 시 신분증 확인
           </p>
 
@@ -295,20 +290,6 @@ export default function HomePage() {
         </ul>
       </section>
 
-      <section className="mx-auto max-w-3xl px-4 py-12">
-        <div className="rounded-2xl border border-line bg-elev p-6 text-center">
-          <p className="text-sm text-gray-300">읽으시느라 시간 쓰셨으니까,</p>
-          <p className="mt-1 text-base font-bold text-white">
-            카카오톡 한 통 하시면 됩니다.
-          </p>
-          <p className="mt-2 text-xs text-gray-500">
-            창원 룰루랄라 나이트 · 카카오톡 
-          </p>
-          <div className="mt-5 flex justify-center">
-            <CallButton size="xl" pulse />
-          </div>
-        </div>
-      </section>
     </main>
   );
 }

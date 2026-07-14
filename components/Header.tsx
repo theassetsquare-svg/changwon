@@ -12,12 +12,6 @@ export default function Header() {
         >
           {SITE.name}
         </Link>
-        <Link
-          href="/contact"
-          className="inline-flex items-center gap-1 rounded-full bg-gold/15 px-3 py-1.5 text-sm font-bold text-gold ring-1 ring-gold/30"
-        >
-          문의
-        </Link>
       </div>
       <nav
         aria-label="주요 페이지"
