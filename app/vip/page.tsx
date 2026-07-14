@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const VIP_FAQ = [
   {
     q: "창원 룰루랄라 나이트 VIP 룸은 어떻게 예약하나요?",
-    a: "일반 예약과 동일합니다. 카카오톡 besta12로 'VIP 룸으로 잡아주세요' 한마디 하시면 됩니다. 그 시점 룸 상황을 보고 가능한 시간대를 안내합니다.",
+    a: "일반 예약과 동일합니다. 매장 문의로 'VIP 룸으로 잡아주세요' 한마디 하시면 됩니다. 그 시점 룸 상황을 보고 가능한 시간대를 안내합니다.",
   },
   {
     q: "VIP 룸 가격이 따로 있나요?",
@@ -77,9 +77,7 @@ export default function VipPage() {
       <h2 className="pt-2 text-xl font-bold text-white">VIP 예약은</h2>
       <p>
         일반 예약과 같습니다. "VIP 룸으로 잡아주세요" 한마디 하시면 됩니다 —{" "}
-        <a href={SITE.kakaoHref} className="font-bold text-[#c9a800] underline">
-          카카오톡 {SITE.kakao}
-        </a>
+        매장 문의
         . 룸 상황 봐서 가능한 시간 알려드립니다. 인원이 늘어날 가능성도 함께 말씀해
         주시면 자리 폭 넉넉히 잡습니다.
       </p>

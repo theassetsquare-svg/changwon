@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const PRICE_FAQ = [
   {
     q: "창원 룰루랄라 나이트 가격은 평균 얼마예요?",
-    a: "옵션·인원·시간대에 따라 다릅니다. 카카오톡 besta12로 문의하시면 인원에 맞는 두세 가지 옵션의 정확한 금액을 묶어 안내합니다.",
+    a: "옵션·인원·시간대에 따라 다릅니다. 매장에 문의 주시면 인원에 맞는 두세 가지 옵션의 정확한 금액을 묶어 안내합니다.",
   },
   {
     q: "사이트에 가격표가 비어 있는 이유는?",
@@ -26,7 +26,7 @@ const PRICE_FAQ = [
   },
   {
     q: "결제는 카드 / 현금 다 되나요?",
-    a: "결제 수단 세부 정책은 변동될 수 있어 사이트 표기보다 카카오톡으로 확인이 정확합니다. besta12로 미리 문의 주시면 그 자리에서 안내합니다.",
+    a: "결제 수단 세부 정책은 변동될 수 있어 사이트 표기보다 매장에 미리 문의 주시면 그 자리에서 안내합니다.",
   },
 ];
 
@@ -142,9 +142,7 @@ export default function PricePage() {
 
       <h2 className="pt-2 text-xl font-bold text-white">가장 빠른 가격 확인</h2>
       <p>
-        <a href={SITE.kakaoHref} className="font-bold text-[#c9a800] underline">
-          카카오톡 {SITE.kakao}
-        </a>{" "}
+        매장 문의{" "}
         → 인원/날짜 → 가격 안내. 30초입니다.
       </p>
     </PageShell>

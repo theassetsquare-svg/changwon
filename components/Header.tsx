@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { NAV, SITE } from "@/lib/site";
-import CallButton from "./CallButton";
 
 export default function Header() {
   return (
@@ -13,17 +12,12 @@ export default function Header() {
         >
           {SITE.name}
         </Link>
-        <div className="hidden sm:block">
-          <CallButton size="sm" />
-        </div>
-        <a
-          href={SITE.kakaoHref}
-          className="sm:hidden inline-flex items-center gap-1 rounded-full bg-[#FEE500]/20 px-3 py-1.5 text-sm font-bold text-[#c9a800] ring-1 ring-[#FEE500]/40"
-          aria-label="카카오톡 광고문의 besta12"
+        <Link
+          href="/contact"
+          className="inline-flex items-center gap-1 rounded-full bg-gold/15 px-3 py-1.5 text-sm font-bold text-gold ring-1 ring-gold/30"
         >
-          <span aria-hidden>💬</span>
-          <span>카카오 {SITE.kakao}</span>
-        </a>
+          문의
+        </Link>
       </div>
       <nav
         aria-label="주요 페이지"

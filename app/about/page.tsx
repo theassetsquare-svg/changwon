@@ -25,9 +25,7 @@ export default function AboutPage() {
         오래 잘 굴러가는 방식이에요. 손님도 보호되고, 매장도 보호됩니다. 검색하다가
         "창원룰루랄라나이트"라는 이름으로 비슷한 사이트 여럿 보셨을 수 있는데,
         공식 카카오톡 문의는{" "}
-        <a href={SITE.kakaoHref} className="font-bold text-[#c9a800] underline">
-          {SITE.kakao}
-        </a>{" "}
+        매장 문의{" "}
         하나입니다.
       </p>
 
@@ -66,9 +64,7 @@ export default function AboutPage() {
         </li>
         <li>
           문의 —{" "}
-          <a href={SITE.kakaoHref} className="text-[#c9a800] underline">
-            카카오톡 {SITE.kakao}
-          </a>{" "}
+          매장 문의{" "}
           (매니저 직접 응대)
         </li>
         <li>가격대 — 중간대 (정확한 금액은 카카오톡 문의가 기준)</li>

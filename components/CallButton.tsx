@@ -1,4 +1,4 @@
-import { SITE } from "@/lib/site";
+import Link from "next/link";
 
 export default function CallButton({
   size = "md",
@@ -20,13 +20,12 @@ export default function CallButton({
           ? "text-sm px-3 py-2"
           : "text-base px-5 py-3";
   return (
-    <a
-      href={SITE.kakaoHref}
-      className={`${block ? "flex w-full" : "inline-flex"} ${pulse ? "cta-pulse" : ""} items-center justify-center gap-2 rounded-full bg-[#FEE500] font-extrabold text-[#3C1E1E] shadow-lg shadow-yellow-400/20 transition hover:brightness-105 active:scale-[0.98] ${sizeClass}`}
-      aria-label="카카오톡 광고문의 besta12"
+    <Link
+      href="/contact"
+      className={`${block ? "flex w-full" : "inline-flex"} ${pulse ? "cta-pulse" : ""} items-center justify-center gap-2 rounded-full bg-gold font-extrabold text-bg shadow-lg shadow-gold/20 transition hover:brightness-110 active:scale-[0.98] ${sizeClass}`}
     >
-      <span aria-hidden>💬</span>
-      <span>{label ?? `카카오톡 ${SITE.kakao}`}</span>
-    </a>
+      <span aria-hidden>📋</span>
+      <span>{label ?? "예약 문의"}</span>
+    </Link>
   );
 }

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const RESERVE_FAQ = [
   {
     q: "창원 룰루랄라 나이트 예약은 꼭 해야 하나요?",
-    a: "필수는 아닙니다. 다만 사람 많은 날은 자리가 빠르게 빠지기 때문에, 헛걸음하지 않으시려면 카카오톡 besta12로 미리 문의해 두는 편이 안전합니다.",
+    a: "필수는 아닙니다. 다만 사람 많은 날은 자리가 빠르게 빠지기 때문에, 헛걸음하지 않으시려면 미리 문의해 두는 편이 안전합니다.",
   },
   {
     q: "예약 취소하면 페널티가 있나요?",
@@ -25,7 +25,7 @@ const RESERVE_FAQ = [
   },
   {
     q: "온라인 예약 페이지는 없나요?",
-    a: "없습니다. 별도 앱·회원가입·결제 사전등록도 없습니다. 카카오톡 besta12로 한 번에 예약됩니다.",
+    a: "없습니다. 별도 앱·회원가입·결제 사전등록도 없습니다. 매장 문의로 한 번에 예약됩니다.",
   },
   {
     q: "당일 예약도 되나요?",
@@ -40,9 +40,7 @@ export default function ReservePage() {
         앱 다운로드, 회원가입, 결제정보, 그런 거 없습니다. 카카오톡 한 통이면 끝나요.
         진짜로 30초입니다. <strong className="text-white">창원 룰루랄라 나이트</strong>{" "}
         예약은 카카오톡{" "}
-        <a href={SITE.kakaoHref} className="font-bold text-[#c9a800] underline">
-          {SITE.kakao}
-        </a>
+        매장 문의
         , 이 ID 하나로 끝납니다.
       </p>
 
@@ -51,9 +49,7 @@ export default function ReservePage() {
         <li id="step1">
           <strong className="text-gold">1.</strong>{" "}
           카카오톡에서{" "}
-          <a href={SITE.kakaoHref} className="font-bold text-[#c9a800] underline">
-            {SITE.kakao}
-          </a>{" "}
+          매장 문의{" "}
           검색하세요.
         </li>
         <li id="step2">

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const MANAGER_FAQ = [
   {
     q: "카카오톡 문의하면 정말 매니저가 직접 답해요?",
-    a: "네, 카카오톡 besta12로 오시는 문의 거의 다 매니저가 직접 답합니다. 응대 중일 때만 잠시 늦을 수 있고, 그 외에는 다른 직원 거치지 않고 바로 응대합니다.",
+    a: "네, 매장 문의로 오시는 문의 거의 다 매니저가 직접 답합니다. 응대 중일 때만 잠시 늦을 수 있고, 그 외에는 다른 직원 거치지 않고 바로 응대합니다.",
   },
   {
     q: "매니저는 어떤 사람이에요?",
@@ -25,7 +25,7 @@ const MANAGER_FAQ = [
   },
   {
     q: "다른 연락처도 있나요?",
-    a: "현재 공식 문의 채널은 카카오톡 besta12입니다. 다른 채널을 통해 창원 룰루랄라 나이트라고 안내받으셨다면 확인이 필요합니다.",
+    a: "공식 매장에 직접 문의하세요. 다른 채널을 통해 창원 룰루랄라 나이트라고 안내받으셨다면 확인이 필요합니다.",
   },
 ];
 
@@ -39,9 +39,7 @@ export default function JjangguPage() {
       <p>
         안녕하세요. <strong className="text-white">{SITE.name}</strong> 매니저입니다.
         카카오톡{" "}
-        <a href={SITE.kakaoHref} className="font-bold text-[#c9a800] underline">
-          {SITE.kakao}
-        </a>
+        매장 문의
         , 이 ID로 오시는 문의 거의 다 제가 직접 받습니다.
       </p>
 
@@ -56,9 +54,7 @@ export default function JjangguPage() {
         <li id="step1">
           <strong className="text-gold">1.</strong>{" "}
           카카오톡에서{" "}
-          <a href={SITE.kakaoHref} className="font-bold text-[#c9a800] underline">
-            {SITE.kakao}
-          </a>{" "}
+          매장 문의{" "}
           검색하세요.
         </li>
         <li id="step2">
@@ -80,7 +76,7 @@ export default function JjangguPage() {
 
       <h2 className="pt-2 text-xl font-bold text-white">제가 하는 일 (한 줄씩)</h2>
       <ul className="space-y-2 text-gray-300">
-        <li>카카오톡 응대 — {SITE.kakao}, 거의 다 제가 받음</li>
+        <li>문의 응대 — 매장으로, 거의 다 제가 받음</li>
         <li>자리 배정 — 인원·일행·분위기 보고 매번 다시 봄</li>
         <li>가격 안내 — 인원·옵션 묶어서 그 자리에서 알려드림</li>
         <li>단체 예약 정리 — 4인 이상 한 자리에 모이게 잡음</li>

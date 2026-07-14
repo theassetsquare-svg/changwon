@@ -14,11 +14,11 @@ export const metadata: Metadata = {
 const CONTACT_FAQ = [
   {
     q: "창원 룰루랄라 나이트 연락은 어디로 하나요?",
-    a: "카카오톡 besta12가 공식 문의 채널입니다. 매니저가 직접 답변합니다.",
+    a: "매장에 직접 문의하시면 매니저가 답변합니다.",
   },
   {
     q: "카카오톡으로 예약도 가능한가요?",
-    a: "네, 카카오톡 besta12로 인원·날짜·시간을 보내시면 자리 확정까지 한 번에 처리됩니다.",
+    a: "네, 매장 문의로 인원·날짜·시간을 보내시면 자리 확정까지 한 번에 처리됩니다.",
   },
   {
     q: "영업시간 외에 연락하면 답을 받을 수 있나요?",
@@ -38,7 +38,7 @@ export default function ContactPage() {
       <div className="rounded-2xl border border-[#FEE500]/40 bg-[#FEE500]/5 p-6">
         <p className="text-xs text-gray-400">카카오톡 (광고문의)</p>
         <p className="mt-2 text-3xl font-extrabold text-[#c9a800] sm:text-4xl">
-          <a href={SITE.kakaoHref}>{SITE.kakao}</a>
+          매장 문의
         </p>
         <p className="mt-2 text-sm text-gray-300">매니저 직접 응대</p>
       </div>

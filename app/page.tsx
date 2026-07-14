@@ -17,11 +17,11 @@ export const metadata: Metadata = {
 const HOME_FAQ = [
   {
     q: "창원 룰루랄라 나이트 연락처는?",
-    a: "카카오톡 ID besta12로 문의하시면 매니저가 직접 답변합니다.",
+    a: "매장에 문의하시면 매니저가 직접 답변합니다.",
   },
   {
     q: "창원룰루랄라나이트 예약은 어떻게 하나요?",
-    a: "카카오톡 besta12로 인원·날짜·시간을 보내시면 30초 안에 자리가 잡힙니다. 별도 앱·회원가입 없습니다.",
+    a: "매장 문의로 인원·날짜·시간을 보내시면 30초 안에 자리가 잡힙니다. 별도 앱·회원가입 없습니다.",
   },
   {
     q: "창원 룰루랄라 나이트 입장 연령은?",
@@ -29,7 +29,7 @@ const HOME_FAQ = [
   },
   {
     q: "창원 룰루랄라 가격은 얼마인가요?",
-    a: "옵션·인원·시간대에 따라 다릅니다. 카카오톡 besta12로 문의하시면 인원에 맞는 정확한 금액을 안내합니다.",
+    a: "옵션·인원·시간대에 따라 다릅니다. 매장에 문의 주시면 인원에 맞는 정확한 금액을 안내합니다.",
   },
   {
     q: "창원 룰루랄라 위치는 어디인가요?",
@@ -107,9 +107,7 @@ export default function HomePage() {
             여기저기 광고만 보고 닫으셨을지도 모르겠습니다. 광고 어지러운 거 저도 압니다.
             그래서 이 페이지는 짧게 정리합니다. 공식 사이트이고,
             문의는{" "}
-            <a href={SITE.kakaoHref} className="font-bold text-[#c9a800] underline">
-              카카오톡 {SITE.kakao}
-            </a>{" "}
+            매장 문의{" "}
             하나입니다.
           </p>
           <p>
@@ -135,7 +133,7 @@ export default function HomePage() {
           <div className="rounded-2xl border border-line bg-elev p-5">
             <dt className="text-xs text-gray-400">문의</dt>
             <dd className="mt-1 text-xl font-extrabold text-[#c9a800]">
-              <a href={SITE.kakaoHref}>카카오톡 {SITE.kakao}</a>
+              매장 문의
             </dd>
             <dd className="mt-1 text-xs text-gray-500">매니저가 직접 답합니다</dd>
           </div>
@@ -186,9 +184,7 @@ export default function HomePage() {
             <li>
               <strong className="text-gold">1.</strong>{" "}
               카카오톡에서{" "}
-              <a href={SITE.kakaoHref} className="font-bold text-[#c9a800] underline">
-                {SITE.kakao}
-              </a>{" "}
+              매장 문의{" "}
               검색하세요.
             </li>
             <li>
@@ -202,7 +198,7 @@ export default function HomePage() {
             </li>
           </ol>
           <p>
-            저장해 두시면 다음에 편합니다. 카카오톡 {SITE.kakao} · 창원 룰루랄라 나이트.
+            저장해 두시면 다음에 편합니다. 카카오톡  · 창원 룰루랄라 나이트.
             이 두 줄이면 충분합니다.
           </p>
         </div>
@@ -306,7 +302,7 @@ export default function HomePage() {
             카카오톡 한 통 하시면 됩니다.
           </p>
           <p className="mt-2 text-xs text-gray-500">
-            창원 룰루랄라 나이트 · 카카오톡 {SITE.kakao}
+            창원 룰루랄라 나이트 · 카카오톡 
           </p>
           <div className="mt-5 flex justify-center">
             <CallButton size="xl" pulse />

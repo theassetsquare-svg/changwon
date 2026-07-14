@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { SITE } from "@/lib/site";
 
-export const alt = `${SITE.name} 공식 사이트 · 카카오톡 ${SITE.kakao}`;
+export const alt = `${SITE.name} 공식 사이트 · 카카오톡 $`;
 export const size = { width: 1200, height: 1200 };
 export const contentType = "image/png";
 
@@ -62,7 +62,7 @@ export default async function Image() {
             letterSpacing: 2,
           }}
         >
-          {`💬 ${SITE.kakao}`}
+          {`💬 $`}
         </div>
         <div
           style={{

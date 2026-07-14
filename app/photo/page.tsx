@@ -17,7 +17,7 @@ const PHOTO_FAQ = [
   },
   {
     q: "사진을 미리 더 보고 싶으면 어떻게 하나요?",
-    a: "카카오톡 besta12로 문의 주시면 매장 내부 사진을 보내드릴 수 있습니다. 매니저가 직접 안내합니다.",
+    a: "매장에 문의 주시면 매장 내부 사진을 보내드릴 수 있습니다. 매니저가 직접 안내합니다.",
   },
   {
     q: "사진이랑 실제 매장이 다른 경우 있나요?",
@@ -64,9 +64,7 @@ export default function PhotoPage() {
       <h2 className="pt-2 text-xl font-bold text-white">미리 보고 싶으시면</h2>
       <p>
         카카오톡으로 문의 주시면 보내드릴 수 있어요 —{" "}
-        <a href={SITE.kakaoHref} className="font-bold text-[#c9a800] underline">
-          {SITE.kakao}
-        </a>
+        매장 문의
         . 가실 자리 미리 보고 결정하시면 도착했을 때 어색함이 훨씬 줄어듭니다.
       </p>
 
