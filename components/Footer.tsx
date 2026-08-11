@@ -13,7 +13,7 @@ export default function Footer() {
           사업자번호 <span className="placeholder">{PLACEHOLDERS.businessNumber}</span>
         </p>
         <p className="pt-2 text-xs text-gray-500">
-          19세 이상 합법 영업장 · 입장 시 신분증 확인 · 미성년자 출입 불가
+          27세 이상 출입 가능한 합법 영업장 · 입장 시 신분증 확인 · 27세 미만 출입 불가
         </p>
         <p className="text-xs text-gray-600">
           © {new Date().getFullYear()} {SITE.name}

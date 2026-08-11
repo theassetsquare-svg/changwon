@@ -1,26 +1,26 @@
 {
-  "generatedAt": "2026-06-02T15:28:15.691Z",
+  "generatedAt": "2026-08-11T22:59:05.280Z",
   "results": [
     {
       "route": "/",
       "file": "app/page.tsx",
-      "totalLength": 3651,
+      "totalLength": 3325,
       "keywords": {
         "창원 룰루랄라 나이트": {
           "count": 6,
-          "density": 1.81
+          "density": 1.98
         },
         "창원룰루랄라나이트": {
           "count": 2,
-          "density": 0.49
+          "density": 0.54
         },
         "창원 룰루랄라": {
-          "count": 10,
-          "density": 1.92
+          "count": 9,
+          "density": 1.89
         },
         "룰루랄라 나이트": {
           "count": 6,
-          "density": 1.31
+          "density": 1.44
         },
         "창원 나이트": {
           "count": 0,
@@ -31,66 +31,66 @@
           "density": 0
         },
         "짱구": {
-          "count": 10,
-          "density": 0.55
+          "count": 0,
+          "density": 0
         },
         "010-3854-6887": {
-          "count": 5,
-          "density": 1.78
+          "count": 4,
+          "density": 1.56
         }
       },
-      "primaryDensity": 2.3,
+      "primaryDensity": 2.52,
       "verdict": "OK"
     },
     {
       "route": "/about",
       "file": "app/about/page.tsx",
-      "totalLength": 1997,
+      "totalLength": 1879,
       "keywords": {
         "창원 룰루랄라 나이트": {
           "count": 2,
-          "density": 1.1
+          "density": 1.17
         },
         "창원룰루랄라나이트": {
           "count": 2,
-          "density": 0.9
+          "density": 0.96
         },
         "창원 룰루랄라": {
-          "count": 4,
-          "density": 1.4
+          "count": 3,
+          "density": 1.12
         },
         "룰루랄라 나이트": {
           "count": 4,
-          "density": 1.6
+          "density": 1.7
         },
         "창원 나이트": {
           "count": 1,
-          "density": 0.3
+          "density": 0.32
         },
         "창원나이트": {
-          "count": 1,
-          "density": 0.25
+          "count": 0,
+          "density": 0
         },
         "짱구": {
-          "count": 5,
-          "density": 0.5
+          "count": 0,
+          "density": 0
         },
         "010-3854-6887": {
           "count": 0,
           "density": 0
         }
       },
-      "primaryDensity": 2,
+      "primaryDensity": 2.13,
       "verdict": "OK"
     },
     {
       "route": "/jjanggu",
       "file": "app/jjanggu/page.tsx",
-      "totalLength": 1952,
+      "totalLength": 1737,
       "keywords": {
         "창원 룰루랄라 나이트": {
-          "count": 1,
-          "density": 0.56
+          "count": 3,
+          "density": 1.9
         },
         "창원룰루랄라나이트": {
           "count": 0,
@@ -98,11 +98,11 @@
         },
         "창원 룰루랄라": {
           "count": 3,
-          "density": 1.08
+          "density": 1.21
         },
         "룰루랄라 나이트": {
-          "count": 1,
-          "density": 0.41
+          "count": 3,
+          "density": 1.38
         },
         "창원 나이트": {
           "count": 0,
@@ -113,25 +113,25 @@
           "density": 0
         },
         "짱구": {
-          "count": 12,
-          "density": 1.23
+          "count": 0,
+          "density": 0
         },
         "010-3854-6887": {
-          "count": 3,
-          "density": 2
+          "count": 2,
+          "density": 1.5
         }
       },
-      "primaryDensity": 0.56,
+      "primaryDensity": 1.9,
       "verdict": "OK"
     },
     {
       "route": "/price",
       "file": "app/price/page.tsx",
-      "totalLength": 1913,
+      "totalLength": 1869,
       "keywords": {
         "창원 룰루랄라 나이트": {
           "count": 4,
-          "density": 2.3
+          "density": 2.35
         },
         "창원룰루랄라나이트": {
           "count": 0,
@@ -139,11 +139,11 @@
         },
         "창원 룰루랄라": {
           "count": 4,
-          "density": 1.46
+          "density": 1.5
         },
         "룰루랄라 나이트": {
           "count": 4,
-          "density": 1.67
+          "density": 1.71
         },
         "창원 나이트": {
           "count": 0,
@@ -154,25 +154,25 @@
           "density": 0
         },
         "짱구": {
-          "count": 4,
-          "density": 0.42
+          "count": 0,
+          "density": 0
         },
         "010-3854-6887": {
-          "count": 2,
-          "density": 1.36
+          "count": 1,
+          "density": 0.7
         }
       },
-      "primaryDensity": 2.3,
+      "primaryDensity": 2.35,
       "verdict": "OK"
     },
     {
       "route": "/location",
       "file": "app/location/page.tsx",
-      "totalLength": 1715,
+      "totalLength": 1749,
       "keywords": {
         "창원 룰루랄라 나이트": {
           "count": 2,
-          "density": 1.28
+          "density": 1.26
         },
         "창원룰루랄라나이트": {
           "count": 0,
@@ -180,40 +180,40 @@
         },
         "창원 룰루랄라": {
           "count": 2,
-          "density": 0.82
+          "density": 0.8
         },
         "룰루랄라 나이트": {
           "count": 2,
-          "density": 0.93
+          "density": 0.91
         },
         "창원 나이트": {
           "count": 1,
-          "density": 0.35
+          "density": 0.34
         },
         "창원나이트": {
           "count": 0,
           "density": 0
         },
         "짱구": {
-          "count": 2,
-          "density": 0.23
+          "count": 0,
+          "density": 0
         },
         "010-3854-6887": {
           "count": 2,
-          "density": 1.52
+          "density": 1.49
         }
       },
-      "primaryDensity": 1.28,
+      "primaryDensity": 1.26,
       "verdict": "OK"
     },
     {
       "route": "/reserve",
       "file": "app/reserve/page.tsx",
-      "totalLength": 1644,
+      "totalLength": 1619,
       "keywords": {
         "창원 룰루랄라 나이트": {
           "count": 4,
-          "density": 2.68
+          "density": 2.72
         },
         "창원룰루랄라나이트": {
           "count": 0,
@@ -221,11 +221,11 @@
         },
         "창원 룰루랄라": {
           "count": 4,
-          "density": 1.7
+          "density": 1.73
         },
         "룰루랄라 나이트": {
           "count": 4,
-          "density": 1.95
+          "density": 1.98
         },
         "창원 나이트": {
           "count": 0,
@@ -236,25 +236,25 @@
           "density": 0
         },
         "짱구": {
-          "count": 5,
-          "density": 0.61
+          "count": 0,
+          "density": 0
         },
         "010-3854-6887": {
-          "count": 3,
-          "density": 2.37
+          "count": 1,
+          "density": 0.8
         }
       },
-      "primaryDensity": 2.68,
+      "primaryDensity": 2.72,
       "verdict": "OK"
     },
     {
       "route": "/review",
       "file": "app/review/page.tsx",
-      "totalLength": 1578,
+      "totalLength": 1573,
       "keywords": {
         "창원 룰루랄라 나이트": {
           "count": 3,
-          "density": 2.09
+          "density": 2.1
         },
         "창원룰루랄라나이트": {
           "count": 0,
@@ -262,11 +262,11 @@
         },
         "창원 룰루랄라": {
           "count": 3,
-          "density": 1.33
+          "density": 1.34
         },
         "룰루랄라 나이트": {
           "count": 3,
-          "density": 1.52
+          "density": 1.53
         },
         "창원 나이트": {
           "count": 0,
@@ -277,25 +277,25 @@
           "density": 0
         },
         "짱구": {
-          "count": 2,
-          "density": 0.25
+          "count": 0,
+          "density": 0
         },
         "010-3854-6887": {
           "count": 1,
-          "density": 0.82
+          "density": 0.83
         }
       },
-      "primaryDensity": 2.09,
+      "primaryDensity": 2.1,
       "verdict": "OK"
     },
     {
       "route": "/photo",
       "file": "app/photo/page.tsx",
-      "totalLength": 1314,
+      "totalLength": 1297,
       "keywords": {
         "창원 룰루랄라 나이트": {
           "count": 2,
-          "density": 1.67
+          "density": 1.7
         },
         "창원룰루랄라나이트": {
           "count": 0,
@@ -303,11 +303,11 @@
         },
         "창원 룰루랄라": {
           "count": 2,
-          "density": 1.07
+          "density": 1.08
         },
         "룰루랄라 나이트": {
           "count": 2,
-          "density": 1.22
+          "density": 1.23
         },
         "창원 나이트": {
           "count": 0,
@@ -318,25 +318,25 @@
           "density": 0
         },
         "짱구": {
-          "count": 2,
-          "density": 0.3
+          "count": 0,
+          "density": 0
         },
         "010-3854-6887": {
           "count": 1,
-          "density": 0.99
+          "density": 1
         }
       },
-      "primaryDensity": 1.67,
+      "primaryDensity": 1.7,
       "verdict": "OK"
     },
     {
       "route": "/news",
       "file": "app/news/page.tsx",
-      "totalLength": 1206,
+      "totalLength": 1148,
       "keywords": {
         "창원 룰루랄라 나이트": {
           "count": 3,
-          "density": 2.74
+          "density": 2.87
         },
         "창원룰루랄라나이트": {
           "count": 0,
@@ -344,11 +344,11 @@
         },
         "창원 룰루랄라": {
           "count": 3,
-          "density": 1.74
+          "density": 1.83
         },
         "룰루랄라 나이트": {
           "count": 3,
-          "density": 1.99
+          "density": 2.09
         },
         "창원 나이트": {
           "count": 0,
@@ -359,37 +359,37 @@
           "density": 0
         },
         "짱구": {
-          "count": 2,
-          "density": 0.33
+          "count": 0,
+          "density": 0
         },
         "010-3854-6887": {
           "count": 2,
-          "density": 2.16
+          "density": 2.26
         }
       },
-      "primaryDensity": 2.74,
+      "primaryDensity": 2.87,
       "verdict": "OK"
     },
     {
       "route": "/faq",
       "file": "app/faq/page.tsx",
-      "totalLength": 2375,
+      "totalLength": 2267,
       "keywords": {
         "창원 룰루랄라 나이트": {
           "count": 5,
-          "density": 2.32
+          "density": 2.43
         },
         "창원룰루랄라나이트": {
           "count": 1,
-          "density": 0.38
+          "density": 0.4
         },
         "창원 룰루랄라": {
           "count": 5,
-          "density": 1.47
+          "density": 1.54
         },
         "룰루랄라 나이트": {
           "count": 5,
-          "density": 1.68
+          "density": 1.76
         },
         "창원 나이트": {
           "count": 0,
@@ -400,25 +400,25 @@
           "density": 0
         },
         "짱구": {
-          "count": 8,
-          "density": 0.67
+          "count": 0,
+          "density": 0
         },
         "010-3854-6887": {
-          "count": 7,
-          "density": 3.83
+          "count": 6,
+          "density": 3.44
         }
       },
-      "primaryDensity": 2.7,
+      "primaryDensity": 2.83,
       "verdict": "OK"
     },
     {
       "route": "/around",
       "file": "app/around/page.tsx",
-      "totalLength": 1462,
+      "totalLength": 1451,
       "keywords": {
         "창원 룰루랄라 나이트": {
           "count": 3,
-          "density": 2.26
+          "density": 2.27
         },
         "창원룰루랄라나이트": {
           "count": 0,
@@ -426,11 +426,11 @@
         },
         "창원 룰루랄라": {
           "count": 3,
-          "density": 1.44
+          "density": 1.45
         },
         "룰루랄라 나이트": {
           "count": 3,
-          "density": 1.64
+          "density": 1.65
         },
         "창원 나이트": {
           "count": 0,
@@ -441,21 +441,21 @@
           "density": 0
         },
         "짱구": {
-          "count": 2,
-          "density": 0.27
+          "count": 0,
+          "density": 0
         },
         "010-3854-6887": {
           "count": 1,
-          "density": 0.89
+          "density": 0.9
         }
       },
-      "primaryDensity": 2.26,
+      "primaryDensity": 2.27,
       "verdict": "OK"
     },
     {
       "route": "/event",
       "file": "app/event/page.tsx",
-      "totalLength": 1380,
+      "totalLength": 1381,
       "keywords": {
         "창원 룰루랄라 나이트": {
           "count": 3,
@@ -482,8 +482,8 @@
           "density": 0
         },
         "짱구": {
-          "count": 1,
-          "density": 0.14
+          "count": 0,
+          "density": 0
         },
         "010-3854-6887": {
           "count": 1,
@@ -496,11 +496,11 @@
     {
       "route": "/vip",
       "file": "app/vip/page.tsx",
-      "totalLength": 1492,
+      "totalLength": 1481,
       "keywords": {
         "창원 룰루랄라 나이트": {
           "count": 3,
-          "density": 2.21
+          "density": 2.23
         },
         "창원룰루랄라나이트": {
           "count": 0,
@@ -508,11 +508,11 @@
         },
         "창원 룰루랄라": {
           "count": 3,
-          "density": 1.41
+          "density": 1.42
         },
         "룰루랄라 나이트": {
           "count": 3,
-          "density": 1.61
+          "density": 1.62
         },
         "창원 나이트": {
           "count": 0,
@@ -523,25 +523,25 @@
           "density": 0
         },
         "짱구": {
-          "count": 3,
-          "density": 0.4
+          "count": 0,
+          "density": 0
         },
         "010-3854-6887": {
           "count": 1,
-          "density": 0.87
+          "density": 0.88
         }
       },
-      "primaryDensity": 2.21,
+      "primaryDensity": 2.23,
       "verdict": "OK"
     },
     {
       "route": "/contact",
       "file": "app/contact/page.tsx",
-      "totalLength": 1358,
+      "totalLength": 1138,
       "keywords": {
         "창원 룰루랄라 나이트": {
           "count": 3,
-          "density": 2.43
+          "density": 2.9
         },
         "창원룰루랄라나이트": {
           "count": 0,
@@ -549,11 +549,11 @@
         },
         "창원 룰루랄라": {
           "count": 3,
-          "density": 1.55
+          "density": 1.85
         },
         "룰루랄라 나이트": {
           "count": 3,
-          "density": 1.77
+          "density": 2.11
         },
         "창원 나이트": {
           "count": 0,
@@ -564,15 +564,15 @@
           "density": 0
         },
         "짱구": {
-          "count": 3,
-          "density": 0.44
+          "count": 0,
+          "density": 0
         },
         "010-3854-6887": {
           "count": 2,
-          "density": 1.91
+          "density": 2.28
         }
       },
-      "primaryDensity": 2.43,
+      "primaryDensity": 2.9,
       "verdict": "OK"
     }
   ]

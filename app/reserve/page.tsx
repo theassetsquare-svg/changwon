@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
-import { PAGE_META, SITE } from "@/lib/site";
+import { PAGE_META, SITE, OG_IMAGE } from "@/lib/site";
 
 const m = PAGE_META["/reserve"];
 export const metadata: Metadata = {
   title: m.title,
   description: m.description,
   alternates: { canonical: "/reserve" },
-  openGraph: { title: m.title, description: m.description },
+  openGraph: { title: m.title, description: m.description, images: OG_IMAGE },
 };
 
 const RESERVE_FAQ = [
@@ -17,19 +17,19 @@ const RESERVE_FAQ = [
   },
   {
     q: "예약 취소하면 페널티가 있나요?",
-    a: "없습니다. 카카오톡으로 다시 메시지 주시면 됩니다. 다만 가능하면 일찍 알려 주시면 다음 손님 자리를 잡기 좋습니다.",
+    a: "없습니다. 전화로 다시 알려 주시면 됩니다. 다만 가능하면 일찍 알려 주시면 다음 손님 자리를 잡기 좋습니다.",
   },
   {
     q: "단체 예약은 몇 명부터 미리 연락해야 하나요?",
-    a: "4명 이상이면 미리 카카오톡 주세요. 같은 테이블에 모이게 잡으려면 사전 조정이 필요합니다. 인원이 더 많아질 가능성이 있으면 그 부분도 함께 말씀해 주세요.",
+    a: "4명 이상이면 미리 전화 주세요. 같은 테이블에 모이게 잡으려면 사전 조정이 필요합니다. 인원이 더 많아질 가능성이 있으면 그 부분도 함께 말씀해 주세요.",
   },
   {
     q: "온라인 예약 페이지는 없나요?",
-    a: "없습니다. 별도 앱·회원가입·결제 사전등록도 없습니다. 매장 문의로 한 번에 예약됩니다.",
+    a: "없습니다. 별도 앱·회원가입·결제 사전등록도 없습니다. 전화 010-3854-6887로 한 번에 예약됩니다.",
   },
   {
     q: "당일 예약도 되나요?",
-    a: "가능합니다. 도착 직전이라도 카카오톡으로 문의 주시면 자리가 있을 경우 바로 잡아드립니다.",
+    a: "가능합니다. 도착 직전이라도 전화로 문의 주시면 자리가 있을 경우 바로 잡아드립니다.",
   },
 ];
 
@@ -37,23 +37,22 @@ export default function ReservePage() {
   return (
     <PageShell title="창원 룰루랄라 나이트 예약" hook={m.hook} pathname="/reserve">
       <p>
-        앱 다운로드, 회원가입, 결제정보, 그런 거 없습니다. 카카오톡 한 통이면 끝나요.
+        앱 다운로드, 회원가입, 결제정보, 그런 거 없습니다. 전화 한 통이면 끝나요.
         진짜로 30초입니다. <strong className="text-white">창원 룰루랄라 나이트</strong>{" "}
-        예약은 카카오톡{" "}
-        매장 문의
-        , 이 ID 하나로 끝납니다.
+        예약은{" "}
+        <a href={SITE.phoneHref} className="font-extrabold text-gold underline">전화 {SITE.phone}</a>
+        , 이 번호 하나로 끝납니다.
       </p>
 
       <h2 className="pt-2 text-xl font-bold text-white">예약 4단계</h2>
       <ol className="space-y-3 rounded-2xl border border-line bg-elev p-5 text-gray-200">
         <li id="step1">
           <strong className="text-gold">1.</strong>{" "}
-          카카오톡에서{" "}
-          매장 문의{" "}
-          검색하세요.
+          <a href={SITE.phoneHref} className="font-extrabold text-gold underline">{SITE.phone}</a>
+          로 전화하세요.
         </li>
         <li id="step2">
-          <strong className="text-gold">2.</strong> 인원 / 날짜 / 시간 / 요청사항을 보내세요.
+          <strong className="text-gold">2.</strong> 인원 / 날짜 / 시간 / 요청사항을 말씀해 주세요.
         </li>
         <li id="step3">
           <strong className="text-gold">3.</strong> 매니저가 자리 확정해 드립니다.
@@ -66,21 +65,21 @@ export default function ReservePage() {
       <h2 className="pt-2 text-xl font-bold text-white">와서 입장하실 때</h2>
       <ul className="space-y-2 text-gray-300">
         <li>예약 시간 5~10분 전 도착 추천드립니다.</li>
-        <li>신분증 챙겨오세요. 19세 이상 합법 영업장입니다.</li>
+        <li>신분증 챙겨오세요. 27세 이상만 출입 가능한 합법 영업장입니다.</li>
         <li>도착해서 예약 확인 한마디면 자리 안내됩니다.</li>
-        <li>입구가 헷갈리면 도착 직전 다시 카카오톡 주세요. 잡아드립니다.</li>
+        <li>입구가 헷갈리면 도착 직전 다시 전화 주세요. 잡아드립니다.</li>
       </ul>
 
       <h2 className="pt-2 text-xl font-bold text-white">변경 / 취소</h2>
       <p>
-        카카오톡으로 다시 메시지 주시면 됩니다. 변경·취소 페널티 없습니다.
+        전화로 다시 알려 주시면 됩니다. 변경·취소 페널티 없습니다.
         대신 빠르게 알려주시면 다음 손님 잡기 좋아요. 그게 매너 정도로 생각해
         주세요.
       </p>
 
       <h2 className="pt-2 text-xl font-bold text-white">단체 예약</h2>
       <p>
-        4명 넘어가면 미리 한 번 카카오톡 주세요. 한 테이블에 모이게 잡아드릴게요.
+        4명 넘어가면 미리 한 번 전화 주세요. 한 테이블에 모이게 잡아드릴게요.
         분산되면 분위기 깨집니다. 인원이 늘어날 가능성 있으면 그것도 미리 말씀해
         주세요. 자리 폭 넉넉히 잡아둡니다.
       </p>

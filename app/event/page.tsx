@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
-import { PAGE_META, SITE } from "@/lib/site";
+import { PAGE_META, SITE, OG_IMAGE } from "@/lib/site";
 
 const m = PAGE_META["/event"];
 export const metadata: Metadata = {
   title: m.title,
   description: m.description,
   alternates: { canonical: "/event" },
-  openGraph: { title: m.title, description: m.description },
+  openGraph: { title: m.title, description: m.description, images: OG_IMAGE },
 };
 
 const EVENT_FAQ = [
@@ -21,7 +21,7 @@ const EVENT_FAQ = [
   },
   {
     q: "광고만 보고 갔다가 '그런 이벤트 없다' 들어본 적 있어서 의심돼요.",
-    a: "매장 정책상 종료된 이벤트나 '하지 않는 이벤트'를 광고에 적지 않습니다. 매장에 문의 주시면 그 자리에서 실제 진행 여부를 솔직히 답해드립니다.",
+    a: "매장 정책상 종료된 이벤트나 '하지 않는 이벤트'를 광고에 적지 않습니다. 010-3854-6887로 전화 주시면 그 자리에서 실제 진행 여부를 솔직히 답해드립니다.",
   },
 ];
 
@@ -66,9 +66,9 @@ export default function EventPage() {
       </ul>
 
       <p>
-        지금 진행 중인 혜택 여부가 궁금하시면 카카오톡 주세요. 매니저가 그 자리에서
+        지금 진행 중인 혜택 여부가 궁금하시면 전화 주세요. 매니저가 그 자리에서
         솔직히 말씀드립니다 —{" "}
-        매장 문의
+        <a href={SITE.phoneHref} className="font-extrabold text-gold underline">전화 {SITE.phone}</a>
         . 창원 나이트 중에서 "하지 않는 이벤트"를 광고에 적는 가게는 많은데, 저희는
         반대로 갑니다.
       </p>

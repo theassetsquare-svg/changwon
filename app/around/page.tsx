@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
 import Placeholder from "@/components/Placeholder";
-import { PAGE_META, SITE } from "@/lib/site";
+import { PAGE_META, SITE, OG_IMAGE } from "@/lib/site";
 
 const m = PAGE_META["/around"];
 export const metadata: Metadata = {
   title: m.title,
   description: m.description,
   alternates: { canonical: "/around" },
-  openGraph: { title: m.title, description: m.description },
+  openGraph: { title: m.title, description: m.description, images: OG_IMAGE },
 };
 
 const AROUND_FAQ = [
@@ -18,11 +18,11 @@ const AROUND_FAQ = [
   },
   {
     q: "끝나고 묵을 만한 숙소도 추천해 주나요?",
-    a: "인근 호텔·모텔을 가격대별로 정리해 안내합니다. 예약은 본인이 직접 진행하시고, 위치 헷갈리시면 매장에 연락 주시면 알려드립니다.",
+    a: "인근 호텔·모텔을 가격대별로 정리해 안내합니다. 예약은 본인이 직접 진행하시고, 위치 헷갈리시면 010-3854-6887로 전화 주시면 알려드립니다.",
   },
   {
     q: "음주 후 운전 대신 대리 부르려면?",
-    a: "매장에서 대리를 잡아드립니다. 카카오톡으로 한마디 하시거나, 도착 전 미리 '대리 필요할 것 같다'고 알려주시면 시간 맞춰 준비합니다.",
+    a: "매장에서 대리를 잡아드립니다. 전화로 한마디 하시거나, 도착 전 미리 '대리 필요할 것 같다'고 알려주시면 시간 맞춰 준비합니다.",
   },
 ];
 
@@ -56,9 +56,9 @@ export default function AroundPage() {
 
       <h2 className="pt-2 text-xl font-bold text-white">대리 / 택시</h2>
       <p>
-        끝나고 운전 안 하실 거면 가게에서 대리 잡아드릴 수 있어요. 카카오톡으로
+        끝나고 운전 안 하실 거면 가게에서 대리 잡아드릴 수 있어요. 전화로
         미리 알려주시거나, 매장에서 한마디 해 주세요 —{" "}
-        매장 문의
+        <a href={SITE.phoneHref} className="font-extrabold text-gold underline">전화 {SITE.phone}</a>
         . 택시는 매장 앞에서 잡히지 않을 때 호출 안내해 드립니다.
       </p>
 
@@ -66,7 +66,7 @@ export default function AroundPage() {
       <p className="text-gray-300">
         만석일 때 우회 가능한 인근 유료 / 무료 주차장 안내 —{" "}
         <Placeholder>입력필요</Placeholder>. 처음 오시는 분들 헤매기 쉬운 골목이라,
-        도착 직전 카카오톡 주시면 입구까지 잡아드립니다.
+        도착 직전 전화 주시면 입구까지 잡아드립니다.
       </p>
 
       <p className="rounded-2xl border border-line bg-elev p-5 text-sm text-gray-300">

@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
 import Placeholder from "@/components/Placeholder";
-import { PAGE_META, PLACEHOLDERS, SITE } from "@/lib/site";
+import { PAGE_META, PLACEHOLDERS, SITE, OG_IMAGE } from "@/lib/site";
 
 const m = PAGE_META["/about"];
 export const metadata: Metadata = {
   title: m.title,
   description: m.description,
   alternates: { canonical: "/about" },
-  openGraph: { title: m.title, description: m.description },
+  openGraph: { title: m.title, description: m.description, images: OG_IMAGE },
 };
 
 export default function AboutPage() {
@@ -20,18 +20,18 @@ export default function AboutPage() {
     >
       <p>
         <strong className="text-white">창원 룰루랄라 나이트</strong>는 경상남도 창원시
-        안에 있는 합법 나이트 클럽입니다. 사업자 등록 보유하고, 만 19세 이상만
+        안에 있는 합법 나이트 클럽입니다. 사업자 등록 보유하고, 만 27세 이상만
         받습니다. 입장하실 때 신분증 보여 주셔야 합니다. 룰이라기보다, 우리 가게가
         오래 잘 굴러가는 방식이에요. 손님도 보호되고, 매장도 보호됩니다. 검색하다가
         "창원룰루랄라나이트"라는 이름으로 비슷한 사이트 여럿 보셨을 수 있는데,
-        공식 카카오톡 문의는{" "}
-        매장 문의{" "}
+        공식 예약 문의는{" "}
+        <a href={SITE.phoneHref} className="font-extrabold text-gold underline">전화 {SITE.phone}</a>{" "}
         하나입니다.
       </p>
 
       <p>
         매장 이름은 "룰루랄라 나이트", 도시 이름 붙여서 부르면 그게 저희 가게입니다.
-        카카오톡으로 문의하시면 매니저가 직접 답합니다. 직원이 따로 받아서 메모
+        전화로 문의하시면 매니저가 직접 답합니다. 직원이 따로 받아서 메모
         남기고 다시 연락하는 시스템 같은 거 안 합니다.
       </p>
 
@@ -64,12 +64,12 @@ export default function AboutPage() {
         </li>
         <li>
           문의 —{" "}
-          매장 문의{" "}
+          <a href={SITE.phoneHref} className="font-extrabold text-gold underline">전화 {SITE.phone}</a>{" "}
           (매니저 직접 응대)
         </li>
-        <li>가격대 — 중간대 (정확한 금액은 카카오톡 문의가 기준)</li>
-        <li>입장 연령 — 만 19세 이상, 신분증 확인</li>
-        <li>결제 — 현금 / 카드 (자세한 정책은 카카오톡 문의)</li>
+        <li>가격대 — 중간대 (정확한 금액은 전화 문의가 기준)</li>
+        <li>입장 연령 — 만 27세 이상, 신분증 확인</li>
+        <li>결제 — 현금 / 카드 (자세한 정책은 전화 문의)</li>
         <li>사업자 등록 — 보유, 합법 영업장</li>
       </ul>
 
@@ -87,14 +87,14 @@ export default function AboutPage() {
       </h2>
       <ul className="space-y-2 text-gray-300">
         <li>
-          신분증 확인을 합니다. 미성년자는 출입이 불가합니다. 죄송하지만 룰입니다.
+          신분증 확인을 합니다. 27세 미만은 출입이 불가합니다. 죄송하지만 룰입니다.
         </li>
         <li>
           예약 안 하셔도 들어올 수는 있는데, 사람 많은 날은 자리가 빠르게 빠집니다.
-          헛걸음 안 하시려면 카카오톡 문의 추천드립니다.
+          헛걸음 안 하시려면 전화 문의 추천드립니다.
         </li>
         <li>
-          단체(4인 이상)면 미리 카카오톡 주세요. 한 자리에 모이게 잡아드리려면 시간이
+          단체(4인 이상)면 미리 전화 주세요. 한 자리에 모이게 잡아드리려면 시간이
           필요합니다.
         </li>
         <li>

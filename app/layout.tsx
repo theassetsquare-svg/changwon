@@ -71,10 +71,10 @@ export const metadata: Metadata = {
     "og:locality": "창원시",
     "og:region": "경상남도",
     "og:country-name": "대한민국",
-    "twitter:label1": "카카오톡",
-    "twitter:data1": SITE.kakao,
-    "twitter:label2": "문의",
-    "twitter:data2": "광고문의",
+    "twitter:label1": "예약 문의",
+    "twitter:data1": SITE.phone,
+    "twitter:label2": "입장 연령",
+    "twitter:data2": "27세 이상",
   },
 };
 

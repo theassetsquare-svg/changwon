@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
-import { PAGE_META, SITE } from "@/lib/site";
+import { PAGE_META, SITE, OG_IMAGE } from "@/lib/site";
 
 const m = PAGE_META["/review"];
 export const metadata: Metadata = {
   title: m.title,
   description: m.description,
   alternates: { canonical: "/review" },
-  openGraph: { title: m.title, description: m.description },
+  openGraph: { title: m.title, description: m.description, images: OG_IMAGE },
 };
 
 const REVIEW_FAQ = [
@@ -25,7 +25,7 @@ const REVIEW_FAQ = [
   },
   {
     q: "후기 남기려면 어떻게 해야 하나요?",
-    a: "매장에서 직접 말씀하시거나, 매장 문의로 보내주시면 됩니다. 비공개 요청은 그 자리에서 반영됩니다.",
+    a: "매장에서 직접 말씀하시거나, 전화 010-3854-6887로 말씀해 주시면 됩니다. 비공개 요청은 그 자리에서 반영됩니다.",
   },
 ];
 
@@ -54,7 +54,7 @@ export default function ReviewPage() {
       <h2 className="pt-2 text-xl font-bold text-white">제가 후기를 다루는 방식</h2>
       <ul className="space-y-2 text-gray-300">
         <li>방문하신 손님께 직접 받은 후기만 올립니다.</li>
-        <li>출처(카카오톡, 네이버 플레이스 등) 함께 표기합니다.</li>
+        <li>출처(전화, 네이버 플레이스 등) 함께 표기합니다.</li>
         <li>평점 평균 부풀리기 안 합니다. 실제 평균만 표시합니다.</li>
         <li>비공개로 해달라 하시면 그 자리에서 내립니다.</li>
         <li>저희 입장에 불리한 후기도 그대로 남깁니다. 그게 정직이니까요.</li>
@@ -71,9 +71,9 @@ export default function ReviewPage() {
 
       <h2 className="pt-2 text-xl font-bold text-white">후기 남기시려면</h2>
       <p>
-        손님이 후기를 직접 보내주시는 게 가장 좋습니다. 카카오톡, 문자, 직접 어떤
+        손님이 후기를 직접 보내주시는 게 가장 좋습니다. 전화, 문자, 직접 어떤
         방법이든 좋아요. 매니저한테 한마디 해 주세요 —{" "}
-        매장 문의
+        <a href={SITE.phoneHref} className="font-extrabold text-gold underline">전화 {SITE.phone}</a>
         . 후기를 좋게 써달라 부탁 안 합니다. 그냥 솔직히 적어주시면 됩니다.
       </p>
 

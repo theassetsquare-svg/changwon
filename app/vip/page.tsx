@@ -1,24 +1,24 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
 import Placeholder from "@/components/Placeholder";
-import { PAGE_META, SITE } from "@/lib/site";
+import { PAGE_META, SITE, OG_IMAGE } from "@/lib/site";
 
 const m = PAGE_META["/vip"];
 export const metadata: Metadata = {
   title: m.title,
   description: m.description,
   alternates: { canonical: "/vip" },
-  openGraph: { title: m.title, description: m.description },
+  openGraph: { title: m.title, description: m.description, images: OG_IMAGE },
 };
 
 const VIP_FAQ = [
   {
     q: "창원 룰루랄라 나이트 VIP 룸은 어떻게 예약하나요?",
-    a: "일반 예약과 동일합니다. 매장 문의로 'VIP 룸으로 잡아주세요' 한마디 하시면 됩니다. 그 시점 룸 상황을 보고 가능한 시간대를 안내합니다.",
+    a: "일반 예약과 동일합니다. 전화 010-3854-6887로 'VIP 룸으로 잡아주세요' 한마디 하시면 됩니다. 그 시점 룸 상황을 보고 가능한 시간대를 안내합니다.",
   },
   {
     q: "VIP 룸 가격이 따로 있나요?",
-    a: "일반 자리와 가격대가 다릅니다. 인원·옵션에 따라 변동되므로 사이트에 박아 두지 않고, 카카오톡 문의 시점에 정확히 안내합니다.",
+    a: "일반 자리와 가격대가 다릅니다. 인원·옵션에 따라 변동되므로 사이트에 박아 두지 않고, 전화 문의 시점에 정확히 안내합니다.",
   },
   {
     q: "VIP 룸은 별도 입구가 있나요?",
@@ -26,7 +26,7 @@ const VIP_FAQ = [
   },
   {
     q: "VIP 룸 최소 인원이 있나요?",
-    a: "최소·최대 인원은 룸 크기에 따라 다릅니다. 운영 시점에만 안내되며, 카카오톡으로 확인이 가장 정확합니다.",
+    a: "최소·최대 인원은 룸 크기에 따라 다릅니다. 운영 시점에만 안내되며, 전화로 확인이 가장 정확합니다.",
   },
 ];
 
@@ -39,7 +39,7 @@ export default function VipPage() {
     >
       <p>
         VIP 룸은 운영할 때만 안내합니다. 없는 룸을 있는 척 광고하지 않습니다.
-        사람 보고 자리 잡아드리는 거니까, 일단 카카오톡 주세요.{" "}
+        사람 보고 자리 잡아드리는 거니까, 일단 전화 주세요.{" "}
         <strong className="text-white">창원 룰루랄라 나이트</strong> VIP 룸은 인원과
         상황을 보고 매니저가 직접 배정합니다.
       </p>
@@ -77,7 +77,7 @@ export default function VipPage() {
       <h2 className="pt-2 text-xl font-bold text-white">VIP 예약은</h2>
       <p>
         일반 예약과 같습니다. "VIP 룸으로 잡아주세요" 한마디 하시면 됩니다 —{" "}
-        매장 문의
+        <a href={SITE.phoneHref} className="font-extrabold text-gold underline">전화 {SITE.phone}</a>
         . 룸 상황 봐서 가능한 시간 알려드립니다. 인원이 늘어날 가능성도 함께 말씀해
         주시면 자리 폭 넉넉히 잡습니다.
       </p>

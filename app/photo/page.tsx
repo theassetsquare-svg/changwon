@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
-import { PAGE_META, SITE } from "@/lib/site";
+import { PAGE_META, SITE, OG_IMAGE } from "@/lib/site";
 
 const m = PAGE_META["/photo"];
 export const metadata: Metadata = {
   title: m.title,
   description: m.description,
   alternates: { canonical: "/photo" },
-  openGraph: { title: m.title, description: m.description },
+  openGraph: { title: m.title, description: m.description, images: OG_IMAGE },
 };
 
 const PHOTO_FAQ = [
@@ -17,7 +17,7 @@ const PHOTO_FAQ = [
   },
   {
     q: "사진을 미리 더 보고 싶으면 어떻게 하나요?",
-    a: "매장에 문의 주시면 매장 내부 사진을 보내드릴 수 있습니다. 매니저가 직접 안내합니다.",
+    a: "010-3854-6887로 전화 주시면 매장 내부 사진을 보내드릴 수 있습니다. 매니저가 직접 안내합니다.",
   },
   {
     q: "사진이랑 실제 매장이 다른 경우 있나요?",
@@ -63,8 +63,8 @@ export default function PhotoPage() {
 
       <h2 className="pt-2 text-xl font-bold text-white">미리 보고 싶으시면</h2>
       <p>
-        카카오톡으로 문의 주시면 보내드릴 수 있어요 —{" "}
-        매장 문의
+        전화로 문의 주시면 보내드릴 수 있어요 —{" "}
+        <a href={SITE.phoneHref} className="font-extrabold text-gold underline">전화 {SITE.phone}</a>
         . 가실 자리 미리 보고 결정하시면 도착했을 때 어색함이 훨씬 줄어듭니다.
       </p>
 

@@ -1,28 +1,28 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
 import Placeholder from "@/components/Placeholder";
-import { PAGE_META, PLACEHOLDERS, SITE } from "@/lib/site";
+import { PAGE_META, PLACEHOLDERS, SITE, OG_IMAGE } from "@/lib/site";
 
 const m = PAGE_META["/price"];
 export const metadata: Metadata = {
   title: m.title,
   description: m.description,
   alternates: { canonical: "/price" },
-  openGraph: { title: m.title, description: m.description },
+  openGraph: { title: m.title, description: m.description, images: OG_IMAGE },
 };
 
 const PRICE_FAQ = [
   {
     q: "창원 룰루랄라 나이트 가격은 평균 얼마예요?",
-    a: "옵션·인원·시간대에 따라 다릅니다. 매장에 문의 주시면 인원에 맞는 두세 가지 옵션의 정확한 금액을 묶어 안내합니다.",
+    a: "옵션·인원·시간대에 따라 다릅니다. 010-3854-6887로 전화 주시면 인원에 맞는 두세 가지 옵션의 정확한 금액을 묶어 안내합니다.",
   },
   {
     q: "사이트에 가격표가 비어 있는 이유는?",
-    a: "허위 금액을 적지 않기 위해서입니다. 시즌·자리·인원에 따라 가격이 바뀌는데, 표에 박아 두면 손님이 도착해서 '다르네' 라고 느낍니다. 정확한 금액은 카카오톡 문의가 기준입니다.",
+    a: "허위 금액을 적지 않기 위해서입니다. 시즌·자리·인원에 따라 가격이 바뀌는데, 표에 박아 두면 손님이 도착해서 '다르네' 라고 느낍니다. 정확한 금액은 전화 문의가 기준입니다.",
   },
   {
     q: "추가 요금이 붙는 경우가 있나요?",
-    a: "옵션 변경, 인원 추가, VIP 룸 이용 등 변동 사유는 카카오톡 문의 시점에 미리 다 말씀드립니다. 도착 후 '몰랐던 추가요금' 부과는 하지 않습니다.",
+    a: "옵션 변경, 인원 추가, VIP 룸 이용 등 변동 사유는 전화 문의 시점에 미리 다 말씀드립니다. 도착 후 '몰랐던 추가요금' 부과는 하지 않습니다.",
   },
   {
     q: "결제는 카드 / 현금 다 되나요?",
@@ -36,13 +36,13 @@ export default function PricePage() {
       <p>
         솔직히 말씀드릴게요. <strong className="text-white">창원 룰루랄라 나이트</strong>의
         가격은 자주 바뀝니다. 시즌, 인원, 자리에 따라 다릅니다. 그래서 여기 표는 큰
-        틀만 적어두고, 정확한 금액은 카카오톡으로 그때그때 알려드립니다. 그게 가장
+        틀만 적어두고, 정확한 금액은 전화로 그때그때 알려드립니다. 그게 가장
         빠르고 정확합니다.
       </p>
 
       <p>
         가격표를 못 박아두지 않는 이유는 단순합니다. "20만 원이라더니 25만 원이네"
-        같은 말이 손님 입에서 나오지 않게 하려고요. 그래서 카카오톡 문의 시 인원·날짜에
+        같은 말이 손님 입에서 나오지 않게 하려고요. 그래서 전화 문의 시 인원·날짜에
         맞는 옵션 두세 개를 묶어서 정확히 알려드립니다. 손님은 그걸 듣고 비교해서
         정하시면 됩니다.
       </p>
@@ -95,21 +95,21 @@ export default function PricePage() {
           조정해서 잡아드립니다.
         </li>
         <li>
-          4인 이상 (단체) — 묶음 옵션이 따로 있습니다. 미리 카카오톡 주시면 같은 자리에
+          4인 이상 (단체) — 묶음 옵션이 따로 있습니다. 미리 전화 주시면 같은 자리에
           모이게 잡아드릴게요.
         </li>
         <li>
-          VIP 룸 — 별도 안내. 운영 시점에만 가능. 자세한 건 카카오톡으로 직접 안내합니다.
+          VIP 룸 — 별도 안내. 운영 시점에만 가능. 자세한 건 전화로 직접 안내합니다.
         </li>
         <li>
-          평일 / 주말 — 시간대와 손님 밀도에 따라 가격 차이가 있습니다. 카카오톡으로 확인
+          평일 / 주말 — 시간대와 손님 밀도에 따라 가격 차이가 있습니다. 전화로 확인
           가능.
         </li>
       </ul>
 
       <p className="rounded-2xl border border-line bg-elev p-5 text-sm text-gray-300">
         ※ 표시된 금액과 실제 결제 금액에 차이가 있으면 그 자리에서 정정합니다.
-        부풀려서 받지 않습니다. 추가 요금이 발생할 가능성도 카카오톡 문의 시점에 미리
+        부풀려서 받지 않습니다. 추가 요금이 발생할 가능성도 전화 문의 시점에 미리
         말씀드립니다.
       </p>
 
@@ -142,7 +142,7 @@ export default function PricePage() {
 
       <h2 className="pt-2 text-xl font-bold text-white">가장 빠른 가격 확인</h2>
       <p>
-        매장 문의{" "}
+        <a href={SITE.phoneHref} className="font-extrabold text-gold underline">전화 {SITE.phone}</a>{" "}
         → 인원/날짜 → 가격 안내. 30초입니다.
       </p>
     </PageShell>
