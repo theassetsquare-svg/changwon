@@ -9,7 +9,7 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: `${SITE.name} 공식 사이트`,
+    default: `${SITE.nameNoSpace} 공식 사이트 — 상남동 27세 이상 합법 영업장`,
     template: `%s`,
   },
   description: SITE.description,
@@ -32,12 +32,12 @@ export const metadata: Metadata = {
     locale: "ko_KR",
     url: SITE.url,
     siteName: SITE.name,
-    title: `${SITE.name} 공식 사이트`,
+    title: `${SITE.nameNoSpace} 공식 사이트 — 상남동 27세 이상 합법 영업장`,
     description: SITE.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE.name} 공식 사이트`,
+    title: `${SITE.nameNoSpace} 공식 사이트 — 상남동 27세 이상 합법 영업장`,
     description: SITE.description,
   },
   robots: {
