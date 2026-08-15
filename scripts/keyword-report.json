@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-15T02:27:23.225Z",
+  "generatedAt": "2026-08-15T02:34:03.965Z",
   "results": [
     {
       "route": "/",
@@ -578,27 +578,27 @@
     {
       "route": "/night/bulgwang-hobak",
       "file": "lib/venues.ts",
-      "totalLength": 1642,
+      "totalLength": 1633,
       "keywords": {
         "불광동호박나이트": {
           "count": 5,
-          "density": 2.44
+          "density": 2.45
         }
       },
-      "primaryDensity": 2.44,
+      "primaryDensity": 2.45,
       "verdict": "OK"
     },
     {
       "route": "/night/ulsan-champion",
       "file": "lib/venues.ts",
-      "totalLength": 1433,
+      "totalLength": 1429,
       "keywords": {
         "울산챔피언나이트": {
           "count": 5,
-          "density": 2.79
+          "density": 2.8
         }
       },
-      "primaryDensity": 2.79,
+      "primaryDensity": 2.8,
       "verdict": "OK"
     },
     {
@@ -721,14 +721,14 @@
     {
       "route": "/night/cheongdam",
       "file": "lib/venues.ts",
-      "totalLength": 1458,
+      "totalLength": 1454,
       "keywords": {
         "청담나이트": {
           "count": 5,
-          "density": 1.71
+          "density": 1.72
         }
       },
-      "primaryDensity": 1.71,
+      "primaryDensity": 1.72,
       "verdict": "OK"
     }
   ]

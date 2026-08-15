@@ -115,7 +115,7 @@ export const PLACEHOLDERS = {
   instagram: "https://www.instagram.com/rulruralra_nightclub_",
   instagramAlt: "https://www.instagram.com/lulu__lala._.cw",
   naverPlace: PLACEHOLDER,
-  kakaoMap: PLACEHOLDER,
+  // kakaoMap 항목은 제거함 (2026-08-15). 지도 안내는 네이버 플레이스/네이버 지도로 통일.
 } as const;
 
 export const NAV = [

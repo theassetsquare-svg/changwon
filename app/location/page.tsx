@@ -52,8 +52,8 @@ export default function LocationPage() {
       </p>
 
       <p className="text-gray-300">
-        상세 번지는 매장 확정 시점에 본 페이지와 네이버 플레이스, 카카오맵에 동시에
-        반영합니다. 그 전까지는 도착 시 전화 주시면 입구까지 안내합니다.
+        상세 번지는 매장 확정 시점에 본 페이지와 네이버 플레이스에 반영합니다.
+        그 전까지는 도착 시 전화 주시면 입구까지 안내합니다.
       </p>
 
       <h2 className="pt-2 text-xl font-bold text-white">대중교통</h2>
@@ -115,7 +115,7 @@ export default function LocationPage() {
       />
 
       <div className="mt-2 rounded-2xl border border-dashed border-line bg-elev p-8 text-center text-sm text-gray-500">
-        지도 영역 — 가게 좌표 확정되면 네이버 지도 / 카카오맵 임베드 자리
+        지도 영역 — 가게 좌표 확정되면 네이버 지도 임베드 자리
       </div>
     </PageShell>
   );
