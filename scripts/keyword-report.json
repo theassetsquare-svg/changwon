@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-15T02:34:03.965Z",
+  "generatedAt": "2026-08-15T02:49:19.283Z",
   "results": [
     {
       "route": "/",
@@ -168,11 +168,11 @@
     {
       "route": "/location",
       "file": "app/location/page.tsx",
-      "totalLength": 1765,
+      "totalLength": 1752,
       "keywords": {
         "창원 룰루랄라 나이트": {
           "count": 1,
-          "density": 0.62
+          "density": 0.63
         },
         "창원룰루랄라나이트": {
           "count": 1,
@@ -184,7 +184,7 @@
         },
         "룰루랄라 나이트": {
           "count": 1,
-          "density": 0.45
+          "density": 0.46
         },
         "창원 나이트": {
           "count": 1,
@@ -200,10 +200,10 @@
         },
         "010-3854-6887": {
           "count": 2,
-          "density": 1.47
+          "density": 1.48
         }
       },
-      "primaryDensity": 1.13,
+      "primaryDensity": 1.14,
       "verdict": "OK"
     },
     {
@@ -604,118 +604,118 @@
     {
       "route": "/night/daejeon-one",
       "file": "lib/venues.ts",
-      "totalLength": 1345,
+      "totalLength": 1368,
       "keywords": {
         "대전원나이트": {
-          "count": 5,
-          "density": 2.23
+          "count": 4,
+          "density": 1.75
         }
       },
-      "primaryDensity": 2.23,
+      "primaryDensity": 1.75,
       "verdict": "OK"
     },
     {
       "route": "/night/sillim-grandprix",
       "file": "lib/venues.ts",
-      "totalLength": 1424,
+      "totalLength": 1371,
       "keywords": {
         "신림그랑프리나이트": {
           "count": 4,
-          "density": 2.53
+          "density": 2.63
         }
       },
-      "primaryDensity": 2.53,
+      "primaryDensity": 2.63,
       "verdict": "OK"
     },
     {
       "route": "/night/sangbong-hangukgwan",
       "file": "lib/venues.ts",
-      "totalLength": 1408,
+      "totalLength": 1363,
       "keywords": {
         "상봉동한국관나이트": {
           "count": 4,
-          "density": 2.56
+          "density": 2.64
         }
       },
-      "primaryDensity": 2.56,
+      "primaryDensity": 2.64,
       "verdict": "OK"
     },
     {
       "route": "/night/suyu-shampoo",
       "file": "lib/venues.ts",
-      "totalLength": 1218,
+      "totalLength": 1326,
       "keywords": {
         "수유샴푸나이트": {
-          "count": 5,
-          "density": 2.87
+          "count": 4,
+          "density": 2.11
         }
       },
-      "primaryDensity": 2.87,
+      "primaryDensity": 2.11,
       "verdict": "OK"
     },
     {
       "route": "/night/busan-asiad",
       "file": "lib/venues.ts",
-      "totalLength": 1317,
+      "totalLength": 1326,
       "keywords": {
         "부산아시아드나이트": {
           "count": 4,
-          "density": 2.73
+          "density": 2.71
         }
       },
-      "primaryDensity": 2.73,
+      "primaryDensity": 2.71,
       "verdict": "OK"
     },
     {
       "route": "/night/suwon-chancedome",
       "file": "lib/venues.ts",
-      "totalLength": 1312,
+      "totalLength": 1342,
       "keywords": {
         "수원찬스돔나이트": {
           "count": 4,
-          "density": 2.44
+          "density": 2.38
         }
       },
-      "primaryDensity": 2.44,
+      "primaryDensity": 2.38,
       "verdict": "OK"
     },
     {
       "route": "/night/ansan-hit",
       "file": "lib/venues.ts",
-      "totalLength": 1227,
+      "totalLength": 1307,
       "keywords": {
         "안산히트나이트": {
-          "count": 5,
-          "density": 2.85
+          "count": 4,
+          "density": 2.14
         }
       },
-      "primaryDensity": 2.85,
+      "primaryDensity": 2.14,
       "verdict": "OK"
     },
     {
       "route": "/night/daejeon-seven",
       "file": "lib/venues.ts",
-      "totalLength": 1175,
+      "totalLength": 1316,
       "keywords": {
         "대전세븐나이트": {
-          "count": 5,
-          "density": 2.98
+          "count": 4,
+          "density": 2.13
         }
       },
-      "primaryDensity": 2.98,
+      "primaryDensity": 2.13,
       "verdict": "OK"
     },
     {
       "route": "/night/ilsan-shampoo",
       "file": "lib/venues.ts",
-      "totalLength": 1202,
+      "totalLength": 1316,
       "keywords": {
         "일산샴푸나이트": {
-          "count": 5,
-          "density": 2.91
+          "count": 4,
+          "density": 2.13
         }
       },
-      "primaryDensity": 2.91,
+      "primaryDensity": 2.13,
       "verdict": "OK"
     },
     {

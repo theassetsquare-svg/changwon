@@ -7,7 +7,7 @@ import { ADS, VENUES, venuePath } from "@/lib/venues";
 
 const TITLE = "전국 나이트 예약 문의 — 지역별 담당자 연락처 모음";
 const DESCRIPTION =
-  "불광동호박나이트·울산챔피언나이트·청담나이트 등 전국 나이트 예약 문의처를 지역별로 정리했습니다. 광고문의 카톡 besta12. 만 19세 이상, 입장 시 신분증 확인.";
+  "불광동호박나이트·울산챔피언나이트·청담나이트 등 전국 나이트 예약 문의처를 지역별로 정리했습니다. 담당자 등록 전인 지역은 광고주를 모집합니다. 광고문의 카톡 besta12. 만 19세 이상, 입장 시 신분증 확인.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -28,11 +28,11 @@ export const metadata: Metadata = {
 const FAQ = [
   {
     q: "전국 나이트 예약 문의는 어떻게 하나요?",
-    a: "원하는 지역의 페이지에 들어가면 그 업소의 예약 담당자 연락처가 있습니다. 전화 또는 카카오톡으로 인원·날짜·도착 예정 시간을 전달하시면 자리를 안내받을 수 있습니다.",
+    a: "원하는 지역의 페이지에 들어가면 등록된 예약 담당자 연락처를 확인할 수 있습니다. 담당자에게 인원·날짜·도착 예정 시간을 전달하시면 자리를 안내받을 수 있습니다. 아직 담당자가 등록되지 않은 지역은 그 사실을 페이지에 그대로 표시합니다.",
   },
   {
     q: "광고 문의는 어디로 하나요?",
-    a: "카카오톡 아이디 besta12로 문의하시면 됩니다. 업소 등록·페이지 노출 관련 문의를 받습니다.",
+    a: "카카오톡 아이디 besta12로 문의하시면 됩니다. 업소 등록·페이지 노출 등 광고 상담 전용 채널이며, 손님 예약 문의는 받지 않습니다.",
   },
   {
     q: "나이트 입장 연령 제한은 어떻게 되나요?",
@@ -130,8 +130,8 @@ export default function NightIndexPage() {
           </p>
           <p className="mt-2 text-gray-100">
             전국 {VENUES.length}개 지역 나이트의 예약 문의처를 한 곳에
-            모았습니다. 각 페이지에서 담당자 전화 또는 카카오톡으로 인원·날짜·시간을
-            전달하면 자리를 안내받을 수 있고, 만 19세 이상만 입장 가능합니다.
+            모았습니다. 담당자가 등록된 지역은 연락처가 바로 표시되고, 등록 전인
+            지역은 그 사실을 그대로 적어둡니다. 만 19세 이상만 입장 가능합니다.
           </p>
         </aside>
 
@@ -151,7 +151,7 @@ export default function NightIndexPage() {
                   <p className="mt-2 text-sm text-gray-300">
                     {v.phone
                       ? `${v.contactName} ${v.phone}`
-                      : `카톡 ${v.kakao ?? ADS.kakao}`}
+                      : "담당자 등록 전 · 광고주 모집"}
                   </p>
                 </Link>
               </li>
@@ -194,11 +194,12 @@ export default function NightIndexPage() {
             광고 문의
           </h2>
           <p className="mt-2 text-[15px] text-gray-100">
-            업소 등록·페이지 노출 문의는 카카오톡으로 받습니다.
+            업소 등록·페이지 노출 문의는 카카오톡으로 받습니다. 광고 상담 전용
+            채널이며 손님 예약 문의는 받지 않습니다.
           </p>
           <KakaoIdCopy
             id={ADS.kakao}
-            label="카톡"
+            label="광고문의 카톡"
             className="mt-3 inline-flex items-center rounded-xl bg-gold px-4 py-3 text-lg font-extrabold text-bg"
           />
         </section>

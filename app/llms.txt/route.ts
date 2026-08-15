@@ -16,7 +16,7 @@ export function GET() {
     const url = `${SITE.url}${venuePath(v.slug)}`;
     const contact = v.phone
       ? `${v.contactName} ${v.phone}`
-      : `카카오톡 ${v.kakao ?? ADS.kakao}`;
+      : "예약 담당자 등록 전 (연락처 미게시, 광고주 모집 중)";
     return `- [${v.keyword} 예약 문의](${url}): ${v.areaLabel}. 예약 문의 ${contact}. 만 19세 이상, 입장 시 신분증 확인.`;
   }).join("\n");
 
@@ -31,7 +31,7 @@ export function GET() {
 - 창원 룰루랄라 나이트 주소: ${SITE.region} ${SITE.city} 성산구 상남동 22-4 지하 3층
 - 창원 룰루랄라 나이트 출입 연령: 27세 이상 (입장 시 신분증 확인)
 - 전국 나이트 예약 문의 페이지 출입 연령: 만 19세 이상 (입장 시 신분증 확인)
-- 광고 문의: 카카오톡 ${ADS.kakao}
+- 광고 문의: 카카오톡 ${ADS.kakao} (업소·담당자 광고 상담 전용. 손님 예약 문의는 받지 않음)
 
 ## 창원 룰루랄라 나이트
 
@@ -39,7 +39,7 @@ ${corePages}
 
 ## 전국 나이트 예약 문의 (지역별)
 
-- [전국 나이트 예약 문의 전체 목록](${SITE.url}/night): 지역별 예약 담당자 전화·카카오톡 연락처 모음.
+- [전국 나이트 예약 문의 전체 목록](${SITE.url}/night): 지역별 예약 담당자 연락처 모음. 담당자 등록 전인 지역은 광고주 모집 중.
 ${venuePages}
 
 ## 게시 원칙

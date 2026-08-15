@@ -39,8 +39,8 @@ export function generateMetadata({
       "geo.placename": v.areaLabel,
       "dc.title": v.keyword,
       "dc.subject": v.keyword,
-      "twitter:label1": "예약 문의",
-      "twitter:data1": v.phone ?? `카톡 ${v.kakao ?? ADS.kakao}`,
+      "twitter:label1": v.phone ? "예약 문의" : "예약 담당자",
+      "twitter:data1": v.phone ?? "등록 전",
       "twitter:label2": "입장 연령",
       "twitter:data2": "만 19세 이상",
     },
@@ -123,18 +123,39 @@ export default function VenuePage({ params }: { params: { venue: string } }) {
           ) : (
             <>
               <p className="mt-1 text-lg font-bold text-white">
-                카카오톡으로 문의받습니다
+                등록된 예약 담당자 연락처가 아직 없습니다
               </p>
-              <div className="mt-3 flex items-center justify-center rounded-xl bg-gold px-5 py-4 text-2xl font-extrabold text-bg sm:text-3xl">
-                <KakaoIdCopy id={kakao} label="카톡" />
-              </div>
-              <p className="mt-3 text-center text-sm text-gray-400">
-                인원 · 날짜 · 도착 예정 시간을 함께 남겨주시면 바로 확인해
-                드립니다.
+              <p className="mt-2 text-sm text-gray-400">
+                확인되지 않은 번호를 임의로 올리지 않습니다. 담당자가 등록되면
+                이 자리에 바로 표시됩니다.
               </p>
             </>
           )}
         </section>
+
+        {/* 광고주 모집 — besta12 는 손님 예약이 아니라 광고 상담 전용 채널 */}
+        {!v.phone ? (
+          <section
+            aria-label="광고 문의"
+            className="mb-8 rounded-2xl border border-gold/40 bg-gold/5 p-5 sm:p-6"
+          >
+            <p className="text-xs font-bold uppercase tracking-widest text-gold">
+              이 자리 광고주를 찾습니다
+            </p>
+            <p className="mt-2 text-[15px] text-gray-100">
+              {v.short} 예약을 받고 계신 업소·담당자라면 이 페이지 맨 위에
+              연락처를 노출하실 수 있습니다.
+            </p>
+            <KakaoIdCopy
+              id={kakao}
+              label="광고문의 카톡"
+              className="mt-3 inline-flex items-center rounded-xl bg-gold px-5 py-3 text-lg font-extrabold text-bg"
+            />
+            <p className="mt-2 text-xs text-gray-500">
+              광고 상담 전용 채널입니다. 손님 예약 문의는 받지 않습니다.
+            </p>
+          </section>
+        ) : null}
 
         <div className="space-y-5 text-[15px] leading-7 text-gray-200 sm:text-base sm:leading-8">
           {v.intro.map((p, i) => (
@@ -151,10 +172,10 @@ export default function VenuePage({ params }: { params: { venue: string } }) {
             {[
               ["업소명", v.spaced],
               ["지역", v.areaLabel],
-              ["예약 담당", v.contactName],
+              ["예약 담당", v.phone ? v.contactName : "등록 전"],
               [
                 "예약 문의",
-                v.phone ? `전화 ${v.phone}` : `카카오톡 ${kakao}`,
+                v.phone ? `전화 ${v.phone}` : "담당자 등록 전 (연락처 미게시)",
               ],
               ["출입 연령", "만 19세 이상 (입장 시 신분증 확인)"],
               ["예약 방법", "인원 · 날짜 · 도착 예정 시간 전달"],
@@ -170,8 +191,10 @@ export default function VenuePage({ params }: { params: { venue: string } }) {
           </dl>
           <p className="mt-3 text-xs text-gray-500">
             정확한 주소 · 영업시간 · 요금표는 확인된 값만 게시한다는 원칙에 따라
-            임의로 적지 않습니다. {v.phone ? "전화" : "카카오톡"} 문의 시 그대로
-            안내해 드립니다.
+            임의로 적지 않습니다.{" "}
+            {v.phone
+              ? "전화 문의 시 그대로 안내해 드립니다."
+              : "예약 담당자 등록 후 이 자리에 표시됩니다."}
           </p>
         </section>
 
@@ -256,7 +279,7 @@ export default function VenuePage({ params }: { params: { venue: string } }) {
 
       <StickyCallBar
         contextLabel={v.keyword}
-        name={v.phone ? v.contactName : "문의"}
+        name={v.phone ? v.contactName : "광고문의"}
         phone={v.phone}
         phoneHref={v.phone ? phoneHref(v.phone) : undefined}
         kakao={kakao}
