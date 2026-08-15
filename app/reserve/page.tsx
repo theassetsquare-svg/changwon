@@ -35,7 +35,7 @@ const RESERVE_FAQ = [
 
 export default function ReservePage() {
   return (
-    <PageShell title="창원 룰루랄라 나이트 예약" hook={m.hook} pathname="/reserve">
+    <PageShell title="창원룰루랄라나이트 예약" hook={m.hook} pathname="/reserve">
       <p>
         앱 다운로드, 회원가입, 결제정보, 그런 거 없습니다. 전화 한 통이면 끝나요.
         진짜로 30초입니다. <strong className="text-white">창원 룰루랄라 나이트</strong>{" "}

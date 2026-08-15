@@ -28,7 +28,7 @@ const EVENT_FAQ = [
 export default function EventPage() {
   return (
     <PageShell
-      title="창원 룰루랄라 나이트 이벤트"
+      title="창원룰루랄라나이트 이벤트"
       hook={m.hook}
       pathname="/event"
     >

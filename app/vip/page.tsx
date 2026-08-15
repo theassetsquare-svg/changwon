@@ -33,7 +33,7 @@ const VIP_FAQ = [
 export default function VipPage() {
   return (
     <PageShell
-      title="창원 룰루랄라 나이트 VIP 룸"
+      title="창원룰루랄라나이트 VIP 룸"
       hook={m.hook}
       pathname="/vip"
     >

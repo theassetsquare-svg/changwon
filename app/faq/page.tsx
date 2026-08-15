@@ -103,11 +103,11 @@ const FAQ = [
 
 export default function FaqPage() {
   return (
-    <PageShell title="자주 묻는 질문" hook={m.hook} pathname="/faq">
+    <PageShell title="창원룰루랄라나이트 자주 묻는 질문" hook={m.hook} pathname="/faq">
       <p>
         진짜 많이 받는 질문만 골라서 정리했습니다. 답도 매니저가 평소에 받는
         질문 그대로 적었어요. 보시고 그래도 안 풀리면 전화 주세요.
-        <strong className="text-white"> 창원 룰루랄라 나이트</strong> FAQ는 예약·가격·
+        <strong className="text-white">이 FAQ</strong>는 예약·가격·
         위치·연령·결제 5개 축으로 정리되어 있습니다.
       </p>
 

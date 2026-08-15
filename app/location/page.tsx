@@ -33,7 +33,7 @@ const LOC_FAQ = [
 export default function LocationPage() {
   return (
     <PageShell
-      title="창원 룰루랄라 나이트 오시는 길"
+      title="창원룰루랄라나이트 오시는 길"
       hook={m.hook}
       pathname="/location"
     >

@@ -59,10 +59,8 @@ export default function HomePage() {
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-gold" />
             창원 공식 사이트
           </p>
-          <h1 className="fade-up mt-4 text-4xl font-extrabold leading-tight text-white sm:text-6xl">
-            <span className="gold-grad">창원 룰루랄라</span>
-            <br />
-            나이트
+          <h1 className="fade-up mt-4 text-[2rem] font-extrabold leading-tight text-white sm:text-6xl">
+            <span className="gold-grad">창원룰루랄라나이트</span>
           </h1>
           <p className="fade-up mx-auto mt-5 max-w-prose2 text-lg text-gray-200 sm:text-xl">
             처음이라 어색해도 괜찮습니다.

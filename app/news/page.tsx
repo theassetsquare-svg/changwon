@@ -28,7 +28,7 @@ const NEWS_FAQ = [
 export default function NewsPage() {
   return (
     <PageShell
-      title="창원 룰루랄라 나이트 매장 소식"
+      title="창원룰루랄라나이트 매장 소식"
       hook={m.hook}
       pathname="/news"
     >

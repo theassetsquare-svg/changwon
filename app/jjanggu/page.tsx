@@ -32,7 +32,7 @@ const MANAGER_FAQ = [
 export default function JjangguPage() {
   return (
     <PageShell
-      title="매니저가 직접 받습니다"
+      title="창원룰루랄라나이트 매니저가 직접 받습니다"
       hook={m.hook}
       pathname="/jjanggu"
     >

@@ -28,7 +28,7 @@ const CONTACT_FAQ = [
 
 export default function ContactPage() {
   return (
-    <PageShell title="창원 룰루랄라 나이트 문의" hook={m.hook} pathname="/contact">
+    <PageShell title="창원룰루랄라나이트 문의" hook={m.hook} pathname="/contact">
       <p>
         전화로 문의해 주시면 매니저가 직접 답변합니다.{" "}
         <strong className="text-white">창원 룰루랄라 나이트</strong> 모든 문의는
