@@ -57,13 +57,8 @@ export default function StickyCallBar({
           />
         )}
 
-        {hasPhone ? (
-          <KakaoIdCopy
-            id={kakao}
-            label="광고문의 카톡"
-            className="hidden shrink-0 rounded-xl border border-gold/40 bg-elev px-4 py-3 text-sm font-bold text-gold transition hover:bg-elev2 sm:block"
-          />
-        ) : null}
+        {/* 전화번호가 있는(=광고주) 페이지의 고정바에는 광고문의 카톡을 넣지 않는다.
+            광고주 연락처와 경쟁하는 CTA가 되기 때문. 광고문의는 푸터에만 노출. */}
       </div>
     </div>
   );
