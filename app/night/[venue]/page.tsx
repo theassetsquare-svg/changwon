@@ -113,13 +113,11 @@ export default function VenuePage({ params }: { params: { venue: string } }) {
                 <span aria-hidden>📞</span>
                 {v.phone}
               </a>
+              {/* 광고주 페이지에서는 광고문의 카톡을 본문에 넣지 않는다.
+                  광고주 연락처와 경쟁하는 CTA가 되기 때문. 광고문의는 푸터에만. */}
               <p className="mt-3 text-center text-sm text-gray-400">
-                통화가 어려우면 카카오톡{" "}
-                <KakaoIdCopy
-                  id={kakao}
-                  className="rounded-md bg-elev2 px-2 py-0.5 font-bold text-gold"
-                />{" "}
-                로 남겨주셔도 됩니다.
+                인원 · 날짜 · 도착 예정 시간을 말씀해 주시면 바로 안내해
+                드립니다.
               </p>
             </>
           ) : (
