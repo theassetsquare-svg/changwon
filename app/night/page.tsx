@@ -4,6 +4,8 @@ import StickyCallBar from "@/components/StickyCallBar";
 import KakaoIdCopy from "@/components/KakaoIdCopy";
 import { OG_IMAGE, SITE } from "@/lib/site";
 import { ADS, VENUES, venuePath } from "@/lib/venues";
+import { AD_VENUES } from "@/lib/adnight-data";
+import { nightPath } from "@/lib/adnight";
 
 const TITLE = "전국 나이트 예약 문의 — 지역별 담당자 연락처 모음";
 const DESCRIPTION =
@@ -153,6 +155,29 @@ export default function NightIndexPage() {
                       ? `${v.contactName} ${v.phone}`
                       : "담당자 등록 전 · 광고주 모집"}
                   </p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* 전국 나이트 안내 13곳 — 목록에서 1단계로 바로 도달 */}
+        <section className="mt-10">
+          <h2 className="mb-4 text-xl font-bold text-white">
+            지역별 나이트 안내 13곳
+          </h2>
+          <ul className="grid gap-2 sm:grid-cols-2">
+            {AD_VENUES.map((v) => (
+              <li key={v.slug}>
+                <Link
+                  href={nightPath(v.slug)}
+                  className="flex h-full flex-col rounded-xl border border-line bg-elev p-4 transition hover:border-gold hover:bg-elev2"
+                >
+                  <p className="text-base font-extrabold text-gold">
+                    {v.keyword}
+                  </p>
+                  <p className="mt-1 text-xs text-gray-500">{v.areaLabel}</p>
+                  <p className="mt-2 text-sm text-gray-300">{v.suffix}</p>
                 </Link>
               </li>
             ))}

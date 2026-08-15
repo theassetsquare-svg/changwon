@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { NAV, SITE } from "@/lib/site";
 import { VENUES, venuePath } from "@/lib/venues";
+import { AD_VENUES } from "@/lib/adnight-data";
+import { nightPath } from "@/lib/adnight";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -41,5 +43,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...core, ...nightHub, ...venues];
+  // 전국 나이트 광고 페이지 13개 (append)
+  const adVenues: MetadataRoute.Sitemap = AD_VENUES.map((v) => ({
+    url: `${SITE.url}${nightPath(v.slug)}`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.8,
+  }));
+
+  return [...core, ...nightHub, ...venues, ...adVenues];
 }
