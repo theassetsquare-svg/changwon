@@ -1,4 +1,5 @@
 import { NAV, PAGE_META, SITE } from "@/lib/site";
+import { VENUES, venuePath } from "@/lib/venues";
 
 export const dynamic = "force-static";
 
@@ -28,6 +29,28 @@ export function GET() {
     </item>`;
   }).join("\n");
 
+  const nightHub = PAGE_META["/night"];
+  const nightHubItem = `    <item>
+      <title>${esc(nightHub.title)}</title>
+      <link>${esc(SITE.url)}/night</link>
+      <guid isPermaLink="true">${esc(SITE.url)}/night</guid>
+      <description><![CDATA[${nightHub.description}]]></description>
+      <pubDate>${now}</pubDate>
+      <category>전국 나이트 예약 문의</category>
+    </item>`;
+
+  const venueItems = VENUES.map((v) => {
+    const url = `${SITE.url}${venuePath(v.slug)}`;
+    return `    <item>
+      <title>${esc(v.title)}</title>
+      <link>${esc(url)}</link>
+      <guid isPermaLink="true">${esc(url)}</guid>
+      <description><![CDATA[${v.description}]]></description>
+      <pubDate>${now}</pubDate>
+      <category>${esc(v.keyword)}</category>
+    </item>`;
+  }).join("\n");
+
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
@@ -44,6 +67,8 @@ export function GET() {
     <ttl>1440</ttl>
     <generator>Next.js</generator>
 ${items}
+${nightHubItem}
+${venueItems}
   </channel>
 </rss>`;
 

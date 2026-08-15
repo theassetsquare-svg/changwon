@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageJsonLd from "@/components/PageJsonLd";
 import Placeholder from "@/components/Placeholder";
+import StickyCallBar from "@/components/StickyCallBar";
 import { NAV, PAGE_META, PLACEHOLDERS, SITE, OG_IMAGE } from "@/lib/site";
 
 const meta = PAGE_META["/"];
@@ -38,6 +39,7 @@ const HOME_FAQ = [
 
 export default function HomePage() {
   return (
+    <>
     <main>
       <PageJsonLd pathname="/" />
 
@@ -291,5 +293,13 @@ export default function HomePage() {
       </section>
 
     </main>
+
+      <StickyCallBar
+        contextLabel={SITE.nameNoSpace}
+        name={SITE.lotto}
+        phone={SITE.lottoPhone}
+        phoneHref={SITE.lottoPhoneHref}
+      />
+    </>
   );
 }

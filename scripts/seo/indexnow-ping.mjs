@@ -21,6 +21,20 @@ const ROUTES = [
   "/event",
   "/vip",
   "/contact",
+  "/night",
+  // 전국 나이트 예약 문의 (lib/venues.ts 의 slug 와 동일해야 함)
+  "/night/bulgwang-hobak",
+  "/night/ulsan-champion",
+  "/night/daejeon-one",
+  "/night/sillim-grandprix",
+  "/night/sangbong-hangukgwan",
+  "/night/suyu-shampoo",
+  "/night/busan-asiad",
+  "/night/suwon-chancedome",
+  "/night/ansan-hit",
+  "/night/daejeon-seven",
+  "/night/ilsan-shampoo",
+  "/night/cheongdam",
 ];
 
 const urlList = ROUTES.map((r) => `${SITE}${r === "/" ? "" : r}`);

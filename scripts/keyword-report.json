@@ -1,26 +1,26 @@
 {
-  "generatedAt": "2026-08-15T01:35:41.658Z",
+  "generatedAt": "2026-08-15T02:13:25.288Z",
   "results": [
     {
       "route": "/",
       "file": "app/page.tsx",
-      "totalLength": 3336,
+      "totalLength": 3442,
       "keywords": {
         "창원 룰루랄라 나이트": {
           "count": 6,
-          "density": 1.98
+          "density": 1.92
         },
         "창원룰루랄라나이트": {
           "count": 3,
-          "density": 0.81
+          "density": 0.78
         },
         "창원 룰루랄라": {
           "count": 8,
-          "density": 1.68
+          "density": 1.63
         },
         "룰루랄라 나이트": {
           "count": 6,
-          "density": 1.44
+          "density": 1.39
         },
         "창원 나이트": {
           "count": 0,
@@ -36,10 +36,10 @@
         },
         "010-3854-6887": {
           "count": 4,
-          "density": 1.56
+          "density": 1.51
         }
       },
-      "primaryDensity": 2.79,
+      "primaryDensity": 2.7,
       "verdict": "OK"
     },
     {
@@ -573,6 +573,162 @@
         }
       },
       "primaryDensity": 2.69,
+      "verdict": "OK"
+    },
+    {
+      "route": "/night/bulgwang-hobak",
+      "file": "lib/venues.ts",
+      "totalLength": 1642,
+      "keywords": {
+        "불광동호박나이트": {
+          "count": 5,
+          "density": 2.44
+        }
+      },
+      "primaryDensity": 2.44,
+      "verdict": "OK"
+    },
+    {
+      "route": "/night/ulsan-champion",
+      "file": "lib/venues.ts",
+      "totalLength": 1433,
+      "keywords": {
+        "울산챔피언나이트": {
+          "count": 5,
+          "density": 2.79
+        }
+      },
+      "primaryDensity": 2.79,
+      "verdict": "OK"
+    },
+    {
+      "route": "/night/daejeon-one",
+      "file": "lib/venues.ts",
+      "totalLength": 1345,
+      "keywords": {
+        "대전원나이트": {
+          "count": 5,
+          "density": 2.23
+        }
+      },
+      "primaryDensity": 2.23,
+      "verdict": "OK"
+    },
+    {
+      "route": "/night/sillim-grandprix",
+      "file": "lib/venues.ts",
+      "totalLength": 1424,
+      "keywords": {
+        "신림그랑프리나이트": {
+          "count": 4,
+          "density": 2.53
+        }
+      },
+      "primaryDensity": 2.53,
+      "verdict": "OK"
+    },
+    {
+      "route": "/night/sangbong-hangukgwan",
+      "file": "lib/venues.ts",
+      "totalLength": 1408,
+      "keywords": {
+        "상봉동한국관나이트": {
+          "count": 4,
+          "density": 2.56
+        }
+      },
+      "primaryDensity": 2.56,
+      "verdict": "OK"
+    },
+    {
+      "route": "/night/suyu-shampoo",
+      "file": "lib/venues.ts",
+      "totalLength": 1218,
+      "keywords": {
+        "수유샴푸나이트": {
+          "count": 5,
+          "density": 2.87
+        }
+      },
+      "primaryDensity": 2.87,
+      "verdict": "OK"
+    },
+    {
+      "route": "/night/busan-asiad",
+      "file": "lib/venues.ts",
+      "totalLength": 1317,
+      "keywords": {
+        "부산아시아드나이트": {
+          "count": 4,
+          "density": 2.73
+        }
+      },
+      "primaryDensity": 2.73,
+      "verdict": "OK"
+    },
+    {
+      "route": "/night/suwon-chancedome",
+      "file": "lib/venues.ts",
+      "totalLength": 1312,
+      "keywords": {
+        "수원찬스돔나이트": {
+          "count": 4,
+          "density": 2.44
+        }
+      },
+      "primaryDensity": 2.44,
+      "verdict": "OK"
+    },
+    {
+      "route": "/night/ansan-hit",
+      "file": "lib/venues.ts",
+      "totalLength": 1227,
+      "keywords": {
+        "안산히트나이트": {
+          "count": 5,
+          "density": 2.85
+        }
+      },
+      "primaryDensity": 2.85,
+      "verdict": "OK"
+    },
+    {
+      "route": "/night/daejeon-seven",
+      "file": "lib/venues.ts",
+      "totalLength": 1175,
+      "keywords": {
+        "대전세븐나이트": {
+          "count": 5,
+          "density": 2.98
+        }
+      },
+      "primaryDensity": 2.98,
+      "verdict": "OK"
+    },
+    {
+      "route": "/night/ilsan-shampoo",
+      "file": "lib/venues.ts",
+      "totalLength": 1202,
+      "keywords": {
+        "일산샴푸나이트": {
+          "count": 5,
+          "density": 2.91
+        }
+      },
+      "primaryDensity": 2.91,
+      "verdict": "OK"
+    },
+    {
+      "route": "/night/cheongdam",
+      "file": "lib/venues.ts",
+      "totalLength": 1458,
+      "keywords": {
+        "청담나이트": {
+          "count": 5,
+          "density": 1.71
+        }
+      },
+      "primaryDensity": 1.71,
       "verdict": "OK"
     }
   ]

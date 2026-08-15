@@ -1,9 +1,11 @@
 import type { MetadataRoute } from "next";
 import { NAV, SITE } from "@/lib/site";
+import { VENUES, venuePath } from "@/lib/venues";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  return NAV.map((n) => ({
+
+  const core: MetadataRoute.Sitemap = NAV.map((n) => ({
     url: `${SITE.url}${n.href === "/" ? "" : n.href}`,
     lastModified: now,
     changeFrequency:
@@ -22,4 +24,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
           ? 0.9
           : 0.7,
   }));
+
+  const nightHub: MetadataRoute.Sitemap = [
+    {
+      url: `${SITE.url}/night`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  ];
+
+  const venues: MetadataRoute.Sitemap = VENUES.map((v) => ({
+    url: `${SITE.url}${venuePath(v.slug)}`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.8,
+  }));
+
+  return [...core, ...nightHub, ...venues];
 }

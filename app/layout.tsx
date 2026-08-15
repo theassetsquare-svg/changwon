@@ -3,7 +3,6 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
-import MobileCallBar from "@/components/MobileCallBar";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -104,7 +103,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         {children}
         <Footer />
-        <MobileCallBar />
       </body>
     </html>
   );

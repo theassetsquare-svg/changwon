@@ -1,7 +1,8 @@
 import type { ReactNode } from "react";
 import RelatedPages from "./RelatedPages";
 import PageJsonLd from "./PageJsonLd";
-import { PAGE_META } from "@/lib/site";
+import StickyCallBar from "./StickyCallBar";
+import { PAGE_META, SITE } from "@/lib/site";
 
 export default function PageShell({
   title,
@@ -22,7 +23,8 @@ export default function PageShell({
   const answerText = capsule ?? meta?.capsule;
 
   return (
-    <main className="mx-auto max-w-3xl px-4 py-10 sm:py-14">
+    <>
+      <main className="mx-auto max-w-3xl px-4 py-10 sm:py-14">
       {pathname ? <PageJsonLd pathname={pathname} /> : null}
 
       <header className="mb-6 fade-up">
@@ -56,7 +58,15 @@ export default function PageShell({
         {children}
       </div>
 
-      <RelatedPages exclude={pathname ? [pathname] : []} />
-    </main>
+        <RelatedPages exclude={pathname ? [pathname] : []} />
+      </main>
+
+      <StickyCallBar
+        contextLabel={SITE.nameNoSpace}
+        name={SITE.lotto}
+        phone={SITE.lottoPhone}
+        phoneHref={SITE.lottoPhoneHref}
+      />
+    </>
   );
 }

@@ -139,10 +139,14 @@ p {
   50% { transform: translateY(8px); }
 }
 
-/* 모바일 하단 sticky 통화 바를 위한 footer padding */
-@media (max-width: 768px) {
+/* 하단 고정(fixed) 통화 바가 콘텐츠를 가리지 않도록 확보하는 여백.
+   모바일·PC 모두 바가 떠 있으므로 전 구간에 적용한다. */
+body {
+  padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+}
+@media (min-width: 640px) {
   body {
-    padding-bottom: 84px;
+    padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px));
   }
 }
 
