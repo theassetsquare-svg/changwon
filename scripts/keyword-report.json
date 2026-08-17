@@ -1,26 +1,26 @@
 {
-  "generatedAt": "2026-08-15T02:49:19.283Z",
+  "generatedAt": "2026-08-17T02:44:25.828Z",
   "results": [
     {
       "route": "/",
       "file": "app/page.tsx",
-      "totalLength": 3442,
+      "totalLength": 4184,
       "keywords": {
         "창원 룰루랄라 나이트": {
-          "count": 6,
-          "density": 1.92
+          "count": 4,
+          "density": 1.05
         },
         "창원룰루랄라나이트": {
           "count": 3,
-          "density": 0.78
+          "density": 0.65
         },
         "창원 룰루랄라": {
-          "count": 8,
-          "density": 1.63
+          "count": 6,
+          "density": 1
         },
         "룰루랄라 나이트": {
-          "count": 6,
-          "density": 1.39
+          "count": 4,
+          "density": 0.76
         },
         "창원 나이트": {
           "count": 0,
@@ -35,11 +35,11 @@
           "density": 0
         },
         "010-3854-6887": {
-          "count": 4,
-          "density": 1.51
+          "count": 3,
+          "density": 0.93
         }
       },
-      "primaryDensity": 2.7,
+      "primaryDensity": 1.7,
       "verdict": "OK"
     },
     {

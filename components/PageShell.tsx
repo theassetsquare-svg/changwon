@@ -64,7 +64,7 @@ export default function PageShell({
       <StickyCallBar
         contextLabel={SITE.nameNoSpace}
         name={SITE.lotto}
-        phone={SITE.lottoPhone}
+        phone={SITE.lottoPhoneDash}
         phoneHref={SITE.lottoPhoneHref}
       />
     </>

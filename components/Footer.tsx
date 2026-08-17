@@ -33,6 +33,11 @@ export default function Footer() {
             전국 나이트 예약 문의 →
           </Link>
         </p>
+        <p>
+          <Link href="/hall" className="text-gold underline">
+            전국 나이트 홀 도감 40 →
+          </Link>
+        </p>
         <p className="pt-2 text-xs text-gray-500">
           27세 이상 출입 가능한 합법 영업장 · 입장 시 신분증 확인 · 27세 미만 출입 불가
         </p>

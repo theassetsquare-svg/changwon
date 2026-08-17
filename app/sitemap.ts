@@ -3,6 +3,8 @@ import { NAV, SITE } from "@/lib/site";
 import { VENUES, venuePath } from "@/lib/venues";
 import { AD_VENUES } from "@/lib/adnight-data";
 import { nightPath } from "@/lib/adnight";
+import { HALL_VENUES } from "@/lib/hall-data";
+import { hallPath } from "@/lib/hall";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -51,5 +53,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...core, ...nightHub, ...venues, ...adVenues];
+  // 전국 나이트 홀 도감 — 허브 1 + 업소 40
+  const hallHub: MetadataRoute.Sitemap = [
+    {
+      url: `${SITE.url}/hall`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+  ];
+
+  const hallVenues: MetadataRoute.Sitemap = HALL_VENUES.map((v) => ({
+    url: `${SITE.url}${hallPath(v.slug)}`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.8,
+  }));
+
+  return [
+    ...core,
+    ...nightHub,
+    ...venues,
+    ...adVenues,
+    ...hallHub,
+    ...hallVenues,
+  ];
 }

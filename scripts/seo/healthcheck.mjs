@@ -38,8 +38,63 @@ const VENUE_SLUGS = [
   "cheongdam",
 ];
 
+// 전국 나이트 홀 도감 40 (lib/hall/group-*.ts 의 slug 와 동일해야 함)
+const HALL_SLUGS = [
+  "sillim-grandprix",
+  "sangbong-hangukgwan",
+  "suyu-shampoo",
+  "busan-asiad",
+  "suwon-chance-dome",
+  "ansan-hit",
+  "daejeon-seven",
+  "ilsan-shampoo",
+  "cheongdam",
+  "daejeon-one",
+  "changwon-lululala",
+  "bulgwang-hobak",
+  "ulsan-champion",
+  "doksan-gukbingwan",
+  "dapsimni-miracle",
+  "gangseo-hobak",
+  "yeongdeungpo-terminal",
+  "nowon-hobak",
+  "gildong-chance",
+  "paju-yadang-skydome",
+  "guri-hobak",
+  "uijeongbu-hangukgwan",
+  "uijeongbu-baekakgwan",
+  "suwon-korea",
+  "osan-hobak",
+  "indeogwon-gukbingwan",
+  "seongnam-shampoo",
+  "incheon-arabian",
+  "bucheon-gorae",
+  "pyeongtaek-hobak",
+  "cheonan-stardome",
+  "cheonan-korea",
+  "cheongju-hobak",
+  "ulsan-newworld",
+  "seosan-hobak",
+  "daegu-hobak",
+  "gumi-hobak",
+  "gwangju-sangmu",
+  "gwangju-cheomdan",
+  "jeju-do",
+];
+
 const VENUE_ROUTES = VENUE_SLUGS.map((s) => `/night/${s}`);
-const ROUTES = [...CORE_ROUTES, "/night", ...VENUE_ROUTES];
+const HALL_ROUTES = HALL_SLUGS.map((s) => `/hall/${s}`);
+const ROUTES = [
+  ...CORE_ROUTES,
+  "/night",
+  ...VENUE_ROUTES,
+  "/hall",
+  ...HALL_ROUTES,
+];
+
+// /hall 은 홀 도감 전용 고정바(.hallbar)를 쓴다. 창원 페이지의 고정바 클래스와
+// 다르므로 고정바 검사에서 사용할 패턴을 경로별로 나눈다.
+const isHall = (route) => route === "/hall" || route.startsWith("/hall/");
 
 // FAQPage 구조화 데이터가 반드시 있어야 하는 경로
 const FAQ_REQUIRED = new Set([
@@ -50,6 +105,7 @@ const FAQ_REQUIRED = new Set([
   "/event",
   "/night",
   ...VENUE_ROUTES,
+  ...HALL_ROUTES,
 ]);
 
 async function check(route) {
@@ -68,7 +124,9 @@ async function check(route) {
   const hasOg = /<meta[^>]*property="og:title"/i.test(html);
   const hasFaq = FAQ_REQUIRED.has(route) ? /"FAQPage"/.test(html) : true;
   // 하단 고정 전화/카톡 바가 정적 HTML에 실제로 렌더됐는지
-  const hasCallBar = /fixed inset-x-0 bottom-0 z-50/.test(html);
+  const hasCallBar = isHall(route)
+    ? /class="hallbar"/.test(html)
+    : /fixed inset-x-0 bottom-0 z-50/.test(html);
 
   const issues = [];
   if (!hasTitle) issues.push("title-missing");

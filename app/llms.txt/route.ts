@@ -2,6 +2,8 @@ import { NAV, PAGE_META, SITE } from "@/lib/site";
 import { ADS, VENUES, venuePath } from "@/lib/venues";
 import { AD_VENUES } from "@/lib/adnight-data";
 import { nightPath } from "@/lib/adnight";
+import { HALL_VENUES } from "@/lib/hall-data";
+import { hallPath } from "@/lib/hall";
 
 export const dynamic = "force-static";
 
@@ -29,6 +31,13 @@ export function GET() {
     return `- ${url} — ${v.spaced} — ${v.areaLabel} — ${v.answer2}${age}`;
   }).join("\n");
 
+  // 전국 나이트 홀 도감 40 — URL · 업소명 · 지역 · 홀 유형 · 확인된 핵심 한 줄
+  const hallPages = HALL_VENUES.map((v) => {
+    const url = `${SITE.url}${hallPath(v.slug)}`;
+    const age = v.ageFull ? ` ${v.ageFull}만 출입 가능.` : "";
+    return `- ${url} — ${v.spaced} — ${v.areaLabel} — ${v.hallType} — ${v.answer3[0]}${age}`;
+  }).join("\n");
+
   const body = `# ${SITE.name} · 전국 나이트 예약 문의
 
 > ${SITE.shortDescription} 함께 전국 지역별 나이트 예약 담당자 연락처를 안내합니다. 광고문의 카카오톡 ${ADS.kakao}.
@@ -54,6 +63,11 @@ ${venuePages}
 ## 전국 나이트 안내 (지역·업소별 상세)
 
 ${adPages}
+
+## 전국 나이트 홀 도감 40 (공간 구조 · 좌석)
+
+- [전국 나이트 홀 도감 40](${SITE.url}/hall): 전국 나이트 40곳을 입구·플로어·테이블 구역·부스 구역 순서로 읽는 홀 구조 도감. 확인된 사실과 일반적인 홀 기준을 구분해 서술.
+${hallPages}
 
 ## 게시 원칙
 

@@ -65,9 +65,18 @@ export default function HomePage() {
             <span className="gold-grad">창원룰루랄라나이트</span>
           </h1>
           <p className="fade-up mx-auto mt-5 max-w-prose2 text-lg text-gray-200 sm:text-xl">
-            처음이라 어색해도 괜찮습니다.
-            <br className="sm:hidden" /> 전화 한 통이면 끝납니다.
+            같은 밤이라도 어디에 앉느냐에 따라 다릅니다.
+            <br className="sm:hidden" /> 상남동 지하 3층 홀, 한 바퀴 돌아 보세요.
           </p>
+
+          <a
+            href={SITE.lottoPhoneHref}
+            className="fade-up mx-auto mt-7 flex max-w-xl items-center justify-center gap-2 rounded-2xl bg-gold px-5 py-4 text-lg font-extrabold text-bg sm:text-2xl"
+            aria-label={`${SITE.nameNoSpace} ${SITE.lotto} ${SITE.lottoPhoneDash}`}
+          >
+            <span aria-hidden>📞</span>
+            {SITE.nameNoSpace} {SITE.lotto} {SITE.lottoPhoneDash}
+          </a>
 
           <p className="fade-up mt-8 text-xs text-gray-500">
             27세 이상 출입 가능한 합법 영업장 · 입장 시 신분증 확인
@@ -93,32 +102,30 @@ export default function HomePage() {
 
       <section className="mx-auto max-w-3xl px-4 py-10">
         <h2 className="text-xl font-bold text-white sm:text-2xl">
-          창원 룰루랄라 나이트, 처음 오시는 분께
+          홀 한 바퀴 ① 입구 — 지하 3층까지 내려가는 동안
         </h2>
         <div className="mt-4 space-y-4 text-[15px] leading-7 text-gray-300 sm:text-base sm:leading-8">
           <p>
-            창원에서 나이트 한 번 가본다는데 어디로 갈지 막막한 분 많죠. 검색창에
-            <strong className="text-white"> 창원 룰루랄라 나이트 </strong>라고 쳤다가,
-            여기저기 광고만 보고 닫으셨을지도 모르겠습니다. 광고 어지러운 거 저도 압니다.
-            그래서 이 페이지는 짧게 정리합니다. 공식 사이트이고, 예약 문의는{" "}
+            <strong className="text-white">창원 룰루랄라 나이트</strong>는 창원시
+            성산구 상남동 22-4 지하 3층에 있습니다. 세 개 층을 내려간다는 건
+            진입 구간이 길다는 뜻입니다. 반 층 내려가는 홀은 문 하나로 거리와
+            홀이 붙어 있지만, 여기는 그 사이에 층계참이 두 번 들어갑니다.
+          </p>
+          <p>
+            그래서 홀에 도착할 때쯤이면 바깥 생각이 이미 정리돼 있습니다. 처음
+            오시는 분들이 문 앞에서 긴장하다가도 홀에 들어서면 괜찮아지는 이유가
+            이 구간에 있어요. 계단을 내려오면서 소리가 커지는 정도로 그날 홀이
+            얼마나 찼는지도 대충 짐작이 됩니다.
+          </p>
+          <p>
+            입구에서 확인하는 건 하나입니다. 만 27세 이상, 신분증. 사업자 등록이
+            있는 합법 영업장이고, 이 확인이 홀 안의 나이대와 분위기를 거의 다
+            정합니다. 예약 문의는{" "}
             <a href={SITE.phoneHref} className="font-extrabold text-gold underline">
               전화 {SITE.phone}
             </a>{" "}
-            하나입니다.
-          </p>
-          <p>
-            저희는 경상남도 창원시 안에 있는 합법 나이트 클럽입니다. 사업자 등록이
-            있고, 만 27세 이상만 받습니다. 입장하실 때 신분증 확인합니다. 이게 룰이라기
-            보다, 매장이 오래 잘 굴러가는 방법이에요. 손님도 보호되고, 가게도 보호됩니다.
-            창원룰루랄라나이트 이름으로 검색하면 비슷한 페이지가 여럿 뜨실 텐데,
-            공식 전화번호는 010-3854-6887 하나입니다. 다른 번호나 계정으로 연락 받으셨다면
-            같은 가게 아닐 수 있어요.
-          </p>
-          <p>
-            전화로 문의하시면 매니저가 직접 답합니다. 중간에 다른 직원 거치지
-            않습니다. 인원, 날짜, 시간, 이 세 가지만 알려주시면 그 자리에서 자리
-            잡아드려요. 처음 오시는 거면 한마디만 더 보태주세요 — "처음이에요"
-            한마디면 분위기 맞는 자리로 안내드립니다.
+            하나입니다. 창원룰루랄라나이트 이름으로 비슷한 페이지가 여럿 뜨는데,
+            공식 번호는 이 하나예요.
           </p>
         </div>
       </section>
@@ -167,14 +174,61 @@ export default function HomePage() {
 
       <section className="mx-auto max-w-3xl px-4 py-10">
         <h2 className="text-xl font-bold text-white sm:text-2xl">
-          창원 룰루랄라 나이트 예약 — 30초면 끝납니다
+          홀 한 바퀴 ② 플로어와 테이블 — 인원이 자리를 정합니다
+        </h2>
+        <div className="mt-4 space-y-4 text-[15px] leading-7 text-gray-300 sm:text-base sm:leading-8">
+          <p>
+            무대는 홀 한쪽 끝에 붙고 플로어는 그 정면에 놓입니다. 테이블은 플로어를
+            둘러싸고 겹으로 놓입니다. 앞줄은 무대와 플로어가 다 보이고, 뒷줄은
+            목소리가 통합니다. 이 구조는 규모와 상관없이 반복됩니다.
+          </p>
+          <p>
+            그래서 자리는 인원으로 갈립니다. 셋 이하라면 앞줄이 낫습니다. 오가는
+            사람이 많다는 게 단점이 아니라 그 자체로 기회이기 때문입니다. 넷
+            이상이면 한 줄 물러나야 서로 말이 닿습니다. 여섯이 무대 앞에 앉으면
+            양 끝은 서로 존재만 확인하다 끝나요.
+          </p>
+          <p>
+            시간도 자리를 바꿉니다. 문 연 뒤 두어 시간은 홀이 헐거워서 고를 수
+            있고, 자정 무렵이 가장 두껍습니다. 상남동은 저녁 식사 상권이 그대로
+            이어지는 구조라 금요일과 토요일은 이 시계가 한 시간쯤 앞당겨집니다.
+          </p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-3xl px-4 py-10">
+        <h2 className="text-xl font-bold text-white sm:text-2xl">
+          홀 한 바퀴 ③ 부스와 룸 — 조용해질수록 홀과 멀어집니다
         </h2>
         <div className="mt-4 space-y-4 text-gray-300">
           <p>
-            예약을 어렵게 만들 이유가 없습니다. 앱 설치도 회원가입도 결제 사전등록도
-            안 합니다. 전화 한 통이면 됩니다. 진짜로 30초입니다. 처음 연락하는
-            분들이 가장 많이 망설이는 게 "뭘 말해야 하지"인데, 정해진 대본 같은 거
-            없습니다. 그냥 인원·날짜·시간 세 가지만 알려주시면 됩니다.
+            부스는 벽을 등지고 앉는 자리라 대화가 편하고, 룸은 문을 닫으면 홀
+            음악이 배경으로 물러납니다. 조용한 정도로 보면 테이블 · 부스 · 룸
+            순서로 한 단계씩 내려갑니다.
+          </p>
+          <p>
+            다만 조용해질수록 홀과 멀어집니다. 분위기를 보러 오셨다면 룸에서
+            시간을 다 쓰는 건 손해예요. 룸에 앉으시더라도 홀이 차오르는
+            시간대에는 한 번 나와 보시는 편이 낫습니다. 반대로 일행끼리 오래
+            이야기할 자리면 처음부터 벽 쪽을 청하시는 게 맞습니다.
+          </p>
+          <p>
+            정리하면 이렇습니다. 셋 이하 + 홀 분위기 = 앞줄, 넷 이상 + 대화 =
+            물러난 줄이나 부스, 일행끼리만 = 룸. 인원과 목적 두 가지만 말씀해
+            주시면 이 판단은 저희가 대신 합니다.
+          </p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-3xl px-4 py-10">
+        <h2 className="text-xl font-bold text-white sm:text-2xl">
+          자리 잡는 법 — 전화 한 통, 30초
+        </h2>
+        <div className="mt-4 space-y-4 text-gray-300">
+          <p>
+            앱 설치도 회원가입도 결제 사전등록도 없습니다. 전화 한 통이면 됩니다.
+            처음 연락하는 분들이 가장 많이 망설이는 게 &ldquo;뭘 말해야 하지&rdquo;인데,
+            정해진 대본 같은 거 없습니다. 인원 · 날짜 · 시간 세 가지면 됩니다.
           </p>
           <ol className="space-y-3 rounded-2xl border border-line bg-elev p-5 text-gray-200">
             <li>
@@ -203,18 +257,23 @@ export default function HomePage() {
 
       <section className="mx-auto max-w-3xl px-4 py-6">
         <h2 className="text-xl font-bold text-white sm:text-2xl">
-          왜 전화로 직접 받는지
+          다른 지역 홀은 어떻게 생겼나
         </h2>
         <div className="mt-4 space-y-4 text-gray-300">
           <p>
-            나이트 처음 가시는 분들 가장 부담되는 게, 모르는 사람한테 연락해서 "얼마예요"
-            물어보는 거더라고요. 그래서 저희는 그 단계를 가능한 한 편하게 만들었습니다.
-            전화 한 통이면, 매니저가 직접 답합니다.
+            홀마다 층이 다르고 천장이 다르고 부스가 놓인 벽이 다릅니다. 그 차이가
+            자리마다 밤을 바꿉니다. 전국 나이트 40곳을 같은 순서 — 입구 · 플로어 ·
+            테이블 · 부스 — 로 읽어 정리해 두었습니다.
           </p>
           <p>
-            연락하실 때 누구인지 모르고 망설이지 않으셔도 됩니다. 매니저가 가격도 그
-            자리에서 정확히 말씀드리고, 자리도 그 자리에서 잡힙니다. 손님 입장에서
-            한 번 연락으로 끝나는 게 가장 빠릅니다.
+            확인된 주소 · 역 · 층은 그대로 적고, 확인할 수 없는 내부 배치는
+            &ldquo;일반적인 나이트 홀 기준&rdquo;이라고 구분해서 적었습니다.
+            지어낸 요금표나 후기는 없습니다.
+          </p>
+          <p>
+            <Link href="/hall" className="font-extrabold text-gold underline">
+              전국 나이트 홀 도감 40 보기 →
+            </Link>
           </p>
         </div>
       </section>
@@ -297,7 +356,7 @@ export default function HomePage() {
       <StickyCallBar
         contextLabel={SITE.nameNoSpace}
         name={SITE.lotto}
-        phone={SITE.lottoPhone}
+        phone={SITE.lottoPhoneDash}
         phoneHref={SITE.lottoPhoneHref}
       />
     </>

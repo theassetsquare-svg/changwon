@@ -10,7 +10,8 @@
     "audit:keywords": "node scripts/audit-keywords.mjs",
     "seo:indexnow": "node scripts/seo/indexnow-ping.mjs",
     "seo:healthcheck": "node scripts/seo/healthcheck.mjs",
-    "seo:stamp": "node scripts/seo/refresh-sitemap-stamp.mjs"
+    "seo:stamp": "node scripts/seo/refresh-sitemap-stamp.mjs",
+    "gate:hall": "node scripts/hall-gate.mjs"
   },
   "dependencies": {
     "next": "14.2.18",

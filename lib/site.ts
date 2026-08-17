@@ -6,6 +6,8 @@ export const SITE = {
   phoneHref: "tel:01038546887",
   lotto: "로또",
   lottoPhone: "010 7528 4936",
+  /** 하이픈 표기 — 홈 CTA·고정바·썸네일에서 쓰는 정식 표기 */
+  lottoPhoneDash: "010-7528-4936",
   lottoPhoneHref: "tel:01075284936",
   url: "https://changwon.pages.dev",
   domain: "changwon.pages.dev",
@@ -90,7 +92,7 @@ export const OG_IMAGE = [
     width: 1200,
     height: 1200,
     type: "image/png",
-    alt: `창원룰루랄라 · ${SITE.lotto} ${SITE.lottoPhone}`,
+    alt: `창원룰루랄라 · ${SITE.lotto} ${SITE.lottoPhoneDash}`,
   },
 ];
 
@@ -146,7 +148,7 @@ export const PAGE_META: Record<
     title: "창원룰루랄라나이트 공식 사이트 — 상남동 27세 이상 합법 영업장",
     description:
       "창원룰루랄라나이트 공식 사이트. 창원시 성산구 상남동 22-4 지하 3층, 27세 이상 출입 가능한 합법 영업장. 예약 문의 010-3854-6887.",
-    hook: "처음이라 어색해도 괜찮습니다. 전화 한 통이면 끝납니다.",
+    hook: "같은 밤이라도 어디에 앉느냐에 따라 다릅니다. 홀 한 바퀴 돌아 보세요.",
     capsule:
       "창원 룰루랄라 나이트는 창원시 성산구 상남동 22-4 지하 3층의 27세 이상 출입 가능한 합법 영업장이며, 전화 010-3854-6887로 예약을 안내합니다.",
   },
