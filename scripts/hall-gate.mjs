@@ -104,7 +104,7 @@ for (const slug of slugs) {
   const canon = html.match(
     /<link rel="canonical" href="([^"]*)"/
   )?.[1];
-  if (canon !== `https://changwon.pages.dev/hall/${slug}`) {
+  if (canon !== `https://changwonb.pages.dev/hall/${slug}`) {
     warn("G4", slug, `canonical 불일치: ${canon}`);
   }
 
@@ -238,10 +238,10 @@ for (const slug of slugs) {
 // ── 사이트맵 검사 ────────────────────────────────────────
 {
   const sm = readPage(path.join(OUT, "sitemap.xml"));
-  if (!sm.includes("https://changwon.pages.dev/hall<"))
+  if (!sm.includes("https://changwonb.pages.dev/hall<"))
     fails.push("G1 · sitemap — /hall 허브 누락");
   for (const slug of slugs) {
-    if (!sm.includes(`https://changwon.pages.dev/hall/${slug}<`))
+    if (!sm.includes(`https://changwonb.pages.dev/hall/${slug}<`))
       fails.push(`G1 · sitemap — /hall/${slug} 누락`);
   }
 }

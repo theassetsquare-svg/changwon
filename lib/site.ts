@@ -9,8 +9,8 @@ export const SITE = {
   /** 하이픈 표기 — 홈 CTA·고정바·썸네일에서 쓰는 정식 표기 */
   lottoPhoneDash: "010-7528-4936",
   lottoPhoneHref: "tel:01075284936",
-  url: "https://changwon.pages.dev",
-  domain: "changwon.pages.dev",
+  url: "https://changwonb.pages.dev",
+  domain: "changwonb.pages.dev",
   city: "창원시",
   district: "성산구",
   region: "경상남도",

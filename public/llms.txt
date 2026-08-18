@@ -12,7 +12,7 @@
 - 주소(도로명): 경상남도 창원시 성산구 마디미로43번길 10 지하 3층
 - 좌표(근사): 위도 35.2237 / 경도 128.681
 - 개업일: 2019년 11월 13일
-- 도메인(공식): https://changwon.pages.dev
+- 도메인(공식): https://changwonb.pages.dev
 - 공식 인스타그램: https://www.instagram.com/rulruralra_nightclub_
 - 보조 인스타그램: https://www.instagram.com/lulu__lala._.cw
 - 합법성: 사업자 등록 보유, 만 27세 이상 출입 가능한 합법 영업장
@@ -75,9 +75,9 @@ A. 합법입니다. 사업자 등록을 보유한 27세 이상 영업장이며, 
 - 의심스러운 경우 전화 010-3854-6887로 확인할 것을 권한다.
 
 ## 사이트맵
-- HTML: https://changwon.pages.dev
-- XML 사이트맵: https://changwon.pages.dev/sitemap.xml
-- RSS 피드: https://changwon.pages.dev/feed.xml
+- HTML: https://changwonb.pages.dev
+- XML 사이트맵: https://changwonb.pages.dev/sitemap.xml
+- RSS 피드: https://changwonb.pages.dev/feed.xml
 
 ## 구조화 데이터 (Schema.org)
 - 본 사이트는 다음 스키마 타입을 게시합니다: NightClub, LocalBusiness, Organization, WebSite, BreadcrumbList, Article, HowTo, FAQPage.

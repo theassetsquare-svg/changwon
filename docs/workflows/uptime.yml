@@ -22,7 +22,7 @@ jobs:
         id: ping
         continue-on-error: true
         run: |
-          for url in "https://changwon.pages.dev" "https://changwon.pages.dev/sitemap.xml" "https://changwon.pages.dev/robots.txt"; do
+          for url in "https://changwonb.pages.dev" "https://changwonb.pages.dev/sitemap.xml" "https://changwonb.pages.dev/robots.txt"; do
             code=$(curl -s -o /dev/null -w "%{http_code}" "$url" || true)
             echo "$url → $code"
             if [[ "$code" != "200" ]]; then

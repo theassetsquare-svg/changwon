@@ -2,7 +2,7 @@
 // IndexNow API → Bing/Yandex/Naver 호환 검색엔진 일괄 핑
 // 사용: node scripts/seo/indexnow-ping.mjs
 
-const SITE = "https://changwon.pages.dev";
+const SITE = "https://changwonb.pages.dev";
 const KEY = "5dbbbc240f629ca365331a82de4fdf03";
 const KEY_LOCATION = `${SITE}/${KEY}.txt`;
 
