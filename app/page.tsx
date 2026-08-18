@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import PageJsonLd from "@/components/PageJsonLd";
-import StickyCallBar from "@/components/StickyCallBar";
-import { PAGE_META, SITE, OG_IMAGE } from "@/lib/site";
+import { PAGE_META, OG_IMAGE } from "@/lib/site";
 
 const meta = PAGE_META["/"];
 
@@ -51,8 +50,8 @@ const HOME_FAQ = [
     a: "창원 상남동에서 매장을 운영하며 직접 보고 들은 것을 정리한 글입니다. 통계나 조사 결과가 아니라 한 사람의 관찰이며, 성공을 보장하는 방법이 아닙니다. 지어낸 수치나 사례는 넣지 않았습니다.",
   },
   {
-    q: "창원 룰루랄라 나이트는 어디에 있고 연락처는 어떻게 되나요?",
-    a: "경상남도 창원시 성산구 상남동 22-4 지하 3층(모아엔트몰)에 있습니다. 만 27세 이상만 입장할 수 있고 입장 시 신분증을 확인하는 합법 영업장이며, 문의는 010-3854-6887로 받습니다.",
+    q: "창원에서 오래 버티는 게 정말 전략이 되나요?",
+    a: "업계가 좁은 도시에서는 그렇습니다. 같은 분야에 오래 남아 있으면 어느 시점부터는 사람들이 그 분야의 질문을 자연스럽게 그 사람에게 하게 됩니다. 새로 들어온 사람이 아무리 잘해도 그 위치를 단기간에 대체하기는 어렵습니다.",
   },
 ];
 
@@ -388,8 +387,7 @@ export default function HomePage() {
                 이게 계속 통합니다.
               </p>
               <p className="rounded-2xl border border-gold/40 bg-gold/5 p-5 text-gray-100">
-                다시 한 번 밝혀둡니다. 이 글은 창원시 성산구 상남동 22-4 지하
-                3층에서 매장을 운영하는 사람이 현장에서 관찰한 내용이고, 통계나
+                다시 한 번 밝혀둡니다. 이 글은 창원 상남동에서 오래 장사한 사람이 현장에서 관찰한 내용이고, 통계나
                 조사 결과가 아닙니다. 성공을 보장하지 않습니다. 다만 지어낸
                 사례나 없는 수치는 한 줄도 넣지 않았습니다.
               </p>
@@ -428,23 +426,8 @@ export default function HomePage() {
               }}
             />
           </section>
-
-          <section className="border-t border-line py-10">
-            <p className="text-sm leading-7 text-gray-500">
-              글쓴이 · 창원 룰루랄라 나이트 매니저 짱구. 경상남도 창원시 성산구
-              상남동 22-4 지하 3층에서 영업하는 만 27세 이상 출입 가능한 합법
-              영업장이며, 입장 시 신분증을 확인합니다. 문의 {SITE.phone}.
-            </p>
-          </section>
         </article>
       </main>
-
-      <StickyCallBar
-        contextLabel={SITE.nameNoSpace}
-        name={SITE.lotto}
-        phone={SITE.lottoPhoneDash}
-        phoneHref={SITE.lottoPhoneHref}
-      />
     </>
   );
 }

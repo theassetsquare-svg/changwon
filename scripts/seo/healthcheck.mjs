@@ -124,9 +124,14 @@ async function check(route) {
   const hasOg = /<meta[^>]*property="og:title"/i.test(html);
   const hasFaq = FAQ_REQUIRED.has(route) ? /"FAQPage"/.test(html) : true;
   // 하단 고정 전화/카톡 바가 정적 HTML에 실제로 렌더됐는지
-  const hasCallBar = isHall(route)
-    ? /class="hallbar"/.test(html)
-    : /fixed inset-x-0 bottom-0 z-50/.test(html);
+  // 홈(/)은 '창원에서 성공하는 방법' 글 하나만 두는 페이지라 헤더·푸터·고정바를
+  // 모두 걷어냈다(2026-08-18). 따라서 홈은 고정바 검사에서 제외한다.
+  const hasCallBar =
+    route === "/"
+      ? true
+      : isHall(route)
+        ? /class="hallbar"/.test(html)
+        : /fixed inset-x-0 bottom-0 z-50/.test(html);
 
   const issues = [];
   if (!hasTitle) issues.push("title-missing");
