@@ -192,3 +192,28 @@ details > summary::after {
 details[open] > summary::after {
   content: "−";
 }
+
+/* 읽은 분량 표시 바 (홈 장문 글 전용).
+   scroll() 타임라인을 지원하는 브라우저에서만 채워지고,
+   지원하지 않으면 폭 0으로 남아 아무것도 보이지 않는다. */
+.read-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 60;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, #FCD34D 0%, #F59E0B 100%);
+}
+@supports (animation-timeline: scroll()) {
+  .read-progress {
+    width: 100%;
+    transform-origin: 0 50%;
+    transform: scaleX(0);
+    animation: read-progress-grow linear both;
+    animation-timeline: scroll(root block);
+  }
+  @keyframes read-progress-grow {
+    to { transform: scaleX(1); }
+  }
+}

@@ -229,10 +229,11 @@ for (const slug of slugs) {
     fails.push("G10 · home — 로또 010-7528-4936 표기 없음");
   if (!html.includes("tel:01075284936"))
     fails.push("G10 · home — 로또 tel: 링크 없음");
-  if (!html.includes('href="/hall"'))
-    fails.push("G9 · home — 홀 도감 링크 없음");
-  if (!strip(html).includes("홀 한 바퀴"))
-    fails.push("G7 · home — '홀 한 바퀴' 랜딩 구성 아님");
+  // 홈은 '창원에서 성공하는 방법' 단독 글로 운영한다(2026-08-18 변경).
+  // 본문에서 다른 페이지로 연결하지 않으므로 홈의 G7·G9(홀 도감 링크 / '홀 한 바퀴'
+  // 랜딩 구성) 검사는 적용하지 않는다. 허브(/hall)와 각 홀 페이지 검사는 그대로 둔다.
+  if (!strip(html).includes("창원에서 성공하는 방법"))
+    fails.push("G7 · home — '창원에서 성공하는 방법' 본문 구성 아님");
 }
 
 // ── 사이트맵 검사 ────────────────────────────────────────
