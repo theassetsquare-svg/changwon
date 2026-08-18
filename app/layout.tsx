@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   verification: {
     google: "HJjm7MRxykCQ7d_9L7glaTeeaWrmJIzAKY0BcNcfm88",
     other: {
-      "naver-site-verification": "f0a71234d6699a73a4134c4ad4532a0358588111",
+      "naver-site-verification": "1e8cbbc64b5bb55288b135f25772d1b5005f89fe",
     },
   },
   other: {
@@ -61,7 +61,6 @@ export const metadata: Metadata = {
     "geo.placename": "창원시 성산구 상남동",
     "geo.position": `${SITE.geo.latitude};${SITE.geo.longitude}`,
     ICBM: `${SITE.geo.latitude}, ${SITE.geo.longitude}`,
-    "naver-site-verification": "f0a71234d6699a73a4134c4ad4532a0358588111",
     "dc.title": SITE.name,
     "dc.creator": "매니저",
     "dc.subject": "창원 룰루랄라 나이트",
