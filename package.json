@@ -13,7 +13,8 @@
     "seo:stamp": "node scripts/seo/refresh-sitemap-stamp.mjs",
     "gate:hall": "node scripts/hall-gate.mjs",
     "og:thumbs": "node scripts/og/thumbs.mjs",
-    "gate:thumbs": "node scripts/thumb-gate.mjs"
+    "gate:thumbs": "node scripts/thumb-gate.mjs",
+    "live:thumbs": "node scripts/thumb-live.mjs"
   },
   "dependencies": {
     "next": "14.2.18",
