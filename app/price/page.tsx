@@ -1,14 +1,32 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
 import Placeholder from "@/components/Placeholder";
-import { PAGE_META, PLACEHOLDERS, SITE, OG_IMAGE } from "@/lib/site";
+import { PAGE_META, PLACEHOLDERS, SITE, SITE_OTHER } from "@/lib/site";
+import { thumb } from "@/lib/og";
 
 const m = PAGE_META["/price"];
+
+/** 이 페이지 전용 썸네일 — og:image 와 본문 <img> 가 같은 파일을 가리킨다 */
+const THUMB = thumb({
+  pathname: "/price",
+  alt: `${SITE.nameNoSpace} 가격 안내`,
+});
 export const metadata: Metadata = {
   title: m.title,
   description: m.description,
   alternates: { canonical: "/price" },
-  openGraph: { title: m.title, description: m.description, images: OG_IMAGE },
+  openGraph: {
+    title: m.title,
+    description: m.description,
+    images: THUMB.images,
+  },
+  twitter: {
+    card: "summary",
+    title: m.title,
+    description: m.description,
+    images: [THUMB.url],
+  },
+  other: { ...SITE_OTHER, ...THUMB.other },
 };
 
 const PRICE_FAQ = [
@@ -32,7 +50,7 @@ const PRICE_FAQ = [
 
 export default function PricePage() {
   return (
-    <PageShell title="창원룰루랄라나이트 가격" hook={m.hook} pathname="/price">
+    <PageShell title="창원룰루랄라나이트 가격" hook={m.hook} pathname="/price" thumbAlt={THUMB.alt}>
       <p>
         솔직히 말씀드릴게요. <strong className="text-white">창원 룰루랄라 나이트</strong>의
         가격은 자주 바뀝니다. 시즌, 인원, 자리에 따라 다릅니다. 그래서 여기 표는 큰

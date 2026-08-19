@@ -3,7 +3,9 @@ import Link from "next/link";
 import StickyCallBar from "@/components/StickyCallBar";
 import VenueJsonLd from "@/components/VenueJsonLd";
 import KakaoIdCopy from "@/components/KakaoIdCopy";
-import { OG_IMAGE, SITE } from "@/lib/site";
+import { SITE } from "@/lib/site";
+import { thumb } from "@/lib/og";
+import OgThumb from "@/components/OgThumb";
 import { ADS, VENUES, VENUE_BY_SLUG, phoneHref, venuePath } from "@/lib/venues";
 
 export function generateStaticParams() {
@@ -17,25 +19,32 @@ export function generateMetadata({
 }): Metadata {
   const v = VENUE_BY_SLUG[params.venue];
   if (!v) return {};
+  const path = venuePath(v.slug);
+  const t = thumb({
+    pathname: path,
+    alt: `${v.keyword} 예약 문의 안내 · ${v.areaLabel}`,
+  });
   return {
     title: v.title,
     description: v.description,
     keywords: [v.keyword, ...v.aliases],
-    alternates: { canonical: venuePath(v.slug) },
+    alternates: { canonical: path },
     openGraph: {
       type: "article",
       locale: "ko_KR",
-      url: `${SITE.url}${venuePath(v.slug)}`,
+      url: `${SITE.url}${path}`,
       title: v.title,
       description: v.description,
-      images: OG_IMAGE,
+      images: t.images,
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary",
       title: v.title,
       description: v.description,
+      images: [t.url],
     },
     other: {
+      ...t.other,
       "geo.placename": v.areaLabel,
       "dc.title": v.keyword,
       "dc.subject": v.keyword,
@@ -91,6 +100,14 @@ export default function VenuePage({ params }: { params: { venue: string } }) {
           </p>
           <p className="mt-2 text-gray-100">{v.capsule}</p>
         </aside>
+
+        {/* 썸네일 — og:image 와 같은 파일을 본문에도 실제로 렌더한다 */}
+        <figure className="mb-8">
+          <OgThumb
+            pathname={venuePath(v.slug)}
+            alt={`${v.keyword} 예약 문의 안내 · ${v.areaLabel}`}
+          />
+        </figure>
 
         {/* 주 CTA */}
         <section

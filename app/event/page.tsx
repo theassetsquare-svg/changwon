@@ -1,13 +1,31 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
-import { PAGE_META, SITE, OG_IMAGE } from "@/lib/site";
+import { PAGE_META, SITE, SITE_OTHER } from "@/lib/site";
+import { thumb } from "@/lib/og";
 
 const m = PAGE_META["/event"];
+
+/** 이 페이지 전용 썸네일 — og:image 와 본문 <img> 가 같은 파일을 가리킨다 */
+const THUMB = thumb({
+  pathname: "/event",
+  alt: `${SITE.nameNoSpace} 이벤트`,
+});
 export const metadata: Metadata = {
   title: m.title,
   description: m.description,
   alternates: { canonical: "/event" },
-  openGraph: { title: m.title, description: m.description, images: OG_IMAGE },
+  openGraph: {
+    title: m.title,
+    description: m.description,
+    images: THUMB.images,
+  },
+  twitter: {
+    card: "summary",
+    title: m.title,
+    description: m.description,
+    images: [THUMB.url],
+  },
+  other: { ...SITE_OTHER, ...THUMB.other },
 };
 
 const EVENT_FAQ = [
@@ -31,6 +49,7 @@ export default function EventPage() {
       title="창원룰루랄라나이트 이벤트"
       hook={m.hook}
       pathname="/event"
+      thumbAlt={THUMB.alt}
     >
       <p>
         "30% 할인" 같은 거 사이트에 안 적습니다. 보고 오셨는데 막상 가니까 그런

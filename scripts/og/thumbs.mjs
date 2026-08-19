@@ -1,0 +1,343 @@
+#!/usr/bin/env node
+// 전 페이지 썸네일 생성기 — public/og/{슬러그}.png (1200x1200 PNG)
+//
+// [내용 규칙 — 이 사이트에 이미 있던 것을 그대로 쓴다. 변경 금지]
+//
+//   A. 창원 본 사이트 카드 (홈 + 14페이지 + 허브)
+//      app/opengraph-image.tsx 와 같은 화면.
+//      버건디 단색 배경, 금색 "창원룰루랄라나이트", 금색 박스 "로또",
+//      가장 큰 글자 = 전화번호, 아래 주소 한 줄 + 연령 안내 한 줄.
+//
+//   B. 업소 카드 (홀 도감 40 + 예약 안내 12 + 광고 13)
+//      public/og/*-og.png 와 같은 화면.
+//      업소 고유색 배경, 가장 큰 글자 = 업소명(붙여쓰기), 그 아래 지역명.
+//      담당자 전화가 있으면 하단에 검은 띠 + 담당자명 + 전화번호(두 번째로 큰 글자),
+//      없으면 같은 배경에 "나이트클럽 안내" + "창원 룰루랄라 나이트".
+//      연령 기준이 확인된 곳만 우상단에 흰 알약으로 표시.
+//
+// 사용: node scripts/og/thumbs.mjs [--only=슬러그,슬러그]
+
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { ImageResponse } from "next/dist/compiled/@vercel/og/index.node.js";
+import ts from "typescript";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const ROOT = path.resolve(__dirname, "../..");
+const OUT_DIR = path.join(ROOT, "public/og");
+const FONT_DIR = path.join(ROOT, "node_modules/.cache/og-fonts");
+
+const BURGUNDY = "#2A0A12";
+const GOLD = "#E8C766";
+
+// ─────────────────────────── 폰트 ───────────────────────────
+// @vercel/og 기본 번들에는 라틴 글꼴만 있다. 한글 볼드를 직접 실어야
+// 기존 카드와 같은 굵기가 나온다. 받은 파일은 캐시에 두고 재사용한다.
+const FONTS = [
+  { name: "NotoSansKR", weight: 400, css: "wght@400" },
+  { name: "NotoSansKR", weight: 700, css: "wght@700" },
+  { name: "NotoSansKR", weight: 900, css: "wght@900" },
+];
+
+async function loadFonts() {
+  fs.mkdirSync(FONT_DIR, { recursive: true });
+  const out = [];
+  for (const f of FONTS) {
+    const cached = path.join(FONT_DIR, `notosanskr-${f.weight}.ttf`);
+    if (!fs.existsSync(cached)) {
+      const css = await fetch(
+        `https://fonts.googleapis.com/css2?family=Noto+Sans+KR:${f.css}&display=swap`,
+        { headers: { "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" } },
+      ).then((r) => r.text());
+      const url = css.match(/https:\/\/[^)]+\.ttf/)?.[0];
+      if (!url) throw new Error(`폰트 URL 을 찾지 못했습니다 (weight ${f.weight})`);
+      const buf = Buffer.from(await fetch(url).then((r) => r.arrayBuffer()));
+      fs.writeFileSync(cached, buf);
+    }
+    out.push({ name: f.name, weight: f.weight, style: "normal", data: fs.readFileSync(cached) });
+  }
+  return out;
+}
+
+// ─────────────────────────── 데이터 로드 ───────────────────────────
+async function loadTs(rel) {
+  const src = fs
+    .readFileSync(path.join(ROOT, rel), "utf8")
+    .replace(/^import[^\n]*\n/gm, "");
+  const js = ts.transpileModule(src, {
+    compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ESNext },
+  }).outputText;
+  return import("data:text/javascript;base64," + Buffer.from(js).toString("base64"));
+}
+
+// ─────────────────────────── 카드 A: 창원 본 사이트 ───────────────────────────
+const el = (type, style, children) => ({ type, props: { style, children } });
+const row = (style, children) => el("div", { display: "flex", ...style }, children);
+
+function cardChangwon({ lotto, phone }) {
+  return row(
+    {
+      width: "100%",
+      height: "100%",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      background: BURGUNDY,
+      color: "#FFFFFF",
+      padding: 48,
+      fontFamily: "NotoSansKR",
+    },
+    [
+      row({ fontSize: 40, color: GOLD, letterSpacing: 6, marginBottom: 16, fontWeight: 400 }, "창원룰루랄라나이트"),
+      row(
+        {
+          paddingLeft: 60,
+          paddingRight: 60,
+          paddingTop: 12,
+          paddingBottom: 20,
+          background: GOLD,
+          color: BURGUNDY,
+          fontSize: 132,
+          fontWeight: 900,
+          letterSpacing: 6,
+        },
+        lotto,
+      ),
+      // 썸네일에서 가장 큰 요소 = 전화번호
+      row({ marginTop: 36, fontSize: 148, fontWeight: 900, color: "#FFFFFF", letterSpacing: 2 }, phone),
+      row({ marginTop: 40, fontSize: 38, fontWeight: 700, color: GOLD }, "상남동 22-4 지하 3층 · 홀 한 바퀴"),
+      row({ marginTop: 26, fontSize: 28, color: "#C9AFA8", fontWeight: 400 }, "27세 이상 출입 가능한 합법 영업장 · 신분증 확인"),
+    ],
+  );
+}
+
+// ─────────────────────────── 카드 B: 업소 ───────────────────────────
+/** 업소명이 길면 두 줄로 접는다. "…나이트" 앞에서 끊는 게 기존 카드와 같다 */
+function splitVenueName(name) {
+  if (name.length <= 7) return [name];
+  const i = name.lastIndexOf("나이트");
+  if (i > 0) return [name.slice(0, i), name.slice(i)];
+  const mid = Math.ceil(name.length / 2);
+  return [name.slice(0, mid), name.slice(mid)];
+}
+
+function nameFontSize(lines) {
+  const longest = Math.max(...lines.map((l) => l.length));
+  if (longest <= 5) return 190;
+  if (longest <= 6) return 165;
+  if (longest <= 7) return 145;
+  if (longest <= 8) return 128;
+  return 112;
+}
+
+function cardVenue({ bg, fg, name, area, contactName, phone, ageFull }) {
+  const lines = splitVenueName(name);
+  const size = nameFontSize(lines);
+  const hasPhone = Boolean(contactName && phone);
+
+  const topZone = row(
+    {
+      position: "relative",
+      width: "100%",
+      height: hasPhone ? 717 : 717,
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      background: bg,
+      color: fg,
+      paddingLeft: 60,
+      paddingRight: 60,
+    },
+    [
+      ...(ageFull
+        ? [
+            row(
+              {
+                position: "absolute",
+                top: 56,
+                right: 56,
+                background: "#FFFFFF",
+                color: bg,
+                fontSize: 42,
+                fontWeight: 700,
+                paddingLeft: 34,
+                paddingRight: 34,
+                paddingTop: 12,
+                paddingBottom: 16,
+                borderRadius: 999,
+              },
+              ageFull,
+            ),
+          ]
+        : []),
+      // 가장 큰 글자 = 업소명
+      row({ flexDirection: "column", alignItems: "center", marginTop: ageFull ? 40 : 0 },
+        lines.map((l, i) =>
+          row({ fontSize: size, fontWeight: 900, lineHeight: 1.12, color: fg, key: String(i) }, l),
+        ),
+      ),
+      row({ position: "absolute", bottom: 34, fontSize: 36, fontWeight: 700, color: fg }, area),
+    ],
+  );
+
+  const bottomZone = hasPhone
+    ? row(
+        {
+          width: "100%",
+          height: 483,
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          background: "#000000",
+          color: "#FFFFFF",
+        },
+        [
+          row({ fontSize: 66, fontWeight: 700 }, contactName),
+          row({ marginTop: 18, fontSize: 112, fontWeight: 900, letterSpacing: 2 }, phone),
+        ],
+      )
+    : row(
+        {
+          width: "100%",
+          height: 483,
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          background: bg,
+          color: fg,
+        },
+        [
+          row({ fontSize: 72, fontWeight: 900 }, "나이트클럽 안내"),
+          row({ marginTop: 34, fontSize: 36, fontWeight: 700 }, "창원 룰루랄라 나이트"),
+        ],
+      );
+
+  return row(
+    { width: "100%", height: "100%", flexDirection: "column", fontFamily: "NotoSansKR" },
+    [topZone, bottomZone],
+  );
+}
+
+// ─────────────────────────── 페이지 목록 ───────────────────────────
+async function buildRegistry() {
+  const site = await loadTs("lib/site.ts");
+  const venuesMod = await loadTs("lib/venues.ts");
+  const adMod = await loadTs("lib/adnight-data.ts");
+  const hallMods = fs
+    .readdirSync(path.join(ROOT, "lib/hall"))
+    .filter((f) => f.endsWith(".ts"))
+    .sort();
+
+  const SITE = site.SITE;
+  const pages = [];
+
+  const ogSlug = (p) => (p === "/" ? "home" : p.replace(/^\//, "").replace(/\//g, "-"));
+
+  // A. 창원 본 사이트 — 홈 + 13페이지 + 허브 2개
+  const changwonPaths = [
+    ...site.NAV.map((n) => n.href),
+    "/night",
+    "/hall",
+  ];
+  for (const p of changwonPaths) {
+    pages.push({
+      route: p,
+      slug: ogSlug(p),
+      kind: "changwon",
+      spec: { lotto: SITE.lotto, phone: SITE.lottoPhoneDash },
+    });
+  }
+
+  // B-1. 예약 안내 12개
+  for (const v of venuesMod.VENUES) {
+    pages.push({
+      route: `/night/${v.slug}`,
+      slug: ogSlug(`/night/${v.slug}`),
+      kind: "venue",
+      spec: {
+        bg: adMod.AD_VENUES.find((a) => a.slug === `${v.slug}-night`)?.ogBg ?? "#1C2A6E",
+        fg: "#FFFFFF",
+        name: v.keyword,
+        area: v.areaLabel,
+        contactName: v.phone ? v.contactName : undefined,
+        phone: v.phone,
+      },
+    });
+  }
+
+  // B-2. 광고 페이지 13개 — 이미 만들어져 있으므로 기존 파일을 그대로 복사한다
+  for (const v of adMod.AD_VENUES) {
+    pages.push({
+      route: `/night/${v.slug}`,
+      slug: ogSlug(`/night/${v.slug}`),
+      kind: "copy",
+      from: path.join(OUT_DIR, `${v.slug}-og.png`),
+      spec: {
+        bg: v.ogBg,
+        fg: v.ogFg,
+        name: v.keyword,
+        area: v.areaLabel,
+        contactName: v.phone ? v.contactName : undefined,
+        phone: v.phone,
+        ageFull: v.ageFull,
+      },
+    });
+  }
+
+  // B-3. 홀 도감 40개 — 홀 페이지 스킨색(버건디+금색)을 쓴다
+  for (const f of hallMods) {
+    const mod = await loadTs(`lib/hall/${f}`);
+    const arr = Object.values(mod).find(Array.isArray);
+    for (const v of arr) {
+      pages.push({
+        route: `/hall/${v.slug}`,
+        slug: ogSlug(`/hall/${v.slug}`),
+        kind: "venue",
+        spec: {
+          bg: BURGUNDY,
+          fg: GOLD,
+          name: v.keyword,
+          area: v.areaLabel,
+          contactName: v.phone ? v.contactName : undefined,
+          phone: v.phone,
+          ageFull: v.ageFull,
+        },
+      });
+    }
+  }
+
+  return pages;
+}
+
+// ─────────────────────────── 실행 ───────────────────────────
+const onlyArg = process.argv.find((a) => a.startsWith("--only="));
+const only = onlyArg ? new Set(onlyArg.slice(7).split(",")) : null;
+
+const fonts = await loadFonts();
+const pages = await buildRegistry();
+fs.mkdirSync(OUT_DIR, { recursive: true });
+
+let made = 0;
+let copied = 0;
+for (const p of pages) {
+  if (only && !only.has(p.slug)) continue;
+  const dest = path.join(OUT_DIR, `${p.slug}.png`);
+
+  if (p.kind === "copy" && fs.existsSync(p.from)) {
+    fs.copyFileSync(p.from, dest);
+    copied++;
+    continue;
+  }
+
+  const node = p.kind === "changwon" ? cardChangwon(p.spec) : cardVenue(p.spec);
+  const res = new ImageResponse(node, { width: 1200, height: 1200, fonts });
+  fs.writeFileSync(dest, Buffer.from(await res.arrayBuffer()));
+  made++;
+}
+
+console.log(`썸네일 ${made}개 생성 · ${copied}개 기존 파일 복사 · 총 ${pages.length}개 페이지`);
+fs.writeFileSync(
+  path.join(ROOT, "scripts/og/registry.json"),
+  JSON.stringify(pages.map(({ route, slug, kind }) => ({ route, slug, kind })), null, 1),
+);

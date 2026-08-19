@@ -1,14 +1,32 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
 import Placeholder from "@/components/Placeholder";
-import { PAGE_META, PLACEHOLDERS, SITE, OG_IMAGE } from "@/lib/site";
+import { PAGE_META, PLACEHOLDERS, SITE, SITE_OTHER } from "@/lib/site";
+import { thumb } from "@/lib/og";
 
 const m = PAGE_META["/about"];
+
+/** 이 페이지 전용 썸네일 — og:image 와 본문 <img> 가 같은 파일을 가리킨다 */
+const THUMB = thumb({
+  pathname: "/about",
+  alt: `${SITE.nameNoSpace} 가게 소개`,
+});
 export const metadata: Metadata = {
   title: m.title,
   description: m.description,
   alternates: { canonical: "/about" },
-  openGraph: { title: m.title, description: m.description, images: OG_IMAGE },
+  openGraph: {
+    title: m.title,
+    description: m.description,
+    images: THUMB.images,
+  },
+  twitter: {
+    card: "summary",
+    title: m.title,
+    description: m.description,
+    images: [THUMB.url],
+  },
+  other: { ...SITE_OTHER, ...THUMB.other },
 };
 
 export default function AboutPage() {
@@ -17,6 +35,7 @@ export default function AboutPage() {
       title="창원룰루랄라나이트, 어떤 가게냐고요?"
       hook={m.hook}
       pathname="/about"
+      thumbAlt={THUMB.alt}
     >
       <p>
         <strong className="text-white">창원 룰루랄라 나이트</strong>는 경상남도 창원시

@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import StickyCallBar from "@/components/StickyCallBar";
 import KakaoIdCopy from "@/components/KakaoIdCopy";
-import { OG_IMAGE, SITE } from "@/lib/site";
+import OgThumb from "@/components/OgThumb";
+import { SITE, SITE_OTHER } from "@/lib/site";
+import { thumb } from "@/lib/og";
 import { ADS, VENUES, venuePath } from "@/lib/venues";
 import { AD_VENUES } from "@/lib/adnight-data";
 import { nightPath } from "@/lib/adnight";
@@ -10,6 +12,11 @@ import { nightPath } from "@/lib/adnight";
 const TITLE = "전국 나이트 예약 문의 — 지역별 담당자 연락처 모음";
 const DESCRIPTION =
   "불광동호박나이트·울산챔피언나이트·청담나이트 등 전국 나이트 예약 문의처를 지역별로 정리했습니다. 담당자 등록 전인 지역은 광고주를 모집합니다. 광고문의 카톡 besta12. 만 19세 이상, 입장 시 신분증 확인.";
+
+const THUMB = thumb({
+  pathname: "/night",
+  alt: `${SITE.nameNoSpace} 전국 나이트 예약 문의 — 지역별 담당자 연락처`,
+});
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -22,9 +29,15 @@ export const metadata: Metadata = {
     url: `${SITE.url}/night`,
     title: TITLE,
     description: DESCRIPTION,
-    images: OG_IMAGE,
+    images: THUMB.images,
   },
-  twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
+  twitter: {
+    card: "summary",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [THUMB.url],
+  },
+  other: { ...SITE_OTHER, ...THUMB.other },
 };
 
 const FAQ = [
@@ -136,6 +149,11 @@ export default function NightIndexPage() {
             지역은 그 사실을 그대로 적어둡니다. 만 19세 이상만 입장 가능합니다.
           </p>
         </aside>
+
+        {/* 썸네일 — og:image 와 같은 파일을 본문에도 실제로 렌더한다 */}
+        <figure className="mb-8">
+          <OgThumb pathname="/night" alt={THUMB.alt} />
+        </figure>
 
         <section>
           <h2 className="mb-4 text-xl font-bold text-white">지역별 바로가기</h2>

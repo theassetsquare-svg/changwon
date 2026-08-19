@@ -1,7 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import type { HallVenue } from "./hall";
 import { hallPath } from "./hall";
-import { OG_IMAGE, SITE } from "./site";
+import { thumb } from "./og";
+import { SITE } from "./site";
 
 /** 고정바가 홈 인디케이터에 가리지 않도록 cover 를 얹는다 */
 export const hallViewport: Viewport = {
@@ -15,6 +16,7 @@ export const hallViewport: Viewport = {
 export function hallMetadata(v: HallVenue): Metadata {
   const path = hallPath(v.slug);
   const url = `${SITE.url}${path}`;
+  const t = thumb({ pathname: path, alt: v.ogAlt });
 
   return {
     title: v.title,
@@ -34,17 +36,18 @@ export function hallMetadata(v: HallVenue): Metadata {
       siteName: SITE.name,
       title: v.title,
       description: v.description,
-      // 홀 페이지는 공통 썸네일을 쓰되 alt 는 해당 홀 문구로 바꾼다.
-      // (공통 alt 에는 창원 로또 번호가 들어 있어 다른 업소 페이지에 맞지 않는다)
-      images: OG_IMAGE.map((img) => ({ ...img, alt: v.ogAlt })),
+      // 홀마다 자기 썸네일 파일을 쓴다. 본문 <img> 와 반드시 같은 파일.
+      images: t.images,
     },
     twitter: {
       card: "summary",
       title: v.title,
       description: v.description,
+      images: [t.url],
     },
     // 루트 레이아웃의 other 를 통째로 덮어쓴다 (창원 전용 메타 상속 차단)
     other: {
+      ...t.other,
       "geo.placename": v.areaLabel,
       "dc.title": v.keyword,
       "dc.subject": `${v.keyword} 홀 구조`,

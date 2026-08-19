@@ -12,6 +12,13 @@
   Content-Type: image/png
   Cache-Control: public, max-age=3600
 
+# 페이지별 썸네일 — 네이버·구글 이미지 수집기가 확실히 PNG 로 받게 못 박는다.
+# nosniff 가 전역으로 걸려 있어서 Content-Type 이 틀리면 아예 그림으로 안 읽힌다.
+/og/*
+  Content-Type: image/png
+  Cache-Control: public, max-age=86400
+  X-Robots-Tag: all
+
 /icon
   Content-Type: image/png
 

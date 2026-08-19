@@ -1,12 +1,20 @@
 #!/usr/bin/env node
 // IndexNow API → Bing/Yandex/Naver 호환 검색엔진 일괄 핑
 // 사용: node scripts/seo/indexnow-ping.mjs
+//
+// [경로 목록] scripts/og/registry.json 이 있으면 그걸 쓴다.
+// 썸네일 생성기가 만드는 파일이라 페이지가 늘면 자동으로 따라온다.
+// 아래 하드코딩 목록은 registry.json 을 못 읽을 때만 쓰는 예비용이다.
+
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 const SITE = "https://changwonb.pages.dev";
 const KEY = "5dbbbc240f629ca365331a82de4fdf03";
 const KEY_LOCATION = `${SITE}/${KEY}.txt`;
 
-const ROUTES = [
+const FALLBACK_ROUTES = [
   "/",
   "/about",
   "/jjanggu",
@@ -79,6 +87,19 @@ const ROUTES = [
   "/hall/jeju-do",
 ];
 
+function loadRoutes() {
+  try {
+    const here = path.dirname(fileURLToPath(import.meta.url));
+    const reg = path.resolve(here, "../og/registry.json");
+    const routes = JSON.parse(fs.readFileSync(reg, "utf8")).map((r) => r.route);
+    if (routes.length) return routes;
+  } catch {
+    // registry.json 이 없으면 아래 예비 목록으로 간다
+  }
+  return FALLBACK_ROUTES;
+}
+
+const ROUTES = loadRoutes();
 const urlList = ROUTES.map((r) => `${SITE}${r === "/" ? "" : r}`);
 
 async function postIndexNow(endpoint) {
@@ -112,7 +133,7 @@ async function pingSitemap(endpoint) {
   // 사이트맵 자체에 GET 핑 (일부 검색엔진은 sitemap URL의 접근을 신호로 사용)
   results.push(await pingSitemap(`${SITE}/sitemap.xml`).catch((e) => ({ endpoint: "self-sitemap", status: "ERR", ok: false, error: String(e) })));
 
-  console.log("[IndexNow / Sitemap Ping]");
+  console.log(`[IndexNow / Sitemap Ping] 제출 ${urlList.length}건`);
   for (const r of results) {
     console.log(`  ${r.endpoint.padEnd(40)} ${r.ok ? "OK" : "FAIL"} (${r.status})${r.error ? " — " + r.error : ""}`);
   }

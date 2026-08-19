@@ -1,15 +1,22 @@
 import type { Metadata, Viewport } from "next";
 import Link from "next/link";
 import { HALL_CSS } from "@/components/HallPage";
+import OgThumb from "@/components/OgThumb";
 import { HALL_UPDATED, hallPath } from "@/lib/hall";
 import { HALL_BY_SLUG, HALL_REGIONS, HALL_VENUES } from "@/lib/hall-data";
 import { hallViewport } from "@/lib/hall-meta";
-import { OG_IMAGE, SITE } from "@/lib/site";
+import { SITE } from "@/lib/site";
+import { thumb } from "@/lib/og";
 import { ADS } from "@/lib/venues";
 
 const TITLE = "전국 나이트 홀 도감 40 — 자리에 따라 달라지는 밤";
 const DESCRIPTION =
   "전국 나이트 40곳을 공간 축으로 정리한 홀 도감입니다. 입구·플로어·테이블 구역·부스 구역을 같은 순서로 읽고, 확인된 사실과 일반적인 홀 기준을 갈라 적었습니다.";
+
+const THUMB = thumb({
+  pathname: "/hall",
+  alt: `${SITE.nameNoSpace} 전국 나이트 홀 도감 40 — 입구·플로어·테이블·부스`,
+});
 
 export const viewport: Viewport = hallViewport;
 
@@ -32,13 +39,16 @@ export const metadata: Metadata = {
     siteName: SITE.name,
     title: TITLE,
     description: DESCRIPTION,
-    images: OG_IMAGE.map((img) => ({
-      ...img,
-      alt: "전국 나이트 홀 도감 40 — 입구·플로어·테이블·부스 순서로 읽는 홀 구조",
-    })),
+    images: THUMB.images,
   },
-  twitter: { card: "summary", title: TITLE, description: DESCRIPTION },
+  twitter: {
+    card: "summary",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [THUMB.url],
+  },
   other: {
+    ...THUMB.other,
     "dc.title": "전국 나이트 홀 도감 40",
     "dc.subject": "나이트 홀 구조 · 좌석 도감",
     "dc.language": "ko-KR",
@@ -116,6 +126,11 @@ export default function HallHubPage() {
               무엇을 바꾸는지 같은 순서로 정리했습니다.
             </p>
           </header>
+
+          {/* 썸네일 — og:image 와 같은 파일을 본문에도 실제로 렌더한다 */}
+          <figure className="mb-8">
+            <OgThumb pathname="/hall" alt={THUMB.alt} />
+          </figure>
 
           <section className="plan">
             <p className="plan-label">이 도감이 지키는 세 가지</p>

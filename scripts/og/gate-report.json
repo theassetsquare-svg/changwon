@@ -1,0 +1,812 @@
+[
+ {
+  "route": "/",
+  "slug": "home",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "47KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/about",
+  "slug": "about",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "47KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/jjanggu",
+  "slug": "jjanggu",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "47KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/price",
+  "slug": "price",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "47KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/location",
+  "slug": "location",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "47KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/reserve",
+  "slug": "reserve",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "47KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/review",
+  "slug": "review",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "47KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/photo",
+  "slug": "photo",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "47KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/news",
+  "slug": "news",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "47KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/faq",
+  "slug": "faq",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "47KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/around",
+  "slug": "around",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "47KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/event",
+  "slug": "event",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "47KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/vip",
+  "slug": "vip",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "47KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/contact",
+  "slug": "contact",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "47KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/night",
+  "slug": "night",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "47KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall",
+  "slug": "hall",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "47KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/night/bulgwang-hobak",
+  "slug": "night-bulgwang-hobak",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "44KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/night/ulsan-champion",
+  "slug": "night-ulsan-champion",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "47KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/night/daejeon-one",
+  "slug": "night-daejeon-one",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "33KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/night/sillim-grandprix",
+  "slug": "night-sillim-grandprix",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "39KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/night/sangbong-hangukgwan",
+  "slug": "night-sangbong-hangukgwan",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "41KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/night/suyu-shampoo",
+  "slug": "night-suyu-shampoo",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "34KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/night/busan-asiad",
+  "slug": "night-busan-asiad",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "39KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/night/suwon-chancedome",
+  "slug": "night-suwon-chancedome",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "39KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/night/ansan-hit",
+  "slug": "night-ansan-hit",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "33KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/night/daejeon-seven",
+  "slug": "night-daejeon-seven",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "34KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/night/ilsan-shampoo",
+  "slug": "night-ilsan-shampoo",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "36KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/night/cheongdam",
+  "slug": "night-cheongdam",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "43KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/night/bulgwang-hobak-night",
+  "slug": "night-bulgwang-hobak-night",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "45KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/night/changwon-lululala-night",
+  "slug": "night-changwon-lululala-night",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "55KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/night/ulsan-champion-night",
+  "slug": "night-ulsan-champion-night",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "44KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/night/cheongdam-night",
+  "slug": "night-cheongdam-night",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "40KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/night/daejeon-one-night",
+  "slug": "night-daejeon-one-night",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "39KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/night/sillim-grandprix-night",
+  "slug": "night-sillim-grandprix-night",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "36KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/night/sangbong-hangukgwan-night",
+  "slug": "night-sangbong-hangukgwan-night",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "43KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/night/suyu-shampoo-night",
+  "slug": "night-suyu-shampoo-night",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "33KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/night/busan-asiad-night",
+  "slug": "night-busan-asiad-night",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "36KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/night/suwon-chance-dome-night",
+  "slug": "night-suwon-chance-dome-night",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "42KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/night/ansan-hit-night",
+  "slug": "night-ansan-hit-night",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "36KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/night/daejeon-seven-night",
+  "slug": "night-daejeon-seven-night",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "32KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/night/ilsan-shampoo-night",
+  "slug": "night-ilsan-shampoo-night",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "35KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/sillim-grandprix",
+  "slug": "hall-sillim-grandprix",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "38KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/sangbong-hangukgwan",
+  "slug": "hall-sangbong-hangukgwan",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "41KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/suyu-shampoo",
+  "slug": "hall-suyu-shampoo",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "33KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/busan-asiad",
+  "slug": "hall-busan-asiad",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "40KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/suwon-chance-dome",
+  "slug": "hall-suwon-chance-dome",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "41KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/ansan-hit",
+  "slug": "hall-ansan-hit",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "35KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/daejeon-seven",
+  "slug": "hall-daejeon-seven",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "35KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/ilsan-shampoo",
+  "slug": "hall-ilsan-shampoo",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "36KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/cheongdam",
+  "slug": "hall-cheongdam",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "35KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/daejeon-one",
+  "slug": "hall-daejeon-one",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "40KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/changwon-lululala",
+  "slug": "hall-changwon-lululala",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "52KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/bulgwang-hobak",
+  "slug": "hall-bulgwang-hobak",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "44KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/ulsan-champion",
+  "slug": "hall-ulsan-champion",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "48KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/doksan-gukbingwan",
+  "slug": "hall-doksan-gukbingwan",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "38KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/dapsimni-miracle",
+  "slug": "hall-dapsimni-miracle",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "39KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/gangseo-hobak",
+  "slug": "hall-gangseo-hobak",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "34KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/yeongdeungpo-terminal",
+  "slug": "hall-yeongdeungpo-terminal",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "39KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/nowon-hobak",
+  "slug": "hall-nowon-hobak",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "33KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/gildong-chance",
+  "slug": "hall-gildong-chance",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "34KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/paju-yadang-skydome",
+  "slug": "hall-paju-yadang-skydome",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "40KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/guri-hobak",
+  "slug": "hall-guri-hobak",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "33KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/uijeongbu-hangukgwan",
+  "slug": "hall-uijeongbu-hangukgwan",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "42KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/uijeongbu-baekakgwan",
+  "slug": "hall-uijeongbu-baekakgwan",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "43KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/suwon-korea",
+  "slug": "hall-suwon-korea",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "42KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/osan-hobak",
+  "slug": "hall-osan-hobak",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "34KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/indeogwon-gukbingwan",
+  "slug": "hall-indeogwon-gukbingwan",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "39KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/seongnam-shampoo",
+  "slug": "hall-seongnam-shampoo",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "36KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/incheon-arabian",
+  "slug": "hall-incheon-arabian",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "39KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/bucheon-gorae",
+  "slug": "hall-bucheon-gorae",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "33KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/pyeongtaek-hobak",
+  "slug": "hall-pyeongtaek-hobak",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "35KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/cheonan-stardome",
+  "slug": "hall-cheonan-stardome",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "41KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/cheonan-korea",
+  "slug": "hall-cheonan-korea",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "42KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/cheongju-hobak",
+  "slug": "hall-cheongju-hobak",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "33KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/ulsan-newworld",
+  "slug": "hall-ulsan-newworld",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "36KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/seosan-hobak",
+  "slug": "hall-seosan-hobak",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "34KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/daegu-hobak",
+  "slug": "hall-daegu-hobak",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "32KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/gumi-hobak",
+  "slug": "hall-gumi-hobak",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "33KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/gwangju-sangmu",
+  "slug": "hall-gwangju-sangmu",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "35KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/gwangju-cheomdan",
+  "slug": "hall-gwangju-cheomdan",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "35KB",
+  "verdict": "PASS"
+ },
+ {
+  "route": "/hall/jeju-do",
+  "slug": "hall-jeju-do",
+  "img": "O",
+  "same": "O",
+  "meta": "9/9",
+  "size": "1200x1200",
+  "bytes": "33KB",
+  "verdict": "PASS"
+ }
+]

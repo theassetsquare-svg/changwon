@@ -1,4 +1,5 @@
 import Link from "next/link";
+import OgThumb from "./OgThumb";
 import { deriveFaqAnswer, nightPath, phoneDigits } from "@/lib/adnight";
 import type { AdVenue } from "@/lib/adnight";
 import { AD_BY_SLUG } from "@/lib/adnight-data";
@@ -148,6 +149,11 @@ export default function AdNightPage({ venue: v }: { venue: AdVenue }) {
               나이트클럽입니다. {v.answer2}
             </p>
           </div>
+
+          {/* 썸네일 — og:image 와 같은 파일을 본문에도 실제로 렌더한다 */}
+          <figure className="mt-6">
+            <OgThumb pathname={nightPath(v.slug)} alt={v.ogAlt} />
+          </figure>
 
           <div className="space-y-5 text-[15px] leading-7 text-gray-200 sm:text-base sm:leading-8">
             {v.lead.map((p, i) => (

@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import RelatedPages from "./RelatedPages";
 import PageJsonLd from "./PageJsonLd";
 import StickyCallBar from "./StickyCallBar";
+import OgThumb from "./OgThumb";
 import { PAGE_META, SITE } from "@/lib/site";
 
 export default function PageShell({
@@ -10,6 +11,7 @@ export default function PageShell({
   hook,
   pathname,
   capsule,
+  thumbAlt,
   children,
 }: {
   title: string;
@@ -17,6 +19,8 @@ export default function PageShell({
   hook?: string;
   pathname?: string;
   capsule?: string;
+  /** 본문 썸네일 alt — 가게이름 + 페이지 주제 */
+  thumbAlt?: string;
   children: ReactNode;
 }) {
   const meta = pathname ? PAGE_META[pathname] : undefined;
@@ -52,6 +56,17 @@ export default function PageShell({
           </p>
           <p className="mt-2 text-gray-100">{answerText}</p>
         </aside>
+      ) : null}
+
+      {/* 썸네일 — og:image 와 같은 파일을 본문에도 실제로 렌더한다.
+          직답 박스가 없는 페이지에서는 h1 바로 아래가 된다. */}
+      {pathname ? (
+        <figure className="mb-8">
+          <OgThumb
+            pathname={pathname}
+            alt={thumbAlt ?? `${SITE.nameNoSpace} ${title}`}
+          />
+        </figure>
       ) : null}
 
       <div className="space-y-6 text-[15px] leading-7 text-gray-200 sm:text-base sm:leading-8">

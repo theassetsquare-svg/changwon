@@ -1,14 +1,33 @@
 import type { Metadata } from "next";
 import PageJsonLd from "@/components/PageJsonLd";
-import { PAGE_META, OG_IMAGE } from "@/lib/site";
+import OgThumb from "@/components/OgThumb";
+import { PAGE_META, SITE, SITE_OTHER } from "@/lib/site";
+import { thumb } from "@/lib/og";
 
 const meta = PAGE_META["/"];
 
+
+/** 이 페이지 전용 썸네일 — og:image 와 본문 <img> 가 같은 파일을 가리킨다 */
+const THUMB = thumb({
+  pathname: "/",
+  alt: `${SITE.nameNoSpace} 홈 · 창원에서 성공하는 방법`,
+});
 export const metadata: Metadata = {
   title: meta.title,
   description: meta.description,
   alternates: { canonical: "/" },
-  openGraph: { title: meta.title, description: meta.description, images: OG_IMAGE },
+  openGraph: {
+    title: meta.title,
+    description: meta.description,
+    images: THUMB.images,
+  },
+  twitter: {
+    card: "summary",
+    title: meta.title,
+    description: meta.description,
+    images: [THUMB.url],
+  },
+  other: { ...SITE_OTHER, ...THUMB.other },
 };
 
 const TOC = [
@@ -90,6 +109,12 @@ export default function HomePage() {
               <br className="hidden sm:block" /> 다만 사람들이 생각하는 그 이유는
               아닙니다.
             </p>
+
+            {/* 썸네일 — og:image 와 같은 파일을 본문에도 실제로 렌더한다 */}
+            <figure className="fade-up mt-7">
+              <OgThumb pathname="/" alt={THUMB.alt} />
+            </figure>
+
             <div className="fade-up mt-7 space-y-4 text-[15px] leading-7 text-gray-300 sm:text-base sm:leading-8">
               <p>
                 저는 창원시 성산구 상남동 지하 3층에서 매장을 봅니다. 하는 일이

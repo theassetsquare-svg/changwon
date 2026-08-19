@@ -1,4 +1,5 @@
 import Link from "next/link";
+import OgThumb from "./OgThumb";
 import {
   HALL_UPDATED,
   UNVERIFIED_NOTE,
@@ -243,6 +244,11 @@ export default function HallPage({ venue: v }: { venue: HallVenue }) {
                 ))}
               </ol>
             </aside>
+
+            {/* 썸네일 — og:image 와 같은 파일을 본문에도 실제로 렌더한다 */}
+            <figure className="mt-8">
+              <OgThumb pathname={hallPath(v.slug)} alt={v.ogAlt} />
+            </figure>
 
             {/* ③ 사실 표 — 확인된 항목만 */}
             <section className="mt-10">

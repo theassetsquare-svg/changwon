@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import type { AdVenue } from "./adnight";
 import { nightPath } from "./adnight";
+import { thumb } from "./og";
 import { SITE } from "./site";
 
 /**
@@ -19,7 +20,9 @@ export const adViewport: Viewport = {
 export function adMetadata(v: AdVenue): Metadata {
   const path = nightPath(v.slug);
   const url = `${SITE.url}${path}`;
-  const image = `${SITE.url}/og/${v.slug}-og.png`;
+  // 썸네일 파일 경로는 lib/og.ts 한 곳에서만 계산한다 (본문 <img> 와 동일 보장)
+  const t = thumb({ pathname: path, alt: v.ogAlt });
+  const image = t.url;
 
   return {
     title: v.title,
@@ -33,7 +36,7 @@ export function adMetadata(v: AdVenue): Metadata {
       siteName: SITE.name,
       title: v.title,
       description: v.description,
-      images: [{ url: image, width: 1200, height: 1200, alt: v.ogAlt }],
+      images: t.images,
     },
     twitter: {
       card: "summary",
@@ -43,6 +46,7 @@ export function adMetadata(v: AdVenue): Metadata {
     },
     // 루트 레이아웃의 other 를 통째로 덮어쓴다 (연령 축약 표기 상속 차단)
     other: {
+      ...t.other,
       "geo.placename": v.areaLabel,
       "dc.title": v.keyword,
       "dc.subject": v.keyword,

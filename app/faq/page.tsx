@@ -1,13 +1,31 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
-import { PAGE_META, SITE, OG_IMAGE } from "@/lib/site";
+import { PAGE_META, SITE, SITE_OTHER } from "@/lib/site";
+import { thumb } from "@/lib/og";
 
 const m = PAGE_META["/faq"];
+
+/** 이 페이지 전용 썸네일 — og:image 와 본문 <img> 가 같은 파일을 가리킨다 */
+const THUMB = thumb({
+  pathname: "/faq",
+  alt: `${SITE.nameNoSpace} 자주 묻는 질문`,
+});
 export const metadata: Metadata = {
   title: m.title,
   description: m.description,
   alternates: { canonical: "/faq" },
-  openGraph: { title: m.title, description: m.description, images: OG_IMAGE },
+  openGraph: {
+    title: m.title,
+    description: m.description,
+    images: THUMB.images,
+  },
+  twitter: {
+    card: "summary",
+    title: m.title,
+    description: m.description,
+    images: [THUMB.url],
+  },
+  other: { ...SITE_OTHER, ...THUMB.other },
 };
 
 const FAQ = [
@@ -103,7 +121,7 @@ const FAQ = [
 
 export default function FaqPage() {
   return (
-    <PageShell title="창원룰루랄라나이트 자주 묻는 질문" hook={m.hook} pathname="/faq">
+    <PageShell title="창원룰루랄라나이트 자주 묻는 질문" hook={m.hook} pathname="/faq" thumbAlt={THUMB.alt}>
       <p>
         진짜 많이 받는 질문만 골라서 정리했습니다. 답도 매니저가 평소에 받는
         질문 그대로 적었어요. 보시고 그래도 안 풀리면 전화 주세요.

@@ -1,0 +1,407 @@
+[
+ {
+  "route": "/",
+  "slug": "home",
+  "kind": "changwon"
+ },
+ {
+  "route": "/about",
+  "slug": "about",
+  "kind": "changwon"
+ },
+ {
+  "route": "/jjanggu",
+  "slug": "jjanggu",
+  "kind": "changwon"
+ },
+ {
+  "route": "/price",
+  "slug": "price",
+  "kind": "changwon"
+ },
+ {
+  "route": "/location",
+  "slug": "location",
+  "kind": "changwon"
+ },
+ {
+  "route": "/reserve",
+  "slug": "reserve",
+  "kind": "changwon"
+ },
+ {
+  "route": "/review",
+  "slug": "review",
+  "kind": "changwon"
+ },
+ {
+  "route": "/photo",
+  "slug": "photo",
+  "kind": "changwon"
+ },
+ {
+  "route": "/news",
+  "slug": "news",
+  "kind": "changwon"
+ },
+ {
+  "route": "/faq",
+  "slug": "faq",
+  "kind": "changwon"
+ },
+ {
+  "route": "/around",
+  "slug": "around",
+  "kind": "changwon"
+ },
+ {
+  "route": "/event",
+  "slug": "event",
+  "kind": "changwon"
+ },
+ {
+  "route": "/vip",
+  "slug": "vip",
+  "kind": "changwon"
+ },
+ {
+  "route": "/contact",
+  "slug": "contact",
+  "kind": "changwon"
+ },
+ {
+  "route": "/night",
+  "slug": "night",
+  "kind": "changwon"
+ },
+ {
+  "route": "/hall",
+  "slug": "hall",
+  "kind": "changwon"
+ },
+ {
+  "route": "/night/bulgwang-hobak",
+  "slug": "night-bulgwang-hobak",
+  "kind": "venue"
+ },
+ {
+  "route": "/night/ulsan-champion",
+  "slug": "night-ulsan-champion",
+  "kind": "venue"
+ },
+ {
+  "route": "/night/daejeon-one",
+  "slug": "night-daejeon-one",
+  "kind": "venue"
+ },
+ {
+  "route": "/night/sillim-grandprix",
+  "slug": "night-sillim-grandprix",
+  "kind": "venue"
+ },
+ {
+  "route": "/night/sangbong-hangukgwan",
+  "slug": "night-sangbong-hangukgwan",
+  "kind": "venue"
+ },
+ {
+  "route": "/night/suyu-shampoo",
+  "slug": "night-suyu-shampoo",
+  "kind": "venue"
+ },
+ {
+  "route": "/night/busan-asiad",
+  "slug": "night-busan-asiad",
+  "kind": "venue"
+ },
+ {
+  "route": "/night/suwon-chancedome",
+  "slug": "night-suwon-chancedome",
+  "kind": "venue"
+ },
+ {
+  "route": "/night/ansan-hit",
+  "slug": "night-ansan-hit",
+  "kind": "venue"
+ },
+ {
+  "route": "/night/daejeon-seven",
+  "slug": "night-daejeon-seven",
+  "kind": "venue"
+ },
+ {
+  "route": "/night/ilsan-shampoo",
+  "slug": "night-ilsan-shampoo",
+  "kind": "venue"
+ },
+ {
+  "route": "/night/cheongdam",
+  "slug": "night-cheongdam",
+  "kind": "venue"
+ },
+ {
+  "route": "/night/bulgwang-hobak-night",
+  "slug": "night-bulgwang-hobak-night",
+  "kind": "copy"
+ },
+ {
+  "route": "/night/changwon-lululala-night",
+  "slug": "night-changwon-lululala-night",
+  "kind": "copy"
+ },
+ {
+  "route": "/night/ulsan-champion-night",
+  "slug": "night-ulsan-champion-night",
+  "kind": "copy"
+ },
+ {
+  "route": "/night/cheongdam-night",
+  "slug": "night-cheongdam-night",
+  "kind": "copy"
+ },
+ {
+  "route": "/night/daejeon-one-night",
+  "slug": "night-daejeon-one-night",
+  "kind": "copy"
+ },
+ {
+  "route": "/night/sillim-grandprix-night",
+  "slug": "night-sillim-grandprix-night",
+  "kind": "copy"
+ },
+ {
+  "route": "/night/sangbong-hangukgwan-night",
+  "slug": "night-sangbong-hangukgwan-night",
+  "kind": "copy"
+ },
+ {
+  "route": "/night/suyu-shampoo-night",
+  "slug": "night-suyu-shampoo-night",
+  "kind": "copy"
+ },
+ {
+  "route": "/night/busan-asiad-night",
+  "slug": "night-busan-asiad-night",
+  "kind": "copy"
+ },
+ {
+  "route": "/night/suwon-chance-dome-night",
+  "slug": "night-suwon-chance-dome-night",
+  "kind": "copy"
+ },
+ {
+  "route": "/night/ansan-hit-night",
+  "slug": "night-ansan-hit-night",
+  "kind": "copy"
+ },
+ {
+  "route": "/night/daejeon-seven-night",
+  "slug": "night-daejeon-seven-night",
+  "kind": "copy"
+ },
+ {
+  "route": "/night/ilsan-shampoo-night",
+  "slug": "night-ilsan-shampoo-night",
+  "kind": "copy"
+ },
+ {
+  "route": "/hall/sillim-grandprix",
+  "slug": "hall-sillim-grandprix",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/sangbong-hangukgwan",
+  "slug": "hall-sangbong-hangukgwan",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/suyu-shampoo",
+  "slug": "hall-suyu-shampoo",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/busan-asiad",
+  "slug": "hall-busan-asiad",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/suwon-chance-dome",
+  "slug": "hall-suwon-chance-dome",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/ansan-hit",
+  "slug": "hall-ansan-hit",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/daejeon-seven",
+  "slug": "hall-daejeon-seven",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/ilsan-shampoo",
+  "slug": "hall-ilsan-shampoo",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/cheongdam",
+  "slug": "hall-cheongdam",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/daejeon-one",
+  "slug": "hall-daejeon-one",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/changwon-lululala",
+  "slug": "hall-changwon-lululala",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/bulgwang-hobak",
+  "slug": "hall-bulgwang-hobak",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/ulsan-champion",
+  "slug": "hall-ulsan-champion",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/doksan-gukbingwan",
+  "slug": "hall-doksan-gukbingwan",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/dapsimni-miracle",
+  "slug": "hall-dapsimni-miracle",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/gangseo-hobak",
+  "slug": "hall-gangseo-hobak",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/yeongdeungpo-terminal",
+  "slug": "hall-yeongdeungpo-terminal",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/nowon-hobak",
+  "slug": "hall-nowon-hobak",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/gildong-chance",
+  "slug": "hall-gildong-chance",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/paju-yadang-skydome",
+  "slug": "hall-paju-yadang-skydome",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/guri-hobak",
+  "slug": "hall-guri-hobak",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/uijeongbu-hangukgwan",
+  "slug": "hall-uijeongbu-hangukgwan",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/uijeongbu-baekakgwan",
+  "slug": "hall-uijeongbu-baekakgwan",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/suwon-korea",
+  "slug": "hall-suwon-korea",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/osan-hobak",
+  "slug": "hall-osan-hobak",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/indeogwon-gukbingwan",
+  "slug": "hall-indeogwon-gukbingwan",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/seongnam-shampoo",
+  "slug": "hall-seongnam-shampoo",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/incheon-arabian",
+  "slug": "hall-incheon-arabian",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/bucheon-gorae",
+  "slug": "hall-bucheon-gorae",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/pyeongtaek-hobak",
+  "slug": "hall-pyeongtaek-hobak",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/cheonan-stardome",
+  "slug": "hall-cheonan-stardome",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/cheonan-korea",
+  "slug": "hall-cheonan-korea",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/cheongju-hobak",
+  "slug": "hall-cheongju-hobak",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/ulsan-newworld",
+  "slug": "hall-ulsan-newworld",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/seosan-hobak",
+  "slug": "hall-seosan-hobak",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/daegu-hobak",
+  "slug": "hall-daegu-hobak",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/gumi-hobak",
+  "slug": "hall-gumi-hobak",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/gwangju-sangmu",
+  "slug": "hall-gwangju-sangmu",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/gwangju-cheomdan",
+  "slug": "hall-gwangju-cheomdan",
+  "kind": "venue"
+ },
+ {
+  "route": "/hall/jeju-do",
+  "slug": "hall-jeju-do",
+  "kind": "venue"
+ }
+]

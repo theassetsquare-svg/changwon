@@ -84,7 +84,12 @@ export const SITE = {
   // SEO automation: keyword-guard 워크플로우가 푸시마다 키워드 밀도를 자동 감시함
 } as const;
 
-// 공유/검색 썸네일 (네이버·구글·카카오) — 1:1 1200x1200, 전 페이지 공통 적용
+// 공유/검색 썸네일 (네이버·구글·카카오) — 1:1 1200x1200
+//
+// [주의] 이제 페이지마다 자기 썸네일 파일(/og/{슬러그}.png)을 쓴다. lib/og.ts 참고.
+// 여기 OG_IMAGE 는 상대 경로 + 동적 라우트라 네이버가 잡지 못했다.
+// 남겨 둔 건 /opengraph-image 라우트 자체를 없애지 않기 위해서이며,
+// 페이지 메타에는 더 이상 쓰지 않는다.
 export const OG_IMAGE = [
   {
     // ?v= 는 네이버·카카오가 이전 썸네일을 캐시하고 있을 때 갱신을 유도하기 위함
@@ -95,6 +100,31 @@ export const OG_IMAGE = [
     alt: `창원룰루랄라 · ${SITE.lotto} ${SITE.lottoPhoneDash}`,
   },
 ];
+
+/**
+ * 창원 본 사이트 페이지가 공유하는 비표준 메타.
+ *
+ * [왜 상수로 뺐나] Next 는 page 의 `other` 가 layout 의 `other` 를 통째로 덮어쓴다.
+ * 페이지마다 thumbnail 이 달라 page 쪽에 `other` 를 둬야 하는데, 그러면 이 태그들이
+ * 통째로 사라진다. 그래서 페이지에서 `{ ...SITE_OTHER, ...thumb.other }` 로 합친다.
+ */
+export const SITE_OTHER = {
+  "geo.region": "KR-48",
+  "geo.placename": "창원시 성산구 상남동",
+  "geo.position": `${SITE.geo.latitude};${SITE.geo.longitude}`,
+  ICBM: `${SITE.geo.latitude}, ${SITE.geo.longitude}`,
+  "dc.title": SITE.name,
+  "dc.creator": "매니저",
+  "dc.subject": "창원 룰루랄라 나이트",
+  "dc.language": "ko-KR",
+  "og:locality": "창원시",
+  "og:region": "경상남도",
+  "og:country-name": "대한민국",
+  "twitter:label1": "예약 문의",
+  "twitter:data1": SITE.phone,
+  "twitter:label2": "입장 연령",
+  "twitter:data2": "27세 이상",
+} as const;
 
 export const PLACEHOLDER = "[입력필요]";
 

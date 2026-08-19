@@ -2,7 +2,14 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { SiteHeader, SiteFooter } from "@/components/SiteChrome";
 import JsonLd from "@/components/JsonLd";
-import { SITE } from "@/lib/site";
+import { SITE, SITE_OTHER } from "@/lib/site";
+import { thumb } from "@/lib/og";
+
+/** 루트 기본 썸네일 — 개별 페이지는 각자 자기 파일로 덮어쓴다 */
+const ROOT_THUMB = thumb({
+  pathname: "/",
+  alt: `${SITE.nameNoSpace} 공식 사이트 · ${SITE.lotto} ${SITE.lottoPhoneDash}`,
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -32,11 +39,13 @@ export const metadata: Metadata = {
     siteName: SITE.name,
     title: `${SITE.nameNoSpace} 공식 사이트 — 상남동 27세 이상 합법 영업장`,
     description: SITE.description,
+    images: ROOT_THUMB.images,
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: `${SITE.nameNoSpace} 공식 사이트 — 상남동 27세 이상 합법 영업장`,
     description: SITE.description,
+    images: [ROOT_THUMB.url],
   },
   robots: {
     index: true,
@@ -56,23 +65,7 @@ export const metadata: Metadata = {
       "naver-site-verification": "1e8cbbc64b5bb55288b135f25772d1b5005f89fe",
     },
   },
-  other: {
-    "geo.region": "KR-48",
-    "geo.placename": "창원시 성산구 상남동",
-    "geo.position": `${SITE.geo.latitude};${SITE.geo.longitude}`,
-    ICBM: `${SITE.geo.latitude}, ${SITE.geo.longitude}`,
-    "dc.title": SITE.name,
-    "dc.creator": "매니저",
-    "dc.subject": "창원 룰루랄라 나이트",
-    "dc.language": "ko-KR",
-    "og:locality": "창원시",
-    "og:region": "경상남도",
-    "og:country-name": "대한민국",
-    "twitter:label1": "예약 문의",
-    "twitter:data1": SITE.phone,
-    "twitter:label2": "입장 연령",
-    "twitter:data2": "27세 이상",
-  },
+  other: { ...SITE_OTHER, ...ROOT_THUMB.other },
 };
 
 export const viewport: Viewport = {

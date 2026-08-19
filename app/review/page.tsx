@@ -1,13 +1,31 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
-import { PAGE_META, SITE, OG_IMAGE } from "@/lib/site";
+import { PAGE_META, SITE, SITE_OTHER } from "@/lib/site";
+import { thumb } from "@/lib/og";
 
 const m = PAGE_META["/review"];
+
+/** 이 페이지 전용 썸네일 — og:image 와 본문 <img> 가 같은 파일을 가리킨다 */
+const THUMB = thumb({
+  pathname: "/review",
+  alt: `${SITE.nameNoSpace} 후기`,
+});
 export const metadata: Metadata = {
   title: m.title,
   description: m.description,
   alternates: { canonical: "/review" },
-  openGraph: { title: m.title, description: m.description, images: OG_IMAGE },
+  openGraph: {
+    title: m.title,
+    description: m.description,
+    images: THUMB.images,
+  },
+  twitter: {
+    card: "summary",
+    title: m.title,
+    description: m.description,
+    images: [THUMB.url],
+  },
+  other: { ...SITE_OTHER, ...THUMB.other },
 };
 
 const REVIEW_FAQ = [
@@ -35,6 +53,7 @@ export default function ReviewPage() {
       title="창원룰루랄라나이트 후기"
       hook={m.hook}
       pathname="/review"
+      thumbAlt={THUMB.alt}
     >
       <p>
         솔직하게 말씀드립니다. 이 페이지에 가짜 후기는 절대 안 올립니다. 가짜 별점도

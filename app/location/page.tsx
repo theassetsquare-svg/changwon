@@ -1,14 +1,32 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
 import Placeholder from "@/components/Placeholder";
-import { PAGE_META, PLACEHOLDERS, SITE, OG_IMAGE } from "@/lib/site";
+import { PAGE_META, PLACEHOLDERS, SITE, SITE_OTHER } from "@/lib/site";
+import { thumb } from "@/lib/og";
 
 const m = PAGE_META["/location"];
+
+/** 이 페이지 전용 썸네일 — og:image 와 본문 <img> 가 같은 파일을 가리킨다 */
+const THUMB = thumb({
+  pathname: "/location",
+  alt: `${SITE.nameNoSpace} 오시는 길`,
+});
 export const metadata: Metadata = {
   title: m.title,
   description: m.description,
   alternates: { canonical: "/location" },
-  openGraph: { title: m.title, description: m.description, images: OG_IMAGE },
+  openGraph: {
+    title: m.title,
+    description: m.description,
+    images: THUMB.images,
+  },
+  twitter: {
+    card: "summary",
+    title: m.title,
+    description: m.description,
+    images: [THUMB.url],
+  },
+  other: { ...SITE_OTHER, ...THUMB.other },
 };
 
 const LOC_FAQ = [
@@ -36,6 +54,7 @@ export default function LocationPage() {
       title="창원룰루랄라나이트 오시는 길"
       hook={m.hook}
       pathname="/location"
+      thumbAlt={THUMB.alt}
     >
       <p>
         창원이 처음이시면 길 헷갈리기 쉽습니다. 일단 주소 적어두고, 도착하실 때쯤
