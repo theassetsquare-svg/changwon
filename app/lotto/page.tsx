@@ -3,17 +3,17 @@ import PageShell from "@/components/PageShell";
 import { PAGE_META, SITE, SITE_OTHER } from "@/lib/site";
 import { thumb } from "@/lib/og";
 
-const m = PAGE_META["/jjanggu"];
+const m = PAGE_META["/lotto"];
 
 /** 이 페이지 전용 썸네일 — og:image 와 본문 <img> 가 같은 파일을 가리킨다 */
 const THUMB = thumb({
-  pathname: "/jjanggu",
-  alt: `${SITE.nameNoSpace} 매니저 짱구 안내`,
+  pathname: "/lotto",
+  alt: `${SITE.nameNoSpace} 매니저 로또 안내`,
 });
 export const metadata: Metadata = {
   title: m.title,
   description: m.description,
-  alternates: { canonical: "/jjanggu" },
+  alternates: { canonical: "/lotto" },
   openGraph: {
     title: m.title,
     description: m.description,
@@ -31,11 +31,11 @@ export const metadata: Metadata = {
 const MANAGER_FAQ = [
   {
     q: "전화 문의하면 정말 매니저가 직접 답해요?",
-    a: "네, 전화 010-3854-6887로 오시는 문의 거의 다 매니저가 직접 답합니다. 응대 중일 때만 잠시 늦을 수 있고, 그 외에는 다른 직원 거치지 않고 바로 응대합니다.",
+    a: "네, 전화 010-7528-4936로 오시는 문의 거의 다 매니저가 직접 답합니다. 응대 중일 때만 잠시 늦을 수 있고, 그 외에는 다른 직원 거치지 않고 바로 응대합니다.",
   },
   {
     q: "매니저는 어떤 사람이에요?",
-    a: "창원 룰루랄라 나이트에서 손님 응대와 자리 배정을 담당하는 매니저입니다. 인원·일행·분위기를 보고 자리를 잡는 게 일이에요.",
+    a: "창원 룰루랄라 나이트에서 손님 응대와 자리 배정을 담당하는 매니저 로또입니다. 인원·일행·분위기를 보고 자리를 잡는 게 일이에요.",
   },
   {
     q: "전화를 안 받으면 어떻게 해요?",
@@ -43,7 +43,7 @@ const MANAGER_FAQ = [
   },
   {
     q: "다른 연락처도 있나요?",
-    a: "공식 전화번호 010-3854-6887로 문의하세요. 다른 채널을 통해 창원 룰루랄라 나이트라고 안내받으셨다면 확인이 필요합니다.",
+    a: "공식 전화번호 010-7528-4936로 문의하세요. 다른 채널을 통해 창원 룰루랄라 나이트라고 안내받으셨다면 확인이 필요합니다.",
   },
 ];
 
@@ -52,11 +52,11 @@ export default function JjangguPage() {
     <PageShell
       title="창원룰루랄라나이트 매니저가 직접 받습니다"
       hook={m.hook}
-      pathname="/jjanggu"
+      pathname="/lotto"
       thumbAlt={THUMB.alt}
     >
       <p>
-        안녕하세요. <strong className="text-white">{SITE.name}</strong> 매니저입니다.
+        안녕하세요. <strong className="text-white">{SITE.name}</strong> 매니저 <strong className="text-gold">{SITE.lotto}</strong>입니다.
         <a href={SITE.phoneHref} className="font-extrabold text-gold underline">전화 {SITE.phone}</a>
         , 이 번호로 오시는 문의 거의 다 제가 직접 받습니다.
       </p>

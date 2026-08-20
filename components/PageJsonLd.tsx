@@ -47,7 +47,7 @@ export default function PageJsonLd({ pathname }: { pathname: string }) {
     inLanguage: "ko-KR",
     isPartOf: { "@id": `${SITE.url}/#website` },
     about: { "@id": `${SITE.url}/#business` },
-    author: { "@id": `${SITE.url}/#jjanggu` },
+    author: { "@id": `${SITE.url}/#lotto` },
     publisher: { "@id": `${SITE.url}/#organization` },
     datePublished: SITE.founded + "-01-01",
     dateModified: SITE.lastModified,

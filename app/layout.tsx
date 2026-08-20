@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description: SITE.description,
   keywords: [...SITE.keywords],
   applicationName: SITE.name,
-  authors: [{ name: "매니저", url: `${SITE.url}/jjanggu` }],
+  authors: [{ name: "매니저", url: `${SITE.url}/lotto` }],
   creator: "매니저",
   publisher: SITE.name,
   category: "Local Business",

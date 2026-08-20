@@ -15,3 +15,6 @@
 /night/daejeon-seven /night/daejeon-seven-night 301
 /night/ilsan-shampoo /night/ilsan-shampoo-night 301
 /night/cheongdam /night/cheongdam-night 301
+
+# 2026-08-20 — 매니저 페이지 주소를 /jjanggu 에서 /lotto 로 변경
+/jjanggu /lotto 301

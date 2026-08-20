@@ -21,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       n.href === "/"
         ? 1
         : n.href === "/reserve" ||
-            n.href === "/jjanggu" ||
+            n.href === "/lotto" ||
             n.href === "/price" ||
             n.href === "/location"
           ? 0.9

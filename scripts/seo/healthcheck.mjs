@@ -8,7 +8,7 @@ const SITE = process.env.SITE_URL || "https://changwonb.pages.dev";
 const CORE_ROUTES = [
   "/",
   "/about",
-  "/jjanggu",
+  "/lotto",
   "/price",
   "/location",
   "/reserve",

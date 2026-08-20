@@ -17,7 +17,7 @@ const KEY_LOCATION = `${SITE}/${KEY}.txt`;
 const FALLBACK_ROUTES = [
   "/",
   "/about",
-  "/jjanggu",
+  "/lotto",
   "/price",
   "/location",
   "/reserve",

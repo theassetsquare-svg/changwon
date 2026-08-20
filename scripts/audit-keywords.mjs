@@ -13,7 +13,7 @@ const ROOT = path.resolve(__dirname, "..");
 const PAGES = [
   { route: "/", file: "app/page.tsx" },
   { route: "/about", file: "app/about/page.tsx" },
-  { route: "/jjanggu", file: "app/jjanggu/page.tsx" },
+  { route: "/lotto", file: "app/lotto/page.tsx" },
   { route: "/price", file: "app/price/page.tsx" },
   { route: "/location", file: "app/location/page.tsx" },
   { route: "/reserve", file: "app/reserve/page.tsx" },
@@ -34,8 +34,8 @@ const KEYWORDS = [
   "룰루랄라 나이트",
   "창원 나이트",
   "창원나이트",
-  "짱구",
-  "010-3854-6887",
+  "로또",
+  "010-7528-4936",
 ];
 
 // JSX 보이는 텍스트만 추출하기 위해 import/지시자/JSON-LD/JS 식별자 영역 제거
