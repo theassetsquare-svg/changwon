@@ -102,7 +102,7 @@ export const GROUP_2: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "호텔 건물 내 시설이므로 로비 이용 예절을 지켜 주세요.",
     ],
-    related: ["sillim-grandprix", "gildong-chance", "incheon-arabian"],
+    related: ["sillim-grandprix", "gildong-chance-guide", "incheon-arabian-guide"],
   },
 
   {
@@ -413,7 +413,7 @@ export const GROUP_2: HallVenue[] = [
       "성인 대상 홀이라 입장할 때 신분증을 확인할 수 있습니다.",
       "마시고 운전하지 마시고 대리를 이용해 주세요.",
     ],
-    related: ["nowon-hobak", "gangseo-hobak", "yeongdeungpo-terminal"],
+    related: ["nowon-hobak-guide", "gangseo-hobak-guide", "yeongdeungpo-terminal-guide"],
   },
 
   {
@@ -514,12 +514,12 @@ export const GROUP_2: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "삼산동 상권이라 주차가 혼잡합니다. 대리나 대중교통을 권합니다.",
     ],
-    related: ["ulsan-newworld", "busan-asiad", "changwon-lululala"],
+    related: ["ulsan-newworld-guide", "busan-asiad", "changwon-lululala"],
   },
 
   {
     no: 14,
-    slug: "doksan-gukbingwan",
+    slug: "doksan-gukbingwan-guide",
     keyword: "독산동국빈관나이트",
     spaced: "독산동 국빈관나이트",
     regionType: "금천구 나이트클럽",
@@ -611,7 +611,7 @@ export const GROUP_2: HallVenue[] = [
       "확인되지 않은 층·영업시간·요금은 적지 않았습니다.",
       "성인 대상 홀이며 신분증 확인이 있을 수 있습니다.",
     ],
-    related: ["gangseo-hobak", "yeongdeungpo-terminal", "sillim-grandprix"],
+    related: ["gangseo-hobak-guide", "yeongdeungpo-terminal-guide", "sillim-grandprix"],
   },
 
   {
@@ -707,12 +707,12 @@ export const GROUP_2: HallVenue[] = [
       "구조 설명은 일반적인 나이트 홀 기준이며 특정 업소의 실제 배치가 아닙니다.",
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
     ],
-    related: ["sangbong-hangukgwan", "nowon-hobak", "gildong-chance"],
+    related: ["sangbong-hangukgwan", "nowon-hobak-guide", "gildong-chance-guide"],
   },
 
   {
     no: 16,
-    slug: "gangseo-hobak",
+    slug: "gangseo-hobak-guide",
     keyword: "강서호박나이트",
     spaced: "강서 호박나이트",
     regionType: "강서구 나이트클럽",
@@ -804,6 +804,6 @@ export const GROUP_2: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "확인되지 않은 영업시간·요금은 싣지 않았습니다.",
     ],
-    related: ["bulgwang-hobak", "yeongdeungpo-terminal", "doksan-gukbingwan"],
+    related: ["bulgwang-hobak", "yeongdeungpo-terminal-guide", "doksan-gukbingwan-guide"],
   },
 ];

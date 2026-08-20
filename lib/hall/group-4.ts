@@ -7,7 +7,7 @@ import type { HallVenue } from "../hall";
 export const GROUP_4: HallVenue[] = [
   {
     no: 25,
-    slug: "osan-hobak",
+    slug: "osan-hobak-guide",
     keyword: "오산호박나이트",
     spaced: "오산 호박나이트",
     regionType: "오산 나이트클럽",
@@ -98,12 +98,12 @@ export const GROUP_4: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "확인되지 않은 층·좌석 수·요금은 싣지 않았습니다.",
     ],
-    related: ["suwon-korea", "pyeongtaek-hobak", "suwon-chance-dome"],
+    related: ["suwon-korea-guide", "pyeongtaek-hobak", "suwon-chance-dome"],
   },
 
   {
     no: 26,
-    slug: "indeogwon-gukbingwan",
+    slug: "indeogwon-gukbingwan-guide",
     keyword: "인덕원국빈관나이트",
     spaced: "인덕원 국빈관나이트",
     regionType: "안양 나이트클럽",
@@ -197,12 +197,12 @@ export const GROUP_4: HallVenue[] = [
       "구조 설명은 일반적인 나이트 홀 기준이며 특정 업소의 실제 배치가 아닙니다.",
       "방문 전 현재 영업 여부를 직접 확인하시기 바랍니다. 성인 대상 홀은 입장 시 신분증 확인이 있을 수 있습니다.",
     ],
-    related: ["seongnam-shampoo", "suwon-korea", "gwangju-cheomdan"],
+    related: ["seongnam-shampoo-guide", "suwon-korea-guide", "gwangju-cheomdan"],
   },
 
   {
     no: 27,
-    slug: "seongnam-shampoo",
+    slug: "seongnam-shampoo-guide",
     keyword: "성남샴푸나이트",
     spaced: "성남 샴푸나이트",
     regionType: "성남 나이트클럽",
@@ -294,12 +294,12 @@ export const GROUP_4: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "확인되지 않은 층·영업시간·요금은 싣지 않았습니다.",
     ],
-    related: ["suyu-shampoo", "ilsan-shampoo", "suwon-korea"],
+    related: ["suyu-shampoo", "ilsan-shampoo", "suwon-korea-guide"],
   },
 
   {
     no: 28,
-    slug: "incheon-arabian",
+    slug: "incheon-arabian-guide",
     keyword: "인천아라비안나이트",
     spaced: "인천 아라비안나이트",
     regionType: "인천 나이트클럽",
@@ -391,7 +391,7 @@ export const GROUP_4: HallVenue[] = [
       "정확한 지번·층은 확인되지 않아 싣지 않았습니다.",
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
     ],
-    related: ["bucheon-gorae", "gangseo-hobak", "cheongdam"],
+    related: ["bucheon-gorae", "gangseo-hobak-guide", "cheongdam"],
   },
 
   {
@@ -488,7 +488,7 @@ export const GROUP_4: HallVenue[] = [
       "정확한 지번·층·영업시간은 확인되지 않아 싣지 않았습니다.",
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
     ],
-    related: ["incheon-arabian", "yeongdeungpo-terminal", "gangseo-hobak"],
+    related: ["incheon-arabian-guide", "yeongdeungpo-terminal-guide", "gangseo-hobak-guide"],
   },
 
   {
@@ -595,12 +595,12 @@ export const GROUP_4: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "복층 이동 시 계단을 이용하게 됩니다. 음주 후에는 조심하세요.",
     ],
-    related: ["osan-hobak", "cheonan-stardome", "suwon-korea"],
+    related: ["osan-hobak-guide", "cheonan-stardome-guide", "suwon-korea-guide"],
   },
 
   {
     no: 31,
-    slug: "cheonan-stardome",
+    slug: "cheonan-stardome-guide",
     keyword: "천안스타돔나이트",
     spaced: "천안 스타돔나이트",
     regionType: "천안 나이트클럽",
@@ -690,7 +690,7 @@ export const GROUP_4: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "천장 형태에 따른 설명은 일반적인 돔형 홀 기준입니다.",
     ],
-    related: ["cheonan-korea", "paju-yadang-skydome", "suwon-chance-dome"],
+    related: ["cheonan-korea", "paju-yadang-skydome-guide", "suwon-chance-dome"],
   },
 
   {
@@ -787,6 +787,6 @@ export const GROUP_4: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "확인되지 않은 층·영업시간·요금은 싣지 않았습니다.",
     ],
-    related: ["cheonan-stardome", "cheongju-hobak", "seosan-hobak"],
+    related: ["cheonan-stardome-guide", "cheongju-hobak", "seosan-hobak"],
   },
 ];

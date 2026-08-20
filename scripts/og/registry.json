@@ -95,7 +95,7 @@
   "kind": "copy"
  },
  {
-  "route": "/night/cheongdam-night-guide",
+  "route": "/night/cheongdam-night-hall",
   "slug": "night-cheongdam-night",
   "kind": "copy"
  },
@@ -115,7 +115,7 @@
   "kind": "venue"
  },
  {
-  "route": "/night/suyu-shampoo-night-guide",
+  "route": "/night/suyu-shampoo-night-hall",
   "slug": "night-suyu-shampoo-night",
   "kind": "venue"
  },
@@ -125,7 +125,7 @@
   "kind": "venue"
  },
  {
-  "route": "/night/suwon-chance-dome-night-guide",
+  "route": "/night/suwon-chance-dome-night-hall",
   "slug": "night-suwon-chance-dome-night",
   "kind": "venue"
  },
@@ -140,7 +140,7 @@
   "kind": "venue"
  },
  {
-  "route": "/night/ilsan-shampoo-night-guide",
+  "route": "/night/ilsan-shampoo-night-hall",
   "slug": "night-ilsan-shampoo-night",
   "kind": "venue"
  },

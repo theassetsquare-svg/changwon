@@ -190,7 +190,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/night/cheongdam-night-guide",
+  "route": "/night/cheongdam-night-hall",
   "slug": "night-cheongdam-night",
   "img": "O",
   "same": "O",
@@ -230,7 +230,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/night/suyu-shampoo-night-guide",
+  "route": "/night/suyu-shampoo-night-hall",
   "slug": "night-suyu-shampoo-night",
   "img": "O",
   "same": "O",
@@ -250,7 +250,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/night/suwon-chance-dome-night-guide",
+  "route": "/night/suwon-chance-dome-night-hall",
   "slug": "night-suwon-chance-dome-night",
   "img": "O",
   "same": "O",
@@ -280,7 +280,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/night/ilsan-shampoo-night-guide",
+  "route": "/night/ilsan-shampoo-night-hall",
   "slug": "night-ilsan-shampoo-night",
   "img": "O",
   "same": "O",

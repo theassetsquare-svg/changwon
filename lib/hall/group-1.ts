@@ -100,7 +100,7 @@ export const GROUP_1: HallVenue[] = [
       "성인 대상 홀이라 입장 시 신분증을 확인할 수 있습니다.",
       "내부 배치는 운영 사정에 따라 바뀝니다. 확정 배치는 현장 안내를 따르세요.",
     ],
-    related: ["sangbong-hangukgwan", "cheongdam", "gangseo-hobak"],
+    related: ["sangbong-hangukgwan", "cheongdam", "gangseo-hobak-guide"],
   },
 
   {
@@ -205,7 +205,7 @@ export const GROUP_1: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "귀가는 대리운전이나 대중교통을 미리 정해 두시면 편합니다.",
     ],
-    related: ["sillim-grandprix", "nowon-hobak", "suyu-shampoo"],
+    related: ["sillim-grandprix", "nowon-hobak-guide", "suyu-shampoo"],
   },
 
   {
@@ -302,7 +302,7 @@ export const GROUP_1: HallVenue[] = [
       "성인 대상 홀이며 신분증 확인이 있을 수 있습니다.",
       "복층 구조라 이동 시 계단을 이용하게 됩니다. 음주 후에는 특히 조심하세요.",
     ],
-    related: ["sangbong-hangukgwan", "nowon-hobak", "seongnam-shampoo"],
+    related: ["sangbong-hangukgwan", "nowon-hobak-guide", "seongnam-shampoo-guide"],
   },
 
   {
@@ -513,7 +513,7 @@ export const GROUP_1: HallVenue[] = [
       "성인 대상 홀이며 신분증 확인이 있을 수 있습니다.",
       "천장 형태에 따른 설명은 일반적인 돔형 홀 기준입니다.",
     ],
-    related: ["suwon-korea", "osan-hobak", "paju-yadang-skydome"],
+    related: ["suwon-korea-guide", "osan-hobak-guide", "paju-yadang-skydome-guide"],
   },
 
   {
@@ -611,7 +611,7 @@ export const GROUP_1: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "지층 진입 계단이 있으니 이동 시 발밑을 살펴 주세요.",
     ],
-    related: ["suwon-chance-dome", "bucheon-gorae", "seongnam-shampoo"],
+    related: ["suwon-chance-dome", "bucheon-gorae", "seongnam-shampoo-guide"],
   },
 
   {
@@ -810,6 +810,6 @@ export const GROUP_1: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "역이 가까운 만큼 귀가도 대중교통 시간을 확인해 두시면 편합니다.",
     ],
-    related: ["suyu-shampoo", "paju-yadang-skydome", "seongnam-shampoo"],
+    related: ["suyu-shampoo", "paju-yadang-skydome-guide", "seongnam-shampoo-guide"],
   },
 ];
