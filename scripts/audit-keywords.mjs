@@ -114,51 +114,8 @@ function evaluatePage(p) {
   };
 }
 
-// ── 전국 나이트 예약 문의 페이지 (lib/venues.ts 데이터 기반) ─────────────
-// 12개 업소 페이지는 하나의 템플릿(app/night/[venue]/page.tsx)에서 생성되므로
-// 페이지 단위 밀도는 venues.ts 의 업소별 데이터 블록으로 측정한다.
-function evaluateVenues() {
-  const abs = path.join(ROOT, "lib/venues.ts");
-  if (!fs.existsSync(abs)) return [];
-  const raw = fs.readFileSync(abs, "utf-8");
 
-  const blocks = raw.split(/\n  \{\n    slug: "/).slice(1);
-  return blocks.map((chunk) => {
-    const slug = chunk.slice(0, chunk.indexOf('"'));
-    const kwMatch = chunk.match(/keyword:\s*"([^"]+)"/);
-    const keyword = kwMatch ? kwMatch[1] : "";
-
-    // TS 문법 노이즈 + 식별자/메타 전용 필드 제거 → 본문에 노출되는 문구만 남김
-    //  - aliases: 검색 키워드 배열(meta keywords·schema alternateName용, 본문 미노출)
-    //  - slug/keyword/spaced/short/locality/region: 식별자 필드
-    let text = chunk
-      .replace(/^\s*\/\/.*$/gm, "")
-      .replace(/aliases:\s*\[[\s\S]*?\],/, " ")
-      .replace(/^\s*(slug|keyword|spaced|short|locality|region|kakao|phone|contactName|areaLabel):.*$/gm, "")
-      .replace(/^\s*[a-zA-Z]+:\s*/gm, "")
-      .replace(/[{}[\]",]/g, " ");
-
-    const totalLen = textLength(text);
-    const count = countOccurrences(text, keyword);
-    const density = totalLen > 0 ? (count * keyword.length * 100) / totalLen : 0;
-
-    let verdict = "OK";
-    if (density > 4) verdict = "STUFFING_HIGH";
-    else if (density > 3) verdict = "STUFFING_WARN";
-    else if (density < 0.3) verdict = "UNDER_OPTIMIZED";
-
-    return {
-      route: `/night/${slug}`,
-      file: "lib/venues.ts",
-      totalLength: totalLen,
-      keywords: { [keyword]: { count, density: +density.toFixed(2) } },
-      primaryDensity: +density.toFixed(2),
-      verdict,
-    };
-  });
-}
-
-const results = [...PAGES.map(evaluatePage), ...evaluateVenues()];
+const results = PAGES.map(evaluatePage);
 
 const outDir = path.join(ROOT, "scripts");
 fs.mkdirSync(outDir, { recursive: true });

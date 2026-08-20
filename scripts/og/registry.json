@@ -80,66 +80,6 @@
   "kind": "changwon"
  },
  {
-  "route": "/night/bulgwang-hobak",
-  "slug": "night-bulgwang-hobak",
-  "kind": "venue"
- },
- {
-  "route": "/night/ulsan-champion",
-  "slug": "night-ulsan-champion",
-  "kind": "venue"
- },
- {
-  "route": "/night/daejeon-one",
-  "slug": "night-daejeon-one",
-  "kind": "venue"
- },
- {
-  "route": "/night/sillim-grandprix",
-  "slug": "night-sillim-grandprix",
-  "kind": "venue"
- },
- {
-  "route": "/night/sangbong-hangukgwan",
-  "slug": "night-sangbong-hangukgwan",
-  "kind": "venue"
- },
- {
-  "route": "/night/suyu-shampoo",
-  "slug": "night-suyu-shampoo",
-  "kind": "venue"
- },
- {
-  "route": "/night/busan-asiad",
-  "slug": "night-busan-asiad",
-  "kind": "venue"
- },
- {
-  "route": "/night/suwon-chancedome",
-  "slug": "night-suwon-chancedome",
-  "kind": "venue"
- },
- {
-  "route": "/night/ansan-hit",
-  "slug": "night-ansan-hit",
-  "kind": "venue"
- },
- {
-  "route": "/night/daejeon-seven",
-  "slug": "night-daejeon-seven",
-  "kind": "venue"
- },
- {
-  "route": "/night/ilsan-shampoo",
-  "slug": "night-ilsan-shampoo",
-  "kind": "venue"
- },
- {
-  "route": "/night/cheongdam",
-  "slug": "night-cheongdam",
-  "kind": "venue"
- },
- {
   "route": "/night/bulgwang-hobak-night",
   "slug": "night-bulgwang-hobak-night",
   "kind": "copy"
@@ -162,47 +102,47 @@
  {
   "route": "/night/daejeon-one-night",
   "slug": "night-daejeon-one-night",
-  "kind": "copy"
+  "kind": "venue"
  },
  {
   "route": "/night/sillim-grandprix-night",
   "slug": "night-sillim-grandprix-night",
-  "kind": "copy"
+  "kind": "venue"
  },
  {
   "route": "/night/sangbong-hangukgwan-night",
   "slug": "night-sangbong-hangukgwan-night",
-  "kind": "copy"
+  "kind": "venue"
  },
  {
   "route": "/night/suyu-shampoo-night",
   "slug": "night-suyu-shampoo-night",
-  "kind": "copy"
+  "kind": "venue"
  },
  {
   "route": "/night/busan-asiad-night",
   "slug": "night-busan-asiad-night",
-  "kind": "copy"
+  "kind": "venue"
  },
  {
   "route": "/night/suwon-chance-dome-night",
   "slug": "night-suwon-chance-dome-night",
-  "kind": "copy"
+  "kind": "venue"
  },
  {
   "route": "/night/ansan-hit-night",
   "slug": "night-ansan-hit-night",
-  "kind": "copy"
+  "kind": "venue"
  },
  {
   "route": "/night/daejeon-seven-night",
   "slug": "night-daejeon-seven-night",
-  "kind": "copy"
+  "kind": "venue"
  },
  {
   "route": "/night/ilsan-shampoo-night",
   "slug": "night-ilsan-shampoo-night",
-  "kind": "copy"
+  "kind": "venue"
  },
  {
   "route": "/hall/sillim-grandprix",

@@ -160,126 +160,6 @@
   "verdict": "PASS"
  },
  {
-  "route": "/night/bulgwang-hobak",
-  "slug": "night-bulgwang-hobak",
-  "img": "O",
-  "same": "O",
-  "meta": "9/9",
-  "size": "1200x1200",
-  "bytes": "44KB",
-  "verdict": "PASS"
- },
- {
-  "route": "/night/ulsan-champion",
-  "slug": "night-ulsan-champion",
-  "img": "O",
-  "same": "O",
-  "meta": "9/9",
-  "size": "1200x1200",
-  "bytes": "47KB",
-  "verdict": "PASS"
- },
- {
-  "route": "/night/daejeon-one",
-  "slug": "night-daejeon-one",
-  "img": "O",
-  "same": "O",
-  "meta": "9/9",
-  "size": "1200x1200",
-  "bytes": "33KB",
-  "verdict": "PASS"
- },
- {
-  "route": "/night/sillim-grandprix",
-  "slug": "night-sillim-grandprix",
-  "img": "O",
-  "same": "O",
-  "meta": "9/9",
-  "size": "1200x1200",
-  "bytes": "39KB",
-  "verdict": "PASS"
- },
- {
-  "route": "/night/sangbong-hangukgwan",
-  "slug": "night-sangbong-hangukgwan",
-  "img": "O",
-  "same": "O",
-  "meta": "9/9",
-  "size": "1200x1200",
-  "bytes": "41KB",
-  "verdict": "PASS"
- },
- {
-  "route": "/night/suyu-shampoo",
-  "slug": "night-suyu-shampoo",
-  "img": "O",
-  "same": "O",
-  "meta": "9/9",
-  "size": "1200x1200",
-  "bytes": "34KB",
-  "verdict": "PASS"
- },
- {
-  "route": "/night/busan-asiad",
-  "slug": "night-busan-asiad",
-  "img": "O",
-  "same": "O",
-  "meta": "9/9",
-  "size": "1200x1200",
-  "bytes": "39KB",
-  "verdict": "PASS"
- },
- {
-  "route": "/night/suwon-chancedome",
-  "slug": "night-suwon-chancedome",
-  "img": "O",
-  "same": "O",
-  "meta": "9/9",
-  "size": "1200x1200",
-  "bytes": "39KB",
-  "verdict": "PASS"
- },
- {
-  "route": "/night/ansan-hit",
-  "slug": "night-ansan-hit",
-  "img": "O",
-  "same": "O",
-  "meta": "9/9",
-  "size": "1200x1200",
-  "bytes": "33KB",
-  "verdict": "PASS"
- },
- {
-  "route": "/night/daejeon-seven",
-  "slug": "night-daejeon-seven",
-  "img": "O",
-  "same": "O",
-  "meta": "9/9",
-  "size": "1200x1200",
-  "bytes": "34KB",
-  "verdict": "PASS"
- },
- {
-  "route": "/night/ilsan-shampoo",
-  "slug": "night-ilsan-shampoo",
-  "img": "O",
-  "same": "O",
-  "meta": "9/9",
-  "size": "1200x1200",
-  "bytes": "36KB",
-  "verdict": "PASS"
- },
- {
-  "route": "/night/cheongdam",
-  "slug": "night-cheongdam",
-  "img": "O",
-  "same": "O",
-  "meta": "9/9",
-  "size": "1200x1200",
-  "bytes": "43KB",
-  "verdict": "PASS"
- },
- {
   "route": "/night/bulgwang-hobak-night",
   "slug": "night-bulgwang-hobak-night",
   "img": "O",
@@ -326,7 +206,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "39KB",
+  "bytes": "36KB",
   "verdict": "PASS"
  },
  {
@@ -336,7 +216,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "36KB",
+  "bytes": "35KB",
   "verdict": "PASS"
  },
  {
@@ -346,7 +226,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "43KB",
+  "bytes": "37KB",
   "verdict": "PASS"
  },
  {
@@ -356,7 +236,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "33KB",
+  "bytes": "29KB",
   "verdict": "PASS"
  },
  {
@@ -376,7 +256,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "42KB",
+  "bytes": "37KB",
   "verdict": "PASS"
  },
  {
@@ -386,7 +266,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "36KB",
+  "bytes": "31KB",
   "verdict": "PASS"
  },
  {
@@ -396,7 +276,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "32KB",
+  "bytes": "31KB",
   "verdict": "PASS"
  },
  {
@@ -406,7 +286,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "35KB",
+  "bytes": "34KB",
   "verdict": "PASS"
  },
  {
@@ -416,7 +296,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "38KB",
+  "bytes": "34KB",
   "verdict": "PASS"
  },
  {
@@ -426,7 +306,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "41KB",
+  "bytes": "37KB",
   "verdict": "PASS"
  },
  {
@@ -436,7 +316,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "33KB",
+  "bytes": "29KB",
   "verdict": "PASS"
  },
  {
@@ -446,7 +326,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "40KB",
+  "bytes": "36KB",
   "verdict": "PASS"
  },
  {
@@ -456,7 +336,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "41KB",
+  "bytes": "37KB",
   "verdict": "PASS"
  },
  {
@@ -466,7 +346,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "35KB",
+  "bytes": "31KB",
   "verdict": "PASS"
  },
  {
@@ -476,7 +356,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "35KB",
+  "bytes": "31KB",
   "verdict": "PASS"
  },
  {
@@ -486,7 +366,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "36KB",
+  "bytes": "32KB",
   "verdict": "PASS"
  },
  {
@@ -496,7 +376,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "35KB",
+  "bytes": "31KB",
   "verdict": "PASS"
  },
  {
@@ -506,7 +386,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "40KB",
+  "bytes": "36KB",
   "verdict": "PASS"
  },
  {
@@ -546,7 +426,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "38KB",
+  "bytes": "34KB",
   "verdict": "PASS"
  },
  {
@@ -556,7 +436,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "39KB",
+  "bytes": "35KB",
   "verdict": "PASS"
  },
  {
@@ -566,7 +446,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "34KB",
+  "bytes": "31KB",
   "verdict": "PASS"
  },
  {
@@ -576,7 +456,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "39KB",
+  "bytes": "35KB",
   "verdict": "PASS"
  },
  {
@@ -586,7 +466,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "33KB",
+  "bytes": "30KB",
   "verdict": "PASS"
  },
  {
@@ -596,7 +476,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "34KB",
+  "bytes": "30KB",
   "verdict": "PASS"
  },
  {
@@ -606,7 +486,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "40KB",
+  "bytes": "36KB",
   "verdict": "PASS"
  },
  {
@@ -616,7 +496,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "33KB",
+  "bytes": "29KB",
   "verdict": "PASS"
  },
  {
@@ -626,7 +506,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "42KB",
+  "bytes": "38KB",
   "verdict": "PASS"
  },
  {
@@ -636,7 +516,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "43KB",
+  "bytes": "39KB",
   "verdict": "PASS"
  },
  {
@@ -646,7 +526,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "42KB",
+  "bytes": "38KB",
   "verdict": "PASS"
  },
  {
@@ -656,7 +536,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "34KB",
+  "bytes": "30KB",
   "verdict": "PASS"
  },
  {
@@ -666,7 +546,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "39KB",
+  "bytes": "35KB",
   "verdict": "PASS"
  },
  {
@@ -676,7 +556,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "36KB",
+  "bytes": "32KB",
   "verdict": "PASS"
  },
  {
@@ -686,7 +566,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "39KB",
+  "bytes": "35KB",
   "verdict": "PASS"
  },
  {
@@ -696,7 +576,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "33KB",
+  "bytes": "29KB",
   "verdict": "PASS"
  },
  {
@@ -706,7 +586,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "35KB",
+  "bytes": "32KB",
   "verdict": "PASS"
  },
  {
@@ -716,7 +596,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "41KB",
+  "bytes": "37KB",
   "verdict": "PASS"
  },
  {
@@ -726,7 +606,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "42KB",
+  "bytes": "39KB",
   "verdict": "PASS"
  },
  {
@@ -736,7 +616,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "33KB",
+  "bytes": "30KB",
   "verdict": "PASS"
  },
  {
@@ -746,7 +626,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "36KB",
+  "bytes": "33KB",
   "verdict": "PASS"
  },
  {
@@ -756,7 +636,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "34KB",
+  "bytes": "30KB",
   "verdict": "PASS"
  },
  {
@@ -766,7 +646,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "32KB",
+  "bytes": "28KB",
   "verdict": "PASS"
  },
  {
@@ -776,7 +656,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "33KB",
+  "bytes": "29KB",
   "verdict": "PASS"
  },
  {
@@ -786,7 +666,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "35KB",
+  "bytes": "31KB",
   "verdict": "PASS"
  },
  {
@@ -796,7 +676,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "35KB",
+  "bytes": "31KB",
   "verdict": "PASS"
  },
  {
@@ -806,7 +686,7 @@
   "same": "O",
   "meta": "9/9",
   "size": "1200x1200",
-  "bytes": "33KB",
+  "bytes": "30KB",
   "verdict": "PASS"
  }
 ]

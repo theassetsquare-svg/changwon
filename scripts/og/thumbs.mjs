@@ -12,7 +12,9 @@
 //      public/og/*-og.png 와 같은 화면.
 //      업소 고유색 배경, 가장 큰 글자 = 업소명(붙여쓰기), 그 아래 지역명.
 //      담당자 전화가 있으면 하단에 검은 띠 + 담당자명 + 전화번호(두 번째로 큰 글자),
-//      없으면 같은 배경에 "나이트클럽 안내" + "창원 룰루랄라 나이트".
+//      없으면 같은 배경에 "나이트클럽 안내" 한 줄만 넣는다.
+//      ※ 다른 업소 카드에는 "창원 룰루랄라 나이트" 문구를 절대 넣지 않는다.
+//        (창원 카드 A 에만 들어간다)
 //      연령 기준이 확인된 곳만 우상단에 흰 알약으로 표시.
 //
 // 사용: node scripts/og/thumbs.mjs [--only=슬러그,슬러그]
@@ -209,7 +211,6 @@ function cardVenue({ bg, fg, name, area, contactName, phone, ageFull }) {
         },
         [
           row({ fontSize: 72, fontWeight: 900 }, "나이트클럽 안내"),
-          row({ marginTop: 34, fontSize: 36, fontWeight: 700 }, "창원 룰루랄라 나이트"),
         ],
       );
 
@@ -222,7 +223,6 @@ function cardVenue({ bg, fg, name, area, contactName, phone, ageFull }) {
 // ─────────────────────────── 페이지 목록 ───────────────────────────
 async function buildRegistry() {
   const site = await loadTs("lib/site.ts");
-  const venuesMod = await loadTs("lib/venues.ts");
   const adMod = await loadTs("lib/adnight-data.ts");
   const hallMods = fs
     .readdirSync(path.join(ROOT, "lib/hall"))
@@ -249,30 +249,17 @@ async function buildRegistry() {
     });
   }
 
-  // B-1. 예약 안내 12개
-  for (const v of venuesMod.VENUES) {
-    pages.push({
-      route: `/night/${v.slug}`,
-      slug: ogSlug(`/night/${v.slug}`),
-      kind: "venue",
-      spec: {
-        bg: adMod.AD_VENUES.find((a) => a.slug === `${v.slug}-night`)?.ogBg ?? "#1C2A6E",
-        fg: "#FFFFFF",
-        name: v.keyword,
-        area: v.areaLabel,
-        contactName: v.phone ? v.contactName : undefined,
-        phone: v.phone,
-      },
-    });
-  }
-
-  // B-2. 광고 페이지 13개 — 이미 만들어져 있으므로 기존 파일을 그대로 복사한다
+  // B-2. 광고 페이지 13개
+  //   담당자 전화가 있는 카드는 기존 파일을 그대로 복사한다(화면이 이미 맞다).
+  //   전화가 없는 카드는 옛 파일에 "창원 룰루랄라 나이트" 문구가 박혀 있으므로 다시 그린다.
+  //   AdNightPage 의 JSON-LD 가 /og/{slug}-og.png 를 직접 가리키므로 그 원본도 같이 갱신한다.
   for (const v of adMod.AD_VENUES) {
     pages.push({
       route: `/night/${v.slug}`,
       slug: ogSlug(`/night/${v.slug}`),
-      kind: "copy",
+      kind: v.phone ? "copy" : "venue",
       from: path.join(OUT_DIR, `${v.slug}-og.png`),
+      alsoWrite: v.phone ? undefined : path.join(OUT_DIR, `${v.slug}-og.png`),
       spec: {
         bg: v.ogBg,
         fg: v.ogFg,
@@ -332,7 +319,9 @@ for (const p of pages) {
 
   const node = p.kind === "changwon" ? cardChangwon(p.spec) : cardVenue(p.spec);
   const res = new ImageResponse(node, { width: 1200, height: 1200, fonts });
-  fs.writeFileSync(dest, Buffer.from(await res.arrayBuffer()));
+  const png = Buffer.from(await res.arrayBuffer());
+  fs.writeFileSync(dest, png);
+  if (p.alsoWrite) fs.writeFileSync(p.alsoWrite, png);
   made++;
 }
 

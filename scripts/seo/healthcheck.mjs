@@ -22,22 +22,6 @@ const CORE_ROUTES = [
   "/contact",
 ];
 
-// 전국 나이트 예약 문의 (lib/venues.ts 의 slug 와 동일해야 함)
-const VENUE_SLUGS = [
-  "bulgwang-hobak",
-  "ulsan-champion",
-  "daejeon-one",
-  "sillim-grandprix",
-  "sangbong-hangukgwan",
-  "suyu-shampoo",
-  "busan-asiad",
-  "suwon-chancedome",
-  "ansan-hit",
-  "daejeon-seven",
-  "ilsan-shampoo",
-  "cheongdam",
-];
-
 // 전국 나이트 홀 도감 40 (lib/hall/group-*.ts 의 slug 와 동일해야 함)
 const HALL_SLUGS = [
   "sillim-grandprix",
@@ -82,12 +66,10 @@ const HALL_SLUGS = [
   "jeju-do",
 ];
 
-const VENUE_ROUTES = VENUE_SLUGS.map((s) => `/night/${s}`);
 const HALL_ROUTES = HALL_SLUGS.map((s) => `/hall/${s}`);
 const ROUTES = [
   ...CORE_ROUTES,
   "/night",
-  ...VENUE_ROUTES,
   "/hall",
   ...HALL_ROUTES,
 ];
@@ -104,7 +86,6 @@ const FAQ_REQUIRED = new Set([
   "/news",
   "/event",
   "/night",
-  ...VENUE_ROUTES,
   ...HALL_ROUTES,
 ]);
 

@@ -5,7 +5,7 @@ import KakaoIdCopy from "@/components/KakaoIdCopy";
 import OgThumb from "@/components/OgThumb";
 import { SITE, SITE_OTHER } from "@/lib/site";
 import { thumb } from "@/lib/og";
-import { ADS, VENUES, venuePath } from "@/lib/venues";
+import { ADS } from "@/lib/venues";
 import { AD_VENUES } from "@/lib/adnight-data";
 import { nightPath } from "@/lib/adnight";
 
@@ -21,7 +21,7 @@ const THUMB = thumb({
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  keywords: VENUES.flatMap((v) => [v.keyword, v.spaced]),
+  keywords: AD_VENUES.flatMap((v) => [v.keyword, v.spaced]),
   alternates: { canonical: "/night" },
   openGraph: {
     type: "website",
@@ -88,12 +88,12 @@ export default function NightIndexPage() {
       {
         "@type": "ItemList",
         name: TITLE,
-        numberOfItems: VENUES.length,
-        itemListElement: VENUES.map((v, i) => ({
+        numberOfItems: AD_VENUES.length,
+        itemListElement: AD_VENUES.map((v, i) => ({
           "@type": "ListItem",
           position: i + 1,
           name: v.keyword,
-          url: `${SITE.url}${venuePath(v.slug)}`,
+          url: `${SITE.url}${nightPath(v.slug)}`,
         })),
       },
       {
@@ -144,9 +144,9 @@ export default function NightIndexPage() {
             한 줄 요약
           </p>
           <p className="mt-2 text-gray-100">
-            전국 {VENUES.length}개 지역 나이트의 예약 문의처를 한 곳에
-            모았습니다. 담당자가 등록된 지역은 연락처가 바로 표시되고, 등록 전인
-            지역은 그 사실을 그대로 적어둡니다. 만 19세 이상만 입장 가능합니다.
+            전국 {AD_VENUES.length}개 지역 나이트를 지역·업소별로 정리했습니다.
+            담당자가 등록된 곳은 연락처가 바로 표시되고, 등록 전인 곳은 그 사실을
+            그대로 적어둡니다. 만 19세 이상만 입장 가능합니다.
           </p>
         </aside>
 
@@ -155,32 +155,8 @@ export default function NightIndexPage() {
           <OgThumb pathname="/night" alt={THUMB.alt} />
         </figure>
 
-        <section>
-          <h2 className="mb-4 text-xl font-bold text-white">지역별 바로가기</h2>
-          <ul className="grid gap-2 sm:grid-cols-2">
-            {VENUES.map((v) => (
-              <li key={v.slug}>
-                <Link
-                  href={venuePath(v.slug)}
-                  className="flex h-full flex-col rounded-xl border border-line bg-elev p-4 transition hover:border-gold hover:bg-elev2"
-                >
-                  <p className="text-base font-extrabold text-gold">
-                    {v.keyword}
-                  </p>
-                  <p className="mt-1 text-xs text-gray-500">{v.areaLabel}</p>
-                  <p className="mt-2 text-sm text-gray-300">
-                    {v.phone
-                      ? `${v.contactName} ${v.phone}`
-                      : "담당자 등록 전 · 광고주 모집"}
-                  </p>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
-
         {/* 전국 나이트 안내 13곳 — 목록에서 1단계로 바로 도달 */}
-        <section className="mt-10">
+        <section>
           <h2 className="mb-4 text-xl font-bold text-white">
             지역별 나이트 안내 13곳
           </h2>

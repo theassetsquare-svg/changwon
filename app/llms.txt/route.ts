@@ -1,5 +1,5 @@
 import { NAV, PAGE_META, SITE } from "@/lib/site";
-import { ADS, VENUES, venuePath } from "@/lib/venues";
+import { ADS } from "@/lib/venues";
 import { AD_VENUES } from "@/lib/adnight-data";
 import { nightPath } from "@/lib/adnight";
 import { HALL_VENUES } from "@/lib/hall-data";
@@ -14,14 +14,6 @@ export function GET() {
       const meta = PAGE_META[n.href];
       const url = `${SITE.url}${n.href === "/" ? "" : n.href}`;
       return `- [${meta?.title ?? n.label}](${url}): ${meta?.capsule ?? meta?.description ?? ""}`;
-  }).join("\n");
-
-  const venuePages = VENUES.map((v) => {
-    const url = `${SITE.url}${venuePath(v.slug)}`;
-    const contact = v.phone
-      ? `${v.contactName} ${v.phone}`
-      : "예약 담당자 등록 전 (연락처 미게시, 광고주 모집 중)";
-    return `- [${v.keyword} 예약 문의](${url}): ${v.areaLabel}. 예약 문의 ${contact}. 만 19세 이상, 입장 시 신분증 확인.`;
   }).join("\n");
 
   // 전국 나이트 광고 페이지 13개 — URL · 업소명 · 지역 · 한 줄 설명
@@ -57,8 +49,7 @@ ${corePages}
 
 ## 전국 나이트 예약 문의 (지역별)
 
-- [전국 나이트 예약 문의 전체 목록](${SITE.url}/night): 지역별 예약 담당자 연락처 모음. 담당자 등록 전인 지역은 광고주 모집 중.
-${venuePages}
+- [전국 나이트 예약 문의 전체 목록](${SITE.url}/night): 지역별 예약 담당자 연락처 모음.
 
 ## 전국 나이트 안내 (지역·업소별 상세)
 
