@@ -190,7 +190,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/night/cheongdam-night",
+  "route": "/night/cheongdam-night-guide",
   "slug": "night-cheongdam-night",
   "img": "O",
   "same": "O",
@@ -230,7 +230,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/night/suyu-shampoo-night",
+  "route": "/night/suyu-shampoo-night-guide",
   "slug": "night-suyu-shampoo-night",
   "img": "O",
   "same": "O",
@@ -250,7 +250,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/night/suwon-chance-dome-night",
+  "route": "/night/suwon-chance-dome-night-guide",
   "slug": "night-suwon-chance-dome-night",
   "img": "O",
   "same": "O",
@@ -280,7 +280,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/night/ilsan-shampoo-night",
+  "route": "/night/ilsan-shampoo-night-guide",
   "slug": "night-ilsan-shampoo-night",
   "img": "O",
   "same": "O",
@@ -420,7 +420,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/hall/doksan-gukbingwan",
+  "route": "/hall/doksan-gukbingwan-guide",
   "slug": "hall-doksan-gukbingwan",
   "img": "O",
   "same": "O",
@@ -440,7 +440,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/hall/gangseo-hobak",
+  "route": "/hall/gangseo-hobak-guide",
   "slug": "hall-gangseo-hobak",
   "img": "O",
   "same": "O",
@@ -450,7 +450,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/hall/yeongdeungpo-terminal",
+  "route": "/hall/yeongdeungpo-terminal-guide",
   "slug": "hall-yeongdeungpo-terminal",
   "img": "O",
   "same": "O",
@@ -460,7 +460,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/hall/nowon-hobak",
+  "route": "/hall/nowon-hobak-guide",
   "slug": "hall-nowon-hobak",
   "img": "O",
   "same": "O",
@@ -470,7 +470,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/hall/gildong-chance",
+  "route": "/hall/gildong-chance-guide",
   "slug": "hall-gildong-chance",
   "img": "O",
   "same": "O",
@@ -480,7 +480,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/hall/paju-yadang-skydome",
+  "route": "/hall/paju-yadang-skydome-guide",
   "slug": "hall-paju-yadang-skydome",
   "img": "O",
   "same": "O",
@@ -490,7 +490,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/hall/guri-hobak",
+  "route": "/hall/guri-hobak-guide",
   "slug": "hall-guri-hobak",
   "img": "O",
   "same": "O",
@@ -500,7 +500,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/hall/uijeongbu-hangukgwan",
+  "route": "/hall/uijeongbu-hangukgwan-guide",
   "slug": "hall-uijeongbu-hangukgwan",
   "img": "O",
   "same": "O",
@@ -510,7 +510,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/hall/uijeongbu-baekakgwan",
+  "route": "/hall/uijeongbu-baekakgwan-guide",
   "slug": "hall-uijeongbu-baekakgwan",
   "img": "O",
   "same": "O",
@@ -520,7 +520,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/hall/suwon-korea",
+  "route": "/hall/suwon-korea-guide",
   "slug": "hall-suwon-korea",
   "img": "O",
   "same": "O",
@@ -530,7 +530,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/hall/osan-hobak",
+  "route": "/hall/osan-hobak-guide",
   "slug": "hall-osan-hobak",
   "img": "O",
   "same": "O",
@@ -540,7 +540,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/hall/indeogwon-gukbingwan",
+  "route": "/hall/indeogwon-gukbingwan-guide",
   "slug": "hall-indeogwon-gukbingwan",
   "img": "O",
   "same": "O",
@@ -550,7 +550,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/hall/seongnam-shampoo",
+  "route": "/hall/seongnam-shampoo-guide",
   "slug": "hall-seongnam-shampoo",
   "img": "O",
   "same": "O",
@@ -560,7 +560,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/hall/incheon-arabian",
+  "route": "/hall/incheon-arabian-guide",
   "slug": "hall-incheon-arabian",
   "img": "O",
   "same": "O",
@@ -590,7 +590,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/hall/cheonan-stardome",
+  "route": "/hall/cheonan-stardome-guide",
   "slug": "hall-cheonan-stardome",
   "img": "O",
   "same": "O",
@@ -620,7 +620,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/hall/ulsan-newworld",
+  "route": "/hall/ulsan-newworld-guide",
   "slug": "hall-ulsan-newworld",
   "img": "O",
   "same": "O",
@@ -650,7 +650,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/hall/gumi-hobak",
+  "route": "/hall/gumi-hobak-guide",
   "slug": "hall-gumi-hobak",
   "img": "O",
   "same": "O",
@@ -680,7 +680,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/hall/jeju-do",
+  "route": "/hall/jeju-do-guide",
   "slug": "hall-jeju-do",
   "img": "O",
   "same": "O",

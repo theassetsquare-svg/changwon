@@ -372,7 +372,7 @@
   "same": "O"
  },
  {
-  "route": "/night/cheongdam-night",
+  "route": "/night/cheongdam-night-guide",
   "slug": "night-cheongdam-night",
   "http": 200,
   "ctype": "image/png",
@@ -420,7 +420,7 @@
   "same": "O"
  },
  {
-  "route": "/night/suyu-shampoo-night",
+  "route": "/night/suyu-shampoo-night-guide",
   "slug": "night-suyu-shampoo-night",
   "http": 200,
   "ctype": "image/png",
@@ -444,7 +444,7 @@
   "same": "O"
  },
  {
-  "route": "/night/suwon-chance-dome-night",
+  "route": "/night/suwon-chance-dome-night-guide",
   "slug": "night-suwon-chance-dome-night",
   "http": 200,
   "ctype": "image/png",
@@ -480,7 +480,7 @@
   "same": "O"
  },
  {
-  "route": "/night/ilsan-shampoo-night",
+  "route": "/night/ilsan-shampoo-night-guide",
   "slug": "night-ilsan-shampoo-night",
   "http": 200,
   "ctype": "image/png",
@@ -648,7 +648,7 @@
   "same": "O"
  },
  {
-  "route": "/hall/doksan-gukbingwan",
+  "route": "/hall/doksan-gukbingwan-guide",
   "slug": "hall-doksan-gukbingwan",
   "http": 200,
   "ctype": "image/png",
@@ -672,7 +672,7 @@
   "same": "O"
  },
  {
-  "route": "/hall/gangseo-hobak",
+  "route": "/hall/gangseo-hobak-guide",
   "slug": "hall-gangseo-hobak",
   "http": 200,
   "ctype": "image/png",
@@ -684,7 +684,7 @@
   "same": "O"
  },
  {
-  "route": "/hall/yeongdeungpo-terminal",
+  "route": "/hall/yeongdeungpo-terminal-guide",
   "slug": "hall-yeongdeungpo-terminal",
   "http": 200,
   "ctype": "image/png",
@@ -696,7 +696,7 @@
   "same": "O"
  },
  {
-  "route": "/hall/nowon-hobak",
+  "route": "/hall/nowon-hobak-guide",
   "slug": "hall-nowon-hobak",
   "http": 200,
   "ctype": "image/png",
@@ -708,7 +708,7 @@
   "same": "O"
  },
  {
-  "route": "/hall/gildong-chance",
+  "route": "/hall/gildong-chance-guide",
   "slug": "hall-gildong-chance",
   "http": 200,
   "ctype": "image/png",
@@ -720,7 +720,7 @@
   "same": "O"
  },
  {
-  "route": "/hall/paju-yadang-skydome",
+  "route": "/hall/paju-yadang-skydome-guide",
   "slug": "hall-paju-yadang-skydome",
   "http": 200,
   "ctype": "image/png",
@@ -732,7 +732,7 @@
   "same": "O"
  },
  {
-  "route": "/hall/guri-hobak",
+  "route": "/hall/guri-hobak-guide",
   "slug": "hall-guri-hobak",
   "http": 200,
   "ctype": "image/png",
@@ -744,7 +744,7 @@
   "same": "O"
  },
  {
-  "route": "/hall/uijeongbu-hangukgwan",
+  "route": "/hall/uijeongbu-hangukgwan-guide",
   "slug": "hall-uijeongbu-hangukgwan",
   "http": 200,
   "ctype": "image/png",
@@ -756,7 +756,7 @@
   "same": "O"
  },
  {
-  "route": "/hall/uijeongbu-baekakgwan",
+  "route": "/hall/uijeongbu-baekakgwan-guide",
   "slug": "hall-uijeongbu-baekakgwan",
   "http": 200,
   "ctype": "image/png",
@@ -768,7 +768,7 @@
   "same": "O"
  },
  {
-  "route": "/hall/suwon-korea",
+  "route": "/hall/suwon-korea-guide",
   "slug": "hall-suwon-korea",
   "http": 200,
   "ctype": "image/png",
@@ -780,7 +780,7 @@
   "same": "O"
  },
  {
-  "route": "/hall/osan-hobak",
+  "route": "/hall/osan-hobak-guide",
   "slug": "hall-osan-hobak",
   "http": 200,
   "ctype": "image/png",
@@ -792,7 +792,7 @@
   "same": "O"
  },
  {
-  "route": "/hall/indeogwon-gukbingwan",
+  "route": "/hall/indeogwon-gukbingwan-guide",
   "slug": "hall-indeogwon-gukbingwan",
   "http": 200,
   "ctype": "image/png",
@@ -804,7 +804,7 @@
   "same": "O"
  },
  {
-  "route": "/hall/seongnam-shampoo",
+  "route": "/hall/seongnam-shampoo-guide",
   "slug": "hall-seongnam-shampoo",
   "http": 200,
   "ctype": "image/png",
@@ -816,7 +816,7 @@
   "same": "O"
  },
  {
-  "route": "/hall/incheon-arabian",
+  "route": "/hall/incheon-arabian-guide",
   "slug": "hall-incheon-arabian",
   "http": 200,
   "ctype": "image/png",
@@ -852,7 +852,7 @@
   "same": "O"
  },
  {
-  "route": "/hall/cheonan-stardome",
+  "route": "/hall/cheonan-stardome-guide",
   "slug": "hall-cheonan-stardome",
   "http": 200,
   "ctype": "image/png",
@@ -888,7 +888,7 @@
   "same": "O"
  },
  {
-  "route": "/hall/ulsan-newworld",
+  "route": "/hall/ulsan-newworld-guide",
   "slug": "hall-ulsan-newworld",
   "http": 200,
   "ctype": "image/png",
@@ -924,7 +924,7 @@
   "same": "O"
  },
  {
-  "route": "/hall/gumi-hobak",
+  "route": "/hall/gumi-hobak-guide",
   "slug": "hall-gumi-hobak",
   "http": 200,
   "ctype": "image/png",
@@ -960,7 +960,7 @@
   "same": "O"
  },
  {
-  "route": "/hall/jeju-do",
+  "route": "/hall/jeju-do-guide",
   "slug": "hall-jeju-do",
   "http": 200,
   "ctype": "image/png",
