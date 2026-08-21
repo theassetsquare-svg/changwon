@@ -38,6 +38,8 @@ export type AdVenue = {
   region: string;
   group: "A" | "B";
   contactName?: string;
+  /** 썸네일 그림을 바꿨을 때 캐시를 피하려고 붙이는 판 번호. 없으면 기존 파일명 그대로. */
+  ogV?: string;
   phone?: string;
   /** "만 27세 이상" 같은 완전문. 확인된 업소만 */
   ageFull?: string;

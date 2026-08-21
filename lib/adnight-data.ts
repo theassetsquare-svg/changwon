@@ -1336,7 +1336,10 @@ export const AD_VENUES: AdVenue[] = [
     areaLabel: "대전 중구 유천동",
     locality: "대전광역시 중구",
     region: "대전광역시",
-    group: "B",
+    group: "A",
+    contactName: "영탁",
+    phone: "010-7770-0869",
+    ogV: "-v2",
     title: "대전세븐나이트 첫 경험 정리 유천동 당디로 홀 첫 방문",
     description:
       "대전세븐나이트 문 앞에서 뭘 해야 할지 몰라 서 있는 사람이 많습니다. 들어가서 무엇부터 하고 어디에 앉고 언제 움직여야 하는지 첫 방문자 기준으로만 적었습니다.",

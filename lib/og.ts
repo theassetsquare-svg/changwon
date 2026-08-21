@@ -34,6 +34,8 @@ export type ThumbInput = {
   pathname: string;
   /** 가게이름 + 페이지 주제. 네이버·트위터 alt 로 그대로 나간다 */
   alt: string;
+  /** 썸네일 그림을 바꿨을 때 캐시를 피하려고 붙이는 판 번호. 없으면 기존 파일명 그대로. */
+  v?: string;
 };
 
 /**
@@ -41,8 +43,8 @@ export type ThumbInput = {
  * openGraph.images / twitter / other.thumbnail 세 곳에 나눠 넣어야 하므로
  * 조립된 조각을 그대로 돌려준다. 페이지에서 spread 로 합친다.
  */
-export function thumb({ pathname, alt }: ThumbInput) {
-  const url = ogAbsolute(ogSlug(pathname));
+export function thumb({ pathname, alt, v }: ThumbInput) {
+  const url = ogAbsolute(ogSlug(pathname) + (v ?? ""));
   return {
     url,
     /** openGraph.images 에 그대로 넣는다 */

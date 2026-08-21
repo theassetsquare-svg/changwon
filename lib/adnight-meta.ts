@@ -21,7 +21,7 @@ export function adMetadata(v: AdVenue): Metadata {
   const path = nightPath(v.slug);
   const url = `${SITE.url}${path}`;
   // 썸네일 파일 경로는 lib/og.ts 한 곳에서만 계산한다 (본문 <img> 와 동일 보장)
-  const t = thumb({ pathname: path, alt: v.ogAlt });
+  const t = thumb({ pathname: path, alt: v.ogAlt, v: (v as any).ogV });
   const image = t.url;
 
   return {

@@ -624,6 +624,9 @@ export const GROUP_1: HallVenue[] = [
     locality: "대전광역시 중구",
     region: "대전광역시",
     hallType: "단일 홀",
+    contactName: "영탁",
+    phone: "010-7770-0869",
+    ogV: "-v2",
     title: "대전세븐나이트, 무대 뒤쪽이 비어 있는 이유",
     description:
       "대전세븐나이트는 당디로 112에 있는 홀입니다. 어느 홀이든 무대 뒤는 손님 자리가 되지 않습니다. 그 빈 공간이 나머지 자리 배치를 어떻게 결정하는지 정리했습니다.",

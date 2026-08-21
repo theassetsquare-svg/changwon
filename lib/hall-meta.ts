@@ -16,7 +16,7 @@ export const hallViewport: Viewport = {
 export function hallMetadata(v: HallVenue): Metadata {
   const path = hallPath(v.slug);
   const url = `${SITE.url}${path}`;
-  const t = thumb({ pathname: path, alt: v.ogAlt });
+  const t = thumb({ pathname: path, alt: v.ogAlt, v: (v as any).ogV });
 
   return {
     title: v.title,
