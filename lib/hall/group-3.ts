@@ -393,7 +393,7 @@ export const GROUP_3: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "천장 형태에 따른 설명은 일반적인 돔형 홀 기준입니다.",
     ],
-    related: ["suwon-chance-dome", "cheonan-stardome-guide", "ilsan-shampoo"],
+    related: ["suwon-chance-dome", "cheonan-stardome-guide", "ilsan-shampoo-guide"],
   },
 
   {

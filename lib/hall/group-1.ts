@@ -7,7 +7,7 @@ import type { HallVenue } from "../hall";
 export const GROUP_1: HallVenue[] = [
   {
     no: 1,
-    slug: "sillim-grandprix",
+    slug: "sillim-grandprix-guide",
     keyword: "신림그랑프리나이트",
     spaced: "신림 그랑프리나이트",
     regionType: "관악구 나이트클럽",
@@ -205,7 +205,7 @@ export const GROUP_1: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "귀가는 대리운전이나 대중교통을 미리 정해 두시면 편합니다.",
     ],
-    related: ["sillim-grandprix", "nowon-hobak-guide", "suyu-shampoo"],
+    related: ["sillim-grandprix-guide", "nowon-hobak-guide", "suyu-shampoo"],
   },
 
   {
@@ -410,7 +410,7 @@ export const GROUP_1: HallVenue[] = [
       "성인 대상 홀입니다. 입장 시 신분증 확인이 있을 수 있습니다.",
       "온천장 상권 골목이라 지상 주차가 어렵습니다. 대중교통이나 대리를 권합니다.",
     ],
-    related: ["ulsan-champion", "daegu-hobak", "changwon-lululala"],
+    related: ["ulsan-champion-guide", "daegu-hobak", "changwon-lululala"],
   },
 
   {
@@ -722,7 +722,7 @@ export const GROUP_1: HallVenue[] = [
 
   {
     no: 8,
-    slug: "ilsan-shampoo",
+    slug: "ilsan-shampoo-guide",
     keyword: "일산샴푸나이트",
     spaced: "일산 샴푸나이트",
     regionType: "고양 나이트클럽",

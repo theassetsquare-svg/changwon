@@ -294,7 +294,7 @@ export const GROUP_4: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "확인되지 않은 층·영업시간·요금은 싣지 않았습니다.",
     ],
-    related: ["suyu-shampoo", "ilsan-shampoo", "suwon-korea-guide"],
+    related: ["suyu-shampoo", "ilsan-shampoo-guide", "suwon-korea-guide"],
   },
 
   {

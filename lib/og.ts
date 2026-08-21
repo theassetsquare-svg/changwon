@@ -12,7 +12,7 @@ import { SITE } from "./site";
  *   "/"                       → "home"
  *   "/about"                  → "about"
  *   "/hall"                   → "hall"
- *   "/hall/sillim-grandprix"  → "hall-sillim-grandprix"
+ *   "/hall/sillim-grandprix-guide"  → "hall-sillim-grandprix"
  *   "/night/sillim-grandprix" → "night-sillim-grandprix"
  * /hall/x 와 /night/x 는 슬러그가 겹치므로 반드시 접두사를 붙인다.
  */

@@ -372,7 +372,7 @@
   "same": "O"
  },
  {
-  "route": "/night/cheongdam-night-hall",
+  "route": "/night/cheongdam-night-guide",
   "slug": "night-cheongdam-night",
   "http": 200,
   "ctype": "image/png",
@@ -420,7 +420,7 @@
   "same": "O"
  },
  {
-  "route": "/night/suyu-shampoo-night-hall",
+  "route": "/night/suyu-shampoo-night-guide",
   "slug": "night-suyu-shampoo-night",
   "http": 200,
   "ctype": "image/png",
@@ -444,7 +444,7 @@
   "same": "O"
  },
  {
-  "route": "/night/suwon-chance-dome-night-hall",
+  "route": "/night/suwon-chance-dome-night-guide",
   "slug": "night-suwon-chance-dome-night",
   "http": 200,
   "ctype": "image/png",
@@ -480,7 +480,7 @@
   "same": "O"
  },
  {
-  "route": "/night/ilsan-shampoo-night-hall",
+  "route": "/night/ilsan-shampoo-night-guide",
   "slug": "night-ilsan-shampoo-night",
   "http": 200,
   "ctype": "image/png",
@@ -492,7 +492,7 @@
   "same": "O"
  },
  {
-  "route": "/hall/sillim-grandprix",
+  "route": "/hall/sillim-grandprix-guide",
   "slug": "hall-sillim-grandprix",
   "http": 200,
   "ctype": "image/png",
@@ -576,7 +576,7 @@
   "same": "O"
  },
  {
-  "route": "/hall/ilsan-shampoo",
+  "route": "/hall/ilsan-shampoo-guide",
   "slug": "hall-ilsan-shampoo",
   "http": 200,
   "ctype": "image/png",
@@ -636,7 +636,7 @@
   "same": "O"
  },
  {
-  "route": "/hall/ulsan-champion",
+  "route": "/hall/ulsan-champion-guide",
   "slug": "hall-ulsan-champion",
   "http": 200,
   "ctype": "image/png",

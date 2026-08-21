@@ -195,7 +195,7 @@ export const GROUP_5: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "삼산동 상권은 심야 교통이 혼잡합니다. 귀가 수단을 미리 정해 두세요.",
     ],
-    related: ["ulsan-champion", "busan-asiad", "daegu-hobak"],
+    related: ["ulsan-champion-guide", "busan-asiad", "daegu-hobak"],
   },
 
   {
