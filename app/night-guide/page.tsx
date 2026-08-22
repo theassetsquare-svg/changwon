@@ -14,7 +14,7 @@ const DESCRIPTION =
   "불광동호박나이트·울산챔피언나이트·청담나이트 등 전국 나이트 예약 문의처를 지역별로 정리했습니다. 담당자 등록 전인 지역은 광고주를 모집합니다. 광고문의 카톡 besta12. 만 19세 이상, 입장 시 신분증 확인.";
 
 const THUMB = thumb({
-  pathname: "/night",
+  pathname: "/night-guide/",
   alt: `${SITE.nameNoSpace} 전국 나이트 예약 문의 — 지역별 담당자 연락처`,
 });
 
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   keywords: AD_VENUES.flatMap((v) => [v.keyword, v.spaced]),
-  alternates: { canonical: "/night" },
+  alternates: { canonical: "/night-guide/" },
   openGraph: {
     type: "website",
     locale: "ko_KR",
@@ -152,7 +152,7 @@ export default function NightIndexPage() {
 
         {/* 썸네일 — og:image 와 같은 파일을 본문에도 실제로 렌더한다 */}
         <figure className="mb-8">
-          <OgThumb pathname="/night" alt={THUMB.alt} />
+          <OgThumb pathname="/night-guide/" alt={THUMB.alt} />
         </figure>
 
         {/* 전국 나이트 안내 13곳 — 목록에서 1단계로 바로 도달 */}

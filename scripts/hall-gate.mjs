@@ -168,7 +168,7 @@ for (const slug of slugs) {
   }
 
   // ── G9 : 내부 링크 (허브 + 홈 + 관련 3개 이상) ──────────
-  if (!body.includes('href="/hall"')) warn("G9", slug, "허브 링크 없음");
+  if (!body.includes('href="/hall-guide/"')) warn("G9", slug, "허브 링크 없음");
   if (!body.includes('href="/"')) warn("G9", slug, "홈 링크 없음");
   const rel = [...body.matchAll(/href="\/hall\/([a-z0-9-]+)"/g)].map(
     (m) => m[1]
@@ -228,7 +228,7 @@ for (const slug of slugs) {
   // 홈은 '창원에서 성공하는 방법' 글 하나만 두는 페이지다(2026-08-18 변경).
   // 카테고리 메뉴·닉네임·전화번호를 전부 걷어냈으므로 홈의 G7·G9(홀 도감 링크 /
   // '홀 한 바퀴' 랜딩)와 G10(로또 번호 표기) 검사는 적용하지 않는다.
-  // 허브(/hall)와 각 홀 페이지 검사는 그대로 둔다.
+  // 허브(/hall-guide/)와 각 홀 페이지 검사는 그대로 둔다.
   if (/010-\d{4}-\d{4}/.test(strip(html)))
     fails.push("G10 · home — 홈 본문에 전화번호가 남아 있음");
   if (!strip(html).includes("창원에서 성공하는 방법"))

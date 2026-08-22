@@ -70,12 +70,12 @@
   "kind": "changwon"
  },
  {
-  "route": "/night",
+  "route": "/night-guide/",
   "slug": "night",
   "kind": "changwon"
  },
  {
-  "route": "/hall",
+  "route": "/hall-guide/",
   "slug": "hall",
   "kind": "changwon"
  },
@@ -95,7 +95,7 @@
   "kind": "copy"
  },
  {
-  "route": "/night/cheongdam-night-guide",
+  "route": "/night/night-cheongdam",
   "slug": "night-cheongdam-night",
   "kind": "copy"
  },
@@ -105,17 +105,17 @@
   "kind": "venue"
  },
  {
-  "route": "/night/sillim-grandprix-night",
+  "route": "/night-guide/sillim-grandprix-night",
   "slug": "night-sillim-grandprix-night",
   "kind": "venue"
  },
  {
-  "route": "/night/sangbong-hangukgwan-night",
+  "route": "/night-guide/sangbong-hangukgwan-night",
   "slug": "night-sangbong-hangukgwan-night",
   "kind": "venue"
  },
  {
-  "route": "/night/suyu-shampoo-night-guide",
+  "route": "/night-guide/suyu-shampoo-night-guide",
   "slug": "night-suyu-shampoo-night",
   "kind": "venue"
  },
@@ -125,7 +125,7 @@
   "kind": "venue"
  },
  {
-  "route": "/night/suwon-chance-dome-night-guide",
+  "route": "/night-guide/suwon-chance-dome-night-guide",
   "slug": "night-suwon-chance-dome-night",
   "kind": "venue"
  },
@@ -140,22 +140,22 @@
   "kind": "venue"
  },
  {
-  "route": "/night/ilsan-shampoo-night-guide",
+  "route": "/night/night-shampoo-ilsan",
   "slug": "night-ilsan-shampoo-night",
   "kind": "venue"
  },
  {
-  "route": "/hall/sillim-grandprix-guide",
+  "route": "/hall-guide/sillim-grandprix-guide",
   "slug": "hall-sillim-grandprix",
   "kind": "venue"
  },
  {
-  "route": "/hall/sangbong-hangukgwan",
+  "route": "/hall-guide/sangbong-hangukgwan",
   "slug": "hall-sangbong-hangukgwan",
   "kind": "venue"
  },
  {
-  "route": "/hall/suyu-shampoo",
+  "route": "/hall-guide/suyu-shampoo",
   "slug": "hall-suyu-shampoo",
   "kind": "venue"
  },
@@ -165,7 +165,7 @@
   "kind": "venue"
  },
  {
-  "route": "/hall/suwon-chance-dome",
+  "route": "/hall-guide/suwon-chance-dome",
   "slug": "hall-suwon-chance-dome",
   "kind": "venue"
  },
@@ -180,7 +180,7 @@
   "kind": "venue"
  },
  {
-  "route": "/hall/ilsan-shampoo-guide",
+  "route": "/hall/ilsan-shampoo-hall",
   "slug": "hall-ilsan-shampoo",
   "kind": "venue"
  },
@@ -205,12 +205,12 @@
   "kind": "venue"
  },
  {
-  "route": "/hall/ulsan-champion-guide",
+  "route": "/hall/ulsan-champion-hall",
   "slug": "hall-ulsan-champion",
   "kind": "venue"
  },
  {
-  "route": "/hall/doksan-gukbingwan-guide",
+  "route": "/hall/doksan-gukbingwan-hall",
   "slug": "hall-doksan-gukbingwan",
   "kind": "venue"
  },
@@ -220,67 +220,67 @@
   "kind": "venue"
  },
  {
-  "route": "/hall/gangseo-hobak-guide",
+  "route": "/hall/gangseo-hobak-hall",
   "slug": "hall-gangseo-hobak",
   "kind": "venue"
  },
  {
-  "route": "/hall/yeongdeungpo-terminal-guide",
+  "route": "/hall/yeongdeungpo-terminal-hall",
   "slug": "hall-yeongdeungpo-terminal",
   "kind": "venue"
  },
  {
-  "route": "/hall/nowon-hobak-guide",
+  "route": "/hall/nowon-hobak-hall",
   "slug": "hall-nowon-hobak",
   "kind": "venue"
  },
  {
-  "route": "/hall/gildong-chance-guide",
+  "route": "/hall/gildong-chance-hall",
   "slug": "hall-gildong-chance",
   "kind": "venue"
  },
  {
-  "route": "/hall/paju-yadang-skydome-guide",
+  "route": "/hall/paju-yadang-skydome-hall",
   "slug": "hall-paju-yadang-skydome",
   "kind": "venue"
  },
  {
-  "route": "/hall/guri-hobak-guide",
+  "route": "/hall/guri-hobak-hall",
   "slug": "hall-guri-hobak",
   "kind": "venue"
  },
  {
-  "route": "/hall/uijeongbu-hangukgwan-guide",
+  "route": "/hall/uijeongbu-hangukgwan-hall",
   "slug": "hall-uijeongbu-hangukgwan",
   "kind": "venue"
  },
  {
-  "route": "/hall/uijeongbu-baekakgwan-guide",
+  "route": "/hall/uijeongbu-baekakgwan-hall",
   "slug": "hall-uijeongbu-baekakgwan",
   "kind": "venue"
  },
  {
-  "route": "/hall/suwon-korea-guide",
+  "route": "/hall-guide/suwon-korea-guide",
   "slug": "hall-suwon-korea",
   "kind": "venue"
  },
  {
-  "route": "/hall/osan-hobak-guide",
+  "route": "/hall/osan-hobak-hall",
   "slug": "hall-osan-hobak",
   "kind": "venue"
  },
  {
-  "route": "/hall/indeogwon-gukbingwan-guide",
+  "route": "/hall/indeogwon-gukbingwan-hall",
   "slug": "hall-indeogwon-gukbingwan",
   "kind": "venue"
  },
  {
-  "route": "/hall/seongnam-shampoo-guide",
+  "route": "/hall-guide/seongnam-shampoo-guide",
   "slug": "hall-seongnam-shampoo",
   "kind": "venue"
  },
  {
-  "route": "/hall/incheon-arabian-guide",
+  "route": "/hall/incheon-arabian-hall",
   "slug": "hall-incheon-arabian",
   "kind": "venue"
  },
@@ -295,7 +295,7 @@
   "kind": "venue"
  },
  {
-  "route": "/hall/cheonan-stardome-guide",
+  "route": "/hall/cheonan-stardome-hall",
   "slug": "hall-cheonan-stardome",
   "kind": "venue"
  },
@@ -310,12 +310,12 @@
   "kind": "venue"
  },
  {
-  "route": "/hall/ulsan-newworld-guide",
+  "route": "/hall/ulsan-newworld-hall",
   "slug": "hall-ulsan-newworld",
   "kind": "venue"
  },
  {
-  "route": "/hall/seosan-hobak",
+  "route": "/hall-guide/seosan-hobak",
   "slug": "hall-seosan-hobak",
   "kind": "venue"
  },
@@ -325,7 +325,7 @@
   "kind": "venue"
  },
  {
-  "route": "/hall/gumi-hobak-guide",
+  "route": "/hall/gumi-hobak-hall",
   "slug": "hall-gumi-hobak",
   "kind": "venue"
  },
@@ -340,7 +340,7 @@
   "kind": "venue"
  },
  {
-  "route": "/hall/jeju-do-guide",
+  "route": "/hall/jeju-do-hall",
   "slug": "hall-jeju-do",
   "kind": "venue"
  }

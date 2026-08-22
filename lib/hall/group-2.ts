@@ -102,7 +102,7 @@ export const GROUP_2: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "호텔 건물 내 시설이므로 로비 이용 예절을 지켜 주세요.",
     ],
-    related: ["sillim-grandprix-guide", "gildong-chance-guide", "incheon-arabian-guide"],
+    related: ["sillim-grandprix-hall", "gildong-chance-hall", "incheon-arabian-hall"],
   },
 
   {
@@ -313,7 +313,7 @@ export const GROUP_2: HallVenue[] = [
       "만 27세 이상만 출입할 수 있고 신분증을 확인합니다.",
       "귀가는 대리나 동행을 미리 정해 두시면 편합니다.",
     ],
-    related: ["busan-asiad", "ulsan-champion-guide", "daegu-hobak"],
+    related: ["busan-asiad", "ulsan-champion-hall", "daegu-hobak"],
   },
 
   {
@@ -413,12 +413,12 @@ export const GROUP_2: HallVenue[] = [
       "성인 대상 홀이라 입장할 때 신분증을 확인할 수 있습니다.",
       "마시고 운전하지 마시고 대리를 이용해 주세요.",
     ],
-    related: ["nowon-hobak-guide", "gangseo-hobak-guide", "yeongdeungpo-terminal-guide"],
+    related: ["nowon-hobak-hall", "gangseo-hobak-hall", "yeongdeungpo-terminal-hall"],
   },
 
   {
     no: 13,
-    slug: "ulsan-champion-guide",
+    slug: "ulsan-champion-hall",
     keyword: "울산챔피언나이트",
     spaced: "울산 챔피언나이트",
     regionType: "울산 나이트클럽",
@@ -514,12 +514,12 @@ export const GROUP_2: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "삼산동 상권이라 주차가 혼잡합니다. 대리나 대중교통을 권합니다.",
     ],
-    related: ["ulsan-newworld-guide", "busan-asiad", "changwon-lululala"],
+    related: ["ulsan-newworld-hall", "busan-asiad", "changwon-lululala"],
   },
 
   {
     no: 14,
-    slug: "doksan-gukbingwan-guide",
+    slug: "doksan-gukbingwan-hall",
     keyword: "독산동국빈관나이트",
     spaced: "독산동 국빈관나이트",
     regionType: "금천구 나이트클럽",
@@ -611,7 +611,7 @@ export const GROUP_2: HallVenue[] = [
       "확인되지 않은 층·영업시간·요금은 적지 않았습니다.",
       "성인 대상 홀이며 신분증 확인이 있을 수 있습니다.",
     ],
-    related: ["gangseo-hobak-guide", "yeongdeungpo-terminal-guide", "sillim-grandprix-guide"],
+    related: ["gangseo-hobak-hall", "yeongdeungpo-terminal-hall", "sillim-grandprix-hall"],
   },
 
   {
@@ -707,12 +707,12 @@ export const GROUP_2: HallVenue[] = [
       "구조 설명은 일반적인 나이트 홀 기준이며 특정 업소의 실제 배치가 아닙니다.",
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
     ],
-    related: ["sangbong-hangukgwan", "nowon-hobak-guide", "gildong-chance-guide"],
+    related: ["sangbong-hangukgwan", "nowon-hobak-hall", "gildong-chance-hall"],
   },
 
   {
     no: 16,
-    slug: "gangseo-hobak-guide",
+    slug: "gangseo-hobak-hall",
     keyword: "강서호박나이트",
     spaced: "강서 호박나이트",
     regionType: "강서구 나이트클럽",
@@ -804,6 +804,6 @@ export const GROUP_2: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "확인되지 않은 영업시간·요금은 싣지 않았습니다.",
     ],
-    related: ["bulgwang-hobak", "yeongdeungpo-terminal-guide", "doksan-gukbingwan-guide"],
+    related: ["bulgwang-hobak", "yeongdeungpo-terminal-hall", "doksan-gukbingwan-hall"],
   },
 ];

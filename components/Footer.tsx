@@ -29,12 +29,12 @@ export default function Footer() {
           사업자번호 <span className="placeholder">{PLACEHOLDERS.businessNumber}</span>
         </p>
         <p className="pt-2">
-          <Link href="/night" className="text-gold underline">
+          <Link href="/night-guide/" className="text-gold underline">
             전국 나이트 예약 문의 →
           </Link>
         </p>
         <p>
-          <Link href="/hall" className="text-gold underline">
+          <Link href="/hall-guide/" className="text-gold underline">
             전국 나이트 홀 도감 40 →
           </Link>
         </p>

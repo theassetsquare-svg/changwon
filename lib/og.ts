@@ -11,9 +11,9 @@ import { SITE } from "./site";
  * 라우트 경로 → 썸네일 파일 슬러그.
  *   "/"                       → "home"
  *   "/about"                  → "about"
- *   "/hall"                   → "hall"
- *   "/hall/sillim-grandprix-guide"  → "hall-sillim-grandprix"
- *   "/night/sillim-grandprix" → "night-sillim-grandprix"
+ *   "/hall-guide/"                   → "hall"
+ *   "/hall-guide/sillim-grandprix-guide"  → "hall-sillim-grandprix"
+ *   "/night-guide/sillim-grandprix" → "night-sillim-grandprix"
  * /hall/x 와 /night/x 는 슬러그가 겹치므로 반드시 접두사를 붙인다.
  */
 export function ogSlug(pathname: string): string {

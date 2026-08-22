@@ -237,8 +237,8 @@ async function buildRegistry() {
   // A. 창원 본 사이트 — 홈 + 13페이지 + 허브 2개
   const changwonPaths = [
     ...site.NAV.map((n) => n.href),
-    "/night",
-    "/hall",
+    "/night-guide/",
+    "/hall-guide/",
   ];
   for (const p of changwonPaths) {
     pages.push({
