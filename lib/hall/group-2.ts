@@ -102,7 +102,7 @@ export const GROUP_2: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "호텔 건물 내 시설이므로 로비 이용 예절을 지켜 주세요.",
     ],
-    related: ["sillim-grandprix-1", "chance-gildong", "arabian-incheon"],
+    related: ["sillim-grandprix-2", "chance-gildong", "arabian-incheon"],
   },
 
   {
@@ -313,7 +313,7 @@ export const GROUP_2: HallVenue[] = [
       "만 27세 이상만 출입할 수 있고 신분증을 확인합니다.",
       "귀가는 대리나 동행을 미리 정해 두시면 편합니다.",
     ],
-    related: ["busan-asiad", "ulsan-champion-1", "daegu-hobak"],
+    related: ["busan-asiad", "ulsan-champion-2", "daegu-hobak"],
   },
 
   {
@@ -418,7 +418,7 @@ export const GROUP_2: HallVenue[] = [
 
   {
     no: 13,
-    slug: "ulsan-champion-1",
+    slug: "ulsan-champion-2",
     keyword: "울산챔피언나이트",
     spaced: "울산 챔피언나이트",
     regionType: "울산 나이트클럽",
@@ -611,7 +611,7 @@ export const GROUP_2: HallVenue[] = [
       "확인되지 않은 층·영업시간·요금은 적지 않았습니다.",
       "성인 대상 홀이며 신분증 확인이 있을 수 있습니다.",
     ],
-    related: ["gangseo-hobak-hall", "yeongdeungpo-terminal-hall", "sillim-grandprix-1"],
+    related: ["gangseo-hobak-hall", "yeongdeungpo-terminal-hall", "sillim-grandprix-2"],
   },
 
   {
@@ -707,7 +707,7 @@ export const GROUP_2: HallVenue[] = [
       "구조 설명은 일반적인 나이트 홀 기준이며 특정 업소의 실제 배치가 아닙니다.",
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
     ],
-    related: ["sangbong-hangukgwan-1", "hobak-nowon", "chance-gildong"],
+    related: ["sangbong-hangukgwan-2", "hobak-nowon", "chance-gildong"],
   },
 
   {

@@ -393,7 +393,7 @@ export const GROUP_3: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "천장 형태에 따른 설명은 일반적인 돔형 홀 기준입니다.",
     ],
-    related: ["suwon-chancedome-1", "stardome-cheonan", "ilsan-shampoo-1"],
+    related: ["suwon-chancedome-2", "stardome-cheonan", "ilsan-shampoo-2"],
   },
 
   {
@@ -589,7 +589,7 @@ export const GROUP_3: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "상가 건물 공용부에서는 다른 입점 업소에 방해가 되지 않도록 해 주세요.",
     ],
-    related: ["uijeongbu-baekakgwan-hall", "hobak-nowon", "sangbong-hangukgwan-1"],
+    related: ["uijeongbu-baekakgwan-hall", "hobak-nowon", "sangbong-hangukgwan-2"],
   },
 
   {
@@ -790,6 +790,6 @@ export const GROUP_3: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "인계동 상권은 심야 교통이 혼잡합니다. 귀가 수단을 미리 정해 두세요.",
     ],
-    related: ["suwon-chancedome-1", "osan-hobak-hall", "seongnam-shampoo-hall"],
+    related: ["suwon-chancedome-2", "osan-hobak-hall", "seongnam-shampoo-hall"],
   },
 ];

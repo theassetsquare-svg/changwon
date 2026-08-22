@@ -95,7 +95,7 @@
   "kind": "copy"
  },
  {
-  "route": "/night/cheongdam-1",
+  "route": "/night/cheongdam-2",
   "slug": "night-cheongdam-night",
   "kind": "copy"
  },
@@ -140,7 +140,7 @@
   "kind": "venue"
  },
  {
-  "route": "/night/ilsan-shampoo-1",
+  "route": "/night/ilsan-shampoo-2",
   "slug": "night-ilsan-shampoo-night",
   "kind": "venue"
  },
@@ -170,7 +170,7 @@
   "kind": "venue"
  },
  {
-  "route": "/hall/ansan-hit-1",
+  "route": "/hall/ansan-hit-2",
   "slug": "hall-ansan-hit",
   "kind": "venue"
  },
@@ -180,7 +180,7 @@
   "kind": "venue"
  },
  {
-  "route": "/hall/ilsan-shampoo-1",
+  "route": "/hall/ilsan-shampoo-2",
   "slug": "hall-ilsan-shampoo",
   "kind": "venue"
  },
@@ -205,7 +205,7 @@
   "kind": "venue"
  },
  {
-  "route": "/hall/ulsan-champion-1",
+  "route": "/hall/ulsan-champion-2",
   "slug": "hall-ulsan-champion",
   "kind": "venue"
  },
