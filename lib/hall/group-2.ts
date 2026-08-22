@@ -624,6 +624,8 @@ export const GROUP_2: HallVenue[] = [
     locality: "서울특별시 동대문구",
     region: "서울특별시",
     hallType: "확인 진행 중",
+    contactName: "유재석",
+    phone: "010-8156-6558",
     title: "답십리미라클나이트, 확인된 것부터 세는 홀",
     description:
       "답십리미라클나이트에 대해 공개 정보로 확인되는 건 지역까지입니다. 지어내는 대신, 확인된 것과 확인 못 한 것을 갈라 놓고 일반적인 나이트 홀 구조를 공간 순서대로 정리했습니다.",

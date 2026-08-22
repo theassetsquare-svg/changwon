@@ -15,6 +15,7 @@ const PHONE_TABLE = {
   "changwon-lululala": "010-7528-4936",
   "ulsan-champion": "010-5653-0069",
   "bulgwang-hobak": "010-2221-1937",
+  "dapsimni-miracle": "010-8156-6558",
 };
 const KAKAO = "besta12";
 
