@@ -190,7 +190,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/night/night-cheongdam",
+  "route": "/night/cheongdam-1",
   "slug": "night-cheongdam-night",
   "img": "O",
   "same": "O",
@@ -280,7 +280,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/night/night-shampoo-ilsan-guide",
+  "route": "/night/ilsan-shampoo-1",
   "slug": "night-ilsan-shampoo-night",
   "img": "O",
   "same": "O",
@@ -340,7 +340,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/hall/ansan-hit",
+  "route": "/hall/ansan-hit-1",
   "slug": "hall-ansan-hit",
   "img": "O",
   "same": "O",
@@ -360,7 +360,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/hall/shampoo-ilsan",
+  "route": "/hall/ilsan-shampoo-1",
   "slug": "hall-ilsan-shampoo",
   "img": "O",
   "same": "O",
@@ -410,7 +410,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/hall/champion-ulsan",
+  "route": "/hall/ulsan-champion-1",
   "slug": "hall-ulsan-champion",
   "img": "O",
   "same": "O",

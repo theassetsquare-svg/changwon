@@ -98,7 +98,7 @@ export const GROUP_4: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "확인되지 않은 층·좌석 수·요금은 싣지 않았습니다.",
     ],
-    related: ["suwon-korea-hall", "pyeongtaek-hobak", "suwon-chance-dome"],
+    related: ["suwon-korea-hall", "pyeongtaek-hobak", "suwon-chancedome-1"],
   },
 
   {
@@ -294,7 +294,7 @@ export const GROUP_4: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "확인되지 않은 층·영업시간·요금은 싣지 않았습니다.",
     ],
-    related: ["suyu-shampoo", "shampoo-ilsan", "suwon-korea-hall"],
+    related: ["suyu-shampoo", "ilsan-shampoo-1", "suwon-korea-hall"],
   },
 
   {
@@ -690,7 +690,7 @@ export const GROUP_4: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "천장 형태에 따른 설명은 일반적인 돔형 홀 기준입니다.",
     ],
-    related: ["cheonan-korea", "paju-yadang-skydome-hall", "suwon-chance-dome"],
+    related: ["cheonan-korea", "paju-yadang-skydome-hall", "suwon-chancedome-1"],
   },
 
   {
