@@ -650,7 +650,7 @@ export const AD_VENUES: AdVenue[] = [
     related: [
       "sillim-grandprix-night",
       "sangbong-hangukgwan-night",
-      "night-shampoo-suyu",
+      "night-shampoo-suyu-guide",
     ],
   },
 
@@ -760,7 +760,7 @@ export const AD_VENUES: AdVenue[] = [
       "신림그랑프리나이트는 인원 하나만 바꿔도 밤의 결이 달라지는 홀입니다. 오늘 몇 명이 움직이는지부터 정하고 출발하세요.",
     related: [
       "sangbong-hangukgwan-night",
-      "night-shampoo-suyu",
+      "night-shampoo-suyu-guide",
       "busan-asiad-night",
     ],
   },
@@ -872,16 +872,16 @@ export const AD_VENUES: AdVenue[] = [
     outro:
       "상봉동한국관나이트는 준비가 부족하면 시간을 잃고, 준비가 되면 하룻밤을 통으로 쓰는 홀입니다. 1부와 2부 중 어디로 갈지부터 정해 두세요.",
     related: [
-      "night-shampoo-suyu",
+      "night-shampoo-suyu-guide",
       "busan-asiad-night",
-      "night-dome-chance-suwon",
+      "night-dome-chance-suwon-guide",
     ],
   },
 
   // ── 8. 수유샴푸나이트 · 각도13 단골 관점형 ─────────────────
   {
     no: 8,
-    slug: "night-shampoo-suyu",
+    slug: "night-shampoo-suyu-guide",
     notice: [
       "수유 샴푸나이트 이용 순서를 정리한 페이지입니다.",
       "성인 영업장이라 입장 시 신분증을 확인할 수 있습니다.",
@@ -984,7 +984,7 @@ export const AD_VENUES: AdVenue[] = [
       "수유샴푸나이트는 두 번째 방문부터 확실히 편해지는 홀입니다. 오늘이 첫 방문이라면 이 순서만 그대로 따라 해 보세요.",
     related: [
       "busan-asiad-night",
-      "night-dome-chance-suwon",
+      "night-dome-chance-suwon-guide",
       "ansan-hit-night",
     ],
   },
@@ -1093,7 +1093,7 @@ export const AD_VENUES: AdVenue[] = [
     outro:
       "부산아시아드나이트는 간판보다 안이 훨씬 큰 홀입니다. 온천장 쪽으로 나올 일이 있으면 지하 입구만 찾아 내려가 보세요.",
     related: [
-      "night-dome-chance-suwon",
+      "night-dome-chance-suwon-guide",
       "ansan-hit-night",
       "daejeon-seven-night",
     ],
@@ -1102,7 +1102,7 @@ export const AD_VENUES: AdVenue[] = [
   // ── 10. 수원찬스돔나이트 · 각도2 질문 던지기형 ──────────────
   {
     no: 10,
-    slug: "night-dome-chance-suwon",
+    slug: "night-dome-chance-suwon-guide",
     notice: [
       "수원 찬스돔나이트 방문 안내입니다. 요금과 이벤트는 싣지 않습니다.",
       "성인만 입장할 수 있는 홀입니다.",
@@ -1204,7 +1204,7 @@ export const AD_VENUES: AdVenue[] = [
     related: [
       "ansan-hit-night",
       "daejeon-seven-night",
-      "night-shampoo-ilsan",
+      "night-shampoo-ilsan-guide",
     ],
   },
 
@@ -1313,7 +1313,7 @@ export const AD_VENUES: AdVenue[] = [
       "안산히트나이트는 눈보다 귀로 먼저 도착하는 홀입니다. 계단을 내려가는 몇 초를 놓치지 말고 들어 보세요.",
     related: [
       "daejeon-seven-night",
-      "night-shampoo-ilsan",
+      "night-shampoo-ilsan-guide",
       "bulgwang-hobak-night",
     ],
   },
@@ -1424,7 +1424,7 @@ export const AD_VENUES: AdVenue[] = [
     outro:
       "대전세븐나이트는 처음 온 사람이 헤매지 않도록 진행이 짜여 있는 홀입니다. 모르는 건 감추지 말고 먼저 말하는 편이 빠릅니다.",
     related: [
-      "night-shampoo-ilsan",
+      "night-shampoo-ilsan-guide",
       "bulgwang-hobak-night",
       "changwon-lululala-night",
     ],
@@ -1433,7 +1433,7 @@ export const AD_VENUES: AdVenue[] = [
   // ── 13. 일산샴푸나이트 · 각도5 이유 나열형 ──────────────────
   {
     no: 13,
-    slug: "night-shampoo-ilsan",
+    slug: "night-shampoo-ilsan-guide",
     notice: [
       "일산 샴푸나이트 안내 페이지입니다. 확인된 정보만 담았습니다.",
       "청소년은 출입할 수 없습니다.",

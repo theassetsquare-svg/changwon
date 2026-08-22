@@ -480,7 +480,7 @@
   "same": "O"
  },
  {
-  "route": "/night/night-shampoo-ilsan",
+  "route": "/night/night-shampoo-ilsan-guide",
   "slug": "night-ilsan-shampoo-night",
   "http": 200,
   "ctype": "image/png",
@@ -576,7 +576,7 @@
   "same": "O"
  },
  {
-  "route": "/hall/ilsan-shampoo-hall",
+  "route": "/hall/shampoo-ilsan",
   "slug": "hall-ilsan-shampoo",
   "http": 200,
   "ctype": "image/png",
@@ -636,7 +636,7 @@
   "same": "O"
  },
  {
-  "route": "/hall/ulsan-champion-hall",
+  "route": "/hall/champion-ulsan",
   "slug": "hall-ulsan-champion",
   "http": 200,
   "ctype": "image/png",
@@ -696,7 +696,7 @@
   "same": "O"
  },
  {
-  "route": "/hall/nowon-hobak-hall",
+  "route": "/hall/hobak-nowon",
   "slug": "hall-nowon-hobak",
   "http": 200,
   "ctype": "image/png",
@@ -708,7 +708,7 @@
   "same": "O"
  },
  {
-  "route": "/hall/gildong-chance-hall",
+  "route": "/hall/chance-gildong",
   "slug": "hall-gildong-chance",
   "http": 200,
   "ctype": "image/png",
@@ -732,7 +732,7 @@
   "same": "O"
  },
  {
-  "route": "/hall/guri-hobak-hall",
+  "route": "/hall/hobak-guri",
   "slug": "hall-guri-hobak",
   "http": 200,
   "ctype": "image/png",
@@ -816,7 +816,7 @@
   "same": "O"
  },
  {
-  "route": "/hall/incheon-arabian-hall",
+  "route": "/hall/arabian-incheon",
   "slug": "hall-incheon-arabian",
   "http": 200,
   "ctype": "image/png",
@@ -852,7 +852,7 @@
   "same": "O"
  },
  {
-  "route": "/hall/cheonan-stardome-hall",
+  "route": "/hall/stardome-cheonan",
   "slug": "hall-cheonan-stardome",
   "http": 200,
   "ctype": "image/png",
@@ -888,7 +888,7 @@
   "same": "O"
  },
  {
-  "route": "/hall/ulsan-newworld-hall",
+  "route": "/hall/newworld-ulsan",
   "slug": "hall-ulsan-newworld",
   "http": 200,
   "ctype": "image/png",
@@ -960,7 +960,7 @@
   "same": "O"
  },
  {
-  "route": "/hall/jeju-do-hall",
+  "route": "/hall/do-jeju",
   "slug": "hall-jeju-do",
   "http": 200,
   "ctype": "image/png",

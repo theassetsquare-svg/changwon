@@ -294,12 +294,12 @@ export const GROUP_4: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "확인되지 않은 층·영업시간·요금은 싣지 않았습니다.",
     ],
-    related: ["suyu-shampoo", "ilsan-shampoo-hall", "suwon-korea-hall"],
+    related: ["suyu-shampoo", "shampoo-ilsan", "suwon-korea-hall"],
   },
 
   {
     no: 28,
-    slug: "incheon-arabian-hall",
+    slug: "arabian-incheon",
     keyword: "인천아라비안나이트",
     spaced: "인천 아라비안나이트",
     regionType: "인천 나이트클럽",
@@ -488,7 +488,7 @@ export const GROUP_4: HallVenue[] = [
       "정확한 지번·층·영업시간은 확인되지 않아 싣지 않았습니다.",
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
     ],
-    related: ["incheon-arabian-hall", "yeongdeungpo-terminal-hall", "gangseo-hobak-hall"],
+    related: ["arabian-incheon", "yeongdeungpo-terminal-hall", "gangseo-hobak-hall"],
   },
 
   {
@@ -595,12 +595,12 @@ export const GROUP_4: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "복층 이동 시 계단을 이용하게 됩니다. 음주 후에는 조심하세요.",
     ],
-    related: ["osan-hobak-hall", "cheonan-stardome-hall", "suwon-korea-hall"],
+    related: ["osan-hobak-hall", "stardome-cheonan", "suwon-korea-hall"],
   },
 
   {
     no: 31,
-    slug: "cheonan-stardome-hall",
+    slug: "stardome-cheonan",
     keyword: "천안스타돔나이트",
     spaced: "천안 스타돔나이트",
     regionType: "천안 나이트클럽",
@@ -787,6 +787,6 @@ export const GROUP_4: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "확인되지 않은 층·영업시간·요금은 싣지 않았습니다.",
     ],
-    related: ["cheonan-stardome-hall", "cheongju-hobak", "seosan-hobak"],
+    related: ["stardome-cheonan", "cheongju-hobak", "seosan-hobak"],
   },
 ];

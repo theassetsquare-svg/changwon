@@ -205,7 +205,7 @@ export const GROUP_1: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "귀가는 대리운전이나 대중교통을 미리 정해 두시면 편합니다.",
     ],
-    related: ["sillim-grandprix-hall", "nowon-hobak-hall", "suyu-shampoo"],
+    related: ["sillim-grandprix-hall", "hobak-nowon", "suyu-shampoo"],
   },
 
   {
@@ -302,7 +302,7 @@ export const GROUP_1: HallVenue[] = [
       "성인 대상 홀이며 신분증 확인이 있을 수 있습니다.",
       "복층 구조라 이동 시 계단을 이용하게 됩니다. 음주 후에는 특히 조심하세요.",
     ],
-    related: ["sangbong-hangukgwan", "nowon-hobak-hall", "seongnam-shampoo-hall"],
+    related: ["sangbong-hangukgwan", "hobak-nowon", "seongnam-shampoo-hall"],
   },
 
   {
@@ -410,7 +410,7 @@ export const GROUP_1: HallVenue[] = [
       "성인 대상 홀입니다. 입장 시 신분증 확인이 있을 수 있습니다.",
       "온천장 상권 골목이라 지상 주차가 어렵습니다. 대중교통이나 대리를 권합니다.",
     ],
-    related: ["ulsan-champion-hall", "daegu-hobak", "changwon-lululala"],
+    related: ["champion-ulsan", "daegu-hobak", "changwon-lululala"],
   },
 
   {
@@ -722,7 +722,7 @@ export const GROUP_1: HallVenue[] = [
 
   {
     no: 8,
-    slug: "ilsan-shampoo-hall",
+    slug: "shampoo-ilsan",
     keyword: "일산샴푸나이트",
     spaced: "일산 샴푸나이트",
     regionType: "고양 나이트클럽",

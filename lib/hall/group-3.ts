@@ -106,7 +106,7 @@ export const GROUP_3: HallVenue[] = [
 
   {
     no: 18,
-    slug: "nowon-hobak-hall",
+    slug: "hobak-nowon",
     keyword: "노원호박나이트",
     spaced: "노원 호박나이트",
     regionType: "노원구 나이트클럽",
@@ -202,7 +202,7 @@ export const GROUP_3: HallVenue[] = [
 
   {
     no: 19,
-    slug: "gildong-chance-hall",
+    slug: "chance-gildong",
     keyword: "길동찬스나이트",
     spaced: "길동 찬스나이트",
     regionType: "강동구 나이트클럽",
@@ -297,7 +297,7 @@ export const GROUP_3: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "확인되지 않은 요금·좌석 수는 싣지 않았습니다.",
     ],
-    related: ["cheongdam", "dapsimni-miracle", "guri-hobak-hall"],
+    related: ["cheongdam", "dapsimni-miracle", "hobak-guri"],
   },
 
   {
@@ -393,12 +393,12 @@ export const GROUP_3: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "천장 형태에 따른 설명은 일반적인 돔형 홀 기준입니다.",
     ],
-    related: ["suwon-chance-dome", "cheonan-stardome-hall", "ilsan-shampoo-hall"],
+    related: ["suwon-chance-dome", "stardome-cheonan", "shampoo-ilsan"],
   },
 
   {
     no: 21,
-    slug: "guri-hobak-hall",
+    slug: "hobak-guri",
     keyword: "구리호박나이트",
     spaced: "구리 호박나이트",
     regionType: "구리 나이트클럽",
@@ -488,7 +488,7 @@ export const GROUP_3: HallVenue[] = [
       "정확한 지번·층·영업시간은 확인되지 않아 싣지 않았습니다.",
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
     ],
-    related: ["gildong-chance-hall", "uijeongbu-baekakgwan-hall", "nowon-hobak-hall"],
+    related: ["chance-gildong", "uijeongbu-baekakgwan-hall", "hobak-nowon"],
   },
 
   {
@@ -589,7 +589,7 @@ export const GROUP_3: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "상가 건물 공용부에서는 다른 입점 업소에 방해가 되지 않도록 해 주세요.",
     ],
-    related: ["uijeongbu-baekakgwan-hall", "nowon-hobak-hall", "sangbong-hangukgwan"],
+    related: ["uijeongbu-baekakgwan-hall", "hobak-nowon", "sangbong-hangukgwan"],
   },
 
   {
@@ -694,7 +694,7 @@ export const GROUP_3: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "확인되지 않은 층·좌석 수·요금은 싣지 않았습니다.",
     ],
-    related: ["uijeongbu-hangukgwan-hall", "guri-hobak-hall", "nowon-hobak-hall"],
+    related: ["uijeongbu-hangukgwan-hall", "hobak-guri", "hobak-nowon"],
   },
 
   {

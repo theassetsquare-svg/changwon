@@ -140,7 +140,7 @@
   "kind": "venue"
  },
  {
-  "route": "/night/night-shampoo-ilsan",
+  "route": "/night/night-shampoo-ilsan-guide",
   "slug": "night-ilsan-shampoo-night",
   "kind": "venue"
  },
@@ -180,7 +180,7 @@
   "kind": "venue"
  },
  {
-  "route": "/hall/ilsan-shampoo-hall",
+  "route": "/hall/shampoo-ilsan",
   "slug": "hall-ilsan-shampoo",
   "kind": "venue"
  },
@@ -205,7 +205,7 @@
   "kind": "venue"
  },
  {
-  "route": "/hall/ulsan-champion-hall",
+  "route": "/hall/champion-ulsan",
   "slug": "hall-ulsan-champion",
   "kind": "venue"
  },
@@ -230,12 +230,12 @@
   "kind": "venue"
  },
  {
-  "route": "/hall/nowon-hobak-hall",
+  "route": "/hall/hobak-nowon",
   "slug": "hall-nowon-hobak",
   "kind": "venue"
  },
  {
-  "route": "/hall/gildong-chance-hall",
+  "route": "/hall/chance-gildong",
   "slug": "hall-gildong-chance",
   "kind": "venue"
  },
@@ -245,7 +245,7 @@
   "kind": "venue"
  },
  {
-  "route": "/hall/guri-hobak-hall",
+  "route": "/hall/hobak-guri",
   "slug": "hall-guri-hobak",
   "kind": "venue"
  },
@@ -280,7 +280,7 @@
   "kind": "venue"
  },
  {
-  "route": "/hall/incheon-arabian-hall",
+  "route": "/hall/arabian-incheon",
   "slug": "hall-incheon-arabian",
   "kind": "venue"
  },
@@ -295,7 +295,7 @@
   "kind": "venue"
  },
  {
-  "route": "/hall/cheonan-stardome-hall",
+  "route": "/hall/stardome-cheonan",
   "slug": "hall-cheonan-stardome",
   "kind": "venue"
  },
@@ -310,7 +310,7 @@
   "kind": "venue"
  },
  {
-  "route": "/hall/ulsan-newworld-hall",
+  "route": "/hall/newworld-ulsan",
   "slug": "hall-ulsan-newworld",
   "kind": "venue"
  },
@@ -340,7 +340,7 @@
   "kind": "venue"
  },
  {
-  "route": "/hall/jeju-do-hall",
+  "route": "/hall/do-jeju",
   "slug": "hall-jeju-do",
   "kind": "venue"
  }
