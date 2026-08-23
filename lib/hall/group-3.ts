@@ -7,7 +7,7 @@ import type { HallVenue } from "../hall";
 export const GROUP_3: HallVenue[] = [
   {
     no: 17,
-    slug: "yeongdeungpo-terminal-hall",
+    slug: "yeongdeungpo-terminal-1",
     keyword: "영등포터미널나이트",
     spaced: "영등포 터미널나이트",
     regionType: "영등포구 나이트클럽",
@@ -101,12 +101,12 @@ export const GROUP_3: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "복층 이동 시 계단을 이용하게 됩니다. 음주 후에는 조심하세요.",
     ],
-    related: ["gangseo-hobak-hall", "suyu-shampoo", "bucheon-gorae"],
+    related: ["gangseo-hobak-1", "suyu-shampoo", "bucheon-gorae"],
   },
 
   {
     no: 18,
-    slug: "hobak-nowon",
+    slug: "nowon-hobak-1",
     keyword: "노원호박나이트",
     spaced: "노원 호박나이트",
     regionType: "노원구 나이트클럽",
@@ -197,12 +197,12 @@ export const GROUP_3: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "확인되지 않은 층·영업시간·요금은 싣지 않았습니다.",
     ],
-    related: ["suyu-shampoo", "bulgwang-hobak", "uijeongbu-hangukgwan-hall"],
+    related: ["suyu-shampoo", "bulgwang-hobak", "uijeongbu-hangukgwan-1"],
   },
 
   {
     no: 19,
-    slug: "chance-gildong",
+    slug: "gildong-chance-1",
     keyword: "길동찬스나이트",
     spaced: "길동 찬스나이트",
     regionType: "강동구 나이트클럽",
@@ -297,12 +297,12 @@ export const GROUP_3: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "확인되지 않은 요금·좌석 수는 싣지 않았습니다.",
     ],
-    related: ["cheongdam", "dapsimni-miracle", "hobak-guri"],
+    related: ["cheongdam", "dapsimni-miracle", "guri-hobak-1"],
   },
 
   {
     no: 20,
-    slug: "paju-yadang-skydome-hall",
+    slug: "paju-skydome-1",
     keyword: "파주야당스카이돔나이트",
     spaced: "파주 야당스카이돔나이트",
     regionType: "파주 나이트클럽",
@@ -393,12 +393,12 @@ export const GROUP_3: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "천장 형태에 따른 설명은 일반적인 돔형 홀 기준입니다.",
     ],
-    related: ["suwon-chancedome-2", "stardome-cheonan", "ilsan-shampoo-2"],
+    related: ["suwon-chancedome-3", "cheonan-stardome-1", "ilsan-shampoo-3"],
   },
 
   {
     no: 21,
-    slug: "hobak-guri",
+    slug: "guri-hobak-1",
     keyword: "구리호박나이트",
     spaced: "구리 호박나이트",
     regionType: "구리 나이트클럽",
@@ -488,12 +488,12 @@ export const GROUP_3: HallVenue[] = [
       "정확한 지번·층·영업시간은 확인되지 않아 싣지 않았습니다.",
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
     ],
-    related: ["chance-gildong", "uijeongbu-baekakgwan-hall", "hobak-nowon"],
+    related: ["gildong-chance-1", "uijeongbu-baekakgwan-1", "nowon-hobak-1"],
   },
 
   {
     no: 22,
-    slug: "uijeongbu-hangukgwan-hall",
+    slug: "uijeongbu-hangukgwan-1",
     keyword: "의정부한국관나이트",
     spaced: "의정부 한국관나이트",
     regionType: "의정부 나이트클럽",
@@ -589,12 +589,12 @@ export const GROUP_3: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "상가 건물 공용부에서는 다른 입점 업소에 방해가 되지 않도록 해 주세요.",
     ],
-    related: ["uijeongbu-baekakgwan-hall", "hobak-nowon", "sangbong-hangukgwan-2"],
+    related: ["uijeongbu-baekakgwan-1", "nowon-hobak-1", "sangbong-hangukgwan-3"],
   },
 
   {
     no: 23,
-    slug: "uijeongbu-baekakgwan-hall",
+    slug: "uijeongbu-baekakgwan-1",
     keyword: "의정부백악관나이트",
     spaced: "의정부 백악관나이트",
     regionType: "의정부 나이트클럽",
@@ -694,12 +694,12 @@ export const GROUP_3: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "확인되지 않은 층·좌석 수·요금은 싣지 않았습니다.",
     ],
-    related: ["uijeongbu-hangukgwan-hall", "hobak-guri", "hobak-nowon"],
+    related: ["uijeongbu-hangukgwan-1", "guri-hobak-1", "nowon-hobak-1"],
   },
 
   {
     no: 24,
-    slug: "suwon-korea-hall",
+    slug: "suwon-korea-1",
     keyword: "수원코리아나이트",
     spaced: "수원 코리아나이트",
     regionType: "수원 나이트클럽",
@@ -790,6 +790,6 @@ export const GROUP_3: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "인계동 상권은 심야 교통이 혼잡합니다. 귀가 수단을 미리 정해 두세요.",
     ],
-    related: ["suwon-chancedome-2", "osan-hobak-hall", "seongnam-shampoo-hall"],
+    related: ["suwon-chancedome-3", "osan-hobak-1", "seongnam-shampoo-1"],
   },
 ];

@@ -95,7 +95,7 @@
   "kind": "copy"
  },
  {
-  "route": "/night/cheongdam-2",
+  "route": "/night/cheongdam-3",
   "slug": "night-cheongdam-2",
   "kind": "copy"
  },
@@ -115,7 +115,7 @@
   "kind": "venue"
  },
  {
-  "route": "/night/suyu-shampoo-2",
+  "route": "/night/suyu-shampoo-3",
   "slug": "night-suyu-shampoo-2",
   "kind": "venue"
  },
@@ -125,7 +125,7 @@
   "kind": "venue"
  },
  {
-  "route": "/night/suwon-chancedome-2",
+  "route": "/night/suwon-chancedome-3",
   "slug": "night-suwon-chancedome-2",
   "kind": "venue"
  },
@@ -140,17 +140,17 @@
   "kind": "copy"
  },
  {
-  "route": "/night/ilsan-shampoo-2",
+  "route": "/night/ilsan-shampoo-3",
   "slug": "night-ilsan-shampoo-2",
   "kind": "venue"
  },
  {
-  "route": "/hall/sillim-grandprix-2",
+  "route": "/hall/sillim-grandprix-3",
   "slug": "hall-sillim-grandprix-2",
   "kind": "venue"
  },
  {
-  "route": "/hall/sangbong-hangukgwan-2",
+  "route": "/hall/sangbong-hangukgwan-3",
   "slug": "hall-sangbong-hangukgwan-2",
   "kind": "venue"
  },
@@ -165,12 +165,12 @@
   "kind": "venue"
  },
  {
-  "route": "/hall/suwon-chancedome-2",
+  "route": "/hall/suwon-chancedome-3",
   "slug": "hall-suwon-chancedome-2",
   "kind": "venue"
  },
  {
-  "route": "/hall/ansan-hit-2",
+  "route": "/hall/ansan-hit-3",
   "slug": "hall-ansan-hit-2",
   "kind": "venue"
  },
@@ -180,7 +180,7 @@
   "kind": "venue"
  },
  {
-  "route": "/hall/ilsan-shampoo-2",
+  "route": "/hall/ilsan-shampoo-3",
   "slug": "hall-ilsan-shampoo-2",
   "kind": "venue"
  },
@@ -205,12 +205,12 @@
   "kind": "venue"
  },
  {
-  "route": "/hall/ulsan-champion-2",
+  "route": "/hall/ulsan-champion-3",
   "slug": "hall-ulsan-champion-2",
   "kind": "venue"
  },
  {
-  "route": "/hall/doksan-gukbingwan-hall",
+  "route": "/hall/doksan-gukbingwan-1",
   "slug": "hall-doksan-gukbingwan-hall",
   "kind": "venue"
  },
@@ -220,67 +220,67 @@
   "kind": "venue"
  },
  {
-  "route": "/hall/gangseo-hobak-hall",
+  "route": "/hall/gangseo-hobak-1",
   "slug": "hall-gangseo-hobak-hall",
   "kind": "venue"
  },
  {
-  "route": "/hall/yeongdeungpo-terminal-hall",
+  "route": "/hall/yeongdeungpo-terminal-1",
   "slug": "hall-yeongdeungpo-terminal-hall",
   "kind": "venue"
  },
  {
-  "route": "/hall/hobak-nowon",
+  "route": "/hall/nowon-hobak-1",
   "slug": "hall-hobak-nowon",
   "kind": "venue"
  },
  {
-  "route": "/hall/chance-gildong",
+  "route": "/hall/gildong-chance-1",
   "slug": "hall-chance-gildong",
   "kind": "venue"
  },
  {
-  "route": "/hall/paju-yadang-skydome-hall",
+  "route": "/hall/paju-skydome-1",
   "slug": "hall-paju-yadang-skydome-hall",
   "kind": "venue"
  },
  {
-  "route": "/hall/hobak-guri",
+  "route": "/hall/guri-hobak-1",
   "slug": "hall-hobak-guri",
   "kind": "venue"
  },
  {
-  "route": "/hall/uijeongbu-hangukgwan-hall",
+  "route": "/hall/uijeongbu-hangukgwan-1",
   "slug": "hall-uijeongbu-hangukgwan-hall",
   "kind": "venue"
  },
  {
-  "route": "/hall/uijeongbu-baekakgwan-hall",
+  "route": "/hall/uijeongbu-baekakgwan-1",
   "slug": "hall-uijeongbu-baekakgwan-hall",
   "kind": "venue"
  },
  {
-  "route": "/hall/suwon-korea-hall",
+  "route": "/hall/suwon-korea-1",
   "slug": "hall-suwon-korea-hall",
   "kind": "venue"
  },
  {
-  "route": "/hall/osan-hobak-hall",
+  "route": "/hall/osan-hobak-1",
   "slug": "hall-osan-hobak-hall",
   "kind": "venue"
  },
  {
-  "route": "/hall/indeogwon-gukbingwan-hall",
+  "route": "/hall/indeogwon-gukbingwan-1",
   "slug": "hall-indeogwon-gukbingwan-hall",
   "kind": "venue"
  },
  {
-  "route": "/hall/seongnam-shampoo-hall",
+  "route": "/hall/seongnam-shampoo-1",
   "slug": "hall-seongnam-shampoo-hall",
   "kind": "venue"
  },
  {
-  "route": "/hall/arabian-incheon",
+  "route": "/hall/incheon-arabian-1",
   "slug": "hall-arabian-incheon",
   "kind": "venue"
  },
@@ -295,7 +295,7 @@
   "kind": "venue"
  },
  {
-  "route": "/hall/stardome-cheonan",
+  "route": "/hall/cheonan-stardome-1",
   "slug": "hall-stardome-cheonan",
   "kind": "venue"
  },
@@ -310,7 +310,7 @@
   "kind": "venue"
  },
  {
-  "route": "/hall/newworld-ulsan",
+  "route": "/hall/ulsan-newworld-1",
   "slug": "hall-newworld-ulsan",
   "kind": "venue"
  },
@@ -325,7 +325,7 @@
   "kind": "venue"
  },
  {
-  "route": "/hall/gumi-hobak-hall",
+  "route": "/hall/gumi-hobak-1",
   "slug": "hall-gumi-hobak-hall",
   "kind": "venue"
  },
@@ -340,7 +340,7 @@
   "kind": "venue"
  },
  {
-  "route": "/hall/do-jeju",
+  "route": "/hall/jeju-1",
   "slug": "hall-do-jeju",
   "kind": "venue"
  }

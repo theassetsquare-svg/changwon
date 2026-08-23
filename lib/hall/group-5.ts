@@ -103,7 +103,7 @@ export const GROUP_5: HallVenue[] = [
 
   {
     no: 34,
-    slug: "newworld-ulsan",
+    slug: "ulsan-newworld-1",
     keyword: "울산뉴월드나이트",
     spaced: "울산 뉴월드나이트",
     regionType: "울산 나이트클럽",
@@ -195,7 +195,7 @@ export const GROUP_5: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "삼산동 상권은 심야 교통이 혼잡합니다. 귀가 수단을 미리 정해 두세요.",
     ],
-    related: ["ulsan-champion-2", "busan-asiad", "daegu-hobak"],
+    related: ["ulsan-champion-3", "busan-asiad", "daegu-hobak"],
   },
 
   {
@@ -391,12 +391,12 @@ export const GROUP_5: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "확인되지 않은 영업시간·좌석 수·요금은 싣지 않았습니다.",
     ],
-    related: ["gumi-hobak-hall", "newworld-ulsan", "busan-asiad"],
+    related: ["gumi-hobak-1", "ulsan-newworld-1", "busan-asiad"],
   },
 
   {
     no: 37,
-    slug: "gumi-hobak-hall",
+    slug: "gumi-hobak-1",
     keyword: "구미호박나이트",
     spaced: "구미 호박나이트",
     regionType: "구미 나이트클럽",
@@ -487,7 +487,7 @@ export const GROUP_5: HallVenue[] = [
       "정확한 지번·층·영업시간은 확인되지 않아 싣지 않았습니다.",
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
     ],
-    related: ["daegu-hobak", "cheongju-hobak", "newworld-ulsan"],
+    related: ["daegu-hobak", "cheongju-hobak", "ulsan-newworld-1"],
   },
 
   {
@@ -584,7 +584,7 @@ export const GROUP_5: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "확인되지 않은 층·영업시간·요금은 싣지 않았습니다.",
     ],
-    related: ["gwangju-cheomdan", "do-jeju", "daegu-hobak"],
+    related: ["gwangju-cheomdan", "jeju-1", "daegu-hobak"],
   },
 
   {
@@ -684,12 +684,12 @@ export const GROUP_5: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "상가 건물 공용부에서는 다른 입점 업소에 방해가 되지 않도록 해 주세요.",
     ],
-    related: ["gwangju-sangmu", "do-jeju", "uijeongbu-hangukgwan-hall"],
+    related: ["gwangju-sangmu", "jeju-1", "uijeongbu-hangukgwan-1"],
   },
 
   {
     no: 40,
-    slug: "do-jeju",
+    slug: "jeju-1",
     keyword: "제주도나이트",
     spaced: "제주도 나이트",
     regionType: "제주 나이트클럽",
