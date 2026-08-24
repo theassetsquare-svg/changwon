@@ -82,22 +82,22 @@
  {
   "route": "/night/bulgwang-hobak-night",
   "slug": "night-bulgwang-hobak-night",
-  "kind": "copy"
+  "kind": "venue"
  },
  {
   "route": "/night/changwon-lululala-night",
   "slug": "night-changwon-lululala-night",
-  "kind": "copy"
+  "kind": "venue"
  },
  {
   "route": "/night/ulsan-champion-night",
   "slug": "night-ulsan-champion-night",
-  "kind": "copy"
+  "kind": "venue"
  },
  {
   "route": "/night/1-1",
   "slug": "night-1-1",
-  "kind": "copy"
+  "kind": "venue"
  },
  {
   "route": "/night/daejeon-one-night",
@@ -137,7 +137,7 @@
  {
   "route": "/night/daejeon-seven-night",
   "slug": "night-daejeon-seven-night",
-  "kind": "copy"
+  "kind": "venue"
  },
  {
   "route": "/night/4-1",

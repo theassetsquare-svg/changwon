@@ -10,13 +10,29 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const OUT = path.join(ROOT, "out");
 
-// 전화번호 허용표 — 이 외의 010 번호가 홀 페이지에 있으면 실패
-const PHONE_TABLE = {
-  "changwon-lululala": "010-7528-4936",
-  "ulsan-champion": "010-5653-0069",
-  "bulgwang-hobak": "010-2221-1937",
-  "dapsimni-miracle": "010-8156-6558",
-};
+/* 전화번호 허용표 — 이 외의 010 번호가 홀 페이지에 있으면 실패.
+ *
+ * ★ 2026-08-24 수정 — 예전에는 이 표를 손으로 적어 뒀다. 그래서
+ *   ① 광고주를 새로 넣으면 표에 안 적혀 "허용되지 않은 번호"로 막히고
+ *   ② 주소교체로 슬러그가 바뀌면(ulsan-champion → 11-1) 표의 열쇠가 어긋나
+ *      정상 광고주 페이지가 통째로 실패로 잡혔다.
+ *   이제 lib/hall/group-*.ts 의 데이터에서 직접 읽는다. 데이터가 유일한 기준이고,
+ *   주소가 바뀌어도 따라간다.
+ */
+const PHONE_TABLE = (() => {
+  const table = {};
+  const dir = path.join(ROOT, "lib/hall");
+  for (const f of fs.readdirSync(dir).filter((x) => x.endsWith(".ts"))) {
+    const src = fs.readFileSync(path.join(dir, f), "utf8");
+    // 업소 하나가 한 덩어리다. 그 안에서 slug 와 phone 을 짝지어 읽는다.
+    for (const block of src.split(/\n  \{/)) {
+      const slug = block.match(/\n?\s*slug: "([^"]+)"/)?.[1];
+      const phone = block.match(/\n\s*phone: "([^"]+)"/)?.[1];
+      if (slug && phone) table[slug] = phone;
+    }
+  }
+  return table;
+})();
 const KAKAO = "besta12";
 
 const files = fs
@@ -68,8 +84,10 @@ const metaValues = (html) =>
 if (slugs.length !== 40) {
   fails.push(`G1 · hall — 페이지 40개가 아니라 ${slugs.length}개`);
 }
-if (!fs.existsSync(path.join(OUT, "hall.html"))) {
-  fails.push("G1 · hub — /hall 허브 산출물 없음");
+// ★ 2026-08-22 주소교체로 허브가 /hall → /hall-guide 로 옮겨졌다.
+//   검문만 옛 이름을 보고 있어 계속 죽어 있었다(2026-08-24 확인).
+if (!fs.existsSync(path.join(OUT, "hall-guide.html"))) {
+  fails.push("G1 · hub — /hall-guide 허브 산출물 없음");
 }
 
 const titles = new Map();
@@ -169,7 +187,9 @@ for (const slug of slugs) {
   }
 
   // ── G9 : 내부 링크 (허브 + 홈 + 관련 3개 이상) ──────────
-  if (!body.includes('href="/hall-guide/"')) warn("G9", slug, "허브 링크 없음");
+  // ★ 페이지는 href="/hall-guide" (끝 슬래시 없음) 로 링크한다.
+  //   검문만 슬래시를 붙여 찾고 있어 40개 전부가 계속 실패로 잡혔다(2026-08-24 확인).
+  if (!/href="\/hall-guide\/?"/.test(body)) warn("G9", slug, "허브 링크 없음");
   if (!body.includes('href="/"')) warn("G9", slug, "홈 링크 없음");
   const rel = [...body.matchAll(/href="\/hall\/([a-z0-9-]+)"/g)].map(
     (m) => m[1]
@@ -208,7 +228,7 @@ for (const slug of slugs) {
 
 // ── 허브 검사 ────────────────────────────────────────────
 {
-  const html = readPage(path.join(OUT, "hall.html"));
+  const html = readPage(path.join(OUT, "hall-guide.html"));
   const body = hallBody(html);
   const text = strip(body);
   if (!body.includes(KAKAO)) fails.push(`G10 · hub — 광고문의 카톡 없음`);
@@ -239,8 +259,9 @@ for (const slug of slugs) {
 // ── 사이트맵 검사 ────────────────────────────────────────
 {
   const sm = readPage(path.join(OUT, "sitemap.xml"));
-  if (!sm.includes("https://g.nolcool.com/hall<"))
-    fails.push("G1 · sitemap — /hall 허브 누락");
+  // ★ 허브 주소가 /hall → /hall-guide 로 옮겨졌다(2026-08-22 주소교체).
+  if (!sm.includes("https://g.nolcool.com/hall-guide<"))
+    fails.push("G1 · sitemap — /hall-guide 허브 누락");
   for (const slug of slugs) {
     if (!sm.includes(`https://g.nolcool.com/hall/${slug}<`))
       fails.push(`G1 · sitemap — /hall/${slug} 누락`);

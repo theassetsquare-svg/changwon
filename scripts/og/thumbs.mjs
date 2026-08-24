@@ -258,16 +258,19 @@ async function buildRegistry() {
   }
 
   // B-2. 광고 페이지 13개
-  //   담당자 전화가 있는 카드는 기존 파일을 그대로 복사한다(화면이 이미 맞다).
-  //   전화가 없는 카드는 옛 파일에 "창원 룰루랄라 나이트" 문구가 박혀 있으므로 다시 그린다.
-  //   AdNightPage 의 JSON-LD 가 /og/{slug}-og.png 를 직접 가리키므로 그 원본도 같이 갱신한다.
+  //   ★ 2026-08-24 수정 — 예전에는 "담당자 전화가 있으면 기존 파일이 이미 맞다"고 보고
+  //     복사만 했다. 그러면 **새로 넣은 광고주**의 번호가 카드에 안 들어간다
+  //     (부산아시아드에 새우깡 010-3614-1056 을 넣었을 때 실제로 옛 카드가 그대로 나왔다).
+  //     카드는 언제나 데이터에서 다시 그린다. 데이터가 유일한 기준이다.
+  //   전화가 없는 카드는 옛 파일에 "창원 룰루랄라 나이트" 문구가 박혀 있으므로 반드시 다시 그린다.
+  //   {slug}-og.png 원본도 항상 같이 갱신한다.
   for (const v of adMod.AD_VENUES) {
     pages.push({
       route: `/night/${v.slug}`,
       slug: ogSlug(`/night/${v.slug}`),
-      kind: v.phone ? "copy" : "venue",
+      kind: "venue",
       from: path.join(OUT_DIR, `${v.slug}-og.png`),
-      alsoWrite: v.phone ? undefined : path.join(OUT_DIR, `${v.slug}-og.png`),
+      alsoWrite: path.join(OUT_DIR, `${v.slug}-og.png`),
       spec: {
         bg: v.ogBg,
         fg: v.ogFg,

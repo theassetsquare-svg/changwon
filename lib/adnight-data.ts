@@ -1008,6 +1008,8 @@ export const AD_VENUES: AdVenue[] = [
     locality: "부산광역시 동래구",
     region: "부산광역시",
     group: "B",
+    contactName: "새우깡",
+    phone: "010-3614-1056",
     title: "부산아시아드나이트 겉만 보면 모른다 온천장 지하 복층",
     description:
       "부산아시아드나이트는 온천장 큰 건물 지하에 숨어 있어 밖에서는 규모가 짐작되지 않습니다. 홀의 성격과 두 개 층 구조, 자리와 부킹이 도는 방식을 정면으로 정리했습니다.",
