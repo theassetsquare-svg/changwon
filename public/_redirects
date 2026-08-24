@@ -8,13 +8,13 @@
 /night/daejeon-one /night/daejeon-one-night 301
 /night/sillim-grandprix /night/sillim-grandprix-night 301
 /night/sangbong-hangukgwan /night/sangbong-hangukgwan-night 301
-/night/suyu-shampoo /night/suyu-shampoo-3 301
+/night/suyu-shampoo /night/2 301
 /night/busan-asiad /night/busan-asiad-night 301
-/night/suwon-chancedome /night/suwon-chancedome-3 301
+/night/suwon-chancedome /night/3 301
 /night/ansan-hit /night/ansan-hit-night 301
 /night/daejeon-seven /night/daejeon-seven-night 301
-/night/ilsan-shampoo /night/ilsan-shampoo-3 301
-/night/cheongdam /night/cheongdam-3 301
+/night/ilsan-shampoo /night/4 301
+/night/cheongdam /night/1 301
 
 # 2026-08-20 — 매니저 페이지 주소를 /jjanggu 에서 /lotto 로 변경
 /jjanggu /lotto 301

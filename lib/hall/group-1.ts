@@ -7,7 +7,7 @@ import type { HallVenue } from "../hall";
 export const GROUP_1: HallVenue[] = [
   {
     no: 1,
-    slug: "sillim-grandprix-3",
+    slug: "5",
     keyword: "신림그랑프리나이트",
     spaced: "신림 그랑프리나이트",
     regionType: "관악구 나이트클럽",
@@ -100,12 +100,12 @@ export const GROUP_1: HallVenue[] = [
       "성인 대상 홀이라 입장 시 신분증을 확인할 수 있습니다.",
       "내부 배치는 운영 사정에 따라 바뀝니다. 확정 배치는 현장 안내를 따르세요.",
     ],
-    related: ["sangbong-hangukgwan-3", "cheongdam", "gangseo-hobak-1"],
+    related: ["6", "cheongdam", "13"],
   },
 
   {
     no: 2,
-    slug: "sangbong-hangukgwan-3",
+    slug: "6",
     keyword: "상봉동한국관나이트",
     spaced: "상봉동 한국관나이트",
     regionType: "중랑구 나이트클럽",
@@ -205,12 +205,12 @@ export const GROUP_1: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "귀가는 대리운전이나 대중교통을 미리 정해 두시면 편합니다.",
     ],
-    related: ["sillim-grandprix-3", "nowon-hobak-1", "suyu-shampoo"],
+    related: ["5", "15", "7"],
   },
 
   {
     no: 3,
-    slug: "suyu-shampoo",
+    slug: "7",
     keyword: "수유샴푸나이트",
     spaced: "수유 샴푸나이트",
     regionType: "강북구 나이트클럽",
@@ -302,7 +302,7 @@ export const GROUP_1: HallVenue[] = [
       "성인 대상 홀이며 신분증 확인이 있을 수 있습니다.",
       "복층 구조라 이동 시 계단을 이용하게 됩니다. 음주 후에는 특히 조심하세요.",
     ],
-    related: ["sangbong-hangukgwan-3", "nowon-hobak-1", "seongnam-shampoo-1"],
+    related: ["6", "15", "24"],
   },
 
   {
@@ -410,12 +410,12 @@ export const GROUP_1: HallVenue[] = [
       "성인 대상 홀입니다. 입장 시 신분증 확인이 있을 수 있습니다.",
       "온천장 상권 골목이라 지상 주차가 어렵습니다. 대중교통이나 대리를 권합니다.",
     ],
-    related: ["ulsan-champion-3", "daegu-hobak", "changwon-lululala"],
+    related: ["11", "daegu-hobak", "changwon-lululala"],
   },
 
   {
     no: 5,
-    slug: "suwon-chancedome-3",
+    slug: "8",
     keyword: "수원찬스돔나이트",
     spaced: "수원 찬스돔나이트",
     regionType: "수원 나이트클럽",
@@ -513,12 +513,12 @@ export const GROUP_1: HallVenue[] = [
       "성인 대상 홀이며 신분증 확인이 있을 수 있습니다.",
       "천장 형태에 따른 설명은 일반적인 돔형 홀 기준입니다.",
     ],
-    related: ["suwon-korea-1", "osan-hobak-1", "paju-skydome-1"],
+    related: ["21", "22", "17"],
   },
 
   {
     no: 6,
-    slug: "ansan-hit-3",
+    slug: "9",
     keyword: "안산히트나이트",
     spaced: "안산 히트나이트",
     regionType: "안산 나이트클럽",
@@ -611,7 +611,7 @@ export const GROUP_1: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "지층 진입 계단이 있으니 이동 시 발밑을 살펴 주세요.",
     ],
-    related: ["suwon-chancedome-3", "bucheon-gorae", "seongnam-shampoo-1"],
+    related: ["8", "bucheon-gorae", "24"],
   },
 
   {
@@ -722,7 +722,7 @@ export const GROUP_1: HallVenue[] = [
 
   {
     no: 8,
-    slug: "ilsan-shampoo-3",
+    slug: "10",
     keyword: "일산샴푸나이트",
     spaced: "일산 샴푸나이트",
     regionType: "고양 나이트클럽",
@@ -813,6 +813,6 @@ export const GROUP_1: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "역이 가까운 만큼 귀가도 대중교통 시간을 확인해 두시면 편합니다.",
     ],
-    related: ["suyu-shampoo", "paju-skydome-1", "seongnam-shampoo-1"],
+    related: ["7", "17", "24"],
   },
 ];
