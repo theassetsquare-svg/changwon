@@ -22,11 +22,11 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   keywords: AD_VENUES.flatMap((v) => [v.keyword, v.spaced]),
-  alternates: { canonical: "/night-guide/" },
+  alternates: { canonical: "/night-guide" },
   openGraph: {
     type: "website",
     locale: "ko_KR",
-    url: `${SITE.url}/night`,
+    url: `${SITE.url}/night-guide`,   /* ★ /night 는 주소교체로 버려져 404 다 */
     title: TITLE,
     description: DESCRIPTION,
     images: THUMB.images,
@@ -65,8 +65,8 @@ export default function NightIndexPage() {
     "@graph": [
       {
         "@type": "CollectionPage",
-        "@id": `${SITE.url}/night`,
-        url: `${SITE.url}/night`,
+        "@id": `${SITE.url}/night-guide`,
+        url: `${SITE.url}/night-guide`,   /* ★ /night 는 주소교체로 버려져 404 다 */
         name: TITLE,
         description: DESCRIPTION,
         inLanguage: "ko-KR",
@@ -81,7 +81,7 @@ export default function NightIndexPage() {
             "@type": "ListItem",
             position: 2,
             name: "전국 나이트 예약 문의",
-            item: `${SITE.url}/night`,
+            item: `${SITE.url}/night-guide`,
           },
         ],
       },

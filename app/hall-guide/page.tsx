@@ -31,11 +31,11 @@ export const metadata: Metadata = {
     "나이트 테이블",
     ...HALL_VENUES.slice(0, 12).map((v) => v.keyword),
   ],
-  alternates: { canonical: "/hall-guide/" },
+  alternates: { canonical: "/hall-guide" },
   openGraph: {
     type: "website",
     locale: "ko_KR",
-    url: `${SITE.url}/hall`,
+    url: `${SITE.url}/hall-guide`,   /* ★ /hall 은 주소교체로 버려져 404 다 */
     siteName: SITE.name,
     title: TITLE,
     description: DESCRIPTION,
@@ -64,16 +64,16 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "CollectionPage",
-      "@id": `${SITE.url}/hall#collection`,
+      "@id": `${SITE.url}/hall-guide#collection`,
       name: "전국 나이트 홀 도감 40",
       description: DESCRIPTION,
-      url: `${SITE.url}/hall`,
+      url: `${SITE.url}/hall-guide`,   /* ★ /hall 은 주소교체로 버려져 404 다 */
       inLanguage: "ko-KR",
       dateModified: HALL_UPDATED,
     },
     {
       "@type": "ItemList",
-      "@id": `${SITE.url}/hall#itemlist`,
+      "@id": `${SITE.url}/hall-guide#itemlist`,
       name: "전국 나이트 홀 도감 40",
       numberOfItems: HALL_VENUES.length,
       itemListElement: HALL_VENUES.map((v, i) => ({
@@ -85,14 +85,14 @@ const jsonLd = {
     },
     {
       "@type": "BreadcrumbList",
-      "@id": `${SITE.url}/hall#breadcrumb`,
+      "@id": `${SITE.url}/hall-guide#breadcrumb`,
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "홈", item: SITE.url },
         {
           "@type": "ListItem",
           position: 2,
           name: "전국 나이트 홀 도감 40",
-          item: `${SITE.url}/hall`,
+          item: `${SITE.url}/hall-guide`,
         },
       ],
     },

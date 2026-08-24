@@ -154,7 +154,7 @@ function jsonLd(v: HallVenue) {
         datePublished: HALL_UPDATED,
         dateModified: HALL_UPDATED,
         about: { "@id": `${url}#hall` },
-        isPartOf: { "@id": `${SITE.url}/hall#collection` },
+        isPartOf: { "@id": `${SITE.url}/hall-guide#collection` },
         author: { "@type": "Organization", name: SITE.name },
         publisher: { "@type": "Organization", name: SITE.name },
         mainEntityOfPage: url,
@@ -178,7 +178,7 @@ function jsonLd(v: HallVenue) {
             "@type": "ListItem",
             position: 2,
             name: "전국 나이트 홀 도감 40",
-            item: `${SITE.url}/hall`,
+            item: `${SITE.url}/hall-guide`,
           },
           { "@type": "ListItem", position: 3, name: v.keyword, item: url },
         ],
@@ -206,7 +206,7 @@ export default function HallPage({ venue: v }: { venue: HallVenue }) {
           <nav aria-label="현재 위치" className="mb-5 text-xs text-[#C9AFA8]">
             <Link href="/">홈</Link>
             <span className="px-1.5">›</span>
-            <Link href="/hall-guide/">전국 나이트 홀 도감 40</Link>
+            <Link href="/hall-guide">전국 나이트 홀 도감 40</Link>
             <span className="px-1.5">›</span>
             <span>{v.keyword}</span>
           </nav>
@@ -366,7 +366,7 @@ export default function HallPage({ venue: v }: { venue: HallVenue }) {
               ))}
             </ul>
             <p className="mt-5 text-center text-sm">
-              <Link href="/hall-guide/" className="underline">
+              <Link href="/hall-guide" className="underline">
                 전국 나이트 홀 도감 40 전체 보기 →
               </Link>
             </p>
