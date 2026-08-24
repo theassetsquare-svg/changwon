@@ -4,6 +4,7 @@ import { deriveFaqAnswer, nightPath, phoneDigits } from "@/lib/adnight";
 import type { AdVenue } from "@/lib/adnight";
 import { AD_BY_SLUG } from "@/lib/adnight-data";
 import { SITE } from "@/lib/site";
+import { ogAbsolute, ogSlug } from "@/lib/og";
 import { ADS } from "@/lib/venues";
 
 /** 이 페이지 마지막 정리 시각 (sitemap lastmod 와 함께 관리) */
@@ -48,7 +49,11 @@ function jsonLd(v: AdVenue) {
     name: v.spaced,
     alternateName: v.keyword,
     url,
-    image: `${SITE.url}/og/${v.slug}-og.png`,
+    /* ★ 썸네일 경로는 lib/og.ts 하나만 쓴다(그 파일의 [원칙 1]).
+       예전에는 여기서만 `${v.slug}-og.png` 라는 다른 이름을 만들어 냈다.
+       그 이름의 파일은 만들어지지 않아 JSON-LD 의 그림이 404 가 됐다
+       (2026-08-24 실측: 창원b 에서 5건). 이제 og:image 와 같은 파일을 가리킨다. */
+    image: ogAbsolute(ogSlug(nightPath(v.slug))),
     description: v.description,
     address: {
       "@type": "PostalAddress",

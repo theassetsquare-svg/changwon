@@ -232,7 +232,15 @@ async function buildRegistry() {
   const SITE = site.SITE;
   const pages = [];
 
-  const ogSlug = (p) => (p === "/" ? "home" : p.replace(/^\//, "").replace(/\//g, "-"));
+  /* ★ lib/og.ts 의 ogSlug() 와 글자 하나까지 같아야 한다.
+     예전에는 여기만 **끝의 "/" 를 떼지 않아** "/night-guide/" 가 "night-guide-" 가 됐다.
+     사이트는 "night-guide.png" 를 부르는데 생성기는 "night-guide-.png" 를 만들어
+     허브 두 페이지의 썸네일이 계속 404 였다(2026-08-24 확인). */
+  const ogSlug = (p) => {
+    const s = p.replace(/\/+$/, "");
+    if (s === "" || s === "/") return "home";
+    return s.replace(/^\//, "").replace(/\//g, "-");
+  };
 
   // A. 창원 본 사이트 — 홈 + 13페이지 + 허브 2개
   const changwonPaths = [
