@@ -28,9 +28,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
           : 0.7,
   }));
 
+  /* ★ 목록 페이지 주소는 2026-08-22 주소교체 때 /night → /night-guide 로 옮겼는데
+     이 sitemap 만 옛 주소를 계속 내보내고 있었다. 네이버가 그 주소를 저장했다가
+     눌러 보면 404 가 나온다. 실제로 있는 주소(app/night-guide/page.tsx)로 맞춘다. */
   const nightHub: MetadataRoute.Sitemap = [
     {
-      url: `${SITE.url}/night`,
+      url: `${SITE.url}/night-guide`,
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.8,
@@ -46,9 +49,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   // 전국 나이트 홀 도감 — 허브 1 + 업소 40
+  /* ★ 같은 이유 — /hall 은 app/hall-guide/page.tsx 로 옮겨졌다(2026-08-22). */
   const hallHub: MetadataRoute.Sitemap = [
     {
-      url: `${SITE.url}/hall`,
+      url: `${SITE.url}/hall-guide`,
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.9,
