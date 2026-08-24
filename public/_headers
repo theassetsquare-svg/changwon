@@ -16,7 +16,7 @@
 # nosniff 가 전역으로 걸려 있어서 Content-Type 이 틀리면 아예 그림으로 안 읽힌다.
 /og/*
   Content-Type: image/png
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=3600, must-revalidate
   X-Robots-Tag: all
 
 /icon

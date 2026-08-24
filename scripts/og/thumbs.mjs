@@ -271,6 +271,7 @@ async function buildRegistry() {
       kind: "venue",
       from: path.join(OUT_DIR, `${v.slug}-og.png`),
       alsoWrite: path.join(OUT_DIR, `${v.slug}-og.png`),
+      ogV: v.ogV,
       spec: {
         bg: v.ogBg,
         fg: v.ogFg,
@@ -292,6 +293,7 @@ async function buildRegistry() {
         route: `/hall/${v.slug}`,
         slug: ogSlug(`/hall/${v.slug}`),
         kind: "venue",
+        ogV: v.ogV,
         spec: {
           bg: BURGUNDY,
           fg: GOLD,
@@ -333,6 +335,11 @@ for (const p of pages) {
   const png = Buffer.from(await res.arrayBuffer());
   fs.writeFileSync(dest, png);
   if (p.alsoWrite) fs.writeFileSync(p.alsoWrite, png);
+  /* ★ 2026-08-25 — 판 번호(ogV) 파일도 여기서 같이 만든다.
+     페이지는 thumb({v: ogV}) 로 /og/<슬러그><판번호>.png 를 부르는데,
+     예전에는 생성기가 그 파일을 만들지 않아 **손으로 복사해 둔 옛 그림**이 그대로 나갔다.
+     그러면 데이터를 고쳐도 카드가 안 바뀐다(대전세븐 -v2 가 그 상태였다). */
+  if (p.ogV) fs.writeFileSync(path.join(OUT_DIR, `${p.slug}${p.ogV}.png`), png);
   made++;
 }
 
