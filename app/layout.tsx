@@ -62,7 +62,12 @@ export const metadata: Metadata = {
   verification: {
     google: "HJjm7MRxykCQ7d_9L7glaTeeaWrmJIzAKY0BcNcfm88",
     other: {
-      "naver-site-verification": "1e8cbbc64b5bb55288b135f25772d1b5005f89fe",
+      // ★ 배열로 준다 — 값 하나만 두면 인증 태그도 하나만 나온다.
+      //   Next.js 는 배열이면 같은 name 의 meta 를 원소 수만큼 만들어 준다.
+      "naver-site-verification": [
+        "1e8cbbc64b5bb55288b135f25772d1b5005f89fe",
+        "bc5c05687d39b1237cd8bfc49f07524141c467aa",
+      ],
     },
   },
   other: { ...SITE_OTHER, ...ROOT_THUMB.other },

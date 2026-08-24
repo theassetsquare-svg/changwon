@@ -20,7 +20,7 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const OUT = path.join(ROOT, "out");
-const SITE_URL = "https://changwonb.pages.dev";
+const SITE_URL = "https://g.nolcool.com";
 const MAX_BYTES = 300 * 1024;
 
 const registry = JSON.parse(

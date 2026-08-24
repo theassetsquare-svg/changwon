@@ -3,7 +3,7 @@
 // 검증: HTTP 200, <title> 존재, JSON-LD 1개 이상, canonical 존재, og:title 존재
 // 사용: node scripts/seo/healthcheck.mjs
 
-const SITE = process.env.SITE_URL || "https://changwonb.pages.dev";
+const SITE = process.env.SITE_URL || "https://g.nolcool.com";
 
 const CORE_ROUTES = [
   "/",

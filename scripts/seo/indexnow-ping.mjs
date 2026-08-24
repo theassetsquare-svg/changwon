@@ -10,7 +10,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-const SITE = "https://changwonb.pages.dev";
+const SITE = "https://g.nolcool.com";
 const KEY = "5dbbbc240f629ca365331a82de4fdf03";
 const KEY_LOCATION = `${SITE}/${KEY}.txt`;
 

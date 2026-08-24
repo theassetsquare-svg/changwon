@@ -12,7 +12,7 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
-const SITE = "https://changwonb.pages.dev";
+const SITE = "https://g.nolcool.com";
 
 const registry = JSON.parse(
   fs.readFileSync(path.join(ROOT, "scripts/og/registry.json"), "utf8"),
