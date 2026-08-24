@@ -7,7 +7,7 @@ import type { HallVenue } from "../hall";
 export const GROUP_3: HallVenue[] = [
   {
     no: 17,
-    slug: "14",
+    slug: "14-1",
     keyword: "영등포터미널나이트",
     spaced: "영등포 터미널나이트",
     regionType: "영등포구 나이트클럽",
@@ -101,12 +101,12 @@ export const GROUP_3: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "복층 이동 시 계단을 이용하게 됩니다. 음주 후에는 조심하세요.",
     ],
-    related: ["13", "7", "bucheon-gorae"],
+    related: ["13-1", "7-1", "bucheon-gorae"],
   },
 
   {
     no: 18,
-    slug: "15",
+    slug: "15-1",
     keyword: "노원호박나이트",
     spaced: "노원 호박나이트",
     regionType: "노원구 나이트클럽",
@@ -197,12 +197,12 @@ export const GROUP_3: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "확인되지 않은 층·영업시간·요금은 싣지 않았습니다.",
     ],
-    related: ["7", "bulgwang-hobak", "19"],
+    related: ["7-1", "bulgwang-hobak", "19-1"],
   },
 
   {
     no: 19,
-    slug: "16",
+    slug: "16-1",
     keyword: "길동찬스나이트",
     spaced: "길동 찬스나이트",
     regionType: "강동구 나이트클럽",
@@ -297,12 +297,12 @@ export const GROUP_3: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "확인되지 않은 요금·좌석 수는 싣지 않았습니다.",
     ],
-    related: ["cheongdam", "dapsimni-miracle", "18"],
+    related: ["cheongdam", "dapsimni-miracle", "18-1"],
   },
 
   {
     no: 20,
-    slug: "17",
+    slug: "17-1",
     keyword: "파주야당스카이돔나이트",
     spaced: "파주 야당스카이돔나이트",
     regionType: "파주 나이트클럽",
@@ -393,12 +393,12 @@ export const GROUP_3: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "천장 형태에 따른 설명은 일반적인 돔형 홀 기준입니다.",
     ],
-    related: ["8", "26", "10"],
+    related: ["8-1", "26-1", "10-1"],
   },
 
   {
     no: 21,
-    slug: "18",
+    slug: "18-1",
     keyword: "구리호박나이트",
     spaced: "구리 호박나이트",
     regionType: "구리 나이트클럽",
@@ -488,12 +488,12 @@ export const GROUP_3: HallVenue[] = [
       "정확한 지번·층·영업시간은 확인되지 않아 싣지 않았습니다.",
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
     ],
-    related: ["16", "20", "15"],
+    related: ["16-1", "20-1", "15-1"],
   },
 
   {
     no: 22,
-    slug: "19",
+    slug: "19-1",
     keyword: "의정부한국관나이트",
     spaced: "의정부 한국관나이트",
     regionType: "의정부 나이트클럽",
@@ -589,12 +589,12 @@ export const GROUP_3: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "상가 건물 공용부에서는 다른 입점 업소에 방해가 되지 않도록 해 주세요.",
     ],
-    related: ["20", "15", "6"],
+    related: ["20-1", "15-1", "6-1"],
   },
 
   {
     no: 23,
-    slug: "20",
+    slug: "20-1",
     keyword: "의정부백악관나이트",
     spaced: "의정부 백악관나이트",
     regionType: "의정부 나이트클럽",
@@ -694,12 +694,12 @@ export const GROUP_3: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "확인되지 않은 층·좌석 수·요금은 싣지 않았습니다.",
     ],
-    related: ["19", "18", "15"],
+    related: ["19-1", "18-1", "15-1"],
   },
 
   {
     no: 24,
-    slug: "21",
+    slug: "21-1",
     keyword: "수원코리아나이트",
     spaced: "수원 코리아나이트",
     regionType: "수원 나이트클럽",
@@ -790,6 +790,6 @@ export const GROUP_3: HallVenue[] = [
       "성인 대상 홀이며 입장 시 신분증 확인이 있을 수 있습니다.",
       "인계동 상권은 심야 교통이 혼잡합니다. 귀가 수단을 미리 정해 두세요.",
     ],
-    related: ["8", "22", "24"],
+    related: ["8-1", "22-1", "24-1"],
   },
 ];
