@@ -80,27 +80,27 @@
   "kind": "changwon"
  },
  {
-  "route": "/night/bulgwang-hobak-night",
+  "route": "/bulgwang-hobak-night",
   "slug": "night-bulgwang-hobak-night",
   "kind": "venue"
  },
  {
-  "route": "/night/changwon-lululala-night",
+  "route": "/changwon-lululala-night",
   "slug": "night-changwon-lululala-night",
   "kind": "venue"
  },
  {
-  "route": "/night/ulsan-champion-night",
+  "route": "/ulsan-champion-night",
   "slug": "night-ulsan-champion-night",
   "kind": "venue"
  },
  {
-  "route": "/night/1-1",
+  "route": "/cheongdam-night",
   "slug": "night-1-1",
   "kind": "venue"
  },
  {
-  "route": "/night/daejeon-one-night",
+  "route": "/daejeon-one-night",
   "slug": "night-daejeon-one-night",
   "kind": "venue"
  },
@@ -115,7 +115,7 @@
   "kind": "venue"
  },
  {
-  "route": "/night/2-1",
+  "route": "/suyu-shampoo-night",
   "slug": "night-2-1",
   "kind": "venue"
  },
@@ -125,12 +125,12 @@
   "kind": "venue"
  },
  {
-  "route": "/night/3-1",
+  "route": "/suwon-chancedome-night",
   "slug": "night-3-1",
   "kind": "venue"
  },
  {
-  "route": "/night/ansan-hit-night",
+  "route": "/ansan-hit-night",
   "slug": "night-ansan-hit-night",
   "kind": "venue"
  },
@@ -140,7 +140,7 @@
   "kind": "venue"
  },
  {
-  "route": "/night/4-1",
+  "route": "/ilsan-shampoo-night",
   "slug": "night-4-1",
   "kind": "venue"
  },

@@ -1098,4 +1098,8 @@ export const VENUE_BY_SLUG = Object.fromEntries(
   VENUES.map((v) => [v.slug, v])
 ) as Record<string, Venue>;
 
-export const venuePath = (slug: string) => `/night/${slug}`;
+/* ★ 2026-08-26 — 가게 페이지 주소는 메인주소 바로 뒤에 가게이름.
+ *   단 네이버에 이미 나오는 아래 슬러그만 옛 /night/ 경로를 그대로 쓴다. */
+const NIGHT_KEEP_OLD = new Set(["sillim-grandprix-night", "sangbong-hangukgwan-night", "busan-asiad-night", "daejeon-seven-night"]);
+export const venuePath = (slug: string) =>
+  NIGHT_KEEP_OLD.has(slug) ? `/night/${slug}` : `/${slug}`;

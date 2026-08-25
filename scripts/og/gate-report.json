@@ -160,7 +160,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/night/bulgwang-hobak-night",
+  "route": "/bulgwang-hobak-night",
   "slug": "night-bulgwang-hobak-night",
   "img": "O",
   "same": "O",
@@ -170,7 +170,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/night/changwon-lululala-night",
+  "route": "/changwon-lululala-night",
   "slug": "night-changwon-lululala-night",
   "img": "O",
   "same": "O",
@@ -180,7 +180,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/night/ulsan-champion-night",
+  "route": "/ulsan-champion-night",
   "slug": "night-ulsan-champion-night",
   "img": "O",
   "same": "O",
@@ -200,7 +200,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/night/daejeon-one-night",
+  "route": "/daejeon-one-night",
   "slug": "night-daejeon-one-night",
   "img": "O",
   "same": "O",
@@ -260,7 +260,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/night/ansan-hit-night",
+  "route": "/ansan-hit-night",
   "slug": "night-ansan-hit-night",
   "img": "O",
   "same": "O",
