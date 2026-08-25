@@ -74,7 +74,55 @@ export type HallVenue = {
   related: string[];
 };
 
-export const hallPath = (slug: string) => `/hall/${slug}`;
+/* ★ 2026-08-26 대표님 확정 — 가게 페이지 주소는 메인주소 바로 뒤에 가게이름.
+ *   네이버에 이미 나오는 아래 슬러그만 옛 /hall/ 경로를 그대로 쓴다. */
+export const HALL_KEEP_OLD = new Set<string>(["bulgwang-hobak", "daegu-hobak", "gwangju-sangmu", "daejeon-one"]);
+
+/** 슬러그 → 새 주소 이름 (루트에서 부딪히지 않도록 미리 정해 둔다) */
+export const HALL_URL_MAP: Record<string, string> = {
+  "5-1": "sillim-grandprix-night",
+  "6-1": "sangbong-hangukgwan-night",
+  "7-1": "suyu-shampoo-night-1",
+  "busan-asiad": "busan-asiad-night",
+  "8-1": "suwon-chancedome-night-1",
+  "9-1": "ansan-hit-night-1",
+  "daejeon-seven": "daejeon-seven-night",
+  "10-1": "ilsan-shampoo-night-1",
+  "cheongdam": "cheongdam-night-1",
+  "changwon-lululala": "changwon-lululala-night-1",
+  "11-1": "ulsan-champion-night-1",
+  "12-1": "doksan-gukbingwan-night",
+  "dapsimni-miracle": "dapsimni-miracle-night",
+  "13-1": "gangseo-hobak-night",
+  "14-1": "yeongdeungpo-terminal-night",
+  "15-1": "nowon-hobak-night",
+  "16-1": "gildong-chance-night",
+  "17-1": "paju-skydome-night",
+  "18-1": "guri-hobak-night",
+  "19-1": "uijeongbu-hangukgwan-night",
+  "20-1": "uijeongbu-baekakgwan-night",
+  "21-1": "suwon-korea-night",
+  "22-1": "osan-hobak-night",
+  "23-1": "indeogwon-gukbingwan-night",
+  "24-1": "seongnam-shampoo-night",
+  "25-1": "incheon-arabian-night",
+  "bucheon-gorae": "bucheon-gorae-night",
+  "pyeongtaek-hobak": "pyeongtaek-hobak-night",
+  "26-1": "cheonan-stardome-night",
+  "cheonan-korea": "cheonan-korea-night",
+  "cheongju-hobak": "cheongju-hobak-night",
+  "27-1": "ulsan-newworld-night",
+  "seosan-hobak": "seosan-hobak-night",
+  "28-1": "gumi-hobak-night",
+  "gwangju-cheomdan": "gwangju-cheomdan-night",
+  "29-1": "jeju-night",
+};
+export const HALL_SLUG_BY_URL: Record<string, string> = Object.fromEntries(
+  Object.entries(HALL_URL_MAP).map(([slug, url]) => [url, slug])
+);
+
+export const hallPath = (slug: string) =>
+  HALL_KEEP_OLD.has(slug) ? `/hall/${slug}` : `/${HALL_URL_MAP[slug] ?? slug}`;
 export const phoneDigits = (p: string) => p.replace(/[^0-9]/g, "");
 
 /** 확인 못 한 항목은 표에서 아예 빼는 대신, 이 문구로 한 번만 밝힌다 */
