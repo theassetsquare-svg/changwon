@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import PageJsonLd from "@/components/PageJsonLd";
+/* ★사이트 신원(창원룰루랄라나이트) JSON-LD 는 홈과 자기 페이지에서만 렌더한다.
+   전에는 layout 에 있어 남의 가게 페이지까지 오염시켰다(2026-08-25 수리). */
+import JsonLd from "@/components/JsonLd";
 import OgThumb from "@/components/OgThumb";
 import { PAGE_META, SITE, SITE_OTHER } from "@/lib/site";
 import { thumb } from "@/lib/og";
@@ -78,6 +81,7 @@ export default function HomePage() {
   return (
     <>
       <main>
+        <JsonLd />
         <PageJsonLd pathname="/" />
 
         {/* 읽은 분량 표시 — 지원 브라우저에서만 동작하고, 아니면 그냥 보이지 않는다 */}

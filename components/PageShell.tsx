@@ -1,6 +1,9 @@
 import type { ReactNode } from "react";
 import RelatedPages from "./RelatedPages";
 import PageJsonLd from "./PageJsonLd";
+/* PageShell 은 창원룰루랄라 자기 페이지 13개(about·contact·faq·lotto…)만 쓴다.
+   그래서 사이트 신원 JSON-LD 를 여기 두면 남의 가게 페이지로 새지 않는다(2026-08-25). */
+import JsonLd from "./JsonLd";
 import StickyCallBar from "./StickyCallBar";
 import OgThumb from "./OgThumb";
 import { PAGE_META, SITE } from "@/lib/site";
@@ -29,6 +32,7 @@ export default function PageShell({
   return (
     <>
       <main className="mx-auto max-w-3xl px-4 py-10 sm:py-14">
+      <JsonLd />
       {pathname ? <PageJsonLd pathname={pathname} /> : null}
 
       <header className="mb-6 fade-up">

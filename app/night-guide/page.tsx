@@ -3,7 +3,7 @@ import Link from "next/link";
 import StickyCallBar from "@/components/StickyCallBar";
 import KakaoIdCopy from "@/components/KakaoIdCopy";
 import OgThumb from "@/components/OgThumb";
-import { SITE, SITE_OTHER } from "@/lib/site";
+import { SITE, SITE_OTHER_NOPHONE } from "@/lib/site";
 import { thumb } from "@/lib/og";
 import { ADS } from "@/lib/venues";
 import { AD_VENUES } from "@/lib/adnight-data";
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     images: [THUMB.url],
   },
-  other: { ...SITE_OTHER, ...THUMB.other },
+  other: { ...SITE_OTHER_NOPHONE, ...THUMB.other },
 };
 
 const FAQ = [

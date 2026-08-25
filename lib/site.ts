@@ -129,6 +129,22 @@ export const SITE_OTHER = {
   "twitter:data2": "27세 이상",
 } as const;
 
+/**
+ * ★로또(창원룰루랄라) 번호가 빠진 판.
+ *
+ * 왜 필요한가 — SITE_OTHER 에는 `twitter:data1 = 010-7528-4936` 이 들어 있다.
+ * 이걸 남의 가게를 다루는 페이지(night-guide 등)나 layout 기본값으로 쓰면
+ * **로또 번호가 그 페이지에 새어 들어간다.** 2026-08-25 night-guide 에서 실제로 발견했다.
+ * 광고주 규칙: 번호는 자기 가게 페이지와 자기 지역 페이지에만.
+ *
+ * 자기 페이지(홈 + 창원룰루랄라 13개)는 그대로 SITE_OTHER 를 쓰고,
+ * 그 외에는 이 판을 쓴다.
+ */
+export const SITE_OTHER_NOPHONE = (() => {
+  const { "twitter:label1": _l1, "twitter:data1": _d1, ...rest } = SITE_OTHER;
+  return rest;
+})();
+
 export const PLACEHOLDER = "[입력필요]";
 
 export const PLACEHOLDERS = {

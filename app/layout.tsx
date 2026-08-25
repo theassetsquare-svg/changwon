@@ -1,8 +1,13 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { SiteHeader, SiteFooter } from "@/components/SiteChrome";
-import JsonLd from "@/components/JsonLd";
-import { SITE, SITE_OTHER } from "@/lib/site";
+/* ★2026-08-25 — JsonLd 를 여기(= 모든 페이지)에서 뺐다.
+   JsonLd 는 창원룰루랄라나이트의 신원(이름·전화 010-7528-4936·예약방법)을 담고 있는데
+   layout 에 있으면 일산샴푸·부산아시아드 같은 **남의 가게 페이지에도 그대로 찍힌다.**
+   실측 53페이지에서 로또 번호가 새고 있었고, 네이버가 그 페이지를 창원룰루랄라 페이지로
+   오인할 수 있어 "가게이름 검색 상위노출" 목표에 정면으로 어긋난다.
+   → 홈(app/page.tsx)과 창원룰루랄라 자기 페이지 13개(PageShell)에서만 렌더한다. */
+import { SITE, SITE_OTHER_NOPHONE } from "@/lib/site";
 import { thumb } from "@/lib/og";
 
 /** 루트 기본 썸네일 — 개별 페이지는 각자 자기 파일로 덮어쓴다 */
@@ -70,7 +75,7 @@ export const metadata: Metadata = {
       ],
     },
   },
-  other: { ...SITE_OTHER, ...ROOT_THUMB.other },
+  other: { ...SITE_OTHER_NOPHONE, ...ROOT_THUMB.other },
 };
 
 export const viewport: Viewport = {
@@ -95,7 +100,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
-        <JsonLd />
         <SiteHeader />
         {children}
         <SiteFooter />
