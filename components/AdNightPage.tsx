@@ -112,10 +112,12 @@ export default function AdNightPage({ venue: v }: { venue: AdVenue }) {
   const related = (() => {
     const out = v.related.map((s) => AD_BY_SLUG[s]).filter(Boolean);
     if (out.length < 6) {
+      /* ★ 자기 위치 다음부터 순환해 채운다 — 앞에서부터 채우면 뒤쪽 가게가 고립된다 */
       const have = new Set(out.map((x) => x.slug));
-      for (const o of AD_VENUES) {
-        if (out.length >= 6) break;
-        if (o.slug === v.slug || have.has(o.slug)) continue;
+      const base = Math.max(0, AD_VENUES.findIndex((x) => x.slug === v.slug));
+      for (let i = 1; out.length < 6 && i <= AD_VENUES.length; i++) {
+        const o = AD_VENUES[(base + i) % AD_VENUES.length];
+        if (!o || o.slug === v.slug || have.has(o.slug)) continue;
         out.push(o); have.add(o.slug);
       }
     }
