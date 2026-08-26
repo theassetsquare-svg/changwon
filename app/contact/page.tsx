@@ -4,17 +4,17 @@ import Placeholder from "@/components/Placeholder";
 import { PAGE_META, PLACEHOLDERS, SITE, SITE_OTHER } from "@/lib/site";
 import { thumb } from "@/lib/og";
 
-const m = PAGE_META["/contact"];
+const m = PAGE_META["/contact-1/"];
 
 /** 이 페이지 전용 썸네일 — og:image 와 본문 <img> 가 같은 파일을 가리킨다 */
 const THUMB = thumb({
-  pathname: "/contact",
+  pathname: "/contact-1/",
   alt: `${SITE.nameNoSpace} 문의`,
 });
 export const metadata: Metadata = {
   title: m.title,
   description: m.description,
-  alternates: { canonical: "/contact" },
+  alternates: { canonical: "/contact-1/" },
   openGraph: {
     title: m.title,
     description: m.description,
@@ -46,7 +46,7 @@ const CONTACT_FAQ = [
 
 export default function ContactPage() {
   return (
-    <PageShell title="창원룰루랄라나이트 문의" hook={m.hook} pathname="/contact" thumbAlt={THUMB.alt}>
+    <PageShell title="창원룰루랄라나이트 문의" hook={m.hook} pathname="/contact-1/" thumbAlt={THUMB.alt}>
       <p>
         전화로 문의해 주시면 매니저가 직접 답변합니다.{" "}
         <strong className="text-white">창원 룰루랄라 나이트</strong> 모든 문의는

@@ -3,17 +3,17 @@ import PageShell from "@/components/PageShell";
 import { PAGE_META, SITE, SITE_OTHER } from "@/lib/site";
 import { thumb } from "@/lib/og";
 
-const m = PAGE_META["/event"];
+const m = PAGE_META["/event-1/"];
 
 /** 이 페이지 전용 썸네일 — og:image 와 본문 <img> 가 같은 파일을 가리킨다 */
 const THUMB = thumb({
-  pathname: "/event",
+  pathname: "/event-1/",
   alt: `${SITE.nameNoSpace} 이벤트`,
 });
 export const metadata: Metadata = {
   title: m.title,
   description: m.description,
-  alternates: { canonical: "/event" },
+  alternates: { canonical: "/event-1/" },
   openGraph: {
     title: m.title,
     description: m.description,
@@ -48,7 +48,7 @@ export default function EventPage() {
     <PageShell
       title="창원룰루랄라나이트 이벤트"
       hook={m.hook}
-      pathname="/event"
+      pathname="/event-1/"
       thumbAlt={THUMB.alt}
     >
       <p>

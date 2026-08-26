@@ -175,15 +175,15 @@ export const NAV = [
   { href: "/lotto", label: "매니저" },
   { href: "/price", label: "가격" },
   { href: "/location", label: "오시는 길" },
-  { href: "/reserve", label: "예약" },
+  { href: "/reserve-1/", label: "예약" },
   { href: "/review", label: "후기" },
-  { href: "/photo", label: "사진" },
+  { href: "/photo-1/", label: "사진" },
   { href: "/news", label: "소식" },
   { href: "/faq", label: "FAQ" },
-  { href: "/around", label: "주변" },
-  { href: "/event", label: "이벤트" },
+  { href: "/around-1/", label: "주변" },
+  { href: "/event-1/", label: "이벤트" },
   { href: "/vip", label: "VIP" },
-  { href: "/contact", label: "문의" },
+  { href: "/contact-1/", label: "문의" },
 ] as const;
 // NAV 는 창원 사이트 본 메뉴 전용이다.
 // /night(전국 나이트) 는 창원 페이지의 헤더 메뉴·본문 링크 구성을 바꾸지 않기 위해
@@ -233,7 +233,7 @@ export const PAGE_META: Record<
     capsule:
       "창원 룰루랄라 나이트는 경상남도 창원시 성산구 상남동 22-4 지하 3층, 도로명 마디미로43번길 10에 위치하며 도착 직전 전화로 안내받을 수 있습니다.",
   },
-  "/reserve": {
+  "/reserve-1/": {
     title: "창원룰루랄라나이트 예약 30초 — 앱·회원가입·결제등록 없음",
     description:
       "창원룰루랄라나이트 예약은 문의 한 번이면 끝납니다. 인원·날짜·시간 → 자리 확정. 처음 오시는 분도 30초면 끝납니다.",
@@ -249,7 +249,7 @@ export const PAGE_META: Record<
     capsule:
       "창원 룰루랄라 나이트 후기 페이지에는 실제 손님이 매장에 직접 남긴 후기만 게시되며, 가짜 별점이나 조작 평가는 일절 사용하지 않습니다.",
   },
-  "/photo": {
+  "/photo-1/": {
     title: "창원룰루랄라나이트 매장 사진 — 합성·외부 이미지 0장",
     description:
       "창원룰루랄라나이트 매장 사진은 전부 실제 우리 가게 컷. 매니저가 직접 찍거나 손님이 허락하고 찍어준 사진만 올립니다.",
@@ -273,7 +273,7 @@ export const PAGE_META: Record<
     capsule:
       "창원 룰루랄라 나이트 FAQ는 예약·가격·연령·결제·주차 등 매니저가 평소 받는 질문을 그대로 정리한 페이지입니다.",
   },
-  "/around": {
+  "/around-1/": {
     title: "창원룰루랄라나이트 주변 — 식사·해장·숙소·대리 동선 정리",
     description:
       "창원룰루랄라나이트 주변 식사·해장·숙소·대리·24시 카페 정리. 광고비 받고 끼워 넣지 않고 직접 다녀본 곳만 적었습니다.",
@@ -281,7 +281,7 @@ export const PAGE_META: Record<
     capsule:
       "창원 룰루랄라 나이트 주변 페이지는 매장 인근 식당·숙소·대리 정보를 모아 손님의 방문 전후 동선을 미리 잡을 수 있도록 안내합니다.",
   },
-  "/event": {
+  "/event-1/": {
     title: "창원룰루랄라나이트 이벤트 — 진행 중인 혜택만 게시",
     description:
       "창원룰루랄라나이트 이벤트는 진행 중인 혜택만 게시. 종료된 이벤트는 즉시 내리고, '30% 할인' 같은 거짓 광고는 쓰지 않습니다.",
@@ -297,7 +297,7 @@ export const PAGE_META: Record<
     capsule:
       "창원 룰루랄라 나이트 VIP 룸은 실제 운영 시점에만 안내하며, 자리 배정은 매니저가 인원과 상황을 보고 직접 결정합니다.",
   },
-  "/night-guide/": {
+  "/night-guide-1/": {
     title: "전국 나이트 예약 문의 — 지역별 담당자 연락처 모음",
     description:
       "불광동호박나이트·울산챔피언나이트·청담나이트 등 전국 나이트 예약 문의처를 지역별로 정리했습니다. 광고문의 카톡 besta12. 만 19세 이상, 입장 시 신분증 확인.",
@@ -305,7 +305,7 @@ export const PAGE_META: Record<
     capsule:
       "전국 나이트 예약 문의 페이지는 지역별 업소의 예약 담당자 전화·카카오톡 연락처를 모아둔 안내 페이지입니다.",
   },
-  "/contact": {
+  "/contact-1/": {
     title: "창원룰루랄라나이트 문의 — 매니저 직접 응대 010-7528-4936",
     description:
       "창원룰루랄라나이트 문의는 매니저가 직접 응대. 예약·가격·길 안내·VIP 룸까지 한 번에 답 드립니다. 010-7528-4936.",

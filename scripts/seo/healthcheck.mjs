@@ -11,15 +11,15 @@ const CORE_ROUTES = [
   "/lotto",
   "/price",
   "/location",
-  "/reserve",
+  "/reserve-1/",
   "/review",
-  "/photo",
+  "/photo-1/",
   "/news",
   "/faq",
-  "/around",
-  "/event",
+  "/around-1/",
+  "/event-1/",
   "/vip",
-  "/contact",
+  "/contact-1/",
 ];
 
 // 전국 나이트 홀 도감 40 (lib/hall/group-*.ts 의 slug 와 동일해야 함)
@@ -69,14 +69,14 @@ const HALL_SLUGS = [
 const HALL_ROUTES = HALL_SLUGS.map((s) => `/hall/${s}`);
 const ROUTES = [
   ...CORE_ROUTES,
-  "/night-guide/",
-  "/hall-guide/",
+  "/night-guide-1/",
+  "/hall-guide-1/",
   ...HALL_ROUTES,
 ];
 
 // /hall 은 홀 도감 전용 고정바(.hallbar)를 쓴다. 창원 페이지의 고정바 클래스와
 // 다르므로 고정바 검사에서 사용할 패턴을 경로별로 나눈다.
-const isHall = (route) => route === "/hall-guide/" || route.startsWith("/hall-guide/");
+const isHall = (route) => route === "/hall-guide-1/" || route.startsWith("/hall-guide-1/");
 
 // FAQPage 구조화 데이터가 반드시 있어야 하는 경로
 const FAQ_REQUIRED = new Set([
@@ -84,8 +84,8 @@ const FAQ_REQUIRED = new Set([
   "/faq",
   "/location",
   "/news",
-  "/event",
-  "/night-guide/",
+  "/event-1/",
+  "/night-guide-1/",
   ...HALL_ROUTES,
 ]);
 

@@ -3,17 +3,17 @@ import PageShell from "@/components/PageShell";
 import { PAGE_META, SITE, SITE_OTHER } from "@/lib/site";
 import { thumb } from "@/lib/og";
 
-const m = PAGE_META["/reserve"];
+const m = PAGE_META["/reserve-1/"];
 
 /** 이 페이지 전용 썸네일 — og:image 와 본문 <img> 가 같은 파일을 가리킨다 */
 const THUMB = thumb({
-  pathname: "/reserve",
+  pathname: "/reserve-1/",
   alt: `${SITE.nameNoSpace} 예약 안내`,
 });
 export const metadata: Metadata = {
   title: m.title,
   description: m.description,
-  alternates: { canonical: "/reserve" },
+  alternates: { canonical: "/reserve-1/" },
   openGraph: {
     title: m.title,
     description: m.description,
@@ -53,7 +53,7 @@ const RESERVE_FAQ = [
 
 export default function ReservePage() {
   return (
-    <PageShell title="창원룰루랄라나이트 예약" hook={m.hook} pathname="/reserve" thumbAlt={THUMB.alt}>
+    <PageShell title="창원룰루랄라나이트 예약" hook={m.hook} pathname="/reserve-1/" thumbAlt={THUMB.alt}>
       <p>
         앱 다운로드, 회원가입, 결제정보, 그런 거 없습니다. 전화 한 통이면 끝나요.
         진짜로 30초입니다. <strong className="text-white">창원 룰루랄라 나이트</strong>{" "}

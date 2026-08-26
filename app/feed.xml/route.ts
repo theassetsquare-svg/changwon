@@ -28,7 +28,7 @@ export function GET() {
     </item>`;
   }).join("\n");
 
-  const nightHub = PAGE_META["/night-guide/"];
+  const nightHub = PAGE_META["/night-guide-1/"];
   const nightHubItem = `    <item>
       <title>${esc(nightHub.title)}</title>
       <link>${esc(SITE.url)}/night</link>

@@ -3,17 +3,17 @@ import PageShell from "@/components/PageShell";
 import { PAGE_META, SITE, SITE_OTHER } from "@/lib/site";
 import { thumb } from "@/lib/og";
 
-const m = PAGE_META["/photo"];
+const m = PAGE_META["/photo-1/"];
 
 /** 이 페이지 전용 썸네일 — og:image 와 본문 <img> 가 같은 파일을 가리킨다 */
 const THUMB = thumb({
-  pathname: "/photo",
+  pathname: "/photo-1/",
   alt: `${SITE.nameNoSpace} 사진`,
 });
 export const metadata: Metadata = {
   title: m.title,
   description: m.description,
-  alternates: { canonical: "/photo" },
+  alternates: { canonical: "/photo-1/" },
   openGraph: {
     title: m.title,
     description: m.description,
@@ -48,7 +48,7 @@ export default function PhotoPage() {
     <PageShell
       title="창원룰루랄라나이트 매장 사진"
       hook={m.hook}
-      pathname="/photo"
+      pathname="/photo-1/"
       thumbAlt={THUMB.alt}
     >
       <p>

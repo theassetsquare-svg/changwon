@@ -14,7 +14,7 @@ const DESCRIPTION =
   "전국 나이트 40곳을 공간 축으로 정리한 홀 도감입니다. 입구·플로어·테이블 구역·부스 구역을 같은 순서로 읽고, 확인된 사실과 일반적인 홀 기준을 갈라 적었습니다.";
 
 const THUMB = thumb({
-  pathname: "/hall-guide/",
+  pathname: "/hall-guide-1/",
   alt: `${SITE.nameNoSpace} 전국 나이트 홀 도감 40 — 입구·플로어·테이블·부스`,
 });
 
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     "나이트 테이블",
     ...HALL_VENUES.slice(0, 12).map((v) => v.keyword),
   ],
-  alternates: { canonical: "/hall-guide" },
+  alternates: { canonical: "/hall-guide-1/" },
   openGraph: {
     type: "website",
     locale: "ko_KR",
@@ -129,7 +129,7 @@ export default function HallHubPage() {
 
           {/* 썸네일 — og:image 와 같은 파일을 본문에도 실제로 렌더한다 */}
           <figure className="mb-8">
-            <OgThumb pathname="/hall-guide/" alt={THUMB.alt} />
+            <OgThumb pathname="/hall-guide-1/" alt={THUMB.alt} />
           </figure>
 
           <section className="plan">
