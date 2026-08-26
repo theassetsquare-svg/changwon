@@ -7,7 +7,7 @@ import {
   phoneDigits,
 } from "@/lib/hall";
 import type { HallVenue } from "@/lib/hall";
-import { HALL_BY_SLUG } from "@/lib/hall-data";
+import { HALL_VENUES, HALL_BY_SLUG } from "@/lib/hall-data";
 import { SITE } from "@/lib/site";
 import { ADS } from "@/lib/venues";
 
@@ -188,10 +188,19 @@ function jsonLd(v: HallVenue) {
 }
 
 export default function HallPage({ venue: v }: { venue: HallVenue }) {
-  const related = v.related
-    .map((s) => HALL_BY_SLUG[s])
-    .filter(Boolean)
-    .slice(0, 4);
+  /* ★ 2026-08-26 — 관련 링크가 적으면 색인이 안 된다. 모자라면 6개까지 채운다. */
+  const related = (() => {
+    const out = v.related.map((s) => HALL_BY_SLUG[s]).filter(Boolean);
+    if (out.length < 6) {
+      const have = new Set(out.map((x) => x.slug));
+      for (const o of HALL_VENUES) {
+        if (out.length >= 6) break;
+        if (o.slug === v.slug || have.has(o.slug)) continue;
+        out.push(o); have.add(o.slug);
+      }
+    }
+    return out.slice(0, 6);
+  })();
 
   return (
     <>

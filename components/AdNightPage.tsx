@@ -2,7 +2,7 @@ import Link from "next/link";
 import OgThumb from "./OgThumb";
 import { deriveFaqAnswer, nightPath, phoneDigits } from "@/lib/adnight";
 import type { AdVenue } from "@/lib/adnight";
-import { AD_BY_SLUG } from "@/lib/adnight-data";
+import { AD_VENUES, AD_BY_SLUG } from "@/lib/adnight-data";
 import { SITE } from "@/lib/site";
 import { ogAbsolute, ogSlug } from "@/lib/og";
 import { ADS } from "@/lib/venues";
@@ -107,10 +107,20 @@ function jsonLd(v: AdVenue) {
 }
 
 export default function AdNightPage({ venue: v }: { venue: AdVenue }) {
-  const related = v.related
-    .map((s) => AD_BY_SLUG[s])
-    .filter(Boolean)
-    .slice(0, 4);
+  /* ★ 2026-08-26 — 관련 링크가 적으면 네이버가 "중요하지 않은 페이지"로 본다.
+   *   실측: 들어오는 링크 0~2개인 페이지가 색인이 안 됐다. 모자라면 6개까지 채운다. */
+  const related = (() => {
+    const out = v.related.map((s) => AD_BY_SLUG[s]).filter(Boolean);
+    if (out.length < 6) {
+      const have = new Set(out.map((x) => x.slug));
+      for (const o of AD_VENUES) {
+        if (out.length >= 6) break;
+        if (o.slug === v.slug || have.has(o.slug)) continue;
+        out.push(o); have.add(o.slug);
+      }
+    }
+    return out.slice(0, 6);
+  })();
 
   return (
     <>
