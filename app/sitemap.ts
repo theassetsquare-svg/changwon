@@ -66,8 +66,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  /* ★ 2026-08-27 — 홈 푸터에서 이어지는 건전한 지역 안내 페이지.
+     public/business-district/index.html 로 만들어 두었고 사이트맵에도 실어야 색인 대상이 된다. */
+  const areaGuide: MetadataRoute.Sitemap = [
+    {
+      url: `${SITE.url}/business-district/`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+  ];
+
   return [
     ...core,
+    ...areaGuide,
     ...nightHub,
     ...adVenues,
     ...hallHub,
