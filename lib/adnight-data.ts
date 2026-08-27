@@ -13,7 +13,7 @@ export const AD_VENUES: AdVenue[] = [
   // ── 1. 불광동호박나이트 · 각도6 오해 깨기형 ────────────────
   {
     no: 1,
-    slug: "bulgwang-hobak-night-1",
+    slug: "bulgwang-hobak-night",
     notice: [
       "불광동 호박나이트 안내 페이지이며 업소 공식 홈페이지가 아닙니다.",
       "성인 대상 홀이라 입장할 때 신분증을 확인할 수 있습니다.",
@@ -127,7 +127,7 @@ export const AD_VENUES: AdVenue[] = [
   // ── 2. 창원룰루랄라나이트 · 각도7 문답형 ──────────────────
   {
     no: 2,
-    slug: "changwon-lululala-night-2",
+    slug: "changwon-lululala-night",
     notice: [
       "창원 룰루랄라나이트 이용 안내이며 요금표는 싣지 않습니다.",
       "만 27세 이상만 출입할 수 있고 신분증을 확인합니다.",
@@ -303,7 +303,7 @@ export const AD_VENUES: AdVenue[] = [
   // ── 3. 울산챔피언나이트 · 각도8 시간 흐름형 ────────────────
   {
     no: 3,
-    slug: "ulsan-champion-night-2",
+    slug: "ulsan-champion-night",
     notice: [
       "울산 챔피언나이트 소개 페이지입니다. 예약은 담당자 통화로 확정됩니다.",
       "청소년은 출입할 수 없는 성인 영업장입니다.",
@@ -526,7 +526,7 @@ export const AD_VENUES: AdVenue[] = [
   // ── 5. 대전원나이트 · 각도10 짧은 요약형 ───────────────────
   {
     no: 5,
-    slug: "daejeon-one-night-1",
+    slug: "daejeon-one-night",
     notice: [
       "대전 원나이트 요약 안내입니다. 확인된 항목만 실었습니다.",
       "만 38세 이상만 출입할 수 있습니다.",
@@ -657,7 +657,7 @@ export const AD_VENUES: AdVenue[] = [
   // ── 6. 신림그랑프리나이트 · 각도11 인원별 공략형 ────────────
   {
     no: 6,
-    slug: "sillim-grandprix-night-1",
+    slug: "sillim-grandprix-night",
     notice: [
       "신림 그랑프리나이트 인원별 안내이며 공식 홈페이지가 아닙니다.",
       "성인 대상 홀이며 청소년 출입은 불가합니다.",
@@ -768,7 +768,7 @@ export const AD_VENUES: AdVenue[] = [
   // ── 7. 상봉동한국관나이트 · 각도12 실수 방지형 ──────────────
   {
     no: 7,
-    slug: "sangbong-hangukgwan-night-1",
+    slug: "sangbong-hangukgwan-night",
     notice: [
       "상봉동 한국관나이트 방문 전 안내입니다. 요금은 적지 않았습니다.",
       "미성년자는 출입할 수 없습니다.",
@@ -992,7 +992,7 @@ export const AD_VENUES: AdVenue[] = [
   // ── 9. 부산아시아드나이트 · 각도1 정면 소개형 ───────────────
   {
     no: 9,
-    slug: "busan-asiad-night-1",
+    slug: "busan-asiad-night",
     notice: [
       "부산 아시아드나이트 소개 페이지이며 업소 공식 채널이 아닙니다.",
       "청소년 출입은 허용되지 않습니다.",
@@ -1214,7 +1214,7 @@ export const AD_VENUES: AdVenue[] = [
   // ── 11. 안산히트나이트 · 각도3 장면 묘사형 ──────────────────
   {
     no: 11,
-    slug: "ansan-hit-night-2",
+    slug: "ansan-hit-night",
     notice: [
       "안산 히트나이트 분위기를 정리한 안내 페이지입니다.",
       "미성년자는 입장할 수 없습니다.",
@@ -1324,7 +1324,7 @@ export const AD_VENUES: AdVenue[] = [
   // ── 12. 대전세븐나이트 · 각도4 처음 가는 사람 시점 ──────────
   {
     no: 12,
-    slug: "daejeon-seven-night-1",
+    slug: "daejeon-seven-night",
     notice: [
       "대전 세븐나이트 첫 방문 안내이며 공식 홈페이지가 아닙니다.",
       "성인 대상 영업장으로 신분증 확인이 있을 수 있습니다.",

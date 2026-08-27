@@ -233,7 +233,7 @@ async function buildRegistry() {
   const pages = [];
 
   /* ★ lib/og.ts 의 ogSlug() 와 글자 하나까지 같아야 한다.
-     예전에는 여기만 **끝의 "/" 를 떼지 않아** "/night-guide-1/" 가 "night-guide-" 가 됐다.
+     예전에는 여기만 **끝의 "/" 를 떼지 않아** "/night-guide/" 가 "night-guide-" 가 됐다.
      사이트는 "night-guide.png" 를 부르는데 생성기는 "night-guide-.png" 를 만들어
      허브 두 페이지의 썸네일이 계속 404 였다(2026-08-24 확인). */
   const ogSlug = (p) => {
@@ -245,8 +245,8 @@ async function buildRegistry() {
   // A. 창원 본 사이트 — 홈 + 13페이지 + 허브 2개
   const changwonPaths = [
     ...site.NAV.map((n) => n.href),
-    "/night-guide-1/",
-    "/hall-guide-1/",
+    "/night-guide/",
+    "/hall-guide/",
   ];
   for (const p of changwonPaths) {
     pages.push({

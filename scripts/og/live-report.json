@@ -60,8 +60,8 @@
   "same": "O"
  },
  {
-  "route": "/reserve-1/",
-  "slug": "reserve-1",
+  "route": "/reserve",
+  "slug": "reserve",
   "http": 200,
   "ctype": "image/png",
   "kb": 47,
@@ -84,8 +84,8 @@
   "same": "O"
  },
  {
-  "route": "/photo-1/",
-  "slug": "photo-1",
+  "route": "/photo",
+  "slug": "photo",
   "http": 200,
   "ctype": "image/png",
   "kb": 47,
@@ -120,8 +120,8 @@
   "same": "O"
  },
  {
-  "route": "/around-1/",
-  "slug": "around-1",
+  "route": "/around",
+  "slug": "around",
   "http": 200,
   "ctype": "image/png",
   "kb": 47,
@@ -132,8 +132,8 @@
   "same": "O"
  },
  {
-  "route": "/event-1/",
-  "slug": "event-1",
+  "route": "/event",
+  "slug": "event",
   "http": 200,
   "ctype": "image/png",
   "kb": 47,
@@ -156,8 +156,8 @@
   "same": "O"
  },
  {
-  "route": "/contact-1/",
-  "slug": "contact-1",
+  "route": "/contact",
+  "slug": "contact",
   "http": 200,
   "ctype": "image/png",
   "kb": 47,
@@ -168,7 +168,7 @@
   "same": "O"
  },
  {
-  "route": "/night-guide-1/",
+  "route": "/night-guide/",
   "slug": "night",
   "http": 200,
   "ctype": "image/png",
@@ -180,7 +180,7 @@
   "same": "O"
  },
  {
-  "route": "/hall-guide-1/",
+  "route": "/hall-guide/",
   "slug": "hall",
   "http": 200,
   "ctype": "image/png",
@@ -336,7 +336,7 @@
   "same": "O"
  },
  {
-  "route": "/bulgwang-hobak-night-1/",
+  "route": "/bulgwang-hobak-night",
   "slug": "night-bulgwang-hobak-night",
   "http": 200,
   "ctype": "image/png",
@@ -348,7 +348,7 @@
   "same": "O"
  },
  {
-  "route": "/changwon-lululala-night-2/",
+  "route": "/changwon-lululala-night",
   "slug": "night-changwon-lululala-night",
   "http": 200,
   "ctype": "image/png",
@@ -360,7 +360,7 @@
   "same": "O"
  },
  {
-  "route": "/ulsan-champion-night-2/",
+  "route": "/ulsan-champion-night",
   "slug": "night-ulsan-champion-night",
   "http": 200,
   "ctype": "image/png",
@@ -384,7 +384,7 @@
   "same": "O"
  },
  {
-  "route": "/daejeon-one-night-1/",
+  "route": "/daejeon-one-night",
   "slug": "night-daejeon-one-night",
   "http": 200,
   "ctype": "image/png",
@@ -456,7 +456,7 @@
   "same": "O"
  },
  {
-  "route": "/ansan-hit-night-2/",
+  "route": "/ansan-hit-night",
   "slug": "night-ansan-hit-night",
   "http": 200,
   "ctype": "image/png",

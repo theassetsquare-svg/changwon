@@ -16,15 +16,15 @@ const PAGES = [
   { route: "/lotto", file: "app/lotto/page.tsx" },
   { route: "/price", file: "app/price/page.tsx" },
   { route: "/location", file: "app/location/page.tsx" },
-  { route: "/reserve-1/", file: "app/reserve/page.tsx" },
+  { route: "/reserve", file: "app/reserve/page.tsx" },
   { route: "/review", file: "app/review/page.tsx" },
-  { route: "/photo-1/", file: "app/photo/page.tsx" },
+  { route: "/photo", file: "app/photo/page.tsx" },
   { route: "/news", file: "app/news/page.tsx" },
   { route: "/faq", file: "app/faq/page.tsx" },
-  { route: "/around-1/", file: "app/around/page.tsx" },
-  { route: "/event-1/", file: "app/event/page.tsx" },
+  { route: "/around", file: "app/around/page.tsx" },
+  { route: "/event", file: "app/event/page.tsx" },
   { route: "/vip", file: "app/vip/page.tsx" },
-  { route: "/contact-1/", file: "app/contact/page.tsx" },
+  { route: "/contact", file: "app/contact/page.tsx" },
 ];
 
 const KEYWORDS = [

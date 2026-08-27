@@ -138,7 +138,7 @@ export default function AdNightPage({ venue: v }: { venue: AdVenue }) {
             홈
           </Link>
           <span className="px-1.5">›</span>
-          <Link href="/night-guide-1/" className="hover:text-gold">
+          <Link href="/night-guide" className="hover:text-gold">
             전국 나이트 예약 문의
           </Link>
           <span className="px-1.5">›</span>
@@ -278,7 +278,7 @@ export default function AdNightPage({ venue: v }: { venue: AdVenue }) {
             ))}
           </ul>
           <p className="mt-4 text-center text-sm">
-            <Link href="/night-guide-1/" className="text-gold underline">
+            <Link href="/night-guide" className="text-gold underline">
               전국 나이트 전체 보기 →
             </Link>
           </p>

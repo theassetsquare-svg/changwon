@@ -21,7 +21,7 @@ export default function CallButton({
           : "text-base px-5 py-3";
   return (
     <Link
-      href="/contact-1/"
+      href="/contact"
       className={`${block ? "flex w-full" : "inline-flex"} ${pulse ? "cta-pulse" : ""} items-center justify-center gap-2 rounded-full bg-gold font-extrabold text-bg shadow-lg shadow-gold/20 transition hover:brightness-110 active:scale-[0.98] ${sizeClass}`}
     >
       <span aria-hidden>📋</span>

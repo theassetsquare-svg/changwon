@@ -12,15 +12,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${SITE.url}${n.href === "/" ? "" : n.href}`,
     lastModified: now,
     changeFrequency:
-      n.href === "/" || n.href === "/news" || n.href === "/event-1/"
+      n.href === "/" || n.href === "/news" || n.href === "/event"
         ? "daily"
-        : n.href === "/faq" || n.href === "/price" || n.href === "/reserve-1/"
+        : n.href === "/faq" || n.href === "/price" || n.href === "/reserve"
           ? "weekly"
           : "monthly",
     priority:
       n.href === "/"
         ? 1
-        : n.href === "/reserve-1/" ||
+        : n.href === "/reserve" ||
             n.href === "/lotto" ||
             n.href === "/price" ||
             n.href === "/location"

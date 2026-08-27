@@ -4,17 +4,17 @@ import Placeholder from "@/components/Placeholder";
 import { PAGE_META, SITE, SITE_OTHER } from "@/lib/site";
 import { thumb } from "@/lib/og";
 
-const m = PAGE_META["/around-1/"];
+const m = PAGE_META["/around"];
 
 /** 이 페이지 전용 썸네일 — og:image 와 본문 <img> 가 같은 파일을 가리킨다 */
 const THUMB = thumb({
-  pathname: "/around-1/",
+  pathname: "/around",
   alt: `${SITE.nameNoSpace} 주변 안내`,
 });
 export const metadata: Metadata = {
   title: m.title,
   description: m.description,
-  alternates: { canonical: "/around-1/" },
+  alternates: { canonical: "/around" },
   openGraph: {
     title: m.title,
     description: m.description,
@@ -49,7 +49,7 @@ export default function AroundPage() {
     <PageShell
       title="창원룰루랄라나이트 주변 안내"
       hook={m.hook}
-      pathname="/around-1/"
+      pathname="/around"
       thumbAlt={THUMB.alt}
     >
       <p>

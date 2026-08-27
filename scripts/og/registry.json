@@ -25,8 +25,8 @@
   "kind": "changwon"
  },
  {
-  "route": "/reserve-1/",
-  "slug": "reserve-1",
+  "route": "/reserve",
+  "slug": "reserve",
   "kind": "changwon"
  },
  {
@@ -35,8 +35,8 @@
   "kind": "changwon"
  },
  {
-  "route": "/photo-1/",
-  "slug": "photo-1",
+  "route": "/photo",
+  "slug": "photo",
   "kind": "changwon"
  },
  {
@@ -50,13 +50,13 @@
   "kind": "changwon"
  },
  {
-  "route": "/around-1/",
-  "slug": "around-1",
+  "route": "/around",
+  "slug": "around",
   "kind": "changwon"
  },
  {
-  "route": "/event-1/",
-  "slug": "event-1",
+  "route": "/event",
+  "slug": "event",
   "kind": "changwon"
  },
  {
@@ -65,42 +65,42 @@
   "kind": "changwon"
  },
  {
-  "route": "/contact-1/",
-  "slug": "contact-1",
+  "route": "/contact",
+  "slug": "contact",
   "kind": "changwon"
  },
  {
-  "route": "/night-guide-1/",
-  "slug": "night-guide-1",
+  "route": "/night-guide/",
+  "slug": "night-guide",
   "kind": "changwon"
  },
  {
-  "route": "/hall-guide-1/",
-  "slug": "hall-guide-1",
+  "route": "/hall-guide/",
+  "slug": "hall-guide",
   "kind": "changwon"
  },
  {
-  "route": "/bulgwang-hobak-night-1/",
+  "route": "/bulgwang-hobak-night",
   "slug": "night-bulgwang-hobak-night",
   "kind": "venue"
  },
  {
-  "route": "/changwon-lululala-night-2/",
+  "route": "/changwon-lululala-night",
   "slug": "night-changwon-lululala-night",
   "kind": "venue"
  },
  {
-  "route": "/ulsan-champion-night-2/",
+  "route": "/ulsan-champion-night",
   "slug": "night-ulsan-champion-night",
   "kind": "venue"
  },
  {
-  "route": "/cheongdam-night-2/",
+  "route": "/cheongdam-night",
   "slug": "night-1-1",
   "kind": "venue"
  },
  {
-  "route": "/daejeon-one-night-1/",
+  "route": "/daejeon-one-night",
   "slug": "night-daejeon-one-night",
   "kind": "venue"
  },
@@ -115,7 +115,7 @@
   "kind": "venue"
  },
  {
-  "route": "/suyu-shampoo-night-2/",
+  "route": "/suyu-shampoo-night",
   "slug": "night-2-1",
   "kind": "venue"
  },
@@ -125,12 +125,12 @@
   "kind": "venue"
  },
  {
-  "route": "/suwon-chancedome-night-2/",
+  "route": "/suwon-chancedome-night",
   "slug": "night-3-1",
   "kind": "venue"
  },
  {
-  "route": "/ansan-hit-night-2/",
+  "route": "/ansan-hit-night",
   "slug": "night-ansan-hit-night",
   "kind": "venue"
  },
@@ -140,7 +140,7 @@
   "kind": "venue"
  },
  {
-  "route": "/ilsan-shampoo-night-2/",
+  "route": "/ilsan-shampoo-night",
   "slug": "night-4-1",
   "kind": "venue"
  },

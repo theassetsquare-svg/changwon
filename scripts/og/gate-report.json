@@ -50,8 +50,8 @@
   "verdict": "PASS"
  },
  {
-  "route": "/reserve-1/",
-  "slug": "reserve-1",
+  "route": "/reserve",
+  "slug": "reserve",
   "img": "O",
   "same": "O",
   "meta": "9/9",
@@ -70,8 +70,8 @@
   "verdict": "PASS"
  },
  {
-  "route": "/photo-1/",
-  "slug": "photo-1",
+  "route": "/photo",
+  "slug": "photo",
   "img": "O",
   "same": "O",
   "meta": "9/9",
@@ -100,8 +100,8 @@
   "verdict": "PASS"
  },
  {
-  "route": "/around-1/",
-  "slug": "around-1",
+  "route": "/around",
+  "slug": "around",
   "img": "O",
   "same": "O",
   "meta": "9/9",
@@ -110,8 +110,8 @@
   "verdict": "PASS"
  },
  {
-  "route": "/event-1/",
-  "slug": "event-1",
+  "route": "/event",
+  "slug": "event",
   "img": "O",
   "same": "O",
   "meta": "9/9",
@@ -130,8 +130,8 @@
   "verdict": "PASS"
  },
  {
-  "route": "/contact-1/",
-  "slug": "contact-1",
+  "route": "/contact",
+  "slug": "contact",
   "img": "O",
   "same": "O",
   "meta": "9/9",
@@ -140,7 +140,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/night-guide-1/",
+  "route": "/night-guide/",
   "slug": "night",
   "img": "O",
   "same": "O",
@@ -150,7 +150,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/hall-guide-1/",
+  "route": "/hall-guide/",
   "slug": "hall",
   "img": "O",
   "same": "O",
@@ -160,7 +160,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/bulgwang-hobak-night-1/",
+  "route": "/bulgwang-hobak-night",
   "slug": "night-bulgwang-hobak-night",
   "img": "O",
   "same": "O",
@@ -170,7 +170,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/changwon-lululala-night-2/",
+  "route": "/changwon-lululala-night",
   "slug": "night-changwon-lululala-night",
   "img": "O",
   "same": "O",
@@ -180,7 +180,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/ulsan-champion-night-2/",
+  "route": "/ulsan-champion-night",
   "slug": "night-ulsan-champion-night",
   "img": "O",
   "same": "O",
@@ -200,7 +200,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/daejeon-one-night-1/",
+  "route": "/daejeon-one-night",
   "slug": "night-daejeon-one-night",
   "img": "O",
   "same": "O",
@@ -260,7 +260,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/ansan-hit-night-2/",
+  "route": "/ansan-hit-night",
   "slug": "night-ansan-hit-night",
   "img": "O",
   "same": "O",

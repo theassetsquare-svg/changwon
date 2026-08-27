@@ -207,7 +207,7 @@
       "verdict": "OK"
     },
     {
-      "route": "/reserve-1/",
+      "route": "/reserve",
       "file": "app/reserve/page.tsx",
       "totalLength": 1853,
       "keywords": {
@@ -289,7 +289,7 @@
       "verdict": "OK"
     },
     {
-      "route": "/photo-1/",
+      "route": "/photo",
       "file": "app/photo/page.tsx",
       "totalLength": 1527,
       "keywords": {
@@ -412,7 +412,7 @@
       "verdict": "OK"
     },
     {
-      "route": "/around-1/",
+      "route": "/around",
       "file": "app/around/page.tsx",
       "totalLength": 1684,
       "keywords": {
@@ -453,7 +453,7 @@
       "verdict": "OK"
     },
     {
-      "route": "/event-1/",
+      "route": "/event",
       "file": "app/event/page.tsx",
       "totalLength": 1612,
       "keywords": {
@@ -535,7 +535,7 @@
       "verdict": "OK"
     },
     {
-      "route": "/contact-1/",
+      "route": "/contact",
       "file": "app/contact/page.tsx",
       "totalLength": 1370,
       "keywords": {
