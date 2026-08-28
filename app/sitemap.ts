@@ -80,13 +80,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   /* ★ 2026-08-28 — 색인 실험용 페이지. public/ulsan-champion-night-2.html 로 두었다.
      이 사이트는 끝 슬래시가 없는 형태가 200 이라 그대로 적는다. */
   const indexTest: MetadataRoute.Sitemap = [
-    {
-      url: `${SITE.url}/ulsan-champion-night-2`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-  ];
+    "/ulsan-champion-night-2",
+    "/sillim-grandprix-night-2",
+  ].map((p) => ({
+    url: `${SITE.url}${p}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
 
   return [
     ...core,
