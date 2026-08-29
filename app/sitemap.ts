@@ -87,8 +87,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/night-guide/daejeon-seven-night-1",
     "/night-guide/dapsimni-miracle-night-1",
     "/night-guide/busan-asiad-night-1",
-    "/ulsan-champion-night-2",
-    "/sillim-grandprix-night-2",
+    "/night-guide/ulsan-champion-night-2/",
+    "/night-guide/sillim-grandprix-night-2/",
   ].map((p) => ({
     url: `${SITE.url}${p}`,
     lastModified: now,

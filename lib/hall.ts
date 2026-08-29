@@ -121,8 +121,10 @@ export const HALL_SLUG_BY_URL: Record<string, string> = Object.fromEntries(
   Object.entries(HALL_URL_MAP).map(([slug, url]) => [url, slug])
 );
 
+/* ★★ 2026-08-29 — 평면 주소는 색인 0.2%, 폴더 주소는 100%.
+   가게 페이지를 모두 폴더 안으로 넣는다. [[index-cause-flat-url-2026-08-28]] */
 export const hallPath = (slug: string) =>
-  HALL_KEEP_OLD.has(slug) ? `/hall/${slug}` : `/${HALL_URL_MAP[slug] ?? slug}`;
+  `/hall/${HALL_URL_MAP[slug] ?? slug}`;
 export const phoneDigits = (p: string) => p.replace(/[^0-9]/g, "");
 
 /** 확인 못 한 항목은 표에서 아예 빼는 대신, 이 문구로 한 번만 밝힌다 */

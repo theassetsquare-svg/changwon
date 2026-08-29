@@ -78,8 +78,11 @@ const NIGHT_URL_MAP: Record<string, string> = {
   "3-1": "suwon-chancedome-night",
   "4-1": "ilsan-shampoo-night",
 };
+/* ★★ 2026-08-29 — 평면 주소는 색인 0.2%, 폴더 주소는 100%.
+   가게 페이지를 모두 폴더 안으로 넣는다. [[index-cause-flat-url-2026-08-28]] */
+/* ★ /night/xxx-night 는 같은 단어가 두 번 [[naver-url-no-duplicate-word]] → club */
 export const nightPath = (slug: string) =>
-  NIGHT_KEEP_OLD.has(slug) ? `/night/${slug}` : `/${NIGHT_URL_MAP[slug] ?? slug}`;
+  `/club/${NIGHT_URL_MAP[slug] ?? slug}`;
 
 /**
  * 섹션 본문 첫 문단에서 40~90자 사이의 문장 덩어리를 잘라 FAQ 답변으로 쓴다.

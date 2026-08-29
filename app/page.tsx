@@ -460,7 +460,7 @@ export default function HomePage() {
       {/* area-guide-link */}
       <footer style={{ maxWidth: 760, margin: '0 auto', padding: '26px 20px 40px', borderTop: '1px solid #e5e7eb', fontSize: '.9rem', lineHeight: 1.8, color: '#6b7280' }}>
         <nav aria-label="사이트 안내">
-          <a href="/business-district/" style={{ color: '#1f5f8b', textDecoration: 'underline' }}>업무지구 상권 안내</a>
+          <a href="/area/business-district/" style={{ color: '#1f5f8b', textDecoration: 'underline' }}>업무지구 상권 안내</a>
         </nav>
       </footer>
       {/* /area-guide-link */}
