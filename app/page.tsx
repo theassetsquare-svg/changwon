@@ -17,17 +17,23 @@ const THUMB = thumb({
 export const metadata: Metadata = {
   title: meta.title,
   description: meta.description,
+  /* ★ 홈 순수성 (2026-08-31 대표님 지시)
+     홈 화면은 나이트와 상관없는 내용이어야 한다. 화면 글뿐 아니라
+     검색엔진이 읽는 데이터도 마찬가지다.
+     layout.tsx 의 가게 키워드·발행처가 홈까지 따라오므로 홈에서만 지운다. */
+  keywords: [],
+  applicationName: undefined,
+  publisher: undefined,
+  category: undefined,
   alternates: { canonical: "/" },
   openGraph: {
     title: meta.title,
     description: meta.description,
-    images: THUMB.images,
   },
   twitter: {
     card: "summary",
     title: meta.title,
     description: meta.description,
-    images: [THUMB.url],
   },
   other: { ...SITE_OTHER, ...THUMB.other },
 };
@@ -80,7 +86,7 @@ export default function HomePage() {
   return (
     <>
       <main>
-        <JsonLd />
+        {/* 홈 순수성: 가게 신원 JSON-LD(NightClub) 는 홈에 넣지 않는다 (2026-08-31) */}
         <PageJsonLd pathname="/" />
 
         {/* 읽은 분량 표시 — 지원 브라우저에서만 동작하고, 아니면 그냥 보이지 않는다 */}
@@ -113,10 +119,7 @@ export default function HomePage() {
               아닙니다.
             </p>
 
-            {/* 썸네일 — og:image 와 같은 파일을 본문에도 실제로 렌더한다 */}
-            <figure className="fade-up mt-7">
-              <OgThumb pathname="/" alt={THUMB.alt} />
-            </figure>
+            {/* 홈 순수성(2026-08-31 대표님 지시): 홈 화면에는 이미지를 넣지 않는다. 글만. */}
 
             <div className="fade-up mt-7 space-y-4 text-[15px] leading-7 text-gray-300 sm:text-base sm:leading-8">
               <p>

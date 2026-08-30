@@ -44,13 +44,11 @@ export const metadata: Metadata = {
     siteName: SITE.name,
     title: `${SITE.nameNoSpace} 공식 사이트 — 상남동 27세 이상 합법 영업장`,
     description: SITE.description,
-    images: ROOT_THUMB.images,
   },
   twitter: {
     card: "summary",
     title: `${SITE.nameNoSpace} 공식 사이트 — 상남동 27세 이상 합법 영업장`,
     description: SITE.description,
-    images: [ROOT_THUMB.url],
   },
   robots: {
     index: true,
@@ -75,7 +73,8 @@ export const metadata: Metadata = {
       ],
     },
   },
-  other: { ...SITE_OTHER_NOPHONE, ...ROOT_THUMB.other },
+  /* ★ 홈 순수성(2026-08-31): ROOT_THUMB.other 에는 og:image:alt 로 가게이름·번호가 들어간다. 뺀다. */
+  other: { ...SITE_OTHER_NOPHONE },
 };
 
 export const viewport: Viewport = {
