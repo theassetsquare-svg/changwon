@@ -51,7 +51,10 @@ export default function PageJsonLd({ pathname }: { pathname: string }) {
     publisher: { "@id": `${SITE.url}/#organization` },
     datePublished: SITE.founded + "-01-01",
     dateModified: SITE.lastModified,
-    keywords: [...SITE.keywords].slice(0, 10).join(", "),
+    /* ★ 홈 순수성 (2026-08-31 대표님 지시)
+       홈은 나이트와 상관없는 내용이어야 한다. SITE.keywords 에는 가게 이름이 들어 있으므로
+       홈(pathname === "/")에서는 keywords 를 넣지 않는다. 다른 페이지는 그대로. */
+    ...(pathname === "/" ? {} : { keywords: [...SITE.keywords].slice(0, 10).join(", ") }),
   };
 
   return (
