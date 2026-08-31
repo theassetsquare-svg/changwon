@@ -4,7 +4,7 @@ const nextConfig = {
   poweredByHeader: false,
   output: "export",
   images: { unoptimized: true },
-  trailingSlash: false,
+  trailingSlash: true,
 };
 
 export default nextConfig;

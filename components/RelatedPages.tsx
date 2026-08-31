@@ -5,8 +5,10 @@ export default function RelatedPages({ exclude = [] }: { exclude?: string[] }) {
   const items = NAV.filter(
     (n) => n.href !== "/" && !exclude.includes(n.href)
   ).slice(0, 6);
+  /* ★ 2026-08-30 — 다른 쪽으로 보내는 링크 묶음이라 nav 가 맞는 태그다.
+     section 으로 두면 본문으로 세어져 쪽마다 같은 줄이 겹치는 것으로 잡힌다. */
   return (
-    <section className="mt-12 border-t border-line pt-8">
+    <nav aria-label="이 페이지와 함께 보는 안내" className="mt-12 border-t border-line pt-8">
       <h2 className="mb-4 text-sm font-bold uppercase tracking-widest text-gray-400">
         이 페이지 본 사람들이 다음으로 본 페이지
       </h2>
@@ -25,6 +27,6 @@ export default function RelatedPages({ exclude = [] }: { exclude?: string[] }) {
           </li>
         ))}
       </ul>
-    </section>
+    </nav>
   );
 }

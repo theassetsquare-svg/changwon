@@ -1,6 +1,7 @@
 import Link from "next/link";
 import OgThumb from "./OgThumb";
 import { deriveFaqAnswer, nightPath, phoneDigits } from "@/lib/adnight";
+import { factCaption, noManager, tableNote } from "@/lib/hall";
 import type { AdVenue } from "@/lib/adnight";
 import { AD_VENUES, AD_BY_SLUG } from "@/lib/adnight-data";
 import { SITE } from "@/lib/site";
@@ -203,7 +204,7 @@ export default function AdNightPage({ venue: v }: { venue: AdVenue }) {
             </h2>
             <table className="w-full overflow-hidden rounded-2xl border border-line bg-elev text-left text-[15px]">
               <caption className="sr-only">
-                {v.keyword} 기본 정보 — 웹 실사로 확인된 항목만
+                {`${v.keyword} ${factCaption(v.slug)}`}
               </caption>
               <tbody>
                 {v.facts.map(([k, val]) => (
@@ -220,8 +221,7 @@ export default function AdNightPage({ venue: v }: { venue: AdVenue }) {
               </tbody>
             </table>
             <p className="mt-3 text-xs text-gray-500">
-              {v.keyword} 표에는 확인된 항목만 넣었습니다. 여기에 없는 값은
-              아직 확인되지 않았다는 뜻입니다.
+              {`${v.keyword} ${tableNote(v.slug)}`}
             </p>
           </section>
 
@@ -257,7 +257,7 @@ export default function AdNightPage({ venue: v }: { venue: AdVenue }) {
           </section>
         </article>
 
-        <aside
+        <nav
           aria-label="다른 지역 나이트"
           className="mt-12 border-t border-line pt-8"
         >
@@ -282,7 +282,7 @@ export default function AdNightPage({ venue: v }: { venue: AdVenue }) {
               전국 나이트 전체 보기 →
             </Link>
           </p>
-        </aside>
+        </nav>
       </main>
 
       {v.phone ? (

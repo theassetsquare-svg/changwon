@@ -70,7 +70,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
      public/business-district/index.html 로 만들어 두었고 사이트맵에도 실어야 색인 대상이 된다. */
   const areaGuide: MetadataRoute.Sitemap = [
     {
-      url: `${SITE.url}/business-district/`,
+      /* ★ 2026-08-31 — 실제 파일은 public/area/business-district/index.html 이다.
+         사이트맵이 /business-district/ 를 가리켜 같은 글이 주소 2개로 잡히고 있었다(중복 문서).
+         홈 푸터 링크와 같은 /area/business-district/ 하나로 맞춘다. */
+      url: `${SITE.url}/area/business-district/`,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.7,
@@ -96,7 +99,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [
+  /* ★ 2026-08-31 — 이 사이트를 슬래시 정본으로 바꿨다(next.config.mjs trailingSlash: true).
+     네이버가 색인한 주소가 /faq/ /vip/ /news/ /price/ /event/ 처럼 슬래시형인데
+     사이트가 308 로 슬래시를 떼어내고 있었다(색인 주소가 리디렉션 = 0순위 규칙 위반).
+     사이트맵도 슬래시형으로 통일한다 — 사이트맵과 실제 200 주소가 어긋나면
+     수집 예산만 버리고 색인이 되지 않는다. */
+  const 슬래시로 = (목록: MetadataRoute.Sitemap): MetadataRoute.Sitemap =>
+    목록.map((x) => {
+      const u = new URL(x.url);
+      if (u.pathname.endsWith("/")) return x;
+      /* 파일 이름처럼 확장자가 붙은 주소(예: /llms.txt)는 그대로 둔다.
+         정규식을 쓰지 않는다 — 점을 이스케이프하다 아무 주소나 걸리는 사고가 났었다. */
+      const 끝조각 = u.pathname.split("/").pop() || "";
+      if (끝조각.includes(".")) return x;
+      u.pathname = u.pathname + "/";
+      return { ...x, url: u.toString() };
+    });
+
+  return 슬래시로([
     ...core,
     ...areaGuide,
     ...nightHub,
@@ -104,5 +124,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...hallHub,
     ...hallVenues,
     ...indexTest,
-  ];
+  ]);
 }

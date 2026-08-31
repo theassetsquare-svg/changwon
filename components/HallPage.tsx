@@ -3,8 +3,12 @@ import OgThumb from "./OgThumb";
 import {
   HALL_UPDATED,
   UNVERIFIED_NOTE,
+  allHallsLink,
+  factCaption,
   hallPath,
   phoneDigits,
+  relLabel,
+  unverifiedNote,
 } from "@/lib/hall";
 import type { HallVenue } from "@/lib/hall";
 import { HALL_VENUES, HALL_BY_SLUG } from "@/lib/hall-data";
@@ -266,7 +270,7 @@ export default function HallPage({ venue: v }: { venue: HallVenue }) {
               <h2>{v.keyword} 확인된 사실</h2>
               <table className="fact-table mt-4">
                 <caption className="sr-only">
-                  {v.keyword} 기본 정보 — 공개 정보로 확인된 항목만
+                  {`${v.keyword} ${factCaption(v.slug)}`}
                 </caption>
                 <tbody>
                   {v.facts.map(([k, val]) => (
@@ -277,7 +281,7 @@ export default function HallPage({ venue: v }: { venue: HallVenue }) {
                   ))}
                 </tbody>
               </table>
-              <p className="mt-3 text-xs text-[#C9AFA8]">{UNVERIFIED_NOTE}</p>
+              <p className="mt-3 text-xs text-[#C9AFA8]">{unverifiedNote(v.slug)}</p>
             </section>
 
             {/* ④ 공간 소제목 — 입구 → 플로어 → 테이블 → 부스 */}
@@ -356,11 +360,12 @@ export default function HallPage({ venue: v }: { venue: HallVenue }) {
             </section>
           </article>
 
-          <aside
+          {/* ★ 다른 쪽으로 보내는 링크 묶음이라 nav 가 맞는 태그다 (2026-08-30) */}
+          <nav
             aria-label="다른 홀 도감"
             className="mt-12 border-t border-[#7A3247] pt-8"
           >
-            <p className="plan-label">같은 방식으로 읽는 다른 홀</p>
+            <p className="plan-label">{relLabel(v.slug)}</p>
             <ul className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3">
               {related.map((o) => (
                 <li key={o.slug}>
@@ -378,10 +383,10 @@ export default function HallPage({ venue: v }: { venue: HallVenue }) {
             </ul>
             <p className="mt-5 text-center text-sm">
               <Link href="/hall-guide" className="underline">
-                전국 나이트 홀 도감 40 전체 보기 →
+                {allHallsLink(v.slug)}
               </Link>
             </p>
-          </aside>
+          </nav>
         </main>
       </div>
 

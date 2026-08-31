@@ -1,20 +1,3 @@
-/index.html / 301
-/home / 301
-/main / 301
-
 # 2026-08-20 — 빈 껍데기였던 /night/{slug} 12개를 내용 있는 /night/{slug}-night 로 통합
-/night/bulgwang-hobak  /hall/bulgwang-hobak  301
-/night/ulsan-champion  /club/ulsan-champion-night  301
-/night/daejeon-one  /hall/daejeon-one  301
-/night/sillim-grandprix /night/sillim-grandprix-night 301
-/night/sangbong-hangukgwan /night/sangbong-hangukgwan-night 301
-/night/suyu-shampoo  /club/suyu-shampoo-night  301
-/night/busan-asiad /night/busan-asiad-night 301
-/night/suwon-chancedome  /club/suwon-chancedome-night  301
-/night/ansan-hit  /club/ansan-hit-night  301
-/night/daejeon-seven /night/daejeon-seven-night 301
-/night/ilsan-shampoo  /club/ilsan-shampoo-night  301
-/night/cheongdam  /club/cheongdam-night  301
 
 # 2026-08-20 — 매니저 페이지 주소를 /jjanggu 에서 /lotto 로 변경
-/jjanggu /lotto 301
