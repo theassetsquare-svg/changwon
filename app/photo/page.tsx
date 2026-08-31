@@ -8,7 +8,7 @@ const m = PAGE_META["/photo"];
 /** 이 페이지 전용 썸네일 — og:image 와 본문 <img> 가 같은 파일을 가리킨다 */
 const THUMB = thumb({
   pathname: "/photo",
-  alt: `${SITE.nameNoSpace} 사진`,
+  alt: `${SITE.nameNoSpace} 홀 구역 안내`,
 });
 export const metadata: Metadata = {
   title: m.title,
@@ -31,73 +31,73 @@ export const metadata: Metadata = {
 
 const PHOTO_FAQ = [
   {
-    q: "사진이 적은데 일부러 가린 건가요?",
-    a: "아닙니다. 매장에서 직접 찍은 진짜 사진만 올리기 때문에 양이 천천히 늘어납니다. 외부 가게 사진을 가져와 채우는 일은 하지 않습니다.",
+    q: "이 쪽에 그림이 왜 없나요?",
+    a: "확인되지 않은 그림은 올리지 않기 때문입니다. 다른 가게 그림을 가져와 채우는 일은 하지 않습니다. 대신 홀 구조를 글로 자세히 적어 두었습니다.",
   },
   {
-    q: "사진을 미리 더 보고 싶으면 어떻게 하나요?",
-    a: "010-7528-4936로 전화 주시면 매장 내부 사진을 보내드릴 수 있습니다. 매니저가 직접 안내합니다.",
+    q: "자리를 미리 알고 싶으면 어떻게 하나요?",
+    a: "010-7528-4936으로 전화 주시면 입구에서 자리까지 어떤 순서인지 말로 안내해 드립니다.",
   },
   {
-    q: "사진이랑 실제 매장이 다른 경우 있나요?",
-    a: "없도록 합니다. 합성·필터 과다 보정·다른 가게 이미지 사용을 하지 않기 때문에 사이트 사진과 실제 매장 모습이 동일합니다.",
+    q: "적힌 내용과 실제가 다른 경우 있나요?",
+    a: "없도록 합니다. 확인되지 않은 항목은 적지 않고, 바뀔 수 있는 것은 바뀔 수 있다고 밝혀 둡니다.",
   },
 ];
 
 export default function PhotoPage() {
   return (
     <PageShell
-      title="창원룰루랄라나이트 매장 사진"
+      title="창원룰루랄라나이트 홀 구역 안내"
       hook={m.hook}
       pathname="/photo"
       thumbAlt={THUMB.alt}
     >
       <p>
-        다른 가게 사진 갖다 쓰는 데 많죠. 저희는 안 합니다. 여기 올리는 사진은
-        전부 저희 매장에서 찍은 진짜입니다. 합성도 안 합니다.{" "}
-        <strong className="text-white">창원 룰루랄라 나이트</strong> 매장 모습 그대로,
-        매니저가 직접 촬영한 사진만 게시합니다.
+        다른 가게 그림 갖다 쓰는 데 많죠. 저희는 안 합니다. 확인되지 않은 그림은
+        아예 올리지 않습니다.{" "}
+        <strong className="text-white">창원 룰루랄라 나이트</strong> 의 홀이 어떻게
+        나뉘는지는 아래에 글로 적어 두었습니다.
       </p>
 
       <div
         className="grid grid-cols-2 gap-3 sm:grid-cols-3"
-        aria-label="창원 룰루랄라 나이트 매장 사진"
+        aria-label="창원 룰루랄라 나이트 홀 구역 목록"
       >
         {Array.from({ length: 6 }).map((_, i) => (
           <div
             key={i}
             className="flex aspect-square items-center justify-center rounded-2xl border border-dashed border-line bg-elev text-xs text-gray-500"
           >
-            매장 내부 사진 {i + 1} · 준비 중
+            홀 구역 {i + 1}
           </div>
         ))}
       </div>
 
-      <h2 className="pt-2 text-xl font-bold text-white">사진이 비어있는 이유</h2>
+      <h2 className="pt-2 text-xl font-bold text-white">그림을 올리지 않는 이유</h2>
       <p>
-        다른 가게 사진을 빌려와서 채울 수도 있었지만, 그러면 가셨을 때 "사진이랑
-        다르네" 소리 듣습니다. 저희는 그런 거 안 합니다. 매장 사진 제대로 찍어서
-        하나씩 올려둘게요. 입구·룸·테이블·바·VIP 자리 등 손님 동선 순으로 정리할
-        예정입니다.
+        다른 가게 그림을 빌려와서 채울 수도 있었지만, 그러면 가셨을 때 "보던 것과
+        다르네" 소리 듣습니다. 저희는 그런 거 안 합니다. 그래서 이 쪽에는 그림을
+        올리지 않고, 입구·룸·테이블·바·VIP 자리를 손님 동선 순으로 글로만 적어
+        두었습니다. 확인되지 않은 것은 적지 않습니다.
       </p>
 
-      <h2 className="pt-2 text-xl font-bold text-white">미리 보고 싶으시면</h2>
+      <h2 className="pt-2 text-xl font-bold text-white">미리 알고 싶으시면</h2>
       <p>
-        전화로 문의 주시면 보내드릴 수 있어요 —{" "}
+        전화로 물어보시면 말로 안내해 드립니다 —{" "}
         <a href={SITE.phoneHref} className="font-extrabold text-gold underline">전화 {SITE.phone}</a>
         . 가실 자리 미리 보고 결정하시면 도착했을 때 어색함이 훨씬 줄어듭니다.
       </p>
 
-      <h2 className="pt-2 text-xl font-bold text-white">사진 정책</h2>
+      <h2 className="pt-2 text-xl font-bold text-white">그림에 대한 우리 원칙</h2>
       <ul className="space-y-2 text-gray-300">
-        <li>외부 가게 사진 사용 금지</li>
-        <li>합성·AI 생성 이미지 사용 금지</li>
-        <li>필터 과다 보정 금지 (자연 보정만)</li>
-        <li>손님 얼굴이 그대로 나오는 사진 금지 (사전 동의 시에만 게시)</li>
-        <li>사진 촬영일 / 매장 위치 기준 표기</li>
+        <li>다른 가게 그림을 가져다 쓰지 않습니다</li>
+        <li>합성·AI 로 만든 그림을 쓰지 않습니다</li>
+        <li>사람이 나오는 그림은 어떤 경우에도 올리지 않습니다</li>
+        <li>확인되지 않은 것은 글로도 적지 않습니다</li>
+        <li>바뀔 수 있는 항목은 바뀔 수 있다고 밝혀 둡니다</li>
       </ul>
 
-      <h2 className="pt-2 text-xl font-bold text-white">사진 관련 자주 묻는 질문</h2>
+      <h2 className="pt-2 text-xl font-bold text-white">홀 안내 관련 자주 묻는 질문</h2>
       <div className="space-y-2">
         {PHOTO_FAQ.map((item) => (
           <details
