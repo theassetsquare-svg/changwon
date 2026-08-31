@@ -13,14 +13,19 @@ import { OG_HEIGHT, OG_WIDTH, ogFile, ogSlug } from "@/lib/og";
 export default function OgThumb({
   pathname,
   alt,
+  v,
 }: {
   pathname: string;
   alt: string;
+  /** ★ 2026-08-31 — 그림을 바꿀 때 붙이는 판 번호(ogV).
+   *  이걸 안 받아서 og:image 는 -v2 를, 본문 <img> 는 판 번호 없는 파일을 가리켰다.
+   *  같은 파일이어야 한다는 원칙이 깨져 있었다(4쪽). */
+  v?: string;
 }) {
   return (
     /* eslint-disable-next-line @next/next/no-img-element */
     <img
-      src={ogFile(ogSlug(pathname))}
+      src={ogFile(ogSlug(pathname) + (v ?? ""))}
       alt={alt}
       width={OG_WIDTH}
       height={OG_HEIGHT}

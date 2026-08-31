@@ -170,7 +170,7 @@ export default function AdNightPage({ venue: v }: { venue: AdVenue }) {
 
           {/* 썸네일 — og:image 와 같은 파일을 본문에도 실제로 렌더한다 */}
           <figure className="mt-6">
-            <OgThumb pathname={nightPath(v.slug)} alt={v.ogAlt} />
+            <OgThumb pathname={nightPath(v.slug)} alt={v.ogAlt} v={(v as { ogV?: string }).ogV} />
           </figure>
 
           <div className="space-y-5 text-[15px] leading-7 text-gray-200 sm:text-base sm:leading-8">

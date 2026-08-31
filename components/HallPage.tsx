@@ -262,7 +262,7 @@ export default function HallPage({ venue: v }: { venue: HallVenue }) {
 
             {/* 썸네일 — og:image 와 같은 파일을 본문에도 실제로 렌더한다 */}
             <figure className="mt-8">
-              <OgThumb pathname={hallPath(v.slug)} alt={v.ogAlt} />
+              <OgThumb pathname={hallPath(v.slug)} alt={v.ogAlt} v={(v as { ogV?: string }).ogV} />
             </figure>
 
             {/* ③ 사실 표 — 확인된 항목만 */}
