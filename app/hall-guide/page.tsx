@@ -39,16 +39,13 @@ export const metadata: Metadata = {
     siteName: SITE.name,
     title: TITLE,
     description: DESCRIPTION,
-    images: THUMB.images,
   },
   twitter: {
     card: "summary",
     title: TITLE,
     description: DESCRIPTION,
-    images: [THUMB.url],
   },
   other: {
-    ...THUMB.other,
     "dc.title": "전국 나이트 홀 도감 40",
     "dc.subject": "나이트 홀 구조 · 좌석 도감",
     "dc.language": "ko-KR",
@@ -127,10 +124,6 @@ export default function HallHubPage() {
             </p>
           </header>
 
-          {/* 썸네일 — og:image 와 같은 파일을 본문에도 실제로 렌더한다 */}
-          <figure className="mb-8">
-            <OgThumb pathname="/hall-guide/" alt={THUMB.alt} />
-          </figure>
 
           <section className="plan">
             <p className="plan-label">이 도감이 지키는 세 가지</p>
@@ -227,7 +220,11 @@ export default function HallHubPage() {
               마지막 정리 <time dateTime={HALL_UPDATED}>2026년 8월 17일</time>
             </p>
           </section>
-        </main>
+              {/* ★ 2026-08-31 — 관계·연령 고지 (설계도 4장) */}
+      <p className="mt-3 text-[13px] leading-7 text-gray-400">
+        성인(만 19세 이상) 대상 홀을 정리한 안내입니다. 업소로부터 대가를 받지 않았습니다.
+      </p>
+</main>
       </div>
 
       <div className="hallbar" role="complementary" aria-label="광고 문의">

@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: meta.title,
     description: meta.description,
   },
-  other: { ...SITE_OTHER, ...THUMB.other },
+  other: { ...SITE_OTHER },
 };
 
 const TOC = [

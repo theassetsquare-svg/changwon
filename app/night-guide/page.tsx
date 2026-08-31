@@ -29,15 +29,13 @@ export const metadata: Metadata = {
     url: `${SITE.url}/night-guide`,   /* ★ /night 는 주소교체로 버려져 404 다 */
     title: TITLE,
     description: DESCRIPTION,
-    images: THUMB.images,
   },
   twitter: {
     card: "summary",
     title: TITLE,
     description: DESCRIPTION,
-    images: [THUMB.url],
   },
-  other: { ...SITE_OTHER_NOPHONE, ...THUMB.other },
+  other: { ...SITE_OTHER_NOPHONE },
 };
 
 const FAQ = [
@@ -150,10 +148,6 @@ export default function NightIndexPage() {
           </p>
         </aside>
 
-        {/* 썸네일 — og:image 와 같은 파일을 본문에도 실제로 렌더한다 */}
-        <figure className="mb-8">
-          <OgThumb pathname="/night-guide/" alt={THUMB.alt} />
-        </figure>
 
         {/* 전국 나이트 안내 13곳 — 목록에서 1단계로 바로 도달 */}
         <section>
