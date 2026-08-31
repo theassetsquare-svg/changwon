@@ -1,124 +1,37 @@
-import type { Metadata } from "next";
-import PageShell from "@/components/PageShell";
-import { PAGE_META, SITE, SITE_OTHER } from "@/lib/site";
-import { thumb } from "@/lib/og";
+import type { Metadata, Viewport } from "next";
+import AdNightPage from "@/components/AdNightPage";
+import { AD_BY_SLUG } from "@/lib/adnight-data";
+import { adMetadata, adViewport } from "@/lib/adnight-meta";
+import { SITE } from "@/lib/site";
+import { 변형쪽들 } from "@/lib/variant-pages";
 
-const m = PAGE_META["/event"];
+/**
+ * ★★ 2026-09-01 대표님 지시로 바꾼 쪽.
+ *
+ *  "사이트 1개당 창원룰루랄라나이트 페이지 2개만 놔두고,
+ *   색인되는 나머지 창원룰루랄라나이트 페이지만 광고주 페이지로 수정하라고."
+ *
+ *  이 주소(/event)는 **이미 네이버에 색인돼 있다.** 그래서 주소는 그대로 두고
+ *  안에 든 내용만 광고주 페이지로 바꿨다. 색인된 주소를 버리지 않기 위해서다.
+ *
+ *  ★ canonical·og:url 은 반드시 **이 주소(/event)** 여야 한다.
+ *    adMetadata 가 기본으로 넣는 /club/…-night 로 두면
+ *    네이버가 이 쪽을 그쪽의 사본으로 보고 색인에서 밀어낸다.
+ *
+ *  ★ AdNightPage 를 쓰는 이유 — 이 컴포넌트가 광고주 신원(이름·번호·고정전화바·관계 고지)을
+ *    쪽 단위로 넣어 준다. 사이트 전역 렌더로 남의 번호가 새는 사고를 막는다.
+ */
+const VENUE = AD_BY_SLUG["ulsan-champion-night"];
+const 이주소 = "/event";
 
-/** 이 페이지 전용 썸네일 — og:image 와 본문 <img> 가 같은 파일을 가리킨다 */
-const THUMB = thumb({
-  pathname: "/event",
-  alt: `${SITE.nameNoSpace} 이벤트`,
-});
+const base = adMetadata(VENUE);
 export const metadata: Metadata = {
-  title: m.title,
-  description: m.description,
-  alternates: { canonical: "/event" },
-  openGraph: {
-    url: "/event",   /* og:url — canonical 과 같게 (네이버 오픈그래프 필수) */
-    title: m.title,
-    description: m.description,
-    images: THUMB.images,
-  },
-  twitter: {
-    card: "summary",
-    title: m.title,
-    description: m.description,
-    images: [THUMB.url],
-  },
-  other: { ...SITE_OTHER, ...THUMB.other },
+  ...base,
+  alternates: { canonical: 이주소 },
+  openGraph: { ...base.openGraph, url: `${SITE.url}${이주소}` },
 };
+export const viewport: Viewport = adViewport;
 
-const EVENT_FAQ = [
-  {
-    q: "창원 룰루랄라 나이트 지금 진행 중인 이벤트 있나요?",
-    a: "본 페이지에 게시된 내용이 그날 기준 가장 정확합니다. 종료된 이벤트는 즉시 내려가며, 진행 중인 혜택만 게시됩니다.",
-  },
-  {
-    q: "할인 쿠폰 같은 거 있나요?",
-    a: "쿠폰 형태로 따로 운영하지 않습니다. 진행 중인 혜택이 있다면 본 페이지와 매장에서 동일하게 안내됩니다.",
-  },
-  {
-    q: "광고만 보고 갔다가 '그런 이벤트 없다' 들어본 적 있어서 의심돼요.",
-    a: "매장 정책상 종료된 이벤트나 '하지 않는 이벤트'를 광고에 적지 않습니다. 010-7528-4936로 전화 주시면 그 자리에서 실제 진행 여부를 솔직히 답해드립니다.",
-  },
-];
-
-export default function EventPage() {
-  return (
-    <PageShell
-      title="창원룰루랄라나이트 이벤트"
-      hook={m.hook}
-      pathname="/event"
-      thumbAlt={THUMB.alt}
-    >
-      <p>
-        "30% 할인" 같은 거 사이트에 안 적습니다. 보고 오셨는데 막상 가니까 그런
-        할인 없는 가게, 흔하잖아요. 저희는 그게 손님한테 가장 미안한 일이라고
-        생각해요. <strong className="text-white">창원 룰루랄라 나이트</strong>는
-        실제 진행 중인 이벤트만 게시합니다. 끝난 건 즉시 내립니다.
-      </p>
-
-      <div className="rounded-2xl border border-dashed border-line bg-elev p-8 text-center text-gray-400">
-        <p className="text-base">지금 게시 가능한 진행 중 이벤트가 없습니다.</p>
-        <p className="mt-2 text-sm">
-          시작하면 본 페이지와 '매장 소식'에 같이 올립니다.
-        </p>
-      </div>
-
-      <h2 className="pt-2 text-xl font-bold text-white">
-        왜 사이트에 광고를 잘 안 거나면
-      </h2>
-      <p>
-        사이트로 손님 끌어모으는 가게보다, 단골이 다시 부르는 가게가 더 오래 갑니다.
-        그래서 이벤트를 "안 하는" 게 아니라, "하는 것만" 올립니다. 한다고 적었는데
-        막상 가니 없는 가게, 저희는 안 하고 싶어요. 손님이 매장 입구에서 한 번 실망
-        하면 그 다음은 없으니까요.
-      </p>
-
-      <h2 className="pt-2 text-xl font-bold text-white">이벤트 표기 룰</h2>
-      <ul className="space-y-2 text-gray-300">
-        <li>진행 중인 이벤트만 게시. 종료된 이벤트는 즉시 내림.</li>
-        <li>"역대급", "최대", "단 하루" 등 자극적 표현 사용 안 함.</li>
-        <li>할인율 / 적용 조건 / 종료 일자 함께 표기.</li>
-        <li>매장 내 안내 문구와 사이트 게시 내용이 일치.</li>
-        <li>광고비 받고 외부 업체 끼워 넣는 이벤트 게시 안 함.</li>
-      </ul>
-
-      <p>
-        지금 진행 중인 혜택 여부가 궁금하시면 전화 주세요. 매니저가 그 자리에서
-        솔직히 말씀드립니다 —{" "}
-        <a href={SITE.phoneHref} className="font-extrabold text-gold underline">전화 {SITE.phone}</a>
-        . 창원 나이트 중에서 "하지 않는 이벤트"를 광고에 적는 가게는 많은데, 저희는
-        반대로 갑니다.
-      </p>
-
-      <h2 className="pt-2 text-xl font-bold text-white">이벤트 관련 자주 묻는 질문</h2>
-      <div className="space-y-2">
-        {EVENT_FAQ.map((item) => (
-          <details
-            key={item.q}
-            className="rounded-2xl border border-line bg-elev p-4 transition open:border-gold"
-          >
-            <summary className="pr-8 font-semibold text-white">{item.q}</summary>
-            <p className="mt-3 text-gray-300">{item.a}</p>
-          </details>
-        ))}
-      </div>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: EVENT_FAQ.map((f) => ({
-              "@type": "Question",
-              name: f.q,
-              acceptedAnswer: { "@type": "Answer", text: f.a },
-            })),
-          }),
-        }}
-      />
-    </PageShell>
-  );
+export default function Page() {
+  return <AdNightPage venue={VENUE} 변형={변형쪽들["/event"]} />;
 }
