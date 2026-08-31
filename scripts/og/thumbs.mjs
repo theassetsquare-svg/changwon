@@ -224,6 +224,11 @@ function cardVenue({ bg, fg, name, area, contactName, phone, ageFull }) {
 async function buildRegistry() {
   const site = await loadTs("lib/site.ts");
   const adMod = await loadTs("lib/adnight-data.ts");
+  /* ★ 2026-08-31 — 주소를 손으로 박지 않는다. 페이지가 쓰는 함수를 그대로 쓴다.
+     /night/{slug} 로 박아 두었다가 주소가 /club/{slug} 로 바뀐 뒤
+     그림 68개가 엉뚱한 이름으로 만들어져 og:image 가 전부 깨졌다. */
+  const adPath = (await loadTs("lib/adnight.ts")).nightPath;
+  const hPath = (await loadTs("lib/hall.ts")).hallPath;
   const hallMods = fs
     .readdirSync(path.join(ROOT, "lib/hall"))
     .filter((f) => f.endsWith(".ts"))
@@ -266,8 +271,8 @@ async function buildRegistry() {
   //   {slug}-og.png 원본도 항상 같이 갱신한다.
   for (const v of adMod.AD_VENUES) {
     pages.push({
-      route: `/night/${v.slug}`,
-      slug: ogSlug(`/night/${v.slug}`),
+      route: adPath(v.slug),
+      slug: ogSlug(adPath(v.slug)),
       kind: "venue",
       from: path.join(OUT_DIR, `${v.slug}-og.png`),
       alsoWrite: path.join(OUT_DIR, `${v.slug}-og.png`),
@@ -290,8 +295,8 @@ async function buildRegistry() {
     const arr = Object.values(mod).find(Array.isArray);
     for (const v of arr) {
       pages.push({
-        route: `/hall/${v.slug}`,
-        slug: ogSlug(`/hall/${v.slug}`),
+        route: hPath(v.slug),
+        slug: ogSlug(hPath(v.slug)),
         kind: "venue",
         ogV: v.ogV,
         spec: {

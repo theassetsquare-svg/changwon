@@ -9,7 +9,8 @@ import { thumb } from "@/lib/og";
 
 const meta = PAGE_META["/"];
 
-/** 이 페이지 전용 썸네일 — og:image 와 본문 <img> 가 같은 파일을 가리킨다 */
+/** 이 페이지 전용 썸네일 — og:image 와 본문
+가 같은 파일을 가리킨다 */
 const THUMB = thumb({
   pathname: "/",
   alt: `${SITE.nameNoSpace} 홈 · 창원에서 성공하는 방법`,
@@ -27,6 +28,7 @@ export const metadata: Metadata = {
   category: undefined,
   alternates: { canonical: "/" },
   openGraph: {
+    url: "/",   /* og:url — canonical 과 같게 (네이버 오픈그래프 필수) */
     title: meta.title,
     description: meta.description,
   },

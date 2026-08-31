@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   description: m.description,
   alternates: { canonical: "/about" },
   openGraph: {
+    url: "/about",   /* og:url — canonical 과 같게 (네이버 오픈그래프 필수) */
     title: m.title,
     description: m.description,
     images: THUMB.images,
