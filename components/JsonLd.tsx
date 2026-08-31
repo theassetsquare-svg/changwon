@@ -27,7 +27,12 @@ export default function JsonLd() {
       addressLocality: `${SITE.city} ${SITE.district}`,
       addressRegion: SITE.region,
       addressCountry: "KR",
-      postalCode: PLACEHOLDERS.postalCode,
+      /* ★ 2026-08-31 — 우편번호가 확인되지 않아 "[입력필요]" 가 구조화 데이터에
+         그대로 나가고 있었다. 검색엔진에 가짜 값을 주면 안 된다.
+         값이 들어오면 자동으로 다시 실린다. */
+      ...(PLACEHOLDERS.postalCode && !PLACEHOLDERS.postalCode.includes("입력필요")
+        ? { postalCode: PLACEHOLDERS.postalCode }
+        : {}),
     },
     geo: {
       "@type": "GeoCoordinates",

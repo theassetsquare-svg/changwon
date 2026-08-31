@@ -25,9 +25,13 @@ export default function Footer() {
           {SITE.region} {SITE.city} {PLACEHOLDERS.address}
         </p>
         <p className="text-xs text-gray-500">도로명 — {PLACEHOLDERS.addressRoad}</p>
-        <p>
-          사업자번호 <span className="placeholder">{PLACEHOLDERS.businessNumber}</span>
-        </p>
+        {/* ★ 2026-08-31 — 사업자번호가 아직 확인되지 않아 화면에 "[입력필요]" 가
+            그대로 나가고 있었다(g 의 모든 페이지 푸터). 지어내지 않고, 값이 들어올 때까지
+            그 줄을 아예 내보내지 않는다. lib/site.ts 의 businessNumber 에 실제 번호를 넣으면
+            자동으로 다시 보인다. */}
+        {PLACEHOLDERS.businessNumber && !PLACEHOLDERS.businessNumber.includes("입력필요") ? (
+          <p>사업자번호 {PLACEHOLDERS.businessNumber}</p>
+        ) : null}
         <p className="pt-2">
           <Link href="/night-guide" className="text-gold underline">
             전국 나이트 예약 문의 →

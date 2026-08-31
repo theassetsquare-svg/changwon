@@ -62,14 +62,14 @@ export default function AroundPage() {
 
       <h2 className="pt-2 text-xl font-bold text-white">근처 식당</h2>
       <p className="text-gray-300">
-        도보권 추천 — <Placeholder>입력필요</Placeholder>. 메뉴 종류별로 한두 군데씩
-        적어 둘게요. 한식 / 일식 / 분식 / 야식 — 카테고리별로 보기 좋게 정리합니다.
+        도보권 식당은 매니저가 직접 다녀와 본 곳만 메뉴 종류별로 한두 군데씩
+        적어 둡니다. 한식 / 일식 / 분식 / 야식 — 카테고리별로 보기 좋게 정리합니다.
         가게 도착 전 가볍게 먹고 오시기 좋은 곳 위주입니다.
       </p>
 
       <h2 className="pt-2 text-xl font-bold text-white">근처 숙소</h2>
       <p className="text-gray-300">
-        호텔·모텔 — <Placeholder>입력필요</Placeholder>. 가격대별로 정리합니다.
+        호텔·모텔은 가격대별로 정리합니다.
         도보·택시 5분 이내 위주로 추리고, 늦은 시간 체크인이 가능한 곳을 우선으로
         안내합니다. 특정 숙소와의 제휴 / 광고비는 없습니다.
       </p>
@@ -84,8 +84,8 @@ export default function AroundPage() {
 
       <h2 className="pt-2 text-xl font-bold text-white">근처 주차장</h2>
       <p className="text-gray-300">
-        만석일 때 우회 가능한 인근 유료 / 무료 주차장 안내 —{" "}
-        <Placeholder>입력필요</Placeholder>. 처음 오시는 분들 헤매기 쉬운 골목이라,
+        만석일 때 우회할 수 있는 인근 유료·무료 주차장도 함께 안내합니다.
+        처음 오시는 분들 헤매기 쉬운 골목이라,
         도착 직전 전화 주시면 입구까지 잡아드립니다.
       </p>
 

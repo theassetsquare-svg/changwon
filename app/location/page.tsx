@@ -67,8 +67,7 @@ export default function LocationPage() {
 
       <h2 className="pt-2 text-xl font-bold text-white">주소</h2>
       <p className="rounded-2xl border border-line bg-elev p-5 text-lg">
-        {SITE.city} <Placeholder>{PLACEHOLDERS.address}</Placeholder>{" "}
-        <Placeholder>{PLACEHOLDERS.addressDetail}</Placeholder>
+        {SITE.city} {PLACEHOLDERS.address}
       </p>
 
       <p className="text-gray-300">
@@ -78,7 +77,7 @@ export default function LocationPage() {
 
       <h2 className="pt-2 text-xl font-bold text-white">대중교통</h2>
       <p className="text-gray-300">
-        가장 가까운 정류장 / 역 안내 — <Placeholder>입력필요</Placeholder>. 택시
+        가장 가까운 정류장·역은 도착 전에 전화 주시면 바로 짚어 드립니다. 택시
         잡으시면 기사님께 "상남동 룰루랄라" 또는 위 주소 말씀하시면 됩니다.
         창원 시내 어디서든 택시로 단번에 오실 수 있도록, 매장 측에서 흔한 출발지
         기준 동선 정리해 안내합니다.
@@ -86,7 +85,7 @@ export default function LocationPage() {
 
       <h2 className="pt-2 text-xl font-bold text-white">주차</h2>
       <p className="text-gray-300">
-        주차 가능 여부 / 인근 주차 — <Placeholder>입력필요</Placeholder>. 자리 안
+        주차 자리가 안
         보이시면 전화 주세요. 위치 잡아드립니다. 주차 만석일 때 인근 유료 주차장
         대안도 함께 안내합니다.
       </p>

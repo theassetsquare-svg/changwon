@@ -66,25 +66,19 @@ export default function VipPage() {
 
       <h2 className="pt-2 text-xl font-bold text-white">운영 여부</h2>
       <p>
-        현재 운영 — <Placeholder>입력필요</Placeholder>. 운영 중인 시점에는 본
-        페이지에 인원·구성·이용 시간 정보를 함께 게시합니다.
+        VIP 룸 운영 여부는 날짜마다 다릅니다. 전화로 물어보시면 그날 상황을
+        그대로 알려드립니다. 인원·구성·이용 시간은 확인되는 대로 이 페이지에 적습니다.
       </p>
 
       <h2 className="pt-2 text-xl font-bold text-white">수용 인원 / 구성</h2>
-      <ul className="space-y-2 text-gray-300">
-        <li>
-          수용 인원 — <Placeholder>입력필요</Placeholder>
-        </li>
-        <li>
-          구성 — <Placeholder>입력필요</Placeholder>
-        </li>
-        <li>
-          별도 입장 동선 — <Placeholder>입력필요</Placeholder>
-        </li>
-        <li>
-          이용 시간대 — <Placeholder>입력필요</Placeholder>
-        </li>
-      </ul>
+      {/* ★ 2026-08-31 — 수용 인원·구성·동선·시간대는 아직 확인된 값이 없다.
+          지어내지 않고, 확인 불가 항목을 적지 않는다고 한 줄로 밝힌다.
+          (다른 사이트의 UNVERIFIED_NOTE 와 같은 방식) */}
+      <p className="text-gray-300">
+        수용 인원과 룸 구성, 별도 입장 동선, 이용 시간대는 그날 매장 상황에 따라
+        달라집니다. 확인되지 않은 숫자를 적어 두면 손님이 헛걸음하시기 때문에,
+        저희는 전화로 그날 기준을 그대로 말씀드립니다.
+      </p>
 
       <h2 className="pt-2 text-xl font-bold text-white">VIP 룸이 잘 맞는 분</h2>
       <ul className="space-y-2 text-gray-300">

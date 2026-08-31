@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
-import Placeholder from "@/components/Placeholder";
 import { PAGE_META, PLACEHOLDERS, SITE, SITE_OTHER } from "@/lib/site";
 import { thumb } from "@/lib/og";
 
@@ -79,11 +78,13 @@ export default function PricePage() {
             {PLACEHOLDERS.prices.map((p) => (
               <tr key={p.name} className="border-t border-line">
                 <td className="px-4 py-3 font-semibold">{p.name}</td>
+                {/* ★ 2026-08-31 — 값이 없을 때 "[입력필요]" 가 그대로 표에 나갔다.
+                    가격을 지어내지 않는다. 확정 값이 들어오면 그 값이 그대로 실린다. */}
                 <td className="px-4 py-3">
-                  <Placeholder>{p.price}</Placeholder>
+                  {p.price.includes("입력필요") ? "전화 문의" : p.price}
                 </td>
                 <td className="px-4 py-3 text-gray-400">
-                  <Placeholder>{p.note}</Placeholder>
+                  {p.note.includes("입력필요") ? "인원·날짜에 맞춰 안내" : p.note}
                 </td>
               </tr>
             ))}
