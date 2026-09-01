@@ -1,141 +1,29 @@
-import type { Metadata } from "next";
-import PageShell from "@/components/PageShell";
-import Placeholder from "@/components/Placeholder";
-import { PAGE_META, PLACEHOLDERS, SITE, SITE_OTHER } from "@/lib/site";
-import { thumb } from "@/lib/og";
+import type { Metadata, Viewport } from "next";
+import AdNightPage from "@/components/AdNightPage";
+import { AD_BY_SLUG } from "@/lib/adnight-data";
+import { adVariantMetadata, adViewport } from "@/lib/adnight-meta";
+import { 변형쪽들 } from "@/lib/variant-pages";
 
-const m = PAGE_META["/location"];
+/**
+ * ★★ 2026-09-02 대표님 지시로 바꾼 쪽 — 일산샴푸나이트 정보 페이지.
+ *
+ *  주소(/location/)는 **그대로 두고** 안에 든 내용만 바꿨다.
+ *  색인된 주소는 자산이라 버리지 않는다 · 301 리디렉션도 걸지 않는다.
+ *
+ *  ★ canonical·og:url·설명문은 반드시 **이 쪽 자신의 것**이어야 한다.
+ *    기본값(/club/…)으로 두면 네이버가 이 쪽을 그쪽의 사본으로 보고 밀어낸다.
+ *    설명문을 나눠 써도 같은 일이 생긴다 [[description-must-be-unique]].
+ *    그래서 adVariantMetadata 로 canonical·og:url·제목·설명문을 이 주소 것으로 맞춘다.
+ *  ★ AdNightPage 가 신원(이름·번호·고정 전화바·관계 고지·JSON-LD)을 쪽 단위로 넣는다.
+ *    사이트 전역 렌더로 남의 번호가 새는 사고를 막는다.
+ */
+const VENUE = AD_BY_SLUG["4-1"];
+const 이주소 = "/location";
+const 변형 = 변형쪽들["/location"];
 
-/** 이 페이지 전용 썸네일 — og:image 와 본문 <img> 가 같은 파일을 가리킨다 */
-const THUMB = thumb({
-  pathname: "/location",
-  alt: `${SITE.nameNoSpace} 오시는 길`,
-});
-export const metadata: Metadata = {
-  title: m.title,
-  description: m.description,
-  alternates: { canonical: "/location" },
-  openGraph: {
-    url: "/location",   /* og:url — canonical 과 같게 (네이버 오픈그래프 필수) */
-    title: m.title,
-    description: m.description,
-    images: THUMB.images,
-  },
-  twitter: {
-    card: "summary",
-    title: m.title,
-    description: m.description,
-    images: [THUMB.url],
-  },
-  other: { ...SITE_OTHER, ...THUMB.other },
-};
+export const metadata: Metadata = adVariantMetadata(VENUE, 이주소, 변형);
+export const viewport: Viewport = adViewport;
 
-const LOC_FAQ = [
-  {
-    q: "정확한 주소가 어디인가요?",
-    a: "경상남도 창원시 성산구 상남동 22-4 지하 3층(모아엔트몰)입니다. 도로명은 마디미로43번길 10. 도착 시 010-7528-4936로 전화 주시면 매니저가 입구를 잡아드립니다.",
-  },
-  {
-    q: "주차 가능한가요?",
-    a: "매장 인근 주차 안내는 매장 측에서 직접 안내합니다. 자리 안 보이시면 전화 010-7528-4936로 연락 주세요. 위치를 잡아드립니다.",
-  },
-  {
-    q: "대중교통으로 가려면 어떻게 가야 하나요?",
-    a: "가장 가까운 버스/지하철 정거장 안내는 도착 시점이 가장 정확합니다. 택시로 오시면 기사님께 '상남동 룰루랄라' 또는 매장 주소를 말씀하시면 됩니다.",
-  },
-  {
-    q: "끝나고 대리·택시 잡을 수 있나요?",
-    a: "가능합니다. 매장에서 대리·택시 잡아드립니다. 음주 후 운전은 안 됩니다. 전화나 매장에서 한마디 해 주시면 됩니다.",
-  },
-];
-
-export default function LocationPage() {
-  return (
-    <PageShell
-      title="창원룰루랄라나이트 오시는 길"
-      hook={m.hook}
-      pathname="/location"
-      thumbAlt={THUMB.alt}
-    >
-      <p>
-        창원이 처음이시면 길 헷갈리기 쉽습니다. 일단 주소 적어두고, 도착하실 때쯤
-        전화 주세요. 입구 잡아드릴게요.{" "}
-        <strong className="text-white">창원 룰루랄라 나이트</strong>는{" "}
-        {SITE.region} {SITE.city} 안에 위치하고, 창원 나이트 중에서도 찾기 가장
-        쉬운 자리입니다.
-      </p>
-
-      <h2 className="pt-2 text-xl font-bold text-white">주소</h2>
-      <p className="rounded-2xl border border-line bg-elev p-5 text-lg">
-        {SITE.city} {PLACEHOLDERS.address}
-      </p>
-
-      <p className="text-gray-300">
-        상세 번지는 매장 확정 시점에 본 페이지와 네이버 플레이스에 반영합니다.
-        그 전까지는 도착 시 전화 주시면 입구까지 안내합니다.
-      </p>
-
-      <h2 className="pt-2 text-xl font-bold text-white">대중교통</h2>
-      <p className="text-gray-300">
-        가장 가까운 정류장·역은 도착 전에 전화 주시면 바로 짚어 드립니다. 택시
-        잡으시면 기사님께 "상남동 룰루랄라" 또는 위 주소 말씀하시면 됩니다.
-        창원 시내 어디서든 택시로 단번에 오실 수 있도록, 매장 측에서 흔한 출발지
-        기준 동선 정리해 안내합니다.
-      </p>
-
-      <h2 className="pt-2 text-xl font-bold text-white">주차</h2>
-      <p className="text-gray-300">
-        주차 자리가 안
-        보이시면 전화 주세요. 위치 잡아드립니다. 주차 만석일 때 인근 유료 주차장
-        대안도 함께 안내합니다.
-      </p>
-
-      <h2 className="pt-2 text-xl font-bold text-white">근처에서 출발하실 때</h2>
-      <ul className="space-y-2 text-gray-300">
-        <li>창원역·중앙역 방향 — 시간대별 택시 동선 안내 가능</li>
-        <li>마산·진해 방향 — 대중교통 막차 시간 사전 안내</li>
-        <li>경상남도 외 지역 — 미리 전화 주시면 도착 시간 맞춰 자리 잡아둠</li>
-      </ul>
-
-      <h2 className="pt-2 text-xl font-bold text-white">끝나고 이동</h2>
-      <p>
-        대리·택시 필요하시면 가게에서 잡아드립니다. 전화로 미리 알려주시거나,
-        매장에서 한마디 해 주세요 —{" "}
-        <a href={SITE.phoneHref} className="font-extrabold text-gold underline">전화 {SITE.phone}</a>
-        . 만취 상태로 운전대 잡으시는 거, 저희가 못 본 척 안 합니다. 다른 손님과
-        본인 안전을 위한 룰입니다.
-      </p>
-
-      <h2 className="pt-2 text-xl font-bold text-white">위치 관련 자주 묻는 질문</h2>
-      <div className="space-y-2">
-        {LOC_FAQ.map((item) => (
-          <details
-            key={item.q}
-            className="rounded-2xl border border-line bg-elev p-4 transition open:border-gold"
-          >
-            <summary className="pr-8 font-semibold text-white">{item.q}</summary>
-            <p className="mt-3 text-gray-300">{item.a}</p>
-          </details>
-        ))}
-      </div>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: LOC_FAQ.map((f) => ({
-              "@type": "Question",
-              name: f.q,
-              acceptedAnswer: { "@type": "Answer", text: f.a },
-            })),
-          }),
-        }}
-      />
-
-      <div className="mt-2 rounded-2xl border border-dashed border-line bg-elev p-8 text-center text-sm text-gray-500">
-        지도 영역 — 가게 좌표 확정되면 네이버 지도 임베드 자리
-      </div>
-    </PageShell>
-  );
+export default function Page() {
+  return <AdNightPage venue={VENUE} 변형={변형} />;
 }

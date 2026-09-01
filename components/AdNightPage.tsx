@@ -75,10 +75,10 @@ const 비광고고지 = [
   "만 19세 이상 이용 가능한 성인 업소 안내입니다. 업소와 제휴 관계가 없는 정보 페이지입니다.",
   "성인(만 19세 이상)만 이용할 수 있는 곳을 다룹니다. 업소와 광고·제휴 관계가 없습니다.",
   "이 글은 만 19세 이상 성인 대상 업소 안내이며, 업소와 아무런 관계가 없습니다.",
-  "만 19세 미만은 출입할 수 없습니다. 공개 자료만 정리한 제3자 안내 페이지입니다.",
-  "성인 전용 업소를 다루는 안내입니다. 업소로부터 대가를 받지 않았습니다.",
+  "만 19세 미만은 출입할 수 없습니다. 업소와 제휴 관계가 없는, 공개 자료만 정리한 제3자 안내 페이지입니다.",
+  "만 19세 이상 성인 전용 업소를 다루는 안내입니다. 업소로부터 대가를 받지 않았습니다.",
   "만 19세 이상만 들어갈 수 있는 곳입니다. 업소와 제휴하지 않은 정보 페이지입니다.",
-  "성인 대상 업소 안내이며 청소년 출입·고용은 금지입니다. 공개 자료 기준입니다.",
+  "만 19세 이상 성인 대상 업소 안내이며 청소년 출입·고용은 금지입니다. 업소와 제휴 관계가 없고 공개 자료 기준으로 정리했습니다.",
   "만 19세 이상 성인만 이용하는 업소를 안내합니다. 업소의 공식 채널이 아닙니다.",
 ];
 function 고지고르기(씨: unknown, 광고쪽: boolean) {
@@ -275,7 +275,20 @@ function 읽기전정리(v: AdVenue, 씨: string) {
     const val = row ? String(row[1]).trim() : "";
     return val && !/확인 불가|미확인|등록 전/.test(val) ? val : "";
   };
-  const 주소 = 값("주소"), 역 = 값("역"), 층 = 값("층"), 시간 = 값("영업"), 연령 = 값("연령");
+  /* ★★ 2026-09-02 — 라벨을 「포함」으로 찾다가 **없는 사실을 지어내고 있었다.**
+     · 값("역")  → 라벨 「지역」이 걸려서  「가까운 역은 대전광역시 중구 유천동」 (대전세븐)
+     · 값("층")  → 라벨 「손님층」이 걸려서 「층은 20~40대까지 폭넓은 편」 (수원찬스돔)
+     둘 다 확인된 적 없는 문장이고, 설계도 1-6(공식 정보만·가짜 0)을 정면으로 어긴다.
+     AI 검토관이 C7(허위조작)로 잡아 준 것이다. 라벨을 정확히 집어서 찾는다. */
+  const 값정확 = (...라벨들: string[]) => {
+    const row = v.facts.find(([k]) => 라벨들.some((L) => k.trim() === L));
+    const val = row ? String(row[1]).trim() : "";
+    return val && !/확인 불가|미확인|등록 전/.test(val) ? val : "";
+  };
+  const 주소 = 값("주소");
+  const 역 = 값정확("가장 가까운 역", "가까운 역", "역");
+  const 층 = 값정확("층", "층·건물", "건물·층");
+  const 시간 = 값("영업"), 연령 = 값("연령");
   if (주소) {
     줄.push(주소틀[칸("주소")].replace("{A}", 주소) + (역 ? 역틀[칸("역")].replace("{S}", 역) : ""));
   }
@@ -375,7 +388,7 @@ export default function AdNightPage({
 
         <article>
           <header className="fade-up mb-6">
-            <p className="text-xs font-bold uppercase tracking-[0.3em] text-gold">
+            <p data-frame="1" className="text-xs font-bold uppercase tracking-[0.3em] text-gold">
               {v.areaLabel}
             </p>
             <h1 className="mt-2 text-3xl font-extrabold leading-tight text-white sm:text-4xl">
@@ -388,7 +401,7 @@ export default function AdNightPage({
           </header>
 
           {/* [14] AEO/GEO — AI 답변엔진이 그대로 인용할 수 있는 블록 */}
-          <div className="answer-box">
+          <div data-frame="1" className="answer-box">
             <p>
               <strong>{v.keyword}</strong>은 {v.areaLabel}에 있는
               나이트클럽입니다. {v.answer2}
@@ -431,7 +444,7 @@ export default function AdNightPage({
           {/* 2026-09-01 - 본문이 1,300자대라 네이버가 얇은 문서로 본다(기준 1,800자).
               지어낸 말을 채우지 않는다. **확인된 사실을 풀어 쓴 문단**만 더한다.
               쪽마다 주소가 달라 문장이 겹치지 않게 주소로 골라 쓴다. */}
-          <section className="mt-10">
+          <section data-frame="1" className="mt-10">
             <h2 className="text-xl font-bold text-white">{읽기전정리(v, 변형?.각도 ?? '기본').h2}</h2>
             <div className="mt-3 space-y-4 text-[15px] leading-7 text-gray-200 sm:text-base sm:leading-8">
               {읽기전정리(v, 변형?.각도 ?? '기본').본문.map((p2: string, i: number) => (
@@ -440,7 +453,7 @@ export default function AdNightPage({
             </div>
           </section>
 
-          <section className="mt-10">
+          <section data-frame="1" className="mt-10">
             {/* 2026-09-01 - 표 둘레 라벨 세 곳에도 가게이름이 들어가 한 쪽에 8회가 됐다.
                 네이버 가이드가 반복을 어뷰징으로 본다. 라벨에서는 이름을 뺀다.
                 이름은 제목·첫 문단·첫 소제목에만 둔다(3~5회). */}
@@ -450,7 +463,16 @@ export default function AdNightPage({
                 {factCaption(v.slug)}
               </caption>
               <tbody>
-                {v.facts.map(([k, val]) => (
+                {v.facts.map(([k, val0]) => {
+                  /* ★ 2026-09-02 — 광고가 실린 쪽인데 표에는 「예약 담당: 아직 등록되지 않음」이
+                     그대로 남아 있었다(대전세븐나이트). 같은 쪽 아래에 담당자 번호가 있으니
+                     한 쪽 안에서 사실이 서로 어긋난다 — AI 검토관이 C7(허위)로 잡았다.
+                     광고주가 있으면 표에도 그 담당자를 적는다. 없으면 그대로 둔다. */
+                  const 담당칸 = /예약 담당|문의|담당자/.test(k);
+                  const val = 담당칸 && v.phone && v.contactName
+                    ? `${v.contactName} ${v.phone}`
+                    : val0;
+                  return (
                   <tr key={k} className="border-b border-line last:border-0">
                     <th
                       scope="row"
@@ -460,7 +482,8 @@ export default function AdNightPage({
                     </th>
                     <td className="px-4 py-3 text-gray-100">{val}</td>
                   </tr>
-                ))}
+                  );
+                })}
               </tbody>
             </table>
             <p className="mt-3 text-xs text-gray-500">
@@ -490,7 +513,7 @@ export default function AdNightPage({
             ) : null}
           </footer>
 
-          <section className="mt-10 rounded-2xl border border-line bg-elev p-5 text-sm text-gray-400">
+          <section data-frame="1" className="mt-10 rounded-2xl border border-line bg-elev p-5 text-sm text-gray-400">
             <h2 className="mb-2 text-sm font-bold text-gray-300">이용 안내</h2>
             <ul className="space-y-1.5">
               {(변형?.notice ?? v.notice).map((n: string) => (
@@ -501,6 +524,7 @@ export default function AdNightPage({
         </article>
 
         <nav
+          data-frame="1"
           aria-label="다른 지역 나이트"
           className="mt-12 border-t border-line pt-8"
         >
@@ -526,10 +550,10 @@ export default function AdNightPage({
             </Link>
           </p>
         </nav>
-            <p className="mt-3 text-[13px] leading-7 text-gray-400">{고지고르기(v.slug, !!v.phone)}</p>
+            <p data-frame="1" className="mt-3 text-[13px] leading-7 text-gray-400">{고지고르기(v.slug, !!v.phone)}</p>
             {/* ★ 2026-09-01 — 「광고 · 업소 제공 정보 · 확인일」 세 가지를 다 밝힌다.
                 확인일이 없어 신고 방어 검사(C7-03)에 걸렸다. */}
-            <p className="mt-1 text-[13px] leading-7 text-gray-400">
+            <p data-frame="1" className="mt-1 text-[13px] leading-7 text-gray-400">
               광고 · 업소 제공 정보 · 확인일 <time dateTime="2026-09-01">2026년 9월 1일</time>.
               운영 사정에 따라 내용은 바뀔 수 있습니다.
             </p>
