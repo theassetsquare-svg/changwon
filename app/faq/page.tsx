@@ -1,167 +1,33 @@
-import type { Metadata } from "next";
-import PageShell from "@/components/PageShell";
-import { PAGE_META, SITE, SITE_OTHER } from "@/lib/site";
-import { thumb } from "@/lib/og";
+import type { Metadata, Viewport } from "next";
+import AdNightPage from "@/components/AdNightPage";
+import { AD_BY_SLUG } from "@/lib/adnight-data";
+import { adMetadata, adViewport } from "@/lib/adnight-meta";
+import { SITE } from "@/lib/site";
+import { 변형쪽들 } from "@/lib/variant-pages";
 
-const m = PAGE_META["/faq"];
+/**
+ * ★★ 2026-09-01 대표님 지시로 바꾼 쪽 — 답십리미라클나이트 광고주 페이지.
+ *
+ *  이 주소(/faq)는 **주소를 그대로 두고** 안에 든 내용만 광고주 쪽으로 바꿨다.
+ *  (색인된 주소는 자산이라 버리지 않는다 · 리디렉션도 걸지 않는다)
+ *
+ *  ★ canonical·og:url 은 반드시 이 주소여야 한다.
+ *    adMetadata 가 기본으로 넣는 /club/…-night 로 두면
+ *    네이버가 이 쪽을 그쪽의 사본으로 보고 색인에서 밀어낸다.
+ *  ★ AdNightPage 를 쓰는 이유 — 광고주 신원(이름·번호·고정 전화바·관계 고지)을
+ *    쪽 단위로 넣어 준다. 사이트 전역 렌더로 남의 번호가 새는 사고를 막는다.
+ */
+const VENUE = AD_BY_SLUG["dapsimni-miracle-night"];
+const 이주소 = "/faq";
 
-/** 이 페이지 전용 썸네일 — og:image 와 본문 <img> 가 같은 파일을 가리킨다 */
-const THUMB = thumb({
-  pathname: "/faq",
-  alt: `${SITE.nameNoSpace} 자주 묻는 질문`,
-});
+const base = adMetadata(VENUE);
 export const metadata: Metadata = {
-  title: m.title,
-  description: m.description,
-  alternates: { canonical: "/faq" },
-  openGraph: {
-    url: "/faq",   /* og:url — canonical 과 같게 (네이버 오픈그래프 필수) */
-    title: m.title,
-    description: m.description,
-    images: THUMB.images,
-  },
-  twitter: {
-    card: "summary",
-    title: m.title,
-    description: m.description,
-    images: [THUMB.url],
-  },
-  other: { ...SITE_OTHER, ...THUMB.other },
+  ...base,
+  alternates: { canonical: 이주소 },
+  openGraph: { ...base.openGraph, url: `${SITE.url}${이주소}` },
 };
+export const viewport: Viewport = adViewport;
 
-const FAQ = [
-  {
-    q: "창원 룰루랄라 나이트 연락처는?",
-    a: "010-7528-4936로 전화 주시면 매니저가 답변합니다.",
-  },
-  {
-    q: "창원룰루랄라나이트 예약은 어떻게 하나요?",
-    a: "전화 010-7528-4936로 인원·날짜·시간만 알려주시면 30초 안에 자리가 확정됩니다. 별도 앱·회원가입은 없습니다.",
-  },
-  {
-    q: "예약 어떻게 해요?",
-    a: "매장에 인원·날짜·시간 알려주시면 됩니다. 그 자리에서 잡힙니다.",
-  },
-  {
-    q: "처음인데 어색해요. 안 가는 게 나을까요?",
-    a: "오히려 처음이라 와보시는 게 좋아요. 어색한 게 정상이니까 매니저가 어떤 자리에 앉히면 좋을지 같이 봅니다. 전화로 '처음이에요' 한마디만 해 주세요.",
-  },
-  {
-    q: "혼자 가도 돼요?",
-    a: "가능합니다. 다만 분위기는 인원이 있을 때 더 맞을 수 있어요. 그래서 미리 전화 주시면 어울리는 자리 잡아드립니다.",
-  },
-  {
-    q: "창원 룰루랄라 나이트 입장 연령은?",
-    a: "만 27세 이상이면 가능합니다. 입장 시 신분증을 확인합니다. 예외 없습니다.",
-  },
-  {
-    q: "신분증 꼭 가져가야 하나요?",
-    a: "네, 필수입니다. 27세 이상 출입 가능한 합법 영업장이라 신분증 확인이 면제되는 경우는 없습니다. 신분증 미지참 시 입장이 어렵습니다.",
-  },
-  {
-    q: "창원 룰루랄라 나이트 가격은 얼마예요?",
-    a: "옵션·인원·시간대에 따라 다릅니다. 010-7528-4936로 전화 주시면 그 자리에서 인원에 맞는 가격 두세 개 묶어서 알려드립니다.",
-  },
-  {
-    q: "신용카드 / 현금 어떻게 결제해요?",
-    a: "결제 수단 자세한 안내는 전화로 직접 말씀드립니다. 매장 정책상 변동이 있어서 사이트에는 박아두지 않습니다.",
-  },
-  {
-    q: "주차할 수 있나요?",
-    a: "위치 따라 다릅니다. 인근 주차 안내 필요하시면 010-7528-4936로 전화 주세요. 도착 직전에도 괜찮습니다.",
-  },
-  {
-    q: "예약 취소하면 페널티 있어요?",
-    a: "없습니다. 다만 빠르게 알려주시면 다음 손님 잡기 좋습니다. 매너 정도로 생각해 주세요.",
-  },
-  {
-    q: "당일 예약도 가능한가요?",
-    a: "가능합니다. 도착 직전이라도 010-7528-4936로 전화 주시면 자리가 있을 경우 바로 잡아드립니다.",
-  },
-  {
-    q: "단체로 가도 돼요?",
-    a: "환영합니다. 4명 넘으면 미리 한 번 전화 주세요. 같은 자리에 모이게 잡아드립니다.",
-  },
-  {
-    q: "단체 예약 최소·최대 인원은요?",
-    a: "최소 인원 제한은 없습니다. 최대는 자리 상황에 따라 달라지며 전화로 정확히 안내합니다. VIP 룸으로 묶으면 더 큰 인원이 한 자리에 모일 수 있습니다.",
-  },
-  {
-    q: "남자만 / 여자만 와도 돼요?",
-    a: "둘 다 가능합니다. 자세한 분위기는 전화로 그 시간대 상황을 알려드릴게요.",
-  },
-  {
-    q: "취해서 도착하면 어떻게 해요?",
-    a: "많이 취한 상태면 입장이 거절될 수 있습니다. 다른 손님 보호 차원이에요. 양해 부탁드립니다.",
-  },
-  {
-    q: "드레스 코드가 따로 있나요?",
-    a: "특별한 드레스 코드는 없습니다. 다만 슬리퍼·운동복은 분위기상 어색할 수 있어요. 무난한 외출복이면 충분합니다.",
-  },
-  {
-    q: "창원 룰루랄라 나이트 위치는 어디예요?",
-    a: "경상남도 창원시 성산구 상남동 22-4 지하 3층(모아엔트몰)입니다. 도착 직전 전화 주시면 입구 안내해 드립니다.",
-  },
-  {
-    q: "음주 후에 운전하면 안 되니까 대리 좀 잡아주실 수 있어요?",
-    a: "가능합니다. 매장에서 대리·택시 잡아드립니다. 미리 전화로 '대리 필요할 것 같다'고 말씀해 주시면 시간 맞춰 준비합니다.",
-  },
-  {
-    q: "VIP 룸 따로 있나요?",
-    a: "운영 시점에 따라 다릅니다. 전화 010-7528-4936로 'VIP 룸 가능한지' 한마디 물어보시면 그 시점 상황을 안내해 드립니다.",
-  },
-  {
-    q: "오늘 영업하나요?",
-    a: "정기 영업 중일 가능성이 큽니다. 임시 휴무가 있으면 본 사이트의 '소식' 페이지에 사전 안내됩니다. 가장 정확한 답은 전화 확인입니다.",
-  },
-  {
-    q: "전화를 안 받으면요?",
-    a: "영업시간 외 또는 응대 중일 수 있어요. 조금 뒤 다시 전화 주시거나, 부재중으로 남겨 두시면 매니저가 확인 후 답변드립니다.",
-  },
-];
-
-export default function FaqPage() {
-  return (
-    <PageShell title="창원룰루랄라나이트 자주 묻는 질문" hook={m.hook} pathname="/faq" thumbAlt={THUMB.alt}>
-      <p>
-        진짜 많이 받는 질문만 골라서 정리했습니다. 답도 매니저가 평소에 받는
-        질문 그대로 적었어요. 보시고 그래도 안 풀리면 전화 주세요.
-        <strong className="text-white">이 FAQ</strong>는 예약·가격·
-        위치·연령·결제 5개 축으로 정리되어 있습니다.
-      </p>
-
-      <div className="space-y-2">
-        {FAQ.map((item) => (
-          <details
-            key={item.q}
-            className="rounded-2xl border border-line bg-elev p-4 transition open:border-gold"
-          >
-            <summary className="pr-8 font-semibold text-white">{item.q}</summary>
-            <p className="mt-3 text-gray-300">{item.a}</p>
-          </details>
-        ))}
-      </div>
-
-      <p className="rounded-2xl border border-line bg-elev p-5 text-sm text-gray-300">
-        여기 없는 질문이면 전화로 물어봐 주세요 —{" "}
-        <a href={SITE.phoneHref} className="font-extrabold text-gold underline">전화 {SITE.phone}</a>
-        . 매니저가 직접 받는 거니까 어떤 질문이든 괜찮습니다.
-      </p>
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: FAQ.map((f) => ({
-              "@type": "Question",
-              name: f.q,
-              acceptedAnswer: { "@type": "Answer", text: f.a },
-            })),
-          }),
-        }}
-      />
-    </PageShell>
-  );
+export default function Page() {
+  return <AdNightPage venue={VENUE} 변형={변형쪽들["/faq"]} />;
 }
