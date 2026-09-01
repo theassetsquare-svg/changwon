@@ -133,7 +133,7 @@ export default function ReservePage() {
       />
 
       <p className="rounded-2xl border border-line bg-elev p-5 text-sm text-gray-400">
-        ※ 만취 또는 다른 손님께 피해가 갈 행동이 예상되는 경우 입장이 거절될 수
+        ※ 과음 또는 다른 손님께 피해가 갈 행동이 예상되는 경우 입장이 거절될 수
         있습니다. 다른 손님 보호를 위해 양해 부탁드립니다.
       </p>
     </PageShell>

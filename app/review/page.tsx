@@ -57,7 +57,7 @@ export default function ReviewPage() {
       thumbAlt={THUMB.alt}
     >
       <p>
-        솔직하게 말씀드립니다. 이 페이지에 가짜 후기는 절대 안 올립니다. 가짜 별점도
+        솔직하게 말씀드립니다. 이 페이지에 가짜 후기는 결코 안 올립니다. 가짜 별점도
         안 만듭니다. 받은 것만 그대로 올립니다.{" "}
         <strong className="text-white">창원 룰루랄라 나이트</strong> 후기는 실제
         손님이 매장에 남긴 것만 게시합니다. 자작 후기, 외부 알바 후기, 다른 가게

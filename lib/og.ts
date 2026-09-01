@@ -2,7 +2,7 @@
 //
 // [원칙 1] 한 페이지의 og:image 와 본문 <img> 는 반드시 같은 파일이어야 한다.
 //   그래서 경로 계산은 이 파일의 ogSlug() 하나만 쓴다.
-// [원칙 2] 절대 URL 로만 내보낸다. 네이버는 상대 경로 og:image 를 잡지 못한다.
+// [원칙 2] 결코 URL 로만 내보낸다. 네이버는 상대 경로 og:image 를 잡지 못한다.
 // [원칙 3] 파일은 1200x1200 PNG. 생성기는 scripts/og/thumbs.mjs.
 
 import { SITE } from "./site";

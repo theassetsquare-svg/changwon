@@ -14,7 +14,8 @@
     "gate:hall": "node scripts/hall-gate.mjs",
     "og:thumbs": "node scripts/og/thumbs.mjs",
     "gate:thumbs": "node scripts/thumb-gate.mjs",
-    "live:thumbs": "node scripts/thumb-live.mjs"
+    "live:thumbs": "node scripts/thumb-live.mjs",
+    "postbuild": "node scripts/thin-names.js"
   },
   "dependencies": {
     "next": "14.2.18",

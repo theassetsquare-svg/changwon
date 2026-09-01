@@ -121,7 +121,7 @@ export const HALL_SLUG_BY_URL: Record<string, string> = Object.fromEntries(
   Object.entries(HALL_URL_MAP).map(([slug, url]) => [url, slug])
 );
 
-/* ★★ 2026-08-29 — 평면 주소는 색인 0.2%, 폴더 주소는 100%.
+/* ★★ 2026-08-29 — 평면 주소는 색인 0.2%, 폴더 주소는 전부.
    가게 페이지를 모두 폴더 안으로 넣는다. [[index-cause-flat-url-2026-08-28]] */
 export const hallPath = (slug: string) =>
   `/hall/${HALL_URL_MAP[slug] ?? slug}`;
