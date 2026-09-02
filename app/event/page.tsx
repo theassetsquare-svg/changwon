@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import AdNightPage from "@/components/AdNightPage";
 import { AD_BY_SLUG } from "@/lib/adnight-data";
-import { adMetadata, adViewport } from "@/lib/adnight-meta";
+import { adMetadata, adVariantMetadata, adViewport } from "@/lib/adnight-meta";
 import { SITE } from "@/lib/site";
 import { 변형쪽들 } from "@/lib/variant-pages";
 
@@ -24,12 +24,17 @@ import { 변형쪽들 } from "@/lib/variant-pages";
 const VENUE = AD_BY_SLUG["ulsan-champion-night"];
 const 이주소 = "/event";
 
-const base = adMetadata(VENUE);
-export const metadata: Metadata = {
-  ...base,
-  alternates: { canonical: 이주소 },
-  openGraph: { ...base.openGraph, url: `${SITE.url}${이주소}` },
-};
+/* ★ 2026-09-02 (A2) — 설명문이 /club/ 쪽과 **글자까지 같아** 색인을 막고 있었다
+   (색인 점검표 #48). 제목은 이 쪽이 이미 색인된 주소라 규칙 1-4 대로 그대로 두고,
+   설명문만 이 쪽의 것으로 바꾼다. 본문 글은 건드리지 않는다. */
+/* ★ 2026-09-02 (A2) — 제목이 /club/ 쪽과 글자까지 같아 세 쪽이 한 제목을 나눠 쓰고 있었다
+   (색인 점검표 #45). 이 주소는 장부상 **미색인 후보**라 규칙 1-4(색인된 제목 유지)에
+   걸리지 않는다. 그래서 이 쪽의 제목·설명문을 준다. 본문 글은 건드리지 않는다.
+   /news/ · /vip/ 는 **색인된 주소**라 제목을 그대로 둔다. */
+export const metadata: Metadata = adVariantMetadata(VENUE, 이주소, {
+  title: 변형쪽들["/event"].title,
+  description: 변형쪽들["/event"].description,
+});
 export const viewport: Viewport = adViewport;
 
 export default function Page() {

@@ -1,15 +1,43 @@
 import type { MetadataRoute } from "next";
+import fs from "node:fs";
+import path from "node:path";
 import { NAV, SITE } from "@/lib/site";
 import { AD_VENUES } from "@/lib/adnight-data";
 import { nightPath } from "@/lib/adnight";
 import { HALL_VENUES } from "@/lib/hall-data";
 import { hallPath } from "@/lib/hall";
 
+/* ★★ 2026-09-02 (A2 묶음①) — 사이트맵에 **파일 없는 주소(유령)** 를 두지 않는다.
+ *
+ *  실측: /club/dapsimni-miracle-night/ 이 사이트맵에 있는데 app/club 에 그 폴더가 없어
+ *  라이브가 404 였다. 데이터(AD_VENUES)에만 있고 쪽이 없으면 사이트맵이 404 를 광고하게 된다.
+ *  네이버 공식 가이드도 사이트맵 주소는 실제로 접근 가능해야 한다고 못 박고 있다.
+ *  설계도 1-4-2 "사이트맵에 파일 없는 주소를 두지 않는다".
+ *  → 라우트 폴더가 실제로 있는 것만 싣는다. 앞으로도 유령이 생기지 않는다. */
+function 쪽이있나(경로: string): boolean {
+  const 조각 = 경로.replace(/^\/+|\/+$/g, "");
+  if (!조각) return true;
+  const 뿌리 = path.join(process.cwd(), "app", 조각);
+  for (const f of ["page.tsx", "page.ts", "page.jsx", "page.js", "route.ts"]) {
+    try { if (fs.statSync(path.join(뿌리, f)).isFile()) return true; } catch { /* 다음 */ }
+  }
+  /* 동적 라우트([venue] 등)로 만들어지는 쪽은 폴더가 없다 — 상위에 동적 폴더가 있으면 있는 것으로 본다 */
+  const 상위 = path.dirname(뿌리);
+  try {
+    if (fs.readdirSync(상위).some((n) => n.startsWith("["))) return true;
+  } catch { /* 없으면 아래로 */ }
+  return false;
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   const core: MetadataRoute.Sitemap = NAV.map((n) => ({
-    url: `${SITE.url}${n.href === "/" ? "" : n.href}`,
+    /* ★ 2026-09-02 (A2 묶음①) — 홈이 사이트맵에 "https://g.nolcool.com" (끝 슬래시 없음)로
+       나가고 있었다. 그런데 canonical 은 "https://g.nolcool.com/" 다. 주소 한 벌 원칙 위반이라
+       네이버가 두 주소를 다른 쪽으로 볼 수 있다. 아래 슬래시로() 는 pathname 이 이미 "/" 라
+       그냥 지나쳐서 못 고쳤다. 여기서 처음부터 슬래시를 붙인다. */
+    url: `${SITE.url}${n.href === "/" ? "/" : n.href}`,
     lastModified: now,
     changeFrequency:
       n.href === "/" || n.href === "/news" || n.href === "/event"
@@ -41,7 +69,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   // 전국 나이트 광고 페이지 13개 (append)
-  const adVenues: MetadataRoute.Sitemap = AD_VENUES.map((v) => ({
+  const adVenues: MetadataRoute.Sitemap = AD_VENUES.filter((v) => 쪽이있나(nightPath(v.slug))).map((v) => ({
     url: `${SITE.url}${nightPath(v.slug)}`,
     lastModified: now,
     changeFrequency: "weekly",
