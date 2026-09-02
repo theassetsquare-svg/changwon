@@ -1,125 +1,28 @@
-import type { Metadata } from "next";
-import PageShell from "@/components/PageShell";
-import Placeholder from "@/components/Placeholder";
-import { PAGE_META, SITE, SITE_OTHER } from "@/lib/site";
-import { thumb } from "@/lib/og";
+import type { Metadata, Viewport } from "next";
+import AdNightPage from "@/components/AdNightPage";
+import { AD_BY_SLUG } from "@/lib/adnight-data";
+import { adVariantMetadata, adViewport } from "@/lib/adnight-meta";
+import { 변형쪽들 } from "@/lib/variant-pages";
 
-const m = PAGE_META["/around"];
+/**
+ * ★★ 2026-09-03 대표님 지시로 바꾼 쪽 — 파주야당스카이돔나이트 광고주 페이지.
+ *
+ *  주소(/around/)는 **그대로 두고** 안에 든 내용만 바꿨다.
+ *  네이버에 색인된 주소는 자산이라 버리지 않는다 · 301 리디렉션도 걸지 않는다.
+ *
+ *  ★ canonical·og:url·설명문은 반드시 **이 쪽 자신의 것**이어야 한다.
+ *    기본값(/club/…)으로 두면 네이버가 이 쪽을 그쪽의 사본으로 보고 밀어낸다.
+ *  ★ AdNightPage 가 신원(이름·번호·고정 전화바·관계 고지·JSON-LD)을 쪽 단위로 넣는다.
+ *    사이트 전역 렌더로 남의 번호가 새는 사고를 막는다.
+ *  ★ 각도 「복장」 — 이 사이트의 다른 광고주 쪽과 겹치지 않게 배정했다.
+ */
+const VENUE = AD_BY_SLUG["paju-yadang-skydome-night"];
+const 이주소 = "/around";
+const 변형 = 변형쪽들["/around"];
 
-/** 이 페이지 전용 썸네일 — og:image 와 본문 <img> 가 같은 파일을 가리킨다 */
-const THUMB = thumb({
-  pathname: "/around",
-  alt: `${SITE.nameNoSpace} 주변 안내`,
-});
-export const metadata: Metadata = {
-  title: m.title,
-  description: m.description,
-  alternates: { canonical: "/around" },
-  openGraph: {
-    url: "/around",   /* og:url — canonical 과 같게 (네이버 오픈그래프 필수) */
-    title: m.title,
-    description: m.description,
-    images: THUMB.images,
-  },
-  twitter: {
-    card: "summary",
-    title: m.title,
-    description: m.description,
-    images: [THUMB.url],
-  },
-  other: { ...SITE_OTHER, ...THUMB.other },
-};
+export const metadata: Metadata = adVariantMetadata(VENUE, 이주소, 변형);
+export const viewport: Viewport = adViewport;
 
-const AROUND_FAQ = [
-  {
-    q: "창원 룰루랄라 나이트 가기 전에 식사할 만한 곳 있나요?",
-    a: "도보권 식당을 메뉴 종류별로 한두 군데씩 정리해 안내합니다. 광고비 받고 끼워 넣는 추천은 하지 않으며, 매니저가 직접 다녀와 본 곳만 적습니다.",
-  },
-  {
-    q: "끝나고 묵을 만한 숙소도 추천해 주나요?",
-    a: "인근 호텔·모텔을 가격대별로 정리해 안내합니다. 예약은 본인이 직접 진행하시고, 위치 헷갈리시면 010-7528-4936로 전화 주시면 알려드립니다.",
-  },
-  {
-    q: "음주 후 운전 대신 대리 부르려면?",
-    a: "매장에서 대리를 잡아드립니다. 전화로 한마디 하시거나, 도착 전 미리 '대리 필요할 것 같다'고 알려주시면 시간 맞춰 준비합니다.",
-  },
-];
-
-export default function AroundPage() {
-  return (
-    <PageShell
-      title="창원룰루랄라나이트 주변 안내"
-      hook={m.hook}
-      pathname="/around"
-      thumbAlt={THUMB.alt}
-    >
-      <p>
-        가게 도착 전후로 동선이 자연스럽게 풀리도록 주변 정보 정리해 두겠습니다.
-        없는 가게 추천하거나 광고비 받고 끼워넣는 거 안 합니다. 직접 다녀와 본
-        곳만 적습니다. <strong className="text-white">창원 룰루랄라 나이트</strong>{" "}
-        방문 전후 동선이 편해지도록 매장 인근만 큐레이션합니다.
-      </p>
-
-      <h2 className="pt-2 text-xl font-bold text-white">근처 식당</h2>
-      <p className="text-gray-300">
-        도보권 식당은 매니저가 직접 다녀와 본 곳만 메뉴 종류별로 한두 군데씩
-        적어 둡니다. 한식 / 일식 / 분식 / 야식 — 카테고리별로 보기 좋게 정리합니다.
-        가게 도착 전 가볍게 먹고 오시기 좋은 곳 위주입니다.
-      </p>
-
-      <h2 className="pt-2 text-xl font-bold text-white">근처 숙소</h2>
-      <p className="text-gray-300">
-        호텔·모텔은 가격대별로 정리합니다.
-        도보·택시 5분 이내 위주로 추리고, 늦은 시간 체크인이 가능한 곳을 우선으로
-        안내합니다. 특정 숙소와의 제휴 / 광고비는 없습니다.
-      </p>
-
-      <h2 className="pt-2 text-xl font-bold text-white">대리 / 택시</h2>
-      <p>
-        끝나고 운전 안 하실 거면 가게에서 대리 잡아드릴 수 있어요. 전화로
-        미리 알려주시거나, 매장에서 한마디 해 주세요 —{" "}
-        <a href={SITE.phoneHref} className="font-extrabold text-gold underline">전화 {SITE.phone}</a>
-        . 택시는 매장 앞에서 잡히지 않을 때 호출 안내해 드립니다.
-      </p>
-
-      <h2 className="pt-2 text-xl font-bold text-white">근처 주차장</h2>
-      <p className="text-gray-300">
-        만석일 때 우회할 수 있는 인근 유료·무료 주차장도 함께 안내합니다.
-        처음 오시는 분들 헤매기 쉬운 골목이라,
-        도착 직전 전화 주시면 입구까지 잡아드립니다.
-      </p>
-
-      <p className="rounded-2xl border border-line bg-elev p-5 text-sm text-gray-300">
-        ※ 음주 후 운전은 본인뿐 아니라 다른 사람도 다칩니다. 저희가 대리 잡아드리는 거,
-        손님께 부담드리려는 게 아니라 사고 막으려는 거예요.
-      </p>
-
-      <h2 className="pt-2 text-xl font-bold text-white">주변 안내 자주 묻는 질문</h2>
-      <div className="space-y-2">
-        {AROUND_FAQ.map((item) => (
-          <details
-            key={item.q}
-            className="rounded-2xl border border-line bg-elev p-4 transition open:border-gold"
-          >
-            <summary className="pr-8 font-semibold text-white">{item.q}</summary>
-            <p className="mt-3 text-gray-300">{item.a}</p>
-          </details>
-        ))}
-      </div>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: AROUND_FAQ.map((f) => ({
-              "@type": "Question",
-              name: f.q,
-              acceptedAnswer: { "@type": "Answer", text: f.a },
-            })),
-          }),
-        }}
-      />
-    </PageShell>
-  );
+export default function Page() {
+  return <AdNightPage venue={VENUE} 변형={변형} />;
 }
