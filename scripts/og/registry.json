@@ -145,6 +145,11 @@
   "kind": "venue"
  },
  {
+  "route": "/club/dapsimni-miracle-night",
+  "slug": "club-dapsimni-miracle-night",
+  "kind": "venue"
+ },
+ {
   "route": "/hall/sillim-grandprix-night",
   "slug": "hall-sillim-grandprix-night",
   "kind": "venue"
