@@ -110,17 +110,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   /* ★ 2026-08-28 — 색인 실험용 페이지. public/ulsan-champion-night-2.html 로 두었다.
      이 사이트는 끝 슬래시가 없는 형태가 200 이라 그대로 적는다. */
-  const indexTest: MetadataRoute.Sitemap = [
-    "/night-guide/ulsan-champion-night-1",
-    "/night-guide/changwon-lululala-night-1",
-    "/night-guide/bulgwang-hobak-night-1",
-    "/night-guide/cheongdam-night-1",
-    "/night-guide/daejeon-seven-night-1",
-    "/night-guide/dapsimni-miracle-night-1",
-    "/night-guide/busan-asiad-night-1",
-    "/night-guide/ulsan-champion-night-2/",
-    "/night-guide/sillim-grandprix-night-2/",
-  ].map((p) => ({
+  /* ★★ 2026-09-03 — 손으로 적던 목록이라 **빠진 쪽이 생겼다.**
+       public/night-guide 에 14개가 있는데 사이트맵에는 9개만 실려 있었다.
+       사이트맵에 없으면 네이버가 발견할 길이 사실상 없다(홈에 링크를 걸지 않으므로).
+       이제 public/night-guide 를 **읽어서 자동으로 채운다.** 손으로 적지 않는다. */
+  const 손HTML: string[] = (() => {
+    try {
+      const 방 = path.join(process.cwd(), "public", "night-guide");
+      return fs.readdirSync(방, { withFileTypes: true })
+        .filter((x) => x.isDirectory() && fs.existsSync(path.join(방, x.name, "index.html")))
+        .map((x) => `/night-guide/${x.name}/`);
+    } catch { return []; }
+  })();
+  const indexTest: MetadataRoute.Sitemap = 손HTML.map((p) => ({
     url: `${SITE.url}${p}`,
     lastModified: now,
     changeFrequency: "weekly" as const,
