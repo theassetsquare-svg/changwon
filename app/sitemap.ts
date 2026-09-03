@@ -115,12 +115,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
        사이트맵에 없으면 네이버가 발견할 길이 사실상 없다(홈에 링크를 걸지 않으므로).
        이제 public/night-guide 를 **읽어서 자동으로 채운다.** 손으로 적지 않는다. */
   const 손HTML: string[] = (() => {
+    const 모음 = new Set<string>();
+    /* ① public/night-guide/<이름>/index.html — 손으로 만든 쪽 */
     try {
       const 방 = path.join(process.cwd(), "public", "night-guide");
-      return fs.readdirSync(방, { withFileTypes: true })
-        .filter((x) => x.isDirectory() && fs.existsSync(path.join(방, x.name, "index.html")))
-        .map((x) => `/night-guide/${x.name}/`);
-    } catch { return []; }
+      for (const x of fs.readdirSync(방, { withFileTypes: true })) {
+        if (x.isDirectory() && fs.existsSync(path.join(방, x.name, "index.html"))) {
+          모음.add(`/night-guide/${x.name}/`);
+        }
+      }
+    } catch { /* 없으면 넘어간다 */ }
+    /* ★ ② app/night-guide/<이름>/page.tsx — 정식 라우트로 옮긴 쪽
+         2026-09-03 에 changwon-lululala-night-1 을 손 HTML 에서 라우트로 옮겼더니
+         사이트맵에서 빠졌다. 두 곳을 다 읽어야 한다. */
+    try {
+      const 방 = path.join(process.cwd(), "app", "night-guide");
+      for (const x of fs.readdirSync(방, { withFileTypes: true })) {
+        if (!x.isDirectory()) continue;
+        const 있나 = ["page.tsx", "page.ts", "page.jsx", "page.js"]
+          .some((f) => fs.existsSync(path.join(방, x.name, f)));
+        if (있나) 모음.add(`/night-guide/${x.name}/`);
+      }
+    } catch { /* 없으면 넘어간다 */ }
+    return [...모음];
   })();
   const indexTest: MetadataRoute.Sitemap = 손HTML.map((p) => ({
     url: `${SITE.url}${p}`,
