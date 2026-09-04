@@ -90,6 +90,8 @@ export default function HomePage() {
       <main>
         {/* 홈 순수성: 가게 신원 JSON-LD(NightClub) 는 홈에 넣지 않는다 (2026-08-31) */}
         <PageJsonLd pathname="/" />
+        {/* 2026-09-05 AI-100·AI-101 — 홈에만 WebSite·Organization (홈 본문 불변) */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": [{ "@type": "WebSite", "@id": `${SITE.url}/#website`, name: "창원에서 성공하는 방법", url: `${SITE.url}/`, inLanguage: "ko-KR", publisher: { "@id": `${SITE.url}/#org` } }, { "@type": "Organization", "@id": `${SITE.url}/#org`, name: "놀쿨", url: `${SITE.url}/` }] }) }} />
 
         {/* 읽은 분량 표시 — 지원 브라우저에서만 동작하고, 아니면 그냥 보이지 않는다 */}
         <div className="read-progress" aria-hidden />

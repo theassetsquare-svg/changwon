@@ -145,7 +145,8 @@ function jsonLd(v: AdVenue, 변형?: { faq?: { q: string; a: string }[] }) {
       addressCountry: "KR",
     },
   };
-  if (v.phone) nightClub.telephone = v.phone;
+  /* 2026-09-05 AI-088 — JSON-LD 전화는 +82 국가코드 꼴(화면 표기는 그대로) */
+  if (v.phone) nightClub.telephone = String(v.phone).replace(/^0(\d{1,2})-?(\d{3,4})-?(\d{4})$/, '+82-$1-$2-$3');
   if (v.openingHours) nightClub.openingHours = v.openingHours;
   if (v.ageFull) nightClub.typicalAgeRange = v.ageFull;
 
