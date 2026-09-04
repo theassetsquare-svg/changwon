@@ -210,6 +210,8 @@ export const GROUP_4: HallVenue[] = [
     locality: "경기도 성남시 중원구",
     region: "경기도",
     hallType: "역세권 홀",
+    contactName: "이쁜이",
+    phone: "010-3432-4758",
     title: "성남샴푸나이트, 모란역 쪽 홀의 좌석 등급",
     description:
       "성남샴푸나이트는 중원구 광명로 21, 성남동에 있습니다. 모란역이 가깝습니다. 좌석을 등급으로 나누면 어떤 기준이 나오는지 공간 순서대로 정리했습니다.",
