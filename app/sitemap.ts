@@ -163,7 +163,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       return { ...x, url: u.toString() };
     });
 
-  return 슬래시로([
+  /* 2026-09-05 S3 — nightPath 가 /hall/ 로 이어 주는 두 곳이 hallVenues 와 겹친다. 같은 주소는 한 번만(사이트맵 중복 loc 0, 유사문서 표 U-061). */
+  const 전부 = 슬래시로([
     ...core,
     ...areaGuide,
     ...nightHub,
@@ -172,4 +173,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...hallVenues,
     ...indexTest,
   ]);
+  const 본 = new Set<string>();
+  return 전부.filter((x) => { const k = String(x.url); if (본.has(k)) return false; 본.add(k); return true; });
 }
