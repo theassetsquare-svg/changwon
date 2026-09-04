@@ -183,7 +183,7 @@ function jsonLd(v: AdVenue, 변형?: { faq?: { q: string; a: string }[] }) {
         "@type": "BreadcrumbList",
         "@id": `${url}#breadcrumb`,
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "홈", item: SITE.url },
+          { "@type": "ListItem", position: 1, name: "창원에서 성공하는 방법", item: SITE.url },
           {
             "@type": "ListItem",
             position: 2,

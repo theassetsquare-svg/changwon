@@ -17,7 +17,7 @@ export default function PageJsonLd({ pathname }: { pathname: string }) {
             {
               "@type": "ListItem",
               position: 1,
-              name: "홈",
+              name: "창원에서 성공하는 방법",
               item: SITE.url,
             },
           ]

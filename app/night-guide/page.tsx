@@ -74,7 +74,7 @@ export default function NightIndexPage() {
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "홈", item: SITE.url },
+          { "@type": "ListItem", position: 1, name: "창원에서 성공하는 방법", item: SITE.url },
           {
             "@type": "ListItem",
             position: 2,

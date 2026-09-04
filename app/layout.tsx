@@ -18,6 +18,12 @@ const ROOT_THUMB = thumb({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
+  /* 2026-09-05 S3 — 파비콘은 정적 파일 + 절대 주소(네이버 「파비콘」 가이드: 절대 경로 · 같은 rel 1개). app/icon.tsx·apple-icon.tsx(상대 /icon?hash) 는 지웠다. */
+  icons: {
+    icon: [{ url: "https://g.nolcool.com/favicon.png", type: "image/png", sizes: "64x64" }],
+    shortcut: ["https://g.nolcool.com/favicon.ico"],
+    apple: [{ url: "https://g.nolcool.com/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   title: {
     default: `${SITE.nameNoSpace} 공식 사이트 — 상남동 27세 이상 합법 영업장`,
     template: `%s`,
@@ -88,9 +94,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ko-KR">
       <head>
-        <link rel="alternate" hrefLang="ko-KR" href={SITE.url} />
-        <link rel="alternate" hrefLang="ko" href={SITE.url} />
-        <link rel="alternate" hrefLang="x-default" href={SITE.url} />
+        {/* 2026-09-05 S3 — hreflang 3줄 제거: 모든 쪽이 홈을 가리켜 자기 주소가 아니었다(유사문서 표 U-064). 한국어 단일 사이트라 hreflang 불필요 */}
         <link
           rel="alternate"
           type="application/rss+xml"

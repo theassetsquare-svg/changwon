@@ -4,33 +4,29 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
-
+  Cache-Control: public, max-age=60, s-maxage=300
 /_next/static/*
   Cache-Control: public, max-age=31536000, immutable
-
 /opengraph-image
   Content-Type: image/png
   Cache-Control: public, max-age=3600
-
-# 페이지별 썸네일 — 네이버·구글 이미지 수집기가 확실히 PNG 로 받게 못 박는다.
-# nosniff 가 전역으로 걸려 있어서 Content-Type 이 틀리면 아예 그림으로 안 읽힌다.
 /og/*
   Content-Type: image/png
   Cache-Control: public, max-age=3600, must-revalidate
   X-Robots-Tag: all
-
 /icon
   Content-Type: image/png
-
 /apple-icon
   Content-Type: image/png
-
 /llms.txt
   Content-Type: text/plain; charset=utf-8
   Cache-Control: public, max-age=3600
-
 /sitemap.xml
   Cache-Control: public, max-age=3600
-
+  Content-Type: application/xml; charset=utf-8
 /robots.txt
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=3600
+  Content-Type: text/plain; charset=utf-8
+/rss.xml
+  Content-Type: application/rss+xml; charset=utf-8
+  Cache-Control: public, max-age=3600
