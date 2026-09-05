@@ -50,7 +50,7 @@ const PRICE_FAQ = [
 
 export default function PricePage() {
   return (
-    <PageShell title="창원룰루랄라나이트 가격" hook={m.hook} pathname="/price" thumbAlt={THUMB.alt}>
+    <PageShell adLabel title="창원룰루랄라나이트 가격" hook={m.hook} pathname="/price" thumbAlt={THUMB.alt}>
       <p>
         솔직히 말씀드릴게요. <strong className="text-white">창원 룰루랄라 나이트</strong>의
         가격은 자주 바뀝니다. 시즌, 인원, 자리에 따라 다릅니다. 그래서 여기 표는 큰

@@ -25,5 +25,5 @@ export const metadata: Metadata = adVariantMetadata(VENUE, 이주소, 변형);
 export const viewport: Viewport = adViewport;
 
 export default function Page() {
-  return <AdNightPage venue={VENUE} 변형={변형} />;
+  return <AdNightPage venue={VENUE} 변형={변형} path={이주소} />;
 }

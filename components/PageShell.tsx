@@ -41,6 +41,7 @@ function 고지고르기(씨: unknown, 광고쪽: boolean) {
 export default function PageShell({
   title,
   subtitle,
+  adLabel,
   hook,
   pathname,
   capsule,
@@ -48,6 +49,8 @@ export default function PageShell({
   children,
 }: {
   title: string;
+  /** S4(2026-09-05) 설계도 4장 — 광고주 쪽이면 h1 앞에 「광고」 라벨 */
+  adLabel?: boolean;
   subtitle?: string;
   hook?: string;
   pathname?: string;
@@ -69,6 +72,7 @@ export default function PageShell({
         <p className="text-xs font-bold uppercase tracking-[0.3em] text-gold">
           룰루랄라 나이트 · 창원 성산구 상남동
         </p>
+        {adLabel ? <p className="ad-label" style={{ display: "inline-block", margin: "0 0 10px", padding: "3px 10px", border: "1px solid #c9a227", borderRadius: 4, fontSize: 12, color: "#c9a227", letterSpacing: ".04em" }}>광고</p> : null}
         <h1 className="mt-2 text-3xl font-extrabold text-white sm:text-4xl">
           {title}
         </h1>

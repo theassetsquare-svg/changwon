@@ -11,6 +11,9 @@ export const GROUP_2: HallVenue[] = [
     no: 9,
     slug: "cheongdam",
     keyword: "청담나이트",
+    /* S4(2026-09-05) 광고주 세트 — data/shops/cheongdam.json(verified) */
+    contactName: "펩시맨",
+    phone: "010-5655-4866",
     spaced: "청담 나이트",
     regionType: "강남구 나이트클럽",
     areaLabel: "서울 강남구 청담동",

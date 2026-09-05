@@ -1,3 +1,4 @@
+import { thumb } from "@/lib/og";
 import Link from "next/link";
 import OgThumb from "./OgThumb";
 import { deriveFaqAnswer, nightPath, phoneDigits } from "@/lib/adnight";
@@ -123,7 +124,7 @@ body{ padding-bottom:calc(84px + env(safe-area-inset-bottom,0px)); }
 }
 `;
 
-function jsonLd(v: AdVenue, 변형?: { faq?: { q: string; a: string }[] }) {
+function jsonLd(v: AdVenue, 변형?: { faq?: { q: string; a: string }[] }, path?: string) {
   const url = `${SITE.url}${nightPath(v.slug)}`;
 
   const nightClub: Record<string, unknown> = {
@@ -136,7 +137,7 @@ function jsonLd(v: AdVenue, 변형?: { faq?: { q: string; a: string }[] }) {
        예전에는 여기서만 `${v.slug}-og.png` 라는 다른 이름을 만들어 냈다.
        그 이름의 파일은 만들어지지 않아 JSON-LD 의 그림이 404 가 됐다
        (2026-08-24 실측: 창원b 에서 5건). 이제 og:image 와 같은 파일을 가리킨다. */
-    image: ogAbsolute(ogSlug(nightPath(v.slug))),
+    image: thumb({ pathname: path ?? nightPath(v.slug), alt: v.ogAlt, v: (v as any).ogV }).url, /* S4 T-006: 메타데이터(adMetadata)와 같은 계산 — ogV(-v2) 가 빠져 JSON-LD 만 다른 파일을 가리켰다 */
     description: v.description,
     address: {
       "@type": "PostalAddress",
@@ -456,8 +457,11 @@ function 읽기전정리(v: AdVenue, 씨: string) {
 export default function AdNightPage({
   venue: v,
   변형,
+  path,
 }: {
   venue: AdVenue;
+  /** S4(2026-09-05) T-117: 변형 쪽(색인된 옛 주소)이면 그 주소 — 썸네일 파일 이름이 이 주소로 정해져 쪽마다 고유해진다 */
+  path?: string;
   /** 색인된 다른 주소에 이 가게를 얹을 때, 그 쪽만의 글.
    *  주면 첫 문단·본문 문단·마무리를 이것으로 바꾼다.
    *  사실(주소·번호·시간·표·전화바·고지)은 그대로 둔다.
@@ -497,7 +501,7 @@ export default function AdNightPage({
       <style dangerouslySetInnerHTML={{ __html: CALLBAR_CSS }} />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd(v, 변형)) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd(v, 변형, path)) }}
       />
 
       <main className="mx-auto max-w-3xl px-4 py-8 sm:py-12">
@@ -518,6 +522,8 @@ export default function AdNightPage({
             <p data-frame="1" className="text-xs font-bold uppercase tracking-[0.3em] text-gold">
               {v.areaLabel}
             </p>
+            {/* 설계도 4장 — 광고주 페이지 상단 「광고」 라벨 (2026-09-05 S4: g/around·g/photo 만 빠져 있었다) */}
+            <p className="ad-label" style={{ margin: "8px 0 0", display: "inline-block", padding: "3px 10px", border: "1px solid #c9a227", borderRadius: 4, fontSize: 12, color: "#c9a227", letterSpacing: ".04em" }}>광고</p>
             <h1 className="mt-2 text-3xl font-extrabold leading-tight text-white sm:text-4xl">
               {v.keyword}
             </h1>
@@ -537,7 +543,7 @@ export default function AdNightPage({
 
           {/* 썸네일 — og:image 와 같은 파일을 본문에도 실제로 렌더한다 */}
           <figure className="mt-6">
-            <OgThumb pathname={nightPath(v.slug)} alt={v.ogAlt} v={(v as { ogV?: string }).ogV} />
+            <OgThumb pathname={path ?? nightPath(v.slug)} alt={v.ogAlt} v={(v as { ogV?: string }).ogV} />
           </figure>
 
           <div className="space-y-5 text-[15px] leading-7 text-gray-200 sm:text-base sm:leading-8">

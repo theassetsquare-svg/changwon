@@ -33,5 +33,5 @@ export const metadata: Metadata = adVariantMetadata(VENUE, 이주소, {
 export const viewport: Viewport = adViewport;
 
 export default function Page() {
-  return <AdNightPage venue={VENUE} 변형={변형쪽들["/vip"]} />;
+  return <AdNightPage venue={VENUE} 변형={변형쪽들["/vip"]} path={이주소} />;
 }

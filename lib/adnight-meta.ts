@@ -115,7 +115,9 @@ export function adVariantMetadata(
     title,
     description,
     alternates: { canonical: 이주소 },
-    openGraph: { ...base.openGraph, url, title, description },
-    twitter: { ...base.twitter, title, description },
+    /* S4(2026-09-05) T-117: 변형 쪽은 자기 주소 이름의 썸네일 — 한 그림을 여러 쪽이 나눠 쓰지 않는다 */
+    openGraph: { ...base.openGraph, url, title, description, images: thumb({ pathname: 이주소, alt: v.ogAlt, v: (v as any).ogV }).images },
+    twitter: { ...base.twitter, title, description, images: [thumb({ pathname: 이주소, alt: v.ogAlt, v: (v as any).ogV }).url] },
+    other: { ...(base.other as Record<string, string>), thumbnail: thumb({ pathname: 이주소, alt: v.ogAlt, v: (v as any).ogV }).url }, /* 비표준 thumbnail 메타도 같은 그림(T-015 9종 한 주소) */
   };
 }
