@@ -46,6 +46,7 @@ export default function PageShell({
   pathname,
   capsule,
   thumbAlt,
+  thumbV,
   children,
 }: {
   title: string;
@@ -57,6 +58,8 @@ export default function PageShell({
   capsule?: string;
   /** 본문 썸네일 alt — 가게이름 + 페이지 주제 */
   thumbAlt?: string;
+  /** og:image 와 같은 판 번호(-v2 …) — 없으면 본문 그림이 옛 파일을 가리킨다 */
+  thumbV?: string;
   children: ReactNode;
 }) {
   const meta = pathname ? PAGE_META[pathname] : undefined;
@@ -103,6 +106,7 @@ export default function PageShell({
           <OgThumb
             pathname={pathname}
             alt={thumbAlt ?? `${SITE.nameNoSpace} ${title}`}
+            v={thumbV}
           />
         </figure>
       ) : null}
@@ -112,14 +116,12 @@ export default function PageShell({
       </div>
 
         <RelatedPages exclude={pathname ? [pathname] : []} />
-            <p className="mt-3 text-[13px] leading-7 text-gray-400">{고지고르기(pathname, true)}</p>
+            <p className="mt-3 text-[13px] leading-7 text-gray-400">{고지고르기(pathname, false)}</p>
 </main>
 
       <StickyCallBar
         contextLabel={SITE.nameNoSpace}
-        name={SITE.lotto}
-        phone={SITE.lottoPhoneDash}
-        phoneHref={SITE.lottoPhoneHref}
+        name="광고문의"
       />
     </>
   );

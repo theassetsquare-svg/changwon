@@ -18,7 +18,7 @@ export default function JsonLd() {
     description: SITE.description,
     url: SITE.url,
     priceRange: SITE.priceRange,
-    telephone: SITE.phone,
+    /* telephone 없음 — 2026-09-13 광고 해지 */
     currenciesAccepted: "KRW",
     paymentAccepted: "Cash, Credit Card",
     address: {
@@ -81,14 +81,14 @@ export default function JsonLd() {
       {
         "@type": "ContactPoint",
         contactType: "reservations",
-        telephone: SITE.phone,
+        /* telephone 없음 — 2026-09-13 광고 해지 */
         areaServed: "KR",
         availableLanguage: ["Korean", "ko-KR"],
       },
       {
         "@type": "ContactPoint",
         contactType: "customer service",
-        telephone: SITE.phone,
+        /* telephone 없음 — 2026-09-13 광고 해지 */
         areaServed: "KR",
         availableLanguage: ["Korean", "ko-KR"],
       },
@@ -119,15 +119,15 @@ export default function JsonLd() {
     "@type": "HowTo",
     "@id": `${SITE.url}/#how-to-reserve`,
     name: "창원 룰루랄라 나이트 예약 방법",
-    description: `창원 룰루랄라 나이트 예약은 전화 ${SITE.phone} 한 번이면 끝납니다.`,
+    description: "창원 룰루랄라 나이트는 이 사이트와 제휴 관계가 없어 예약을 대신 받지 않습니다. 방문 순서만 정리합니다.",
     totalTime: "PT30S",
     tool: [{ "@type": "HowToTool", name: "전화" }],
     step: [
       {
         "@type": "HowToStep",
         position: 1,
-        name: "전화 문의",
-        text: `${SITE.phone}로 전화해 인원·날짜·시간을 알려주시면 됩니다.`,
+        name: "방문 준비",
+        text: "인원·날짜·시간을 정해 둡니다. 연락처는 싣지 않습니다.",
         url: `${SITE.url}/reserve#step1`,
       },
       {

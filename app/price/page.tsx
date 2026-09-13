@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 const PRICE_FAQ = [
   {
     q: "창원 룰루랄라 나이트 가격은 평균 얼마예요?",
-    a: "옵션·인원·시간대에 따라 다릅니다. 010-7528-4936로 전화 주시면 인원에 맞는 두세 가지 옵션의 정확한 금액을 묶어 안내합니다.",
+    a: "옵션·인원·시간대에 따라 다릅니다. 이 사이트는 업소와 제휴 관계가 없어 금액을 대신 안내하지 않으니 방문 당일 현장에서 확인해 주세요.",
   },
   {
     q: "사이트에 가격표가 비어 있는 이유는?",
@@ -51,7 +51,7 @@ const PRICE_FAQ = [
 
 export default function PricePage() {
   return (
-    <PageShell adLabel title="창원룰루랄라나이트 가격" hook={m.hook} pathname="/price" thumbAlt={THUMB.alt}>
+    <PageShell title="창원룰루랄라나이트 가격" hook={m.hook} pathname="/price" thumbAlt={THUMB.alt} thumbV="-v2">
       <p>
         솔직히 말씀드릴게요. <strong className="text-white">창원 룰루랄라 나이트</strong>의
         가격은 자주 바뀝니다. 시즌, 인원, 자리에 따라 다릅니다. 그래서 여기 표는 큰
@@ -163,8 +163,7 @@ export default function PricePage() {
 
       <h2 className="pt-2 text-xl font-bold text-white">가장 빠른 가격 확인</h2>
       <p>
-        <a href={SITE.phoneHref} className="font-extrabold text-gold underline">전화 {SITE.phone}</a>{" "}
-        → 인원/날짜 → 가격 안내. 30초입니다.
+        방문 당일 입구에서 인원과 날짜를 말하고 금액을 확인하는 것이 가장 정확합니다.
       </p>
     </PageShell>
   );
