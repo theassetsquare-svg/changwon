@@ -8,7 +8,8 @@ const m = PAGE_META["/price"];
 /** 이 페이지 전용 썸네일 — og:image 와 본문 <img> 가 같은 파일을 가리킨다 */
 const THUMB = thumb({
   pathname: "/price",
-  alt: `${SITE.nameNoSpace} 가격 안내`,
+  alt: "창원룰루랄라나이트 · 광고문의 · 카톡 besta12",
+  v: "-v2",
 });
 export const metadata: Metadata = {
   title: m.title,

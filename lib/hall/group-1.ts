@@ -426,6 +426,8 @@ export const GROUP_1: HallVenue[] = [
     locality: "경기도 수원시 권선구",
     region: "경기도",
     hallType: "돔형 홀",
+    contactName: "박찬호",
+    phone: "010-7117-5077",
     title: "수원찬스돔나이트, 돔 천장 아래 어디에 앉나",
     description:
       "수원찬스돔나이트는 권선로 673에 있는 홀입니다. 이름에 붙은 '돔'은 천장 형태를 가리키는 말이고, 천장이 둥글면 소리가 모이는 지점이 달라집니다. 자리별 차이를 정리했습니다.",

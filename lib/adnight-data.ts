@@ -1120,7 +1120,9 @@ export const AD_VENUES: AdVenue[] = [
     areaLabel: "경기 수원시 권선구 권선동",
     locality: "경기도 수원시 권선구",
     region: "경기도",
-    group: "B",
+    group: "A",
+    contactName: "박찬호",
+    phone: "010-7117-5077",
     title: "수원찬스돔나이트 주말엔 붐빌까 권선로 대형 홀 이야기",
     description:
       "수원찬스돔나이트는 주말에 얼마나 차는지 묻는 전화가 많습니다. 사람이 몰리는 진짜 이유와 그때 자리를 잡는 방법을 권선로 673 대형 홀 기준으로 풀었습니다.",
