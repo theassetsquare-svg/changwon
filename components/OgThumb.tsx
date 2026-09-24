@@ -1,4 +1,4 @@
-import { OG_HEIGHT, OG_WIDTH, ogFile, ogSlug } from "@/lib/og";
+import { OG_HEIGHT, OG_WIDTH, ogFile, ogSlug, 쪽카드 } from "@/lib/og";
 
 /**
  * 본문 썸네일 — 직답 박스(없으면 h1) 바로 아래에 들어간다.
@@ -22,11 +22,13 @@ export default function OgThumb({
    *  같은 파일이어야 한다는 원칙이 깨져 있었다(4쪽). */
   v?: string;
 }) {
+  const 표 = 쪽카드(pathname);   /* 2026-09-24 — 쪽마다 고유 카드(lib/thumb-map.json) · og 와 같은 파일 */
+  if (표 && 표.ogOnly) return null;   /* 홈: og 만 · 본문 그림 0(0순위 4) */
   return (
     /* eslint-disable-next-line @next/next/no-img-element */
     <img
-      src={ogFile(ogSlug(pathname) + (v ?? ""))}
-      alt={alt}
+      src={표 ? 표.file : ogFile(ogSlug(pathname) + (v ?? ""))}
+      alt={표 ? 표.alt : alt}
       width={OG_WIDTH}
       height={OG_HEIGHT}
       style={{ maxWidth: "100%", height: "auto" }}

@@ -4,7 +4,7 @@ import StickyCallBar from "@/components/StickyCallBar";
 import KakaoIdCopy from "@/components/KakaoIdCopy";
 import OgThumb from "@/components/OgThumb";
 import { SITE, SITE_OTHER_NOPHONE } from "@/lib/site";
-import { thumb } from "@/lib/og";
+import { thumb, 이미지바꾸기 } from "@/lib/og";
 import { ADS } from "@/lib/venues";
 import { AD_VENUES } from "@/lib/adnight-data";
 import { nightPath } from "@/lib/adnight";
@@ -24,6 +24,7 @@ export const metadata: Metadata = {
   keywords: AD_VENUES.flatMap((v) => [v.keyword, v.spaced]),
   alternates: { canonical: "/night-guide" },
   openGraph: {
+    images: THUMB.images,   /* 2026-09-24 쪽마다 고유 카드 */
     type: "website",
     locale: "ko_KR",
     url: `${SITE.url}/night-guide`,   /* ★ /night 는 주소교체로 버려져 404 다 */
@@ -34,6 +35,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: TITLE,
     description: DESCRIPTION,
+    images: [THUMB.url],
   },
   other: { ...SITE_OTHER_NOPHONE },
 };
@@ -110,7 +112,7 @@ export default function NightIndexPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(graph) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(이미지바꾸기(graph, THUMB.url)) }}
       />
 
       <main className="mx-auto max-w-3xl px-4 py-8 sm:py-12">
@@ -133,6 +135,7 @@ export default function NightIndexPage() {
             지역을 고르시면 그 업소 예약 담당자 연락처가 바로 나옵니다.
           </p>
         </header>
+        <OgThumb pathname="/night-guide" alt={THUMB.alt} />
 
         <aside
           className="mb-8 rounded-2xl border border-gold/40 bg-gold/5 p-5 text-[15px] leading-7 sm:text-base"

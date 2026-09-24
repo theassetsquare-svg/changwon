@@ -28,6 +28,7 @@ export const metadata: Metadata = {
   category: undefined,
   alternates: { canonical: "/" },
   openGraph: {
+    images: THUMB.images,   /* 2026-09-24 대표님 지시 「모든 쪽 썸네일」 — 홈은 og 만(본문 그림 0) */
     url: "/",   /* og:url — canonical 과 같게 (네이버 오픈그래프 필수) */
     title: meta.title,
     description: meta.description,
@@ -36,6 +37,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: meta.title,
     description: meta.description,
+    images: [THUMB.url],
   },
   other: { ...SITE_OTHER },
 };

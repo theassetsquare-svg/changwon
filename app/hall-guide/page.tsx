@@ -6,7 +6,7 @@ import { HALL_UPDATED, hallPath } from "@/lib/hall";
 import { HALL_BY_SLUG, HALL_REGIONS, HALL_VENUES } from "@/lib/hall-data";
 import { hallViewport } from "@/lib/hall-meta";
 import { SITE } from "@/lib/site";
-import { thumb } from "@/lib/og";
+import { thumb, 이미지바꾸기 } from "@/lib/og";
 import { ADS } from "@/lib/venues";
 
 const TITLE = "전국 나이트 홀 도감 40 — 자리에 따라 달라지는 밤";
@@ -33,6 +33,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/hall-guide" },
   openGraph: {
+    images: THUMB.images,   /* 2026-09-24 쪽마다 고유 카드 */
     type: "website",
     locale: "ko_KR",
     url: `${SITE.url}/hall-guide`,   /* ★ /hall 은 주소교체로 버려져 404 다 */
@@ -44,6 +45,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: TITLE,
     description: DESCRIPTION,
+    images: [THUMB.url],
   },
   other: {
     "dc.title": "전국 나이트 홀 도감 40",
@@ -102,7 +104,7 @@ export default function HallHubPage() {
       <style dangerouslySetInnerHTML={{ __html: HALL_CSS }} />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(이미지바꾸기(jsonLd, THUMB.url)) }}
       />
 
       <div className="hall">
@@ -123,6 +125,7 @@ export default function HallHubPage() {
               무엇을 바꾸는지 같은 순서로 정리했습니다.
             </p>
           </header>
+        <OgThumb pathname="/hall-guide" alt={THUMB.alt} />
 
 
           <section className="plan">
