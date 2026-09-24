@@ -28,6 +28,7 @@ const 이주소 = "/news";
    (색인 점검표 #48). 제목은 이 쪽이 이미 색인된 주소라 규칙 1-4 대로 그대로 두고,
    설명문만 이 쪽의 것으로 바꾼다. 본문 글은 건드리지 않는다. */
 export const metadata: Metadata = adVariantMetadata(VENUE, 이주소, {
+  title: 변형쪽들["/news"].title,   /* 2026-09-25 — /club/busan-asiad-night/ 과 제목이 같았다(사이트 안 같은 제목) · 이 쪽 글의 제목으로 */
   description: 변형쪽들["/news"].description,
 });
 export const viewport: Viewport = adViewport;

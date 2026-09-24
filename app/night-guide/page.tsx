@@ -6,6 +6,7 @@ import OgThumb from "@/components/OgThumb";
 import { SITE, SITE_OTHER_NOPHONE } from "@/lib/site";
 import { thumb, 이미지바꾸기 } from "@/lib/og";
 import { ADS } from "@/lib/venues";
+import { Salted } from "@/lib/salt";   /* 2026-09-25 전부10 — ④ 구조 지문 */
 import { AD_VENUES } from "@/lib/adnight-data";
 import { nightPath } from "@/lib/adnight";
 
@@ -109,7 +110,7 @@ export default function NightIndexPage() {
   };
 
   return (
-    <>
+    <Salted seed="/night-guide/">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(이미지바꾸기(graph, THUMB.url)) }}
@@ -167,8 +168,8 @@ export default function NightIndexPage() {
                   <p className="text-base font-extrabold text-gold">
                     {v.keyword}
                   </p>
-                  <p className="mt-1 text-xs text-gray-500">{v.areaLabel}</p>
-                  <p className="mt-2 text-sm text-gray-300">{v.suffix}</p>
+                  <p className="mt-1 text-xs text-gray-500">{`${v.areaLabel} · ${v.suffix}`}</p>{/* 2026-09-25 — 지역 이름만 한 줄로 두면 다른 사이트의 지역 쪽과 문장이 똑같아졌다(③) */}
+
                 </Link>
               </li>
             ))}
@@ -231,7 +232,7 @@ export default function NightIndexPage() {
         </section>
             {/* ★ 2026-08-31 — 관계·연령 고지 (설계도 4장) */}
       <p className="mt-3 text-[13px] leading-7 text-gray-400">
-        만 19세 이상 성인 업소를 모아 안내합니다. 업소와 제휴 관계가 없는 정보 페이지입니다.
+        만 19세 이상 성인 업소를 모아 안내합니다. 업소와 제휴 관계가 없는 정보 페이지입니다. 마지막 정리 2026년 9월 25일 · 운영 사정에 따라 안내 내용은 바뀔 수 있습니다.
       </p>
 </main>
 
@@ -311,6 +312,6 @@ export default function NightIndexPage() {
           <li><a href="/hall/bulgwang-hobak/">불광동호박나이트</a></li>
         </ul>
       </nav>
-    </>
+    </Salted>
   );
 }

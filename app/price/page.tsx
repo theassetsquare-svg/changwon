@@ -1,170 +1,85 @@
-import type { Metadata } from "next";
-import PageShell from "@/components/PageShell";
-import { PAGE_META, PLACEHOLDERS, SITE, SITE_OTHER } from "@/lib/site";
-import { thumb } from "@/lib/og";
+import type { Metadata, Viewport } from "next";
+import AdNightPage from "@/components/AdNightPage";
+import { AD_BY_SLUG } from "@/lib/adnight-data";
+import { adVariantMetadata, adViewport } from "@/lib/adnight-meta";
 
-const m = PAGE_META["/price"];
+/**
+ * /price/ — 창원룰루랄라나이트(광고주 로또) 가격 문의 안내.
+ *
+ * 2026-09-25 전부10 — 예전 글은 가게가 직접 말하는 투로 「부풀려서 받은 적 없다」 「추가요금 0원」 같은
+ *   확인되지 않은 약속을 적고 있었고(제목 「추가요금 0원」 포함), 가게이름은 한 번뿐·한 줄 정리 없음·JSON-LD 이름/주소가 장부와 달랐다.
+ *   금액은 확인된 값이 없어 싣지 않는다. 확인된 사실(주소·영업시간·주차·담당)은 장부(lib/ledger.ts) 값으로 표에만 싣고,
+ *   글은 「가격을 물을 때 무엇을 정해 두고 어떤 순서로 확인하나」에만 답한다. 주소(/price/)는 그대로다.
+ */
+const BASE = AD_BY_SLUG["changwon-lululala-night"];
+const VENUE = {
+  ...BASE,
+  /* 직답 상자 둘째 문장 — 장부에 없는 연령·층 대신 이 쪽이 답하는 것 */
+  answer2: "이 쪽에는 확인되지 않은 금액을 적지 않고, 담당에게 인원과 날짜를 말해 가격을 직접 묻는 순서를 정리했습니다.",
+};
+const 이주소 = "/price";
 
-/** 이 페이지 전용 썸네일 — og:image 와 본문 <img> 가 같은 파일을 가리킨다 */
-const THUMB = thumb({
-  pathname: "/price",
-  alt: "광고 · 창원룰루랄라나이트 · 로또 · 010-7528-4936",
-  v: "-ad0924",   /* 2026-09-24 광고주 복구 — 로또 표준 4줄 카드(새 파일 이름) */
-});
-export const metadata: Metadata = {
-  title: m.title,
-  description: m.description,
-  alternates: { canonical: "/price" },
-  openGraph: {
-    url: "/price",   /* og:url — canonical 과 같게 (네이버 오픈그래프 필수) */
-    title: m.title,
-    description: m.description,
-    images: THUMB.images,
-  },
-  twitter: {
-    card: "summary",
-    title: m.title,
-    description: m.description,
-    images: [THUMB.url],
-  },
-  other: { ...SITE_OTHER, ...THUMB.other },
+const 변형 = {
+  각도: "가격문의",
+  title: "창원룰루랄라나이트 가격, 전화 전에 정리할 것",
+  description: "창원룰루랄라나이트 가격표는 싣지 않았습니다. 확인 안 된 금액 대신 전화로 물을 때 먼저 정할 인원·날짜·자리와 확인 순서를 정리했습니다.",
+  lead: [
+    "창원룰루랄라나이트 가격을 찾는 분이 가장 먼저 부딪히는 것은 공개된 금액표가 없다는 점입니다. 이 쪽도 금액을 적지 않았습니다. 확인되지 않은 숫자를 올려 두면 도착해서 다른 값을 듣게 되고, 그 차이는 고스란히 방문하는 사람의 몫이 되기 때문입니다.",
+    "대신 전화로 물을 때 무엇을 먼저 정해 두면 답이 빨라지는지, 어떤 순서로 묻는 편이 헷갈리지 않는지를 적었습니다. 주소와 영업시간처럼 확인된 값은 아래 표에 따로 모았습니다.",
+  ],
+  sections: [
+    {
+      h2: "가격을 묻기 전에 정해 둘 세 가지",
+      body: [
+        "나이트 비용은 보통 몇 명이 가는지, 어느 날 가는지, 어떤 자리를 원하는지에 따라 달라집니다. 이 세 가지가 정해지지 않은 채로 물으면 돌아오는 답도 넓어질 수밖에 없습니다.",
+        "인원은 확정된 수와 늘어날 수 있는 수를 나눠 말하는 편이 좋습니다. 날짜는 요일까지 정해 두고, 자리는 조용한 쪽인지 홀이 잘 보이는 쪽인지만 골라도 충분합니다.",
+      ],
+    },
+    {
+      h2: "통화에서 확인할 순서",
+      body: [
+        "먼저 인원과 날짜를 말하고, 그 조건에서 고를 수 있는 자리와 금액을 묻습니다. 다음으로 그 금액에 들어 있는 것과 따로 붙는 것이 무엇인지 나눠서 확인합니다.",
+        "끝으로 들은 내용을 한 번 되짚어 말해 보십시오. 금액과 포함 내역을 서로 같은 뜻으로 이해했는지 그 자리에서 맞춰 두면, 도착한 뒤에 설명을 다시 들을 일이 줄어듭니다.",
+      ],
+    },
+    {
+      h2: "확인된 것과 아직 모르는 것",
+      body: [
+        "이 쪽에서 확인된 값은 주소, 영업시간, 주차 가능 여부, 담당 연락처입니다. 영업시간은 매일 오후 7시부터 새벽 5시까지로 확인되어, 방문 시각은 이 안에서 잡으시면 됩니다.",
+        "금액, 결제 수단, 자리 종류별 차이는 확인하지 못해 적지 않았습니다. 이런 항목은 그날 사정에 따라 달라질 수 있으니 방문 전에 담당에게 직접 물어보시는 것이 가장 정확합니다.",
+      ],
+    },
+    {
+      h2: "금액을 들은 뒤 방문 계획 세우기",
+      body: [
+        "금액을 확인했다면 도착 시각과 가는 길을 함께 정해 두십시오. 확인된 주소는 창원시 성산구 상남동 22-4, 도로명으로는 마디미로43번길 10입니다. 지도 앱에 도로명 주소를 넣으면 건물 앞까지 길을 잡을 수 있습니다.",
+        "차를 가져가실 생각이라면 주차는 가능한 것으로 확인됩니다. 다만 늦은 시각에는 돌아가는 방법이 달라지니, 대리운전이나 동행 가운데 무엇으로 돌아갈지 출발 전에 정해 두는 편이 좋습니다.",
+        "금액을 들은 날과 방문하는 날 사이가 길다면, 가기 전날 같은 조건으로 한 번 더 확인하는 편이 안전합니다. 인원이 바뀌었다면 그 점도 함께 알려 다시 안내를 받으십시오.",
+      ],
+    },
+  ],
+  faq: [
+    { q: "창원룰루랄라나이트 가격표는 어디서 보나요?", a: "이 쪽에는 금액을 싣지 않았습니다. 확인되지 않은 금액을 적지 않기 때문이며, 가격은 담당에게 인원과 날짜를 말하고 직접 물어보시면 됩니다." },
+    { q: "가격을 물을 때 무엇을 말하면 되나요?", a: "인원, 방문 날짜, 원하는 자리의 성격 세 가지를 먼저 말하면 됩니다. 조건이 정해져 있을수록 금액 안내도 구체적으로 돌아옵니다." },
+    { q: "따로 붙는 비용이 있는지는 어떻게 아나요?", a: "통화에서 금액에 들어 있는 것과 따로 붙는 것을 나눠서 물어보십시오. 들은 내용을 한 번 되짚어 확인해 두면 도착 뒤에 달라질 일이 줄어듭니다." },
+  ],
+  closing: { h2: "", body: [] as string[] },
+  summary: [
+    "금액은 이 쪽에 적지 않았고, 담당에게 직접 묻는 것이 기준입니다.",
+    "인원·날짜·자리 세 가지를 정한 뒤 물으면 답이 빨라집니다.",
+    "들어 있는 것과 따로 붙는 비용을 나눠 확인해 두십시오.",
+  ],
+  outro: "창원룰루랄라나이트 가격은 조건에 따라 달라지는 값이라, 정해 둔 조건을 들고 한 번에 묻는 편이 가장 정확합니다.",
+  notice: [
+    "이 쪽은 가격 문의 방법을 정리한 안내이며 금액표는 싣지 않았습니다.",
+    "만 19세 미만은 출입할 수 없습니다.",
+    "운영 사정에 따라 안내 내용은 바뀔 수 있습니다.",
+  ],
 };
 
-const PRICE_FAQ = [
-  {
-    q: "창원 룰루랄라 나이트 가격은 평균 얼마예요?",
-    a: "옵션·인원·시간대에 따라 다릅니다. 이 사이트는 업소와 제휴 관계가 없어 금액을 대신 안내하지 않으니 방문 당일 현장에서 확인해 주세요.",
-  },
-  {
-    q: "사이트에 가격표가 비어 있는 이유는?",
-    a: "허위 금액을 적지 않기 위해서입니다. 시즌·자리·인원에 따라 가격이 바뀌는데, 표에 박아 두면 손님이 도착해서 '다르네' 라고 느낍니다. 정확한 금액은 전화 문의가 기준입니다.",
-  },
-  {
-    q: "추가 요금이 붙는 경우가 있나요?",
-    a: "옵션 변경, 인원 추가, VIP 룸 이용 등 변동 사유는 전화 문의 시점에 미리 다 말씀드립니다. 도착 후 '몰랐던 추가요금' 부과는 하지 않습니다.",
-  },
-  {
-    q: "결제는 카드 / 현금 다 되나요?",
-    a: "결제 수단 세부 정책은 변동될 수 있어 사이트 표기보다 매장에 미리 문의 주시면 그 자리에서 안내합니다.",
-  },
-];
+export const metadata: Metadata = adVariantMetadata(VENUE, 이주소, 변형);
+export const viewport: Viewport = adViewport;
 
 export default function PricePage() {
-  return (
-    <PageShell title="창원룰루랄라나이트 가격" hook={m.hook} pathname="/price" thumbAlt={THUMB.alt} thumbV="-ad0924" ad={{ nick: "로또", phone: "010-7528-4936", image: THUMB.url }}>
-      <p>
-        솔직히 말씀드릴게요. <strong className="text-white">창원 룰루랄라 나이트</strong>의
-        가격은 자주 바뀝니다. 시즌, 인원, 자리에 따라 다릅니다. 그래서 여기 표는 큰
-        틀만 적어두고, 정확한 금액은 전화로 그때그때 알려드립니다. 그게 가장
-        빠르고 정확합니다.
-      </p>
-
-      <p>
-        가격표를 못 박아두지 않는 이유는 단순합니다. "20만 원이라더니 25만 원이네"
-        같은 말이 손님 입에서 나오지 않게 하려고요. 그래서 전화 문의 시 인원·날짜에
-        맞는 옵션 두세 개를 묶어서 정확히 알려드립니다. 손님은 그걸 듣고 비교해서
-        정하시면 됩니다.
-      </p>
-
-      <div className="overflow-hidden rounded-2xl border border-line bg-elev">
-        <table className="w-full text-left text-sm sm:text-base">
-          <thead className="bg-elev2 text-gold">
-            <tr>
-              <th className="px-4 py-3">옵션</th>
-              <th className="px-4 py-3">가격</th>
-              <th className="px-4 py-3">메모</th>
-            </tr>
-          </thead>
-          <tbody className="text-gray-200">
-            {PLACEHOLDERS.prices.map((p) => (
-              <tr key={p.name} className="border-t border-line">
-                <td className="px-4 py-3 font-semibold">{p.name}</td>
-                {/* ★ 2026-08-31 — 값이 없을 때 "[입력필요]" 가 그대로 표에 나갔다.
-                    가격을 지어내지 않는다. 확정 값이 들어오면 그 값이 그대로 실린다. */}
-                <td className="px-4 py-3">
-                  {p.price.includes("입력필요") ? "전화 문의" : p.price}
-                </td>
-                <td className="px-4 py-3 text-gray-400">
-                  {p.note.includes("입력필요") ? "인원·날짜에 맞춰 안내" : p.note}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      <h2 className="pt-2 text-xl font-bold text-white">
-        가격 물어보는 게 부담되시면
-      </h2>
-      <p>
-        그 마음 압니다. "얼마예요" 묻는 거 어색하시면 인원만 말씀해 주세요.
-        그 인원에 맞는 옵션 두세 가지 가격 묶어서 알려드립니다. 비교하고
-        결정하시면 됩니다. "싸게 해 주세요" 같은 거 안 하셔도 됩니다 — 부풀려서
-        받은 적 없으니까요.
-      </p>
-
-      <h2 className="pt-2 text-xl font-bold text-white">
-        창원 룰루랄라 나이트 가격, 솔직 가이드
-      </h2>
-      <ul className="space-y-2 text-gray-300">
-        <li>
-          1인 — 인원 적을 때 부담 적은 옵션부터 묶어드립니다. 처음 오시는 분이라면
-          이쪽이 편합니다.
-        </li>
-        <li>
-          2~3인 — 가장 많이 오는 인원대입니다. 옵션 폭이 가장 넓어요. 자리 위치까지
-          조정해서 잡아드립니다.
-        </li>
-        <li>
-          4인 이상 (단체) — 묶음 옵션이 따로 있습니다. 미리 전화 주시면 같은 자리에
-          모이게 잡아드릴게요.
-        </li>
-        <li>
-          VIP 룸 — 별도 안내. 운영 시점에만 가능. 자세한 건 전화로 직접 안내합니다.
-        </li>
-        <li>
-          평일 / 주말 — 시간대와 손님 밀도에 따라 가격 차이가 있습니다. 전화로 확인
-          가능.
-        </li>
-      </ul>
-
-      <p className="rounded-2xl border border-line bg-elev p-5 text-sm text-gray-300">
-        ※ 표시된 금액과 실제 결제 금액에 차이가 있으면 그 자리에서 정정합니다.
-        부풀려서 받지 않습니다. 추가 요금이 발생할 가능성도 전화 문의 시점에 미리
-        말씀드립니다.
-      </p>
-
-      <h2 className="pt-2 text-xl font-bold text-white">가격 관련 자주 묻는 질문</h2>
-      <div className="space-y-2">
-        {PRICE_FAQ.map((item) => (
-          <details
-            key={item.q}
-            className="rounded-2xl border border-line bg-elev p-4 transition open:border-gold"
-          >
-            <summary className="pr-8 font-semibold text-white">{item.q}</summary>
-            <p className="mt-3 text-gray-300">{item.a}</p>
-          </details>
-        ))}
-      </div>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: PRICE_FAQ.map((f) => ({
-              "@type": "Question",
-              name: f.q,
-              acceptedAnswer: { "@type": "Answer", text: f.a },
-            })),
-          }),
-        }}
-      />
-
-      <h2 className="pt-2 text-xl font-bold text-white">가장 빠른 가격 확인</h2>
-      <p>
-        방문 당일 입구에서 인원과 날짜를 말하고 금액을 확인하는 것이 가장 정확합니다.
-      </p>
-    </PageShell>
-  );
+  return <AdNightPage venue={VENUE} 변형={변형} path={이주소} />;
 }

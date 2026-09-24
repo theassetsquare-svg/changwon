@@ -8,6 +8,8 @@ import { AD_VENUES, AD_BY_SLUG } from "@/lib/adnight-data";
 import { SITE } from "@/lib/site";
 import { ogAbsolute, ogSlug } from "@/lib/og";
 import { ADS } from "@/lib/venues";
+import { ledgerOf } from "@/lib/ledger";
+import { Salted } from "@/lib/salt";
 
  /* ★ 2026-08-31 — 이 한 줄이 한 사이트 수십 쪽에 똑같이 박혀 있었다(설계도 5장).
    쪽마다 다른 앞말을 고른다. 카카오톡 아이디는 사실이라 그대로 둔다. */
@@ -125,13 +127,16 @@ body{ padding-bottom:calc(84px + env(safe-area-inset-bottom,0px)); }
 `;
 
 function jsonLd(v: AdVenue, 변형?: { faq?: { q: string; a: string }[] }, path?: string) {
-  const url = `${SITE.url}${nightPath(v.slug)}`;
+  /* 2026-09-25 전부10 — 이 쪽 자신의 주소 · 사실은 장부(lib/ledger.ts) verified 값만 */
+  const url = `${SITE.url}${(path ?? nightPath(v.slug)).replace(/\/?$/, "/")}`;
+  const 장 = ledgerOf(v.keyword);
 
   const nightClub: Record<string, unknown> = {
+    "@context": "https://schema.org",
     "@type": "NightClub",
     "@id": `${url}#nightclub`,
-    name: v.spaced,
-    alternateName: v.keyword,
+    name: v.keyword,
+    alternateName: v.spaced,
     url,
     /* ★ 썸네일 경로는 lib/og.ts 하나만 쓴다(그 파일의 [원칙 1]).
        예전에는 여기서만 `${v.slug}-og.png` 라는 다른 이름을 만들어 냈다.
@@ -144,12 +149,13 @@ function jsonLd(v: AdVenue, 변형?: { faq?: { q: string; a: string }[] }, path?
       addressLocality: v.locality,
       addressRegion: v.region,
       addressCountry: "KR",
+      ...(장?.address ? { streetAddress: 장.address } : {}),
     },
   };
-  /* 2026-09-05 AI-088 — JSON-LD 전화는 +82 국가코드 꼴(화면 표기는 그대로) */
-  if (v.phone) nightClub.telephone = String(v.phone).replace(/^0(\d{1,2})-?(\d{3,4})-?(\d{4})$/, '+82-$1-$2-$3');
-  if (v.openingHours) nightClub.openingHours = v.openingHours;
-  if (v.ageFull) nightClub.typicalAgeRange = v.ageFull;
+  /* 2026-09-05 AI-088 — JSON-LD 전화는 +82 국가코드 꼴(화면 표기는 그대로) · 2026-09-25 광고주 장부 번호만 */
+  if (장?.adv && 장.telephone) nightClub.telephone = String(장.telephone).replace(/^0(\d{1,2})-?(\d{3,4})-?(\d{4})$/, '+82-$1-$2-$3');
+  if (장?.openingHours) nightClub.openingHours = 장.openingHours;
+  if (장?.ageLimit) nightClub.typicalAgeRange = 장.ageLimit;
 
   /* 2026-09-01 - 변형 글을 받은 쪽은 그 쪽의 FAQ 를 쓴다.
      안 그러면 같은 가게의 두 주소가 같은 질문·답을 싣게 된다. */
@@ -171,17 +177,18 @@ function jsonLd(v: AdVenue, 변형?: { faq?: { q: string; a: string }[] }, path?
       },
     }));
 
-  return {
-    "@context": "https://schema.org",
-    "@graph": [
+  /* 2026-09-25 전부10 — @graph 한 덩어리를 최상위 배열(각각 @context)로 — 쪽 검사가 NightClub·FAQPage·BreadcrumbList 를 따로 읽는다 */
+  return [
       nightClub,
       {
+        "@context": "https://schema.org",
         "@type": "FAQPage",
         "@id": `${url}#faq`,
         inLanguage: "ko-KR",
         mainEntity: faq,
       },
       {
+        "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "@id": `${url}#breadcrumb`,
         itemListElement: [
@@ -190,13 +197,12 @@ function jsonLd(v: AdVenue, 변형?: { faq?: { q: string; a: string }[] }, path?
             "@type": "ListItem",
             position: 2,
             name: "전국 나이트 예약 문의",
-            item: `${SITE.url}/night-guide`,
+            item: `${SITE.url}/night-guide/`,
           },
           { "@type": "ListItem", position: 3, name: v.keyword, item: url },
         ],
       },
-    ],
-  };
+  ];
 }
 
 /** 소제목에서 가게이름을 덜어 낸다 - 너무 짧아지면 원래 것을 쓴다 */
@@ -303,6 +309,39 @@ const 귀가틀 = [
   "귀가 계획을 함께 세워 두시면 그날이 훨씬 수월합니다. 새벽 시간대는 이동 방법이 제한되니 미리 알아보시는 편이 좋습니다. 운전 계획이 있으시면 대리 이용을 염두에 두십시오.",
 ];
 
+/* 2026-09-25 전부10 — 창고 6벌을 12쪽이 해시로 나눠 쓰다 보니 같은 문단이 두 쪽에 겹쳤다(8어절 13~16%).
+   /club/ 12쪽은 아래 차례로 자리를 하나씩 받아 문단이 한 번씩만 쓰이게 한다. 새틀은 그 12쪽 몫으로 새로 쓴 이용 안내(가게 사실 없음). */
+const 클럽차례 = ["bulgwang-hobak-night", "ulsan-champion-night", "1-1", "daejeon-one-night", "sillim-grandprix-night", "sangbong-hangukgwan-night", "2-1", "busan-asiad-night", "3-1", "ansan-hit-night", "daejeon-seven-night", "4-1"];
+const 새틀 = [
+  "신분증은 지갑 대신 바로 꺼낼 수 있는 주머니에 따로 넣어 두시면 입구에서 줄이 길어져도 서두를 일이 없습니다. 일행 가운데 한 명이라도 신분증을 두고 오면 모두가 밖에서 기다리게 되니, 출발 전에 서로 한 번씩 확인해 두십시오.",
+  "휴대폰 배터리는 넉넉히 채워 가시는 편이 좋습니다. 홀 안은 소리가 커서 전화보다 문자로 연락하게 되는 일이 많고, 늦은 시각에 택시나 대리를 부를 때도 휴대폰이 있어야 합니다.",
+  "도착 전에 일행끼리 만날 장소를 건물 밖 한 곳으로 정해 두십시오. 안에서 서로 찾으려 하면 소리와 조명 때문에 오래 걸리고, 늦게 오는 사람이 입구에서 헤매기 쉽습니다.",
+  "술은 처음부터 속도를 올리지 않는 편이 끝까지 편합니다. 물을 중간중간 같이 드시고, 몸이 무겁다고 느껴지면 그 자리에서 멈추는 것이 다음 날까지 생각했을 때 가장 나은 선택입니다.",
+  "겉옷과 가방은 들고 다닐 것만 남기고 줄여 가시길 권합니다. 짐이 많으면 자리를 옮길 때마다 챙길 것이 늘어나고, 두고 나오는 물건도 그만큼 생깁니다.",
+  "소리가 큰 곳에 오래 머무르면 귀가 쉽게 피로해집니다. 대화가 목적이라면 스피커와 떨어진 쪽을 고르시고, 중간에 잠깐씩 조용한 곳에서 쉬어 가는 것도 방법입니다.",
+  "사진이나 영상을 찍으실 때는 다른 손님의 얼굴이 담기지 않게 방향을 조심해 주십시오. 공유하기 전에 한 번 더 확인하면 서로 불편할 일이 생기지 않습니다.",
+  "결제 방법은 미리 물어 두시면 계산할 때 기다리는 시간이 줄어듭니다. 여럿이 나눠 낼 생각이라면 누가 먼저 계산하고 나중에 어떻게 나눌지 출발 전에 정해 두는 편이 깔끔합니다.",
+  "평소보다 늦게 자게 되는 날이라 다음 날 일정도 함께 생각해 두시는 편이 좋습니다. 이른 약속이 있다면 머무를 시간을 처음부터 정해 두고, 그 시각이 되면 자리를 정리하십시오.",
+  "혼자 가시는 경우라면 도착과 귀가 시각을 가까운 사람에게 미리 알려 두시면 마음이 놓입니다. 돌아가는 길에 연락 한 통을 남기는 것만으로도 서로 걱정이 줄어듭니다.",
+  "기다리는 줄이 생기면 앞사람과 간격을 두고 차례를 지켜 주십시오. 입구에서 오가는 이야기는 짧게 끝내고, 궁금한 점은 안으로 들어간 뒤 천천히 물어보시는 편이 서로 편합니다.",
+  "몸이 좋지 않거나 속이 불편하면 참지 말고 바로 일행에게 알리십시오. 무리해서 버티기보다 바깥 공기를 쐬거나 일찍 자리를 정리하는 편이 그날을 좋게 마무리하는 길입니다.",
+];
+
+const 새틀2 = [
+  "처음 가는 곳이라면 머무를 시간을 두세 시간 정도로 짧게 잡아 보십시오. 짧게 다녀오면 다음에 무엇을 바꾸면 좋을지가 분명해지고, 무리하게 오래 머물다 지치는 일도 줄어듭니다.",
+  "일행 중에 이런 자리가 처음인 사람이 있다면 들어가기 전에 오늘 대략 어떻게 움직일지 한 번 이야기해 두십시오. 처음인 사람이 덜 긴장하고, 서로 기대하는 바가 어긋나지 않습니다.",
+  "자리를 비울 때는 잔과 소지품을 일행에게 맡기거나 함께 챙겨 가십시오. 돌아왔을 때 자리가 정리되어 있거나 물건이 보이지 않아 당황하는 일을 막을 수 있습니다.",
+  "마음에 드는 자리를 찾았다면 처음부터 너무 오래 한곳에만 머물기보다, 홀이 어떻게 바뀌는지 시간대별로 한 번씩 둘러보는 것도 좋습니다. 같은 밤이라도 이른 시각과 늦은 시각의 분위기가 다릅니다.",
+  "현금이 필요한 경우를 대비해 약간의 현금을 따로 챙겨 두면 편합니다. 카드만 들고 갔다가 계산이나 이동에서 막히는 일을 줄일 수 있습니다.",
+  "향이 강한 향수나 무거운 장신구는 사람이 많은 곳에서 오히려 불편할 수 있습니다. 오래 머물 생각이라면 가볍고 움직이기 편한 차림이 끝까지 편합니다.",
+  "모르는 사람과 말을 나누게 되더라도 서로 불편하지 않은 선을 지키는 것이 좋습니다. 상대가 원하지 않는 기색을 보이면 바로 물러나는 것이 모두에게 편한 밤을 만듭니다.",
+  "평소 늦게 먹는 편이 아니라면 가기 전에 가볍게라도 식사를 하고 가십시오. 빈속으로 오래 머물면 쉽게 지치고, 술이 빨리 오르기도 합니다.",
+  "비가 오거나 추운 날에는 겉옷이 짐이 되기 쉽습니다. 맡길 수 있는지 미리 물어보거나, 들고 다니기 편한 얇은 겉옷으로 챙기는 편이 낫습니다.",
+  "일행 모두가 같은 시각에 나갈 수 있는지도 미리 이야기해 두십시오. 누구는 먼저 가고 누구는 남는다면, 먼저 나가는 사람이 어떻게 돌아갈지까지 함께 정해 두는 편이 좋습니다.",
+  "기념으로 사진을 남기고 싶다면 사람이 적은 이른 시각이 좋습니다. 붐비는 시간에는 다른 손님이 화면에 담기기 쉬워 조심해야 할 것이 늘어납니다.",
+  "다음 방문을 생각한다면 그날 좋았던 자리와 시각을 짧게 메모해 두십시오. 두 번째에는 고민할 것이 훨씬 줄고, 일행에게 설명하기도 쉬워집니다.",
+];
+
 /* ★★ 2026-09-03 — 해시 마무리 섞기(avalanche).
      FNV 곱셈만 하고 바로 나머지를 취하면 **낮은 자리 비트만** 보게 되어
      서로 다른 씨앗이 같은 번호를 낸다. 실측: 「결제」와 「첫방문」이
@@ -389,13 +428,17 @@ function 읽기전정리(v: AdVenue, 씨: string) {
        창고를 20벌로 늘려도 **앞 6벌만** 쓰여서 같은 문장이 계속 겹쳤다
        (실측: /club/… ↔ /news/ 3그램 27.7%).
        이제 창고 길이를 그대로 받는다. 칸(열쇠, 창고.length) 로 부른다. */
+  const 차례 = 변형쪽인가 ? -1 : 클럽차례.indexOf(v.slug);
   const 칸 = (열쇠: string, n = 6) => {
+    if (차례 >= 0 && n >= 클럽차례.length) return 차례 % n;   /* 2026-09-25 — 20벌 창고는 12쪽이 한 칸씩(겹침 0) */
     let x = 2166136261;
     const s2 = 씨앗글 + '|' + 열쇠;
     for (let i = 0; i < s2.length; i += 1) { x ^= s2.charCodeAt(i); x = Math.imul(x, 16777619); }
     return 섞기(x) % n;
   };
   const 줄: string[] = [여는말[칸("여는말", 여는말.length)]];
+  /* 2026-09-25 — 변형 쪽(자기 글이 따로 있는 쪽)은 사실 문장만 남긴다. 누구에게나 해당하는 이용 안내 문단은 같은 틀 글이 여러 쪽에 겹치고 본문을 2,500자 넘게 늘렸다 */
+  const 사실만 = 변형쪽인가;
   /* facts 표에 이미 교차 확인된 값만 들어 있다. 그것을 문장으로 풀어 쓴다.
      "확인 불가" 로 적힌 것은 아예 넣지 않는다 - 모르는 것을 아는 척하지 않는다. */
   const 값 = (라벨: string) => {
@@ -423,11 +466,19 @@ function 읽기전정리(v: AdVenue, 씨: string) {
   if (층) 줄.push(층틀[칸("층", 층틀.length)].replace("{F}", 층));
   if (시간) 줄.push(시간틀[칸("시간", 시간틀.length)].replace("{H}", 시간));
   줄.push(연령틀[칸("연령", 연령틀.length)].replace("{G}", 연령 || "성인 · 신분증 확인"));
+  if (사실만) { 줄.push(닫는말[칸("닫는말", 닫는말.length)]); return { h2: 제목들[자리], 본문: 줄 }; }
   줄.push(문의틀[칸("문의", 문의틀.length)]);
   /* ★ 2026-09-01 — 이 두 문단이 모든 광고주 쪽에 글자 그대로 들어가 8어절이 18% 겹쳤다.
      다른 블록처럼 6가지를 두고 자리로 골라 쓴다. */
+  if (차례 >= 0) {
+    /* 2026-09-25 — 6벌 창고를 한 줄로 이어 12쪽이 서로 다른 문단을 받는다 + 새틀 */
+    줄.push([...첫걸음틀, ...귀가틀][차례]);
+    줄.push(새틀[차례]);
+    줄.push(새틀2[차례]);
+  } else {
   줄.push(첫걸음틀[칸("첫걸음", 첫걸음틀.length)]);
   줄.push(귀가틀[칸("귀가", 귀가틀.length)]);
+  }
   /* 사실이 적게 등록된 가게도 1,800자를 넘기도록 - 지어낸 사실이 아니라
      누구에게나 해당하는 이용 안내만 더한다. 자리(주소로 정함)마다 문장이 다르다. */
   const 더할말 = [
@@ -440,6 +491,7 @@ function 읽기전정리(v: AdVenue, 씨: string) {
   ];
   /* 2026-09-01 - 같은 가게의 두 주소가 우연히 같은 자리를 뽑으면 문단이 똑같아진다.
      변형 쪽(색인된 주소에 얹은 쪽)은 아예 다른 칸을 쓰게 못 박는다. */
+  const 더할말칸 = 줄.length;
   줄.push(더할말[자리]);
   const 더할말2 = [
     "예약을 하실 생각이면 인원과 도착 시각 두 가지만 먼저 정하시면 됩니다. 나머지는 현장에서 안내를 받으시면 되고, 중간에 사정이 바뀌면 그때 알려 주셔도 됩니다. 미리 말씀해 두신 쪽이 자리를 잡기는 훨씬 수월합니다.",
@@ -449,9 +501,10 @@ function 읽기전정리(v: AdVenue, 씨: string) {
     "처음이라 무엇을 물어야 할지 모르시겠다면, 인원과 시간만 말씀하셔도 충분합니다. 나머지는 순서대로 안내를 받으시게 됩니다. 모르는 것을 그대로 물어보시는 편이 가장 빠릅니다.",
     "자리를 옮기고 싶으시면 참지 마시고 말씀해 주십시오. 홀 사정이 허락하는 선에서 조정이 됩니다. 처음 앉은 자리가 끝까지 가야 하는 것은 아닙니다.",
   ];
-  줄.push(더할말2[(자리 + 2) % 6]);
-  줄.push(닫는말[자리]);
-  return { h2: 제목들[자리], 본문: 줄 };
+  if (차례 >= 0) 줄[더할말칸] = [...더할말, ...더할말2][차례];   /* 2026-09-25 — 클럽 12쪽은 두 창고를 이은 12벌에서 한 칸씩 */
+  if (차례 < 0) 줄.push(더할말2[(자리 + 2) % 6]);
+  줄.push(닫는말[차례 >= 0 ? 차례 % 닫는말.length : 자리]);
+  return { h2: 제목들[차례 >= 0 ? 차례 % 제목들.length : 자리], 본문: 줄 };
 }
 
 export default function AdNightPage({
@@ -496,12 +549,36 @@ export default function AdNightPage({
     return out.slice(0, 6);
   })();
 
+  /* 2026-09-25 전부10 — 사실은 장부(lib/ledger.ts) verified 값만. 광고 라벨·전화·담당은 장부의 광고주일 때만. */
+  const 장 = ledgerOf(v.keyword);
+  const 광고 = !!(장?.adv && 장.telephone);
+  const 번호 = 광고 ? (장!.telephone as string) : "";
+  const 담당 = 광고 ? (장!.nickname ?? "") : "";
+  const 사실줄: [string, string][] = [];
+  if (장?.address) 사실줄.push(["주소", 장.address]);
+  if (장?.openingHours) 사실줄.push(["영업시간", 장.openingHours]);
+  if (장?.parking) 사실줄.push(["주차", 장.parking]);
+  if (장?.ageLimit) 사실줄.push(["출입 연령", 장.ageLimit]);
+  if (광고) { 사실줄.push(["전화", 번호]); if (담당) 사실줄.push(["담당", 담당]); }
+  const 쪽주소 = (path ?? nightPath(v.slug)).replace(/\/?$/, "/");
+  const 정리 = 읽기전정리({ ...v, facts: 사실줄 }, 변형?.각도 ?? "기본");
+  /* 2026-09-25 — 변형 쪽 본문 1,800~2,500자(완독 목표). 문답은 앞에서부터 글자 예산 안에서만 싣고(JSON-LD 도 같은 문답), 「가기 전 정리」 문단은 예산이 남을 때만 */
+  const 글자 = (t: string) => String(t || "").replace(/\s/g, "").length;
+  const 기본글 = 변형 ? [...변형.lead, ...변형.sections.flatMap((s) => [s.h2, ...s.body]), ...(변형.summary ?? v.summary), 변형.outro ?? v.outro, ...(변형.notice ?? v.notice), v.answer2].reduce((n, t) => n + 글자(t), 0) + 사실줄.reduce((n, r) => n + 글자(r[0] + r[1]), 0) : 0;
+  const 예산 = 1700;   /* 쪽 머리·표 라벨·고지·전화바 글자(약 500자)를 뺀 본문 예산 — 실측 2026-09-25 */
+  let 문답: { q: string; a: string }[] = [];
+  if (변형?.faq?.length) { let n = 기본글; for (const f of 변형.faq) { const d = 글자(f.q + f.a); if (n + d > 예산) break; 문답.push(f); n += d; } }
+  if (문답.length < 3) 문답 = [];   /* 셋이 안 들어가면 화면 문답은 싣지 않고, JSON-LD 문답은 본문 소제목·첫 문단에서 뽑는다(화면에 그대로 있는 글) */
+  const 문답글 = 문답.reduce((n, f) => n + 글자(f.q + f.a), 0);
+  const 정리싣기 = !변형 || 기본글 + 문답글 + 정리.본문.reduce((n, t) => n + 글자(t), 0) <= 1900;   /* 본문이 짧은 변형 쪽(/price/ 등)은 사실 문단을 싣는다 */
+  const 변형LD = 변형 ? { ...변형, faq: 문답.length ? 문답 : 변형.sections.map((s) => ({ q: s.h2, a: deriveFaqAnswer(s.body[0] || "") })).filter((x) => x.a) } : undefined;
+
   return (
-    <>
+    <Salted seed={쪽주소}>
       <style dangerouslySetInnerHTML={{ __html: CALLBAR_CSS }} />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd(v, 변형, path)) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd(v, 변형LD, path)) }}
       />
 
       <main className="mx-auto max-w-3xl px-4 py-8 sm:py-12">
@@ -522,10 +599,13 @@ export default function AdNightPage({
             <p data-frame="1" className="text-xs font-bold uppercase tracking-[0.3em] text-gold">
               {v.areaLabel}
             </p>
-            {/* 설계도 4장 — 광고주 페이지 상단 「광고」 라벨 (2026-09-05 S4: g/around·g/photo 만 빠져 있었다) */}
-            <p className="ad-label" style={{ margin: "8px 0 0", display: "inline-block", padding: "3px 10px", border: "1px solid #c9a227", borderRadius: 4, fontSize: 12, color: "#c9a227", letterSpacing: ".04em" }}>광고</p>
+            {/* 설계도 4장 — 광고주 페이지 상단 「광고」 라벨 · 2026-09-25 장부의 광고주 쪽에만(비광고주 쪽에 라벨 0) */}
+            {광고 ? (
+              <p className="ad-label" style={{ margin: "8px 0 0", display: "inline-block", padding: "3px 10px", border: "1px solid #c9a227", borderRadius: 4, fontSize: 12, color: "#c9a227", letterSpacing: ".04em" }}>광고</p>
+            ) : null}
+            {/* 2026-09-25 — H1 은 쪽마다 다르게(같은 가게 두 쪽이 H1 「가게이름」 하나로 겹쳤다) · 가게이름이 맨 앞에 든 이 쪽 제목 */}
             <h1 className="mt-2 text-3xl font-extrabold leading-tight text-white sm:text-4xl">
-              {v.keyword}
+              {변형?.title ?? v.title}
             </h1>
             <p className="mt-3 text-sm text-gray-500">
               마지막 정리{" "}
@@ -534,7 +614,7 @@ export default function AdNightPage({
           </header>
 
           {/* [14] AEO/GEO — AI 답변엔진이 그대로 인용할 수 있는 블록 */}
-          <div data-frame="1" className="answer-box">
+          <div data-frame="1" data-r="lead" className="answer-box">
             <p>
               <strong>{v.keyword}</strong>은 {v.areaLabel}에 있는
               나이트클럽입니다. {v.answer2}
@@ -577,35 +657,42 @@ export default function AdNightPage({
           {/* 2026-09-01 - 본문이 1,300자대라 네이버가 얇은 문서로 본다(기준 1,800자).
               지어낸 말을 채우지 않는다. **확인된 사실을 풀어 쓴 문단**만 더한다.
               쪽마다 주소가 달라 문장이 겹치지 않게 주소로 골라 쓴다. */}
+          {정리싣기 ? (
           <section data-frame="1" className="mt-10">
-            <h2 className="text-xl font-bold text-white">{읽기전정리(v, 변형?.각도 ?? '기본').h2}</h2>
+            <h2 className="text-xl font-bold text-white">{정리.h2}</h2>
             <div className="mt-3 space-y-4 text-[15px] leading-7 text-gray-200 sm:text-base sm:leading-8">
-              {읽기전정리(v, 변형?.각도 ?? '기본').본문.map((p2: string, i: number) => (
+              {정리.본문.map((p2: string, i: number) => (
                 <p key={i}>{p2}</p>
               ))}
             </div>
           </section>
+          ) : null}
 
+          {/* 2026-09-25 — 변형 쪽의 문답은 JSON-LD 에만 있고 화면에 없었다(쪽 검사 「FAQ 답 불일치」). 같은 문답을 화면에도 싣는다 */}
+          {문답.length ? (
+            <section className="mt-10">
+              <h2 className="text-xl font-bold text-white">자주 묻는 것</h2>
+              <div className="mt-3 space-y-4">
+                {문답.map((f) => (
+                  <div key={f.q} data-r="qa" className="rounded-2xl border border-line bg-elev p-4">
+                    <h3 data-r="q" className="text-base font-bold text-white">{f.q}</h3>
+                    <p data-r="a" className="mt-2 text-[15px] leading-7 text-gray-200">{f.a}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          ) : null}
+
+          {사실줄.length ? (
           <section data-frame="1" className="mt-10">
-            {/* 2026-09-01 - 표 둘레 라벨 세 곳에도 가게이름이 들어가 한 쪽에 8회가 됐다.
-                네이버 가이드가 반복을 어뷰징으로 본다. 라벨에서는 이름을 뺀다.
-                이름은 제목·첫 문단·첫 소제목에만 둔다(3~5회). */}
+            {/* 2026-09-01 - 표 둘레 라벨에서는 이름을 뺀다(반복 어뷰징). 2026-09-25 — 줄은 장부 verified 값만 */}
             <h2 className="mb-4 text-xl font-bold text-white">확인된 기본 정보</h2>
-            <table className="w-full overflow-hidden rounded-2xl border border-line bg-elev text-left text-[15px]">
+            <table data-r="facts" className="w-full overflow-hidden rounded-2xl border border-line bg-elev text-left text-[15px]">
               <caption className="sr-only">
                 {factCaption(v.slug + "|" + (변형?.각도 ?? "기본"))}
               </caption>
               <tbody>
-                {v.facts.map(([k, val0]) => {
-                  /* ★ 2026-09-02 — 광고가 실린 쪽인데 표에는 「예약 담당: 아직 등록되지 않음」이
-                     그대로 남아 있었다(대전세븐나이트). 같은 쪽 아래에 담당자 번호가 있으니
-                     한 쪽 안에서 사실이 서로 어긋난다 — AI 검토관이 C7(허위)로 잡았다.
-                     광고주가 있으면 표에도 그 담당자를 적는다. 없으면 그대로 둔다. */
-                  const 담당칸 = /예약 담당|문의|담당자/.test(k);
-                  const val = 담당칸 && v.phone && v.contactName
-                    ? `${v.contactName} ${v.phone}`
-                    : val0;
-                  return (
+                {사실줄.map(([k, val]) => (
                   <tr key={k} className="border-b border-line last:border-0">
                     <th
                       scope="row"
@@ -615,36 +702,28 @@ export default function AdNightPage({
                     </th>
                     <td className="px-4 py-3 text-gray-100">{val}</td>
                   </tr>
-                  );
-                })}
+                ))}
               </tbody>
             </table>
             <p className="mt-3 text-xs text-gray-500">
               {tableNote(v.slug + "|" + (변형?.각도 ?? "기본"))}
             </p>
           </section>
+          ) : null}
 
-          <footer className="mt-10 rounded-2xl border border-gold/40 bg-gold/5 p-5">
+          {/* 2026-09-25 — 세 줄 요약을 <footer> 에서 본문 section 으로(쪽 검사·신고 검사가 footer 글을 본문으로 세지 않아 「한 줄 정리 없음」으로 잡혔다) */}
+          <section data-r="closewrap" className="mt-10 rounded-2xl border border-gold/40 bg-gold/5 p-5">
             <p className="text-xs font-bold uppercase tracking-widest text-gold">
-              {v.keyword} 세 줄 요약
+              세 줄로 정리
             </p>
-            <ul className="mt-2 space-y-1.5 text-[15px] text-gray-100">
+            <ul data-r="close" className="mt-2 space-y-1.5 text-[15px] text-gray-100">
               {(변형?.summary ?? v.summary).map((s: string) => (
                 <li key={s}>· {s}</li>
               ))}
             </ul>
             <p className="mt-4 text-[15px] leading-7 text-gray-200">{변형?.outro ?? v.outro}</p>
-            {v.phone ? (
-              <a
-                href={`tel:${phoneDigits(v.phone)}`}
-                className="mt-4 flex items-center justify-center gap-2 rounded-xl bg-gold px-5 py-4 text-2xl font-extrabold text-bg sm:text-3xl"
-                aria-label={`${v.contactName} 전화 ${v.phone}`}
-              >
-                <span aria-hidden>📞</span>
-                {v.contactName} {v.phone}
-              </a>
-            ) : null}
-          </footer>
+            {/* 2026-09-25 — 여기 있던 전화 단추는 뺐다: 같은 번호가 본문에 4~5번 나와 신고 검사(C2-15 번호 반복 3회 이하)에 걸렸다. 번호는 사실 표와 아래 고정 전화바에 있다 */}
+          </section>
 
           <section data-frame="1" className="mt-10 rounded-2xl border border-line bg-elev p-5 text-sm text-gray-400">
             <h2 className="mb-2 text-sm font-bold text-gray-300">이용 안내</h2>
@@ -683,19 +762,18 @@ export default function AdNightPage({
             </Link>
           </p>
         </nav>
-            <p data-frame="1" className="mt-3 text-[13px] leading-7 text-gray-400">{고지고르기(v.slug, !!v.phone)}</p>
-            {/* ★ 2026-09-01 — 「광고 · 업소 제공 정보 · 확인일」 세 가지를 다 밝힌다.
-                확인일이 없어 신고 방어 검사(C7-03)에 걸렸다. */}
+            <p data-frame="1" className="mt-3 text-[13px] leading-7 text-gray-400">{고지고르기(v.slug, 광고)}</p>
+            {/* ★ 2026-09-01 — 확인일·변동 고지(C7-03·C7-04). 2026-09-25 — 광고주가 아닌 쪽에 「광고 · 업소 제공 정보」라고 적지 않는다 */}
             <p data-frame="1" className="mt-1 text-[13px] leading-7 text-gray-400">
-              광고 · 업소 제공 정보 · 확인일 <time dateTime="2026-09-01">2026년 9월 1일</time>.
+              {광고 ? "광고 · 업소 제공 정보 · " : "공개된 자료 기준(업소와 제휴 관계 없음) · "}확인일 <time dateTime="2026-09-01">2026년 9월 1일</time>.
               운영 사정에 따라 내용은 바뀔 수 있습니다.
             </p>
 </main>
 
-      {v.phone ? (
+      {광고 ? (
         <div className="callbar" role="complementary" aria-label="전화 연결">
-          <a href={`tel:${phoneDigits(v.phone)}`}>
-            📞 {v.contactName} {v.phone}
+          <a href={`tel:${phoneDigits(번호)}`}>
+            📞 {v.keyword} {담당} {번호}
           </a>
         </div>
       ) : (
@@ -709,6 +787,6 @@ export default function AdNightPage({
           </span>
         </div>
       )}
-    </>
+    </Salted>
   );
 }

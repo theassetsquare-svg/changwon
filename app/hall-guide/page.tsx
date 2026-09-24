@@ -8,6 +8,7 @@ import { hallViewport } from "@/lib/hall-meta";
 import { SITE } from "@/lib/site";
 import { thumb, 이미지바꾸기 } from "@/lib/og";
 import { ADS } from "@/lib/venues";
+import { Salted } from "@/lib/salt";   /* 2026-09-25 전부10 — ④ 구조 지문 */
 
 const TITLE = "전국 나이트 홀 도감 40 — 자리에 따라 달라지는 밤";
 const DESCRIPTION =
@@ -100,7 +101,7 @@ const jsonLd = {
 
 export default function HallHubPage() {
   return (
-    <>
+    <Salted seed="/hall-guide/">
       <style dangerouslySetInnerHTML={{ __html: HALL_CSS }} />
       <script
         type="application/ld+json"
@@ -209,8 +210,8 @@ export default function HallHubPage() {
             <h2 className="!mt-0 !text-sm !text-[#C9AFA8]">이용 안내</h2>
             <ul className="mt-2 space-y-1.5">
               <li>
-                · 각 페이지는 해당 업소의 홀 구조를 정리한 안내 문서이며 업소
-                공식 홈페이지가 아닙니다.
+                · 각 페이지는 해당 업소의 홀 구조를 정리한 안내 문서이며 업소가
+                직접 운영하는 페이지가 아닙니다.
               </li>
               <li>· 성인 대상 홀입니다. 입장 시 신분증 확인이 있을 수 있습니다.</li>
               <li>
@@ -235,6 +236,6 @@ export default function HallHubPage() {
           광고문의 카톡 <b>{ADS.kakao}</b>
         </span>
       </div>
-    </>
+    </Salted>
   );
 }

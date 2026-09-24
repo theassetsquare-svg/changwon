@@ -5,6 +5,7 @@ import { AD_VENUES } from "@/lib/adnight-data";
 import { nightPath } from "@/lib/adnight";
 import { HALL_VENUES } from "@/lib/hall-data";
 import { hallPath } from "@/lib/hall";
+import sitemap from "../sitemap";
 
 export const dynamic = "force-static";
 
@@ -76,7 +77,13 @@ ${hallPages}
 - 각 지역 업소 페이지는 예약·문의 안내 페이지이며 해당 업소의 공식 홈페이지가 아닙니다.
 `;
 
-  return new Response(body, {
+  /* 2026-09-25 전부10 — 사이트맵에 있는데 여기 없던 쪽(night-guide 정적 쪽·area 통로 등)을 빠짐없이 싣는다(쪽 검사 「llms 에 없음」) */
+  const 끝 = (u: string) => u.replace(/\/+$/, "");
+  const 실린 = new Set(Array.from(body.matchAll(/https?:\/\/[^\s)]+/g)).map((m) => 끝(m[0])));
+  const 더 = sitemap().map((e) => String(e.url)).filter((u) => !실린.has(끝(u)) && !/\/policy\/?$/.test(u));
+  const 전문 = 더.length ? body + "\n## 그 밖의 안내 쪽\n\n" + 더.map((u) => "- " + u).join("\n") + "\n" : body;
+
+  return new Response(전문, {
     headers: {
       "Content-Type": "text/plain; charset=utf-8",
       "Cache-Control": "public, max-age=3600",

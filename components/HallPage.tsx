@@ -16,6 +16,8 @@ import { HALL_VENUES, HALL_BY_SLUG } from "@/lib/hall-data";
 import { SITE } from "@/lib/site";
 import { ADS } from "@/lib/venues";
 import GuideExtra from '@/components/GuideExtra';
+import { ledgerOf } from "@/lib/ledger";
+import { Salted } from "@/lib/salt";
 
 /* ★ 2026-08-31 — 연령·관계 고지가 없어 신고에 취약했다(설계도 4장 · 점검표 #121·#122).
    광고(담당자 전화)를 싣는 쪽과 아닌 쪽의 문구가 달라야 한다.
@@ -32,11 +34,11 @@ const 비광고고지 = [
   "만 19세 이상 이용 가능한 성인 업소 안내입니다. 업소와 제휴 관계가 없는 정보 페이지입니다.",
   "성인(만 19세 이상)만 이용할 수 있는 곳을 다룹니다. 업소와 광고·제휴 관계가 없습니다.",
   "이 글은 만 19세 이상 성인 대상 업소 안내이며, 업소와 아무런 관계가 없습니다.",
-  "만 19세 미만은 출입할 수 없습니다. 공개 자료만 정리한 제3자 안내 페이지입니다.",
-  "성인 전용 업소를 다루는 안내입니다. 업소로부터 대가를 받지 않았습니다.",
+  "만 19세 미만은 출입할 수 없습니다. 업소와 제휴 관계가 없는, 공개 자료만 정리한 안내 페이지입니다.",
+  "만 19세 이상 성인 전용 업소를 다루는 안내입니다. 업소로부터 대가를 받지 않았습니다.",
   "만 19세 이상만 들어갈 수 있는 곳입니다. 업소와 제휴하지 않은 정보 페이지입니다.",
-  "성인 대상 업소 안내이며 청소년 출입·고용은 금지입니다. 공개 자료 기준입니다.",
-  "만 19세 이상 성인만 이용하는 업소를 안내합니다. 업소의 공식 채널이 아닙니다.",
+  "성인 대상 업소 안내이며 청소년 출입·고용은 금지입니다. 업소와 제휴 관계가 없고 공개 자료 기준입니다.",
+  "만 19세 이상 성인만 이용하는 업소를 안내합니다. 업소가 운영하는 채널이 아닙니다.",
 ];
 function 고지고르기(씨: unknown, 광고쪽: boolean) {
   const 곳간 = 광고쪽 ? 광고고지 : 비광고고지;
@@ -102,12 +104,12 @@ export const HALL_CSS = `
   background:
     linear-gradient(var(--gold) 0 0) 0 0/14px 1px no-repeat,
     linear-gradient(var(--gold) 0 0) 0 0/1px 14px no-repeat,
-    linear-gradient(var(--gold) 0 0) 전부 0/14px 1px no-repeat,
-    linear-gradient(var(--gold) 0 0) 전부 0/1px 14px no-repeat,
-    linear-gradient(var(--gold) 0 0) 0 전부/14px 1px no-repeat,
-    linear-gradient(var(--gold) 0 0) 0 전부/1px 14px no-repeat,
-    linear-gradient(var(--gold) 0 0) 전부 전부/14px 1px no-repeat,
-    linear-gradient(var(--gold) 0 0) 전부 전부/1px 14px no-repeat;
+    linear-gradient(var(--gold) 0 0) 100% 0/14px 1px no-repeat,
+    linear-gradient(var(--gold) 0 0) 100% 0/1px 14px no-repeat,
+    linear-gradient(var(--gold) 0 0) 0 100%/14px 1px no-repeat,
+    linear-gradient(var(--gold) 0 0) 0 100%/1px 14px no-repeat,
+    linear-gradient(var(--gold) 0 0) 100% 100%/14px 1px no-repeat,
+    linear-gradient(var(--gold) 0 0) 100% 100%/1px 14px no-repeat;
 }
 .plan-label{
   font-size:11px;letter-spacing:.28em;text-transform:uppercase;
@@ -153,13 +155,16 @@ body{ padding-bottom:calc(84px + env(safe-area-inset-bottom,0px)); }
 `;
 
 function jsonLd(v: HallVenue) {
-  const url = `${SITE.url}${hallPath(v.slug)}`;
+  /* 2026-09-25 전부10 — 주소는 끝 슬래시(canonical 과 같게) · 사실은 장부(lib/ledger.ts) verified 값만 · @graph 대신 최상위 배열(각각 @context) */
+  const url = `${SITE.url}${hallPath(v.slug)}/`;
+  const 장 = ledgerOf(v.keyword);
 
   const place: Record<string, unknown> = {
+    "@context": "https://schema.org",
     "@type": "NightClub",
     "@id": `${url}#hall`,
-    name: v.spaced,
-    alternateName: v.keyword,
+    name: v.keyword,
+    alternateName: v.spaced,
     url,
     description: v.description,
     address: {
@@ -167,23 +172,19 @@ function jsonLd(v: HallVenue) {
       addressLocality: v.locality,
       addressRegion: v.region,
       addressCountry: "KR",
+      ...(장?.address ? { streetAddress: 장.address } : {}),
     },
   };
-  // 확인된 값만 올린다. 확인 못 한 항목은 아예 넣지 않는다.
-  const streetFact = v.facts.find(([k]) => k === "주소");
-  if (streetFact) {
-    (place.address as Record<string, unknown>).streetAddress = streetFact[1];
-  }
-  if (v.phone) place.telephone = v.phone;
+  if (장?.adv && 장.telephone) place.telephone = 장.telephone;
+  if (장?.openingHours) place.openingHours = 장.openingHours;
   /* 2026-09-24 — JSON-LD image = og·본문 첫 그림(같은 파일) */
   place.image = thumb({ pathname: hallPath(v.slug), alt: v.ogAlt, v: (v as { ogV?: string }).ogV }).url;
-  if (v.ageFull) place.typicalAgeRange = v.ageFull;
+  if (장?.ageLimit) place.typicalAgeRange = 장.ageLimit;
 
-  return {
-    "@context": "https://schema.org",
-    "@graph": [
+  return [
       place,
       {
+        "@context": "https://schema.org",
         "@type": "Article",
         "@id": `${url}#article`,
         headline: v.title,
@@ -192,12 +193,13 @@ function jsonLd(v: HallVenue) {
         datePublished: HALL_UPDATED,
         dateModified: HALL_UPDATED,
         about: { "@id": `${url}#hall` },
-        isPartOf: { "@id": `${SITE.url}/hall-guide#collection` },
+        isPartOf: { "@id": `${SITE.url}/hall-guide/#collection` },
         author: { "@type": "Organization", name: SITE.name },
         publisher: { "@type": "Organization", name: SITE.name },
         mainEntityOfPage: url,
       },
       {
+        "@context": "https://schema.org",
         "@type": "FAQPage",
         "@id": `${url}#faq`,
         inLanguage: "ko-KR",
@@ -208,6 +210,7 @@ function jsonLd(v: HallVenue) {
         })),
       },
       {
+        "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "@id": `${url}#breadcrumb`,
         itemListElement: [
@@ -216,13 +219,12 @@ function jsonLd(v: HallVenue) {
             "@type": "ListItem",
             position: 2,
             name: "전국 나이트 홀 도감 40",
-            item: `${SITE.url}/hall-guide`,
+            item: `${SITE.url}/hall-guide/`,
           },
           { "@type": "ListItem", position: 3, name: v.keyword, item: url },
         ],
       },
-    ],
-  };
+  ];
 }
 
 export default function HallPage({ venue: v }: { venue: HallVenue }) {
@@ -242,8 +244,20 @@ export default function HallPage({ venue: v }: { venue: HallVenue }) {
     return out.slice(0, 6);
   })();
 
+  /* 2026-09-25 전부10 — 사실 표·전화·광고 라벨은 장부(lib/ledger.ts) verified 값만 */
+  const 장 = ledgerOf(v.keyword);
+  const 광고 = !!(장?.adv && 장.telephone);
+  const 번호 = 광고 ? (장!.telephone as string) : "";
+  const 담당 = 광고 ? (장!.nickname ?? "") : "";
+  const 사실줄: [string, string][] = [["업소명", v.spaced]];
+  if (장?.address) 사실줄.push(["주소", 장.address]);
+  if (장?.openingHours) 사실줄.push(["영업시간", 장.openingHours]);
+  if (장?.parking) 사실줄.push(["주차", 장.parking]);
+  if (장?.ageLimit) 사실줄.push(["출입 연령", 장.ageLimit]);
+  if (광고) { 사실줄.push(["전화", 번호]); if (담당) 사실줄.push(["담당", 담당]); }
+
   return (
-    <>
+    <Salted seed={hallPath(v.slug) + "/"}>
       <style dangerouslySetInnerHTML={{ __html: HALL_CSS }} />
       <script
         type="application/ld+json"
@@ -263,9 +277,8 @@ export default function HallPage({ venue: v }: { venue: HallVenue }) {
           <article>
             {/* ① 도입 — 답은 끝에 둔다 */}
             <header className="mb-7">
-              {/* ★ 설계도 4장 — 광고주 쪽에는 상단에 「광고」 라벨을 단다.
-                  담당자 번호가 실린 쪽이 곧 광고가 실린 쪽이다. */}
-              {v.phone ? (
+              {/* ★ 설계도 4장 — 광고주 쪽에는 상단에 「광고」 라벨을 단다(장부의 광고주만). */}
+              {광고 ? (
                 <p
                   className="ad-label"
                   style={{
@@ -294,7 +307,7 @@ export default function HallPage({ venue: v }: { venue: HallVenue }) {
             </div>
 
             {/* ② 핵심 3줄 직답 박스 — AI 답변엔진이 그대로 인용할 수 있는 블록 */}
-            <aside className="plan mt-8" aria-label="핵심 3줄">
+            <aside data-r="lead" className="plan mt-8" aria-label="핵심 3줄">
               <p className="plan-label">핵심 3줄</p>
               <ol className="mt-3 space-y-2 text-[15px]">
                 {v.answer3.map((a, i) => (
@@ -313,15 +326,15 @@ export default function HallPage({ venue: v }: { venue: HallVenue }) {
               <OgThumb pathname={hallPath(v.slug)} alt={v.ogAlt} v={(v as { ogV?: string }).ogV} />
             </figure>
 
-            {/* ③ 사실 표 — 확인된 항목만 */}
+            {/* ③ 사실 표 — 장부로 확인된 항목만 */}
             <section className="mt-10">
-              <h2>{v.keyword} 확인된 사실</h2>
-              <table className="fact-table mt-4">
+              <h2>확인된 사실만 모은 표</h2>
+              <table data-r="facts" className="fact-table mt-4">
                 <caption className="sr-only">
-                  {`${v.keyword} ${factCaption(v.slug)}`}
+                  {factCaption(v.slug)}
                 </caption>
                 <tbody>
-                  {v.facts.map(([k, val]) => (
+                  {사실줄.map(([k, val]) => (
                     <tr key={k}>
                       <th scope="row">{k}</th>
                       <td>{val}</td>
@@ -365,14 +378,14 @@ export default function HallPage({ venue: v }: { venue: HallVenue }) {
 
             {/* ⑥ FAQ 3 */}
             <section className="mt-12">
-              <h2>{v.keyword} 자주 묻는 질문</h2>
+              <h2>자주 묻는 질문</h2>
               <div className="mt-4 space-y-3">
                 {v.faq.map((f) => (
-                  <details key={f.q} className="plan">
-                    <summary className="serif cursor-pointer pr-6 font-bold text-[#E8C766]">
+                  <details key={f.q} data-r="qa" className="plan">
+                    <summary data-r="q" className="serif cursor-pointer pr-6 font-bold text-[#E8C766]">
                       {f.q}
                     </summary>
-                    <p className="mt-3 text-[15px]">{f.a}</p>
+                    <p data-r="a" className="mt-3 text-[15px]">{f.a}</p>
                   </details>
                 ))}
               </div>
@@ -381,22 +394,13 @@ export default function HallPage({ venue: v }: { venue: HallVenue }) {
             <GuideExtra pathname={hallPath(v.slug)} />
 
             {/* ⑦ 한 줄 정리 */}
-            <section className="mt-12">
+            <section data-r="closewrap" className="mt-12">
               <div className="plan">
                 <p className="plan-label">한 줄 정리</p>
-                <p className="serif mt-3 text-lg leading-8 text-[#E8C766]">
+                <p data-r="close" className="serif mt-3 text-lg leading-8 text-[#E8C766]">
                   {v.oneline}
                 </p>
-                {v.phone ? (
-                  <a
-                    href={`tel:${phoneDigits(v.phone)}`}
-                    className="mt-5 flex items-center justify-center gap-2 bg-[#C9A227] px-5 py-4 text-2xl font-extrabold text-[#2A0A12] sm:text-3xl"
-                    aria-label={`${v.contactName} 전화 ${v.phone}`}
-                  >
-                    <span aria-hidden>📞</span>
-                    {v.contactName} {v.phone}
-                  </a>
-                ) : null}
+                {/* 2026-09-25 — 여기 있던 전화 단추는 뺐다: 같은 번호가 본문에 4~5번 나와 신고 검사(C2-15 번호 반복 3회 이하)에 걸렸다. 번호는 사실 표와 아래 고정 전화바에 있다 */}
               </div>
             </section>
 
@@ -437,14 +441,14 @@ export default function HallPage({ venue: v }: { venue: HallVenue }) {
               </Link>
             </p>
           </nav>
-              <p className="mt-3 text-[13px] leading-7 text-gray-400">{고지고르기(v.slug, !!v.phone)}</p>
+              <p className="mt-3 text-[13px] leading-7 text-gray-400">{고지고르기(v.slug, 광고)} 운영 사정에 따라 내용은 바뀔 수 있습니다.</p>
 </main>
       </div>
 
-      {v.phone ? (
+      {광고 ? (
         <div className="hallbar" role="complementary" aria-label="전화 연결">
-          <a href={`tel:${phoneDigits(v.phone)}`}>
-            📞 {v.contactName} {v.phone}
+          <a href={`tel:${phoneDigits(번호)}`}>
+            📞 {v.keyword} {담당} {번호}
           </a>
         </div>
       ) : (
@@ -454,6 +458,6 @@ export default function HallPage({ venue: v }: { venue: HallVenue }) {
           </span>
         </div>
       )}
-    </>
+    </Salted>
   );
 }
