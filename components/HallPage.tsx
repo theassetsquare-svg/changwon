@@ -1,5 +1,6 @@
 import Link from "next/link";
 import OgThumb from "./OgThumb";
+import { thumb } from "@/lib/og";
 import {
   HALL_UPDATED,
   UNVERIFIED_NOTE,
@@ -174,6 +175,8 @@ function jsonLd(v: HallVenue) {
     (place.address as Record<string, unknown>).streetAddress = streetFact[1];
   }
   if (v.phone) place.telephone = v.phone;
+  /* 2026-09-24 — JSON-LD image = og·본문 첫 그림(같은 파일) */
+  place.image = thumb({ pathname: hallPath(v.slug), alt: v.ogAlt, v: (v as { ogV?: string }).ogV }).url;
   if (v.ageFull) place.typicalAgeRange = v.ageFull;
 
   return {

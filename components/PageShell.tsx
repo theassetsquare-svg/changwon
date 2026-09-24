@@ -47,6 +47,7 @@ export default function PageShell({
   capsule,
   thumbAlt,
   thumbV,
+  ad,
   children,
 }: {
   title: string;
@@ -60,6 +61,8 @@ export default function PageShell({
   thumbAlt?: string;
   /** og:image 와 같은 판 번호(-v2 …) — 없으면 본문 그림이 옛 파일을 가리킨다 */
   thumbV?: string;
+  /** 2026-09-24 광고주 복구 — 이 쪽이 광고주 가게 쪽이면 전화바·라벨·광고 고지를 그 광고주로 */
+  ad?: { nick: string; phone: string; image?: string };
   children: ReactNode;
 }) {
   const meta = pathname ? PAGE_META[pathname] : undefined;
@@ -68,14 +71,14 @@ export default function PageShell({
   return (
     <>
       <main className="mx-auto max-w-3xl px-4 py-10 sm:py-14">
-      <JsonLd />
+      <JsonLd {...(ad ? { telephone: "+82-" + ad.phone.replace(/^0/, ""), image: ad.image } : {})} />
       {pathname ? <PageJsonLd pathname={pathname} /> : null}
 
       <header className="mb-6 fade-up">
         <p className="text-xs font-bold uppercase tracking-[0.3em] text-gold">
           룰루랄라 나이트 · 창원 성산구 상남동
         </p>
-        {adLabel ? <p className="ad-label" style={{ display: "inline-block", margin: "0 0 10px", padding: "3px 10px", border: "1px solid #c9a227", borderRadius: 4, fontSize: 12, color: "#c9a227", letterSpacing: ".04em" }}>광고</p> : null}
+        {adLabel || ad ? <p className="ad-label" style={{ display: "inline-block", margin: "0 0 10px", padding: "3px 10px", border: "1px solid #c9a227", borderRadius: 4, fontSize: 12, color: "#c9a227", letterSpacing: ".04em" }}>광고</p> : null}
         <h1 className="mt-2 text-3xl font-extrabold text-white sm:text-4xl">
           {title}
         </h1>
@@ -116,13 +119,22 @@ export default function PageShell({
       </div>
 
         <RelatedPages exclude={pathname ? [pathname] : []} />
-            <p className="mt-3 text-[13px] leading-7 text-gray-400">{고지고르기(pathname, false)}</p>
+            <p className="mt-3 text-[13px] leading-7 text-gray-400">{고지고르기(pathname, !!ad)}</p>
 </main>
 
-      <StickyCallBar
-        contextLabel={SITE.nameNoSpace}
-        name="광고문의"
-      />
+      {ad ? (
+        <StickyCallBar
+          contextLabel={SITE.nameNoSpace}
+          name={ad.nick}
+          phone={ad.phone}
+          phoneHref={"tel:" + ad.phone.replace(/\D/g, "")}
+        />
+      ) : (
+        <StickyCallBar
+          contextLabel={SITE.nameNoSpace}
+          name="광고문의"
+        />
+      )}
     </>
   );
 }

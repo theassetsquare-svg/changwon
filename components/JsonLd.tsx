@@ -1,7 +1,8 @@
 import { PLACEHOLDERS, SITE } from "@/lib/site";
 
-export default function JsonLd() {
-  const business = {
+/** 2026-09-24 광고주 복구 — 광고주 가게 쪽(PageShell ad)에서만 telephone·image 를 싣는다. 언급 쪽에는 번호를 넣지 않는다. */
+export default function JsonLd({ telephone, image }: { telephone?: string; image?: string } = {}) {
+  const business: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": ["NightClub", "LocalBusiness"],
     "@id": `${SITE.url}/#business`,
@@ -18,7 +19,7 @@ export default function JsonLd() {
     description: SITE.description,
     url: SITE.url,
     priceRange: SITE.priceRange,
-    /* telephone 없음 — 2026-09-13 광고 해지 */
+    /* telephone — 기본은 없음(사이트 전역). 광고주 가게 쪽만 아래에서 더한다 */
     currenciesAccepted: "KRW",
     paymentAccepted: "Cash, Credit Card",
     address: {
@@ -154,6 +155,8 @@ export default function JsonLd() {
     ],
   };
 
+  if (telephone) business.telephone = telephone;
+  if (image) business.image = image;
   return (
     <>
       <script

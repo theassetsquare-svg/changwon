@@ -8,8 +8,8 @@ const m = PAGE_META["/price"];
 /** 이 페이지 전용 썸네일 — og:image 와 본문 <img> 가 같은 파일을 가리킨다 */
 const THUMB = thumb({
   pathname: "/price",
-  alt: "창원룰루랄라나이트 · 광고문의 · 카톡 besta12",
-  v: "-v2",
+  alt: "광고 · 창원룰루랄라나이트 · 로또 · 010-7528-4936",
+  v: "-ad0924",   /* 2026-09-24 광고주 복구 — 로또 표준 4줄 카드(새 파일 이름) */
 });
 export const metadata: Metadata = {
   title: m.title,
@@ -51,7 +51,7 @@ const PRICE_FAQ = [
 
 export default function PricePage() {
   return (
-    <PageShell title="창원룰루랄라나이트 가격" hook={m.hook} pathname="/price" thumbAlt={THUMB.alt} thumbV="-v2">
+    <PageShell title="창원룰루랄라나이트 가격" hook={m.hook} pathname="/price" thumbAlt={THUMB.alt} thumbV="-ad0924" ad={{ nick: "로또", phone: "010-7528-4936", image: THUMB.url }}>
       <p>
         솔직히 말씀드릴게요. <strong className="text-white">창원 룰루랄라 나이트</strong>의
         가격은 자주 바뀝니다. 시즌, 인원, 자리에 따라 다릅니다. 그래서 여기 표는 큰
