@@ -127,6 +127,7 @@ export default function HallHubPage() {
             </p>
           </header>
         <OgThumb pathname="/hall-guide" alt={THUMB.alt} />
+          <p className="mt-4 text-[15px] sm:text-base">전국 나이트 40곳을 자리에 따라 달라지는 밤이라는 한 가지 기준으로 읽는 도감입니다.</p>
 
 
           <section className="plan">
@@ -197,7 +198,6 @@ export default function HallHubPage() {
                         <p className="mt-1 text-xs text-[#C9AFA8]">
                           {v.areaLabel} · {v.hallType}
                         </p>
-                        <p className="mt-2 text-sm">{v.oneline}</p>
                       </Link>
                     </li>
                   );
