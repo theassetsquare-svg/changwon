@@ -761,7 +761,7 @@ export const AD_VENUES: AdVenue[] = [
     related: [
       "sangbong-hangukgwan-night",
       "2-1",
-      "busan-asiad-night",
+      "busan-asiad-night-4",
     ],
   },
 
@@ -873,7 +873,7 @@ export const AD_VENUES: AdVenue[] = [
       "상봉동한국관나이트는 준비가 부족하면 시간을 잃고, 준비가 되면 하룻밤을 통으로 쓰는 홀입니다. 1부와 2부 중 어디로 갈지부터 정해 두세요.",
     related: [
       "2-1",
-      "busan-asiad-night",
+      "busan-asiad-night-4",
       "3-1",
     ],
   },
@@ -983,7 +983,7 @@ export const AD_VENUES: AdVenue[] = [
     outro:
       "수유샴푸나이트는 두 번째 방문부터 확실히 편해지는 홀입니다. 오늘이 첫 방문이라면 이 순서만 그대로 따라 해 보세요.",
     related: [
-      "busan-asiad-night",
+      "busan-asiad-night-4",
       "3-1",
       "ansan-hit-night",
     ],
@@ -992,7 +992,7 @@ export const AD_VENUES: AdVenue[] = [
   // ── 9. 부산아시아드나이트 · 각도1 정면 소개형 ───────────────
   {
     no: 9,
-    slug: "busan-asiad-night",
+    slug: "busan-asiad-night-4",
     notice: [
       "부산 아시아드나이트 소개 페이지이며 업소 공식 채널이 아닙니다.",
       "청소년 출입은 허용되지 않습니다.",
@@ -1598,7 +1598,7 @@ export const AD_VENUES: AdVenue[] = [
     outro:
       "답십리미라클나이트는 요일에 따라 결이 달라지는 홀입니다. 가려는 날을 먼저 정하고 연락하시면 자리가 수월합니다.",
     related: [
-      "busan-asiad-night",
+      "busan-asiad-night-4",
       "ulsan-champion-night",
       "daejeon-seven-night",
     ],
@@ -1699,7 +1699,7 @@ export const AD_VENUES: AdVenue[] = [
     outro:
       "파주야당스카이돔나이트는 도착이 쉬운 대신 자리 성격이 각도로 갈립니다. 가시는 날과 인원을 정해 담당 딸기에게 알려 주시면 자리가 수월합니다.",
     related: [
-      "busan-asiad-night",
+      "busan-asiad-night-4",
       "daejeon-seven-night",
       "ulsan-champion-night",
     ],

@@ -22,7 +22,7 @@ export type 변형쪽 = {
 
 export const 변형쪽들: Record<string, 변형쪽> = {
   "/news": {
-    "slug": "busan-asiad-night",
+    "slug": "busan-asiad-night-4",
     "각도": "첫방문",
     "title": "부산아시아드나이트 처음 가는 분 안내",
     "description": "부산아시아드나이트 처음 가는 분 안내. 첫날 계획을 단순하게 두고 난 뒤, 첫 방문 날짜를 여유 있게 잡는 편이 덜 번거롭습니다.",
@@ -1354,7 +1354,7 @@ export const 변형쪽들: Record<string, 변형쪽> = {
     ]
   },
   "/night-guide/changwon-lululala-night-1": {
-    "slug": "busan-asiad-night",
+    "slug": "busan-asiad-night-4",
     "각도": "계절",
     "title": "부산아시아드나이트 계절마다 달라지는 점 정리",
     "description": "부산아시아드나이트 계절마다 달라지는 점. 계절을 골라 잡을 수 있다면 장마철에는 교통편을 먼저 보는 편이 어긋날 일이 적어요.",
@@ -1460,7 +1460,7 @@ export const 변형쪽들: Record<string, 변형쪽> = {
     ]
   },
   "/club/changwon-lululala-night": {
-    "slug": "busan-asiad-night",
+    "slug": "busan-asiad-night-4",
     "각도": "결제",
     "title": "부산아시아드나이트 비용을 미리 알아보려면",
     "description": "부산아시아드나이트 비용을 미리 알아보려면. 비용을 먼저 물어 두는 김에, 예상 밖 지출을 미리 잡아 두는 편이 일정이 안 꼬입니다.",

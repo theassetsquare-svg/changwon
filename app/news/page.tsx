@@ -21,7 +21,7 @@ import { 변형쪽들 } from "@/lib/variant-pages";
  *  ★ AdNightPage 를 쓰는 이유 — 이 컴포넌트가 광고주 신원(이름·번호·고정전화바·관계 고지)을
  *    쪽 단위로 넣어 준다. 사이트 전역 렌더로 남의 번호가 새는 사고를 막는다.
  */
-const VENUE = AD_BY_SLUG["busan-asiad-night"];
+const VENUE = AD_BY_SLUG["busan-asiad-night-4"];
 const 이주소 = "/news";
 
 /* ★ 2026-09-02 (A2) — 설명문이 /club/ 쪽과 **글자까지 같아** 색인을 막고 있었다

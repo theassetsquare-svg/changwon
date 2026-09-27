@@ -16,7 +16,7 @@ import { 변형쪽들 } from "@/lib/variant-pages";
  *    public 쪽 파일은 지웠다. 주소·상태코드는 그대로 200 이다.
  *  ★ 각도 「계절」 — 이 사이트의 다른 광고주 쪽과 겹치지 않게 배정했다.
  */
-const VENUE = AD_BY_SLUG["busan-asiad-night"];
+const VENUE = AD_BY_SLUG["busan-asiad-night-4"];
 const 이주소 = "/night-guide/changwon-lululala-night-1";
 const 변형 = 변형쪽들["/night-guide/changwon-lululala-night-1"];
 

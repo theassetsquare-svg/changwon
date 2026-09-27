@@ -16,7 +16,7 @@ import { 변형쪽들 } from "@/lib/variant-pages";
  *    사이트 전역 렌더로 남의 번호가 새는 사고를 막는다.
  *  ★ 각도 「결제」 — 이 사이트의 다른 광고주 쪽과 겹치지 않게 배정했다.
  */
-const VENUE = AD_BY_SLUG["busan-asiad-night"];
+const VENUE = AD_BY_SLUG["busan-asiad-night-4"];
 const 이주소 = "/club/changwon-lululala-night";
 const 변형 = 변형쪽들["/club/changwon-lululala-night"];
 
