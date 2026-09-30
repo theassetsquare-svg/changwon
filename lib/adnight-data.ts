@@ -296,7 +296,7 @@ export const AD_VENUES: AdVenue[] = [
     related: [
       "ulsan-champion-night",
       "1-1",
-      "daejeon-one-night",
+      "daejeon-one-night-4",
     ],
   },
 
@@ -406,7 +406,7 @@ export const AD_VENUES: AdVenue[] = [
       "울산챔피언나이트는 시계를 어떻게 쓰느냐로 결과가 갈리는 홀입니다. 오늘 밤 계획이 섰다면 담당 춘자에게 도착 시간을 먼저 알려 주세요.",
     related: [
       "1-1",
-      "daejeon-one-night",
+      "daejeon-one-night-4",
       "sillim-grandprix-night",
     ],
   },
@@ -517,7 +517,7 @@ export const AD_VENUES: AdVenue[] = [
     outro:
       "청담나이트는 홀 하나를 어떻게 짜느냐로 밤이 달라진다는 걸 보여 주는 곳입니다. 자리를 잡으실 생각이면 담당 펩시맨에게 인원부터 알려 주세요.",
     related: [
-      "daejeon-one-night",
+      "daejeon-one-night-4",
       "sillim-grandprix-night",
       "sangbong-hangukgwan-night",
     ],
@@ -526,7 +526,7 @@ export const AD_VENUES: AdVenue[] = [
   // ── 5. 대전원나이트 · 각도10 짧은 요약형 ───────────────────
   {
     no: 5,
-    slug: "daejeon-one-night",
+    slug: "daejeon-one-night-4",
     notice: [
       "대전 원나이트 요약 안내입니다. 확인된 항목만 실었습니다.",
       "만 38세 이상만 출입할 수 있습니다.",

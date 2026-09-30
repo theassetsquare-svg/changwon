@@ -281,7 +281,7 @@ export default function NightIndexPage() {
         <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(190px,1fr))", gap: "8px 16px", fontSize: ".92rem" }}>
           <li><a href="/hall/daejeon-seven-night/">대전세븐나이트</a></li>
           <li><a href="/hall/daejeon-seven-night/">대전세븐나이트</a></li>
-          <li><a href="/club/daejeon-one-night/">대전원나이트</a></li>
+          <li><a href="/club/daejeon-one-night-4/">대전원나이트</a></li>
           <li><a href="/hall/daejeon-one/">대전원나이트</a></li>
           <li><a href="/hall/seosan-hobak-night/">서산호박나이트</a></li>
           <li><a href="/hall/cheonan-stardome-night/">천안스타돔나이트</a></li>
