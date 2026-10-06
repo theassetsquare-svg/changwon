@@ -87,12 +87,10 @@ export const LEDGER: Record<string, 장부> = {
  },
  "답십리미라클나이트": {
   "id": "dapsimni-miracle",
-  "adv": true,
+  "adv": false,
   "address": "서울 동대문구 고미술로 99",
   "openingHours": "매일 오후 7시~새벽 5시",
-  "parking": "주차 가능 · 발렛파킹",
-  "telephone": "010-8156-6558",
-  "nickname": "유재석"
+  "parking": "주차 가능 · 발렛파킹"
  },
  "독산동국빈관나이트": {
   "id": "doksan-gukbingwan",
