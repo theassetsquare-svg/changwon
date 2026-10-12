@@ -15,7 +15,7 @@ const PAGES = [
   { route: "/about", file: "app/about/page.tsx" },
   { route: "/lotto", file: "app/lotto/page.tsx" },
   { route: "/price", file: "app/price/page.tsx" },
-  { route: "/location", file: "app/location/page.tsx" },
+  { route: "/location-3", file: "app/location/page.tsx" },
   { route: "/reserve", file: "app/reserve/page.tsx" },
   { route: "/review", file: "app/review/page.tsx" },
   { route: "/photo", file: "app/photo/page.tsx" },

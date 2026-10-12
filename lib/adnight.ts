@@ -84,7 +84,7 @@ const NIGHT_URL_MAP: Record<string, string> = {
 /* ★ 2026-09-05 S3 — app/club 에 폴더가 없는 두 곳은 실제 쪽(/hall/)으로 잇는다. /club/… 은 404 였다(품질 표 Q-118). */
 const NIGHT_PATH_OVERRIDE: Record<string, string> = {
   "dapsimni-miracle-night": "/hall/dapsimni-miracle-night",
-  "paju-yadang-skydome-night": "/hall/paju-skydome-night",
+  "paju-yadang-skydome-night": "/hall/paju-skydome-night-3",
 };
 export const nightPath = (slug: string) =>
   NIGHT_PATH_OVERRIDE[slug] ?? `/club/${NIGHT_URL_MAP[slug] ?? slug}`;

@@ -40,7 +40,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/location",
+  "route": "/location-3",
   "slug": "location",
   "img": "O",
   "same": "O",

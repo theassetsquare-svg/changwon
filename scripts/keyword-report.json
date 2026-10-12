@@ -166,7 +166,7 @@
       "verdict": "OK"
     },
     {
-      "route": "/location",
+      "route": "/location-3",
       "file": "app/location/page.tsx",
       "totalLength": 1971,
       "keywords": {

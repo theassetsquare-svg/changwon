@@ -10,7 +10,7 @@ const CORE_ROUTES = [
   "/about",
   "/lotto",
   "/price",
-  "/location",
+  "/location-3",
   "/reserve",
   "/review",
   "/photo",
@@ -82,7 +82,7 @@ const isHall = (route) => route === "/hall-guide/" || route.startsWith("/hall-gu
 const FAQ_REQUIRED = new Set([
   "/",
   "/faq",
-  "/location",
+  "/location-3",
   "/news",
   "/event",
   "/night-guide/",

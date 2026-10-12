@@ -19,7 +19,7 @@ const FALLBACK_ROUTES = [
   "/about",
   "/lotto",
   "/price",
-  "/location",
+  "/location-3",
   "/reserve",
   "/review",
   "/photo",

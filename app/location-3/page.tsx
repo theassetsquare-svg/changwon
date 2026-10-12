@@ -7,7 +7,7 @@ import { 변형쪽들 } from "@/lib/variant-pages";
 /**
  * ★★ 2026-09-02 대표님 지시로 바꾼 쪽 — 일산샴푸나이트 정보 페이지.
  *
- *  주소(/location/)는 **그대로 두고** 안에 든 내용만 바꿨다.
+ *  주소(/location-3/)는 **그대로 두고** 안에 든 내용만 바꿨다.
  *  색인된 주소는 자산이라 버리지 않는다 · 301 리디렉션도 걸지 않는다.
  *
  *  ★ canonical·og:url·설명문은 반드시 **이 쪽 자신의 것**이어야 한다.
@@ -18,8 +18,8 @@ import { 변형쪽들 } from "@/lib/variant-pages";
  *    사이트 전역 렌더로 남의 번호가 새는 사고를 막는다.
  */
 const VENUE = AD_BY_SLUG["4-1"];
-const 이주소 = "/location";
-const 변형 = 변형쪽들["/location"];
+const 이주소 = "/location-3";
+const 변형 = 변형쪽들["/location-3"];
 
 export const metadata: Metadata = adVariantMetadata(VENUE, 이주소, 변형);
 export const viewport: Viewport = adViewport;

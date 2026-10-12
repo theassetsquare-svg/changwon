@@ -161,7 +161,7 @@ export const NAV = [
   { href: "/about", label: "가게 소개" },
   { href: "/lotto", label: "매니저" },
   { href: "/price", label: "가격" },
-  { href: "/location", label: "오시는 길" },
+  { href: "/location-3", label: "오시는 길" },
   { href: "/reserve", label: "예약" },
   { href: "/review", label: "후기" },
   { href: "/photo", label: "사진" },
@@ -212,7 +212,7 @@ export const PAGE_META: Record<
     capsule:
       "창원 룰루랄라 나이트 가격은 인원·옵션·시간대에 따라 다르며, 정확한 금액은 현장에서 확인해야 합니다.",
   },
-  "/location": {
+  "/location-3": {
     title: "창원룰루랄라나이트 오시는 길 — 상남동 22-4 지하 3층",
     description:
       "창원룰루랄라나이트 위치는 창원시 성산구 상남동 22-4 지하 3층(모아엔트몰), 도로명 마디미로43번길 10. 모아엔트몰 건물 안 지하 3층입니다.",

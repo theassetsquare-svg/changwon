@@ -48,7 +48,7 @@
   "same": "O"
  },
  {
-  "route": "/location",
+  "route": "/location-3",
   "slug": "location",
   "http": 200,
   "ctype": "image/png",

@@ -51,7 +51,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         : n.href === "/reserve" ||
             n.href === "/lotto" ||
             n.href === "/price" ||
-            n.href === "/location"
+            n.href === "/location-3"
           ? 0.9
           : 0.7,
   }));
