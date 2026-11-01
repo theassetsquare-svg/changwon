@@ -21,10 +21,8 @@ export const LEDGER: Record<string, 장부> = {
  },
  "부평키스나이트": {
   "id": "bupyeong-kiss",
-  "adv": true,
-  "address": "인천광역시 부평구 시장로 47, 3층(부평동)",
-  "telephone": "010-8497-3072",
-  "nickname": "오빠"
+  "adv": false,
+  "address": "인천광역시 부평구 시장로 47, 3층(부평동)"
  },
  "부산아시아드나이트": {
   "id": "busan-asiad",
@@ -222,10 +220,8 @@ export const LEDGER: Record<string, 장부> = {
  },
  "울산챔피언나이트": {
   "id": "ulsan-champion",
-  "adv": true,
-  "address": "울산 남구 정동로 75 (삼산동 1559-17) 1층",
-  "telephone": "010-5653-0069",
-  "nickname": "춘자"
+  "adv": false,
+  "address": "울산 남구 정동로 75 (삼산동 1559-17) 1층"
  },
  "울산뉴월드나이트": {
   "id": "ulsan-newworld",
