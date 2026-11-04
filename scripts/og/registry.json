@@ -325,7 +325,7 @@
   "kind": "venue"
  },
  {
-  "route": "/hall/seosan-hobak-night",
+  "route": "/hall/seosan-hobak-night-1",
   "slug": "hall-seosan-hobak-night",
   "kind": "venue"
  },
@@ -345,7 +345,7 @@
   "kind": "venue"
  },
  {
-  "route": "/hall/gwangju-cheomdan-night",
+  "route": "/hall/gwangju-cheomdan-night-1",
   "slug": "hall-gwangju-cheomdan-night",
   "kind": "venue"
  },

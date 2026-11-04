@@ -283,7 +283,7 @@ export default function NightIndexPage() {
           <li><a href="/hall/daejeon-seven-night-3/">대전세븐나이트</a></li>
           <li><a href="/club/daejeon-one-night-4/">대전원나이트</a></li>
           <li><a href="/hall/daejeon-one/">대전원나이트</a></li>
-          <li><a href="/hall/seosan-hobak-night/">서산호박나이트</a></li>
+          <li><a href="/hall/seosan-hobak-night-1/">서산호박나이트</a></li>
           <li><a href="/hall/cheonan-stardome-night/">천안스타돔나이트</a></li>
           <li><a href="/hall/cheonan-korea-night/">천안코리아나이트</a></li>
           <li><a href="/hall/cheongju-hobak-night/">청주호박나이트</a></li>
@@ -303,7 +303,7 @@ export default function NightIndexPage() {
         <h3 style={{ fontSize: ".95rem", margin: "16px 0 8px", opacity: .75 }}>호남·제주</h3>
         <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(190px,1fr))", gap: "8px 16px", fontSize: ".92rem" }}>
           <li><a href="/hall/gwangju-sangmu/">광주상무나이트</a></li>
-          <li><a href="/hall/gwangju-cheomdan-night/">광주첨단나이트</a></li>
+          <li><a href="/hall/gwangju-cheomdan-night-1/">광주첨단나이트</a></li>
           <li><a href="/hall/jeju-night/">제주도나이트</a></li>
         </ul>
         <h3 style={{ fontSize: ".95rem", margin: "16px 0 8px", opacity: .75 }}>그 밖의 지역</h3>
