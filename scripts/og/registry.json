@@ -105,27 +105,27 @@
   "kind": "venue"
  },
  {
-  "route": "/club/sillim-grandprix-night",
+  "route": "/club/sillim-grandprix-night-5",
   "slug": "club-sillim-grandprix-night",
   "kind": "venue"
  },
  {
-  "route": "/club/sangbong-hangukgwan-night",
+  "route": "/club/sangbong-hangukgwan-night-5",
   "slug": "club-sangbong-hangukgwan-night",
   "kind": "venue"
  },
  {
-  "route": "/club/suyu-shampoo-night",
+  "route": "/club/suyu-shampoo-night-4",
   "slug": "club-suyu-shampoo-night",
   "kind": "venue"
  },
  {
-  "route": "/club/busan-asiad-night-4",
+  "route": "/club/busan-asiad-night-7",
   "slug": "club-busan-asiad-night",
   "kind": "venue"
  },
  {
-  "route": "/club/suwon-chancedome-night",
+  "route": "/club/suwon-chancedome-night-5",
   "slug": "club-suwon-chancedome-night",
   "kind": "venue"
  },
@@ -135,12 +135,12 @@
   "kind": "venue"
  },
  {
-  "route": "/club/daejeon-seven-night",
+  "route": "/club/daejeon-seven-night-6",
   "slug": "club-daejeon-seven-night",
   "kind": "venue"
  },
  {
-  "route": "/club/ilsan-shampoo-night",
+  "route": "/club/ilsan-shampoo-night-5",
   "slug": "club-ilsan-shampoo-night",
   "kind": "venue"
  },

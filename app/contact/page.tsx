@@ -17,7 +17,7 @@ import { 변형쪽들 } from "@/lib/variant-pages";
  *  ★ AdNightPage 가 신원(이름·번호·고정 전화바·관계 고지·JSON-LD)을 쪽 단위로 넣는다.
  *    사이트 전역 렌더로 남의 번호가 새는 사고를 막는다.
  */
-const VENUE = AD_BY_SLUG["sillim-grandprix-night"];
+const VENUE = AD_BY_SLUG["sillim-grandprix-night-5"];
 const 이주소 = "/contact";
 const 변형 = 변형쪽들["/contact"];
 

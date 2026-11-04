@@ -22,7 +22,7 @@ export type 변형쪽 = {
 
 export const 변형쪽들: Record<string, 변형쪽> = {
   "/news": {
-    "slug": "busan-asiad-night-4",
+    "slug": "busan-asiad-night-7",
     "각도": "첫방문",
     "title": "부산아시아드나이트 처음 가는 분 안내",
     "description": "부산아시아드나이트 처음 가는 분 안내. 첫날 계획을 단순하게 두고 난 뒤, 첫 방문 날짜를 여유 있게 잡는 편이 덜 번거롭습니다.",
@@ -234,7 +234,7 @@ export const 변형쪽들: Record<string, 변형쪽> = {
     ]
   },
   "/vip": {
-    "slug": "daejeon-seven-night",
+    "slug": "daejeon-seven-night-6",
     "각도": "자리",
     "title": "대전세븐나이트 자리 고르는 기준, 통로 쪽과 안쪽",
     "description": "대전세븐나이트 자리 고르는 기준. 드나들기 좋은 통로 쪽을 잡고 나면, 자리 배치를 미리 물어 두는 편이 챙길 것이 줄어든다.",
@@ -674,7 +674,7 @@ export const 변형쪽들: Record<string, 변형쪽> = {
     ]
   },
   "/about": {
-    "slug": "daejeon-seven-night",
+    "slug": "daejeon-seven-night-6",
     "각도": "연령",
     "title": "대전세븐나이트 연령대와 입장 기준 정리",
     "description": "대전세븐나이트는 대전 중구 당디로 112에 있는 나이트클럽입니다. 연령 기준에서 확인된 것과 확인되지 않은 것을 갈라 적었습니다.",
@@ -898,7 +898,7 @@ export const 변형쪽들: Record<string, 변형쪽> = {
     ]
   },
   "/contact": {
-    "slug": "sillim-grandprix-night",
+    "slug": "sillim-grandprix-night-5",
     "각도": "문의",
     "title": "신림그랑프리나이트 연락 전에 정리할 것",
     "description": "신림그랑프리나이트는 신림역 7번 출구 앞 건물 14층으로 확인돼요. 묻기 전에 정해 두면 통화 한 번으로 끝나는 것들을 적었어요.",
@@ -1027,7 +1027,7 @@ export const 변형쪽들: Record<string, 변형쪽> = {
     ]
   },
   "/review-3": {
-    "slug": "sangbong-hangukgwan-night",
+    "slug": "sangbong-hangukgwan-night-5",
     "각도": "분위기",
     "title": "상봉동한국관나이트 홀 분위기와 자리 고르기",
     "description": "상봉동한국관나이트는 금요일과 토요일에 1부와 2부로 나뉘어 돌아간다. 후기 대신 확인된 구조만 놓고 자리 고르는 기준을 적었다.",
@@ -1354,7 +1354,7 @@ export const 변형쪽들: Record<string, 변형쪽> = {
     ]
   },
   "/night-guide/changwon-lululala-night-1": {
-    "slug": "busan-asiad-night-4",
+    "slug": "busan-asiad-night-7",
     "각도": "계절",
     "title": "부산아시아드나이트 계절마다 달라지는 점 정리",
     "description": "부산아시아드나이트 계절마다 달라지는 점. 계절을 골라 잡을 수 있다면 장마철에는 교통편을 먼저 보는 편이 어긋날 일이 적어요.",
@@ -1460,7 +1460,7 @@ export const 변형쪽들: Record<string, 변형쪽> = {
     ]
   },
   "/club/changwon-lululala-night": {
-    "slug": "busan-asiad-night-4",
+    "slug": "busan-asiad-night-7",
     "각도": "결제",
     "title": "부산아시아드나이트 비용을 미리 알아보려면",
     "description": "부산아시아드나이트 비용을 미리 알아보려면. 비용을 먼저 물어 두는 김에, 예상 밖 지출을 미리 잡아 두는 편이 일정이 안 꼬입니다.",

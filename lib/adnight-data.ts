@@ -405,7 +405,7 @@ export const AD_VENUES: AdVenue[] = [
     related: [
       "1-1",
       "daejeon-one-night-4",
-      "sillim-grandprix-night",
+      "sillim-grandprix-night-5",
     ],
   },
 
@@ -516,8 +516,8 @@ export const AD_VENUES: AdVenue[] = [
       "청담나이트는 홀 하나를 어떻게 짜느냐로 밤이 달라진다는 걸 보여 주는 곳입니다. 자리를 잡으실 생각이면 담당 펩시맨에게 인원부터 알려 주세요.",
     related: [
       "daejeon-one-night-4",
-      "sillim-grandprix-night",
-      "sangbong-hangukgwan-night",
+      "sillim-grandprix-night-5",
+      "sangbong-hangukgwan-night-5",
     ],
   },
 
@@ -646,8 +646,8 @@ export const AD_VENUES: AdVenue[] = [
     outro:
       "대전원나이트는 조건이 분명해서 준비가 간단한 홀입니다. 만 38세 이상, 신분증 하나, 이 두 가지면 나머지는 현장에서 정리됩니다.",
     related: [
-      "sillim-grandprix-night",
-      "sangbong-hangukgwan-night",
+      "sillim-grandprix-night-5",
+      "sangbong-hangukgwan-night-5",
       "2-1",
     ],
   },
@@ -655,7 +655,7 @@ export const AD_VENUES: AdVenue[] = [
   // ── 6. 신림그랑프리나이트 · 각도11 인원별 공략형 ────────────
   {
     no: 6,
-    slug: "sillim-grandprix-night",
+    slug: "sillim-grandprix-night-5",
     notice: [
       "신림 그랑프리나이트 인원별 안내이며 업소가 직접 운영하는 페이지가 아닙니다.",
       "성인 대상 홀이며 청소년 출입은 불가합니다.",
@@ -757,16 +757,16 @@ export const AD_VENUES: AdVenue[] = [
     outro:
       "신림그랑프리나이트는 인원 하나만 바꿔도 밤의 결이 달라지는 홀입니다. 오늘 몇 명이 움직이는지부터 정하고 출발하세요.",
     related: [
-      "sangbong-hangukgwan-night",
+      "sangbong-hangukgwan-night-5",
       "2-1",
-      "busan-asiad-night-4",
+      "busan-asiad-night-7",
     ],
   },
 
   // ── 7. 상봉동한국관나이트 · 각도12 실수 방지형 ──────────────
   {
     no: 7,
-    slug: "sangbong-hangukgwan-night",
+    slug: "sangbong-hangukgwan-night-5",
     notice: [
       "상봉동 한국관나이트 방문 전 안내입니다. 요금은 적지 않았습니다.",
       "미성년자는 출입할 수 없습니다.",
@@ -871,7 +871,7 @@ export const AD_VENUES: AdVenue[] = [
       "상봉동한국관나이트는 준비가 부족하면 시간을 잃고, 준비가 되면 하룻밤을 통으로 쓰는 홀입니다. 1부와 2부 중 어디로 갈지부터 정해 두세요.",
     related: [
       "2-1",
-      "busan-asiad-night-4",
+      "busan-asiad-night-7",
       "3-1",
     ],
   },
@@ -981,7 +981,7 @@ export const AD_VENUES: AdVenue[] = [
     outro:
       "수유샴푸나이트는 두 번째 방문부터 확실히 편해지는 홀입니다. 오늘이 첫 방문이라면 이 순서만 그대로 따라 해 보세요.",
     related: [
-      "busan-asiad-night-4",
+      "busan-asiad-night-7",
       "3-1",
       "ansan-hit-night",
     ],
@@ -990,7 +990,7 @@ export const AD_VENUES: AdVenue[] = [
   // ── 9. 부산아시아드나이트 · 각도1 정면 소개형 ───────────────
   {
     no: 9,
-    slug: "busan-asiad-night-4",
+    slug: "busan-asiad-night-7",
     notice: [
       "부산 아시아드나이트 소개 페이지이며 업소 공식 채널이 아닙니다.",
       "청소년 출입은 허용되지 않습니다.",
@@ -1096,7 +1096,7 @@ export const AD_VENUES: AdVenue[] = [
     related: [
       "3-1",
       "ansan-hit-night",
-      "daejeon-seven-night",
+      "daejeon-seven-night-6",
     ],
   },
 
@@ -1206,7 +1206,7 @@ export const AD_VENUES: AdVenue[] = [
       "수원찬스돔나이트는 붐비는 게 문제가 아니라 언제 도착하느냐가 문제인 홀입니다. 주말에 갈 생각이라면 한 시간만 앞당겨 보세요.",
     related: [
       "ansan-hit-night",
-      "daejeon-seven-night",
+      "daejeon-seven-night-6",
       "4-1",
     ],
   },
@@ -1315,7 +1315,7 @@ export const AD_VENUES: AdVenue[] = [
     outro:
       "안산히트나이트는 눈보다 귀로 먼저 도착하는 홀입니다. 계단을 내려가는 몇 초를 놓치지 말고 들어 보세요.",
     related: [
-      "daejeon-seven-night",
+      "daejeon-seven-night-6",
       "4-1",
       "bulgwang-hobak-night",
     ],
@@ -1324,7 +1324,7 @@ export const AD_VENUES: AdVenue[] = [
   // ── 12. 대전세븐나이트 · 각도4 처음 가는 사람 시점 ──────────
   {
     no: 12,
-    slug: "daejeon-seven-night",
+    slug: "daejeon-seven-night-6",
     notice: [
       "대전 세븐나이트 첫 방문 안내이며 업소가 직접 운영하는 페이지가 아닙니다.",
       "성인 대상 영업장으로 신분증 확인이 있을 수 있습니다.",
@@ -1594,9 +1594,9 @@ export const AD_VENUES: AdVenue[] = [
     outro:
       "답십리미라클나이트는 요일에 따라 결이 달라지는 홀입니다. 가려는 날을 먼저 정하고 연락하시면 자리가 수월합니다.",
     related: [
-      "busan-asiad-night-4",
+      "busan-asiad-night-7",
       "ulsan-champion-night",
-      "daejeon-seven-night",
+      "daejeon-seven-night-6",
     ],
   },
 
@@ -1695,8 +1695,8 @@ export const AD_VENUES: AdVenue[] = [
     outro:
       "파주야당스카이돔나이트는 도착이 쉬운 대신 자리 성격이 각도로 갈립니다. 가시는 날과 인원을 정해 담당 딸기에게 알려 주시면 자리가 수월합니다.",
     related: [
-      "busan-asiad-night-4",
-      "daejeon-seven-night",
+      "busan-asiad-night-7",
+      "daejeon-seven-night-6",
       "ulsan-champion-night",
     ],
   },
