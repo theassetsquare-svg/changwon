@@ -25,12 +25,12 @@
   "kind": "changwon"
  },
  {
-  "route": "/reserve",
+  "route": "/reserve-3",
   "slug": "reserve",
   "kind": "changwon"
  },
  {
-  "route": "/review",
+  "route": "/review-3",
   "slug": "review",
   "kind": "changwon"
  },

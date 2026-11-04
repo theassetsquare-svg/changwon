@@ -60,7 +60,7 @@
   "same": "O"
  },
  {
-  "route": "/reserve",
+  "route": "/reserve-3",
   "slug": "reserve",
   "http": 200,
   "ctype": "image/png",
@@ -72,7 +72,7 @@
   "same": "O"
  },
  {
-  "route": "/review",
+  "route": "/review-3",
   "slug": "review",
   "http": 200,
   "ctype": "image/png",

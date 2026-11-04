@@ -551,7 +551,7 @@ export const 변형쪽들: Record<string, 변형쪽> = {
       "공개된 내용을 바탕으로 적어 실제 운영과 차이가 있을 수 있습니다"
     ]
   },
-  "/reserve": {
+  "/reserve-3": {
     "slug": "3-1",
     "각도": "대기",
     "title": "수원찬스돔나이트 기다리지 않고 자리 잡으려면",
@@ -1026,7 +1026,7 @@ export const 변형쪽들: Record<string, 변형쪽> = {
       "후기와 평점은 싣지 않아요."
     ]
   },
-  "/review": {
+  "/review-3": {
     "slug": "sangbong-hangukgwan-night",
     "각도": "분위기",
     "title": "상봉동한국관나이트 홀 분위기와 자리 고르기",

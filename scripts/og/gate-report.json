@@ -50,7 +50,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/reserve",
+  "route": "/reserve-3",
   "slug": "reserve",
   "img": "O",
   "same": "O",
@@ -60,7 +60,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/review",
+  "route": "/review-3",
   "slug": "review",
   "img": "O",
   "same": "O",

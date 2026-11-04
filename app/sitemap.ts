@@ -42,13 +42,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency:
       n.href === "/" || n.href === "/news" || n.href === "/event"
         ? "daily"
-        : n.href === "/faq" || n.href === "/price" || n.href === "/reserve"
+        : n.href === "/faq" || n.href === "/price" || n.href === "/reserve-3"
           ? "weekly"
           : "monthly",
     priority:
       n.href === "/"
         ? 1
-        : n.href === "/reserve" ||
+        : n.href === "/reserve-3" ||
             n.href === "/lotto" ||
             n.href === "/price" ||
             n.href === "/location-3"

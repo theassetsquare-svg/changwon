@@ -162,8 +162,8 @@ export const NAV = [
   { href: "/lotto", label: "매니저" },
   { href: "/price", label: "가격" },
   { href: "/location-3", label: "오시는 길" },
-  { href: "/reserve", label: "예약" },
-  { href: "/review", label: "후기" },
+  { href: "/reserve-3", label: "예약" },
+  { href: "/review-3", label: "후기" },
   { href: "/photo", label: "사진" },
   { href: "/news", label: "소식" },
   { href: "/faq", label: "FAQ" },
@@ -220,7 +220,7 @@ export const PAGE_META: Record<
     capsule:
       "창원 룰루랄라 나이트는 경상남도 창원시 성산구 상남동 22-4 지하 3층, 도로명 마디미로43번길 10에 있습니다.",
   },
-  "/reserve": {
+  "/reserve-3": {
     title: "창원룰루랄라나이트 예약 30초 — 앱·회원가입·결제등록 없음",
     description:
       "창원룰루랄라나이트 예약은 문의 한 번이면 끝납니다. 인원·날짜·시간 → 자리 확정. 처음 오시는 분도 30초면 끝납니다.",
@@ -228,7 +228,7 @@ export const PAGE_META: Record<
     capsule:
       "창원 룰루랄라 나이트 예약은 인원·날짜·시간을 알려주면 한 번에 자리가 확정됩니다.",
   },
-  "/review": {
+  "/review-3": {
     title: "창원룰루랄라나이트 후기 — 가짜 별점·자작 후기 일체 없음",
     description:
       "창원룰루랄라나이트 후기는 받은 그대로 게시합니다. 좋은 말도 불리한 말도 가리지 않고, 평균 별점을 부풀리지 않습니다.",
