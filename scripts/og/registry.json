@@ -170,7 +170,7 @@
   "kind": "venue"
  },
  {
-  "route": "/hall/busan-asiad-night",
+  "route": "/hall/busan-asiad-night-5",
   "slug": "hall-busan-asiad-night",
   "kind": "venue"
  },
@@ -205,7 +205,7 @@
   "kind": "venue"
  },
  {
-  "route": "/hall/changwon-lululala-night-1",
+  "route": "/hall/changwon-lululala-night-6",
   "slug": "hall-changwon-lululala-night-1",
   "kind": "venue"
  },
@@ -305,7 +305,7 @@
   "kind": "venue"
  },
  {
-  "route": "/hall/cheonan-stardome-night",
+  "route": "/hall/cheonan-stardome-night-4",
   "slug": "hall-cheonan-stardome-night",
   "kind": "venue"
  },
