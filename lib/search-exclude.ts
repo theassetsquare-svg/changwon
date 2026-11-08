@@ -34,6 +34,15 @@ export const 대표로가는쪽들: 대표로가는쪽[] = [
     링크: "영등포터미널나이트 위치 안내",
     뒤: "에 정리해 두었습니다.",
   },
+  {
+    /* 손으로 만든 정적 쪽(public/night-guide/cheongdam-night-2/index.html) — robots 와 맨 위 한 줄은 그 HTML 에 같은 글로 직접 넣었고,
+       이 줄은 사이트맵 · llms.txt 에서 빼는 데 쓴다 */
+    경로: "/night-guide/cheongdam-night-2/",
+    대표: "https://l.nolcool.com/night/cheongdam-night-2/",
+    앞: "청담역까지의 직선 거리와 이 건물 지하 1층에 올라 있는 강남구 허가 두 건은 ",
+    링크: "청담나이트 가는 길 안내",
+    뒤: "에 따로 모아 두었습니다.",
+  },
 ];
 
 const 끝슬래시 = (경로: string) => {
