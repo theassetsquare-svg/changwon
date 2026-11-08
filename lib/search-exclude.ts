@@ -2,9 +2,9 @@
  * (대표·겹침 표 = naver-watch config/naver-rep-pages.json · 판정 한 곳 scripts/naver/rep-guard.mjs)
  *
  * 여기 적힌 쪽은 같은 가게를 다른 우리 사이트의 대표 쪽이 맡고 있다. 그래서
- *   ① robots 「noindex, follow」(hall-meta.ts)
+ *   ① robots 「noindex, follow」(/hall/ = hall-meta.ts · /club/ = adnight-meta.ts)
  *   ② 사이트맵 · llms.txt 에서 뺀다(app/sitemap.ts · app/llms.txt/route.ts)
- *   ③ 본문 맨 위에 대표 쪽으로 가는 한 줄(components/HallPage.tsx)
+ *   ③ 본문 맨 위에 대표 쪽으로 가는 한 줄(/hall/ = components/HallPage.tsx · /club/ = components/AdNightPage.tsx)
  * 주소와 쪽은 그대로 둔다 — 지우지 않고 다른 주소로 보내지도 않는다. 손님에게는 지금처럼 보인다.
  * 한 쪽을 더할 때는 그 가게 대표 쪽이 라이브에 오르고 rank-loop 가 「기다림」이 된 뒤에 줄 하나만 더한다. */
 
@@ -42,6 +42,13 @@ export const 대표로가는쪽들: 대표로가는쪽[] = [
     앞: "청담역까지의 직선 거리와 이 건물 지하 1층에 올라 있는 강남구 허가 두 건은 ",
     링크: "청담나이트 가는 길 안내",
     뒤: "에 따로 모아 두었습니다.",
+  },
+  {
+    경로: "/club/ulsan-champion-night/",
+    대표: "https://l.nolcool.com/night/ulsan-champion-night-1/",
+    앞: "이 건물에서 실제로 쓰는 층과 태화강역·공영주차장까지의 거리는 ",
+    링크: "울산챔피언나이트 2·3층 위치 안내",
+    뒤: "에 남구 허가 명단을 바탕으로 따로 정리해 두었습니다.",
   },
 ];
 

@@ -3,6 +3,7 @@ import type { AdVenue } from "./adnight";
 import { nightPath } from "./adnight";
 import { thumb } from "./og";
 import { SITE } from "./site";
+import { 검색제외인가 } from "./search-exclude";
 
 /**
  * [12] 필수1 — viewport-fit=cover.
@@ -23,8 +24,11 @@ export function adMetadata(v: AdVenue): Metadata {
   // 썸네일 파일 경로는 lib/og.ts 한 곳에서만 계산한다 (본문 <img> 와 동일 보장)
   const t = thumb({ pathname: path, alt: v.ogAlt, v: (v as any).ogV });
   const image = t.url;
+  /* [네이버70-1나 · 2026-11-08] 대표 쪽이 따로 있는 가게 쪽 — 검색 제외(링크는 따라감) · lib/search-exclude.ts */
+  const 제외 = 검색제외인가(path);
 
   return {
+    ...(제외 ? { robots: { index: false, follow: true, googleBot: { index: false, follow: true } } } : {}),
     title: v.title,
     description: v.description,
     /* ★ 2026-09-02 — 같은 가게이름이 두 번 들어가 keywords 메타가 낱말 나열처럼 보였다.

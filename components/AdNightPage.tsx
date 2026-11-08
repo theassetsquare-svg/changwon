@@ -10,6 +10,7 @@ import { ogAbsolute, ogSlug } from "@/lib/og";
 import { ADS } from "@/lib/venues";
 import { ledgerOf } from "@/lib/ledger";
 import { Salted } from "@/lib/salt";
+import { 대표로가는쪽찾기 } from "@/lib/search-exclude";
 
  /* ★ 2026-08-31 — 이 한 줄이 한 사이트 수십 쪽에 똑같이 박혀 있었다(설계도 5장).
    쪽마다 다른 앞말을 고른다. 카카오톡 아이디는 사실이라 그대로 둔다. */
@@ -561,6 +562,8 @@ export default function AdNightPage({
   if (장?.ageLimit) 사실줄.push(["출입 연령", 장.ageLimit]);
   if (광고) { 사실줄.push(["전화", 번호]); if (담당) 사실줄.push(["담당", 담당]); }
   const 쪽주소 = (path ?? nightPath(v.slug)).replace(/\/?$/, "/");
+  /* [네이버70-1나 · 2026-11-08] 대표 쪽이 따로 있는 가게면 맨 위에 그쪽으로 가는 한 줄 · lib/search-exclude.ts(이 쪽 주소 그대로 찾음 · 같은 가게 다른 쪽은 그대로) */
+  const 대표줄 = 대표로가는쪽찾기(쪽주소);
   const 정리 = 읽기전정리({ ...v, facts: 사실줄 }, 변형?.각도 ?? "기본");
   /* 2026-09-25 — 변형 쪽 본문 1,800~2,500자(완독 목표). 문답은 앞에서부터 글자 예산 안에서만 싣고(JSON-LD 도 같은 문답), 「가기 전 정리」 문단은 예산이 남을 때만 */
   const 글자 = (t: string) => String(t || "").replace(/\s/g, "").length;
@@ -612,6 +615,13 @@ export default function AdNightPage({
               <time dateTime={AD_UPDATED}>2026년 8월 15일</time>
             </p>
           </header>
+          {대표줄 ? (
+            <p className="mb-6 text-[15px] text-gray-300">
+              {대표줄.앞}
+              <a className="text-gold underline" href={대표줄.대표}>{대표줄.링크}</a>
+              {대표줄.뒤}
+            </p>
+          ) : null}
 
           {/* [14] AEO/GEO — AI 답변엔진이 그대로 인용할 수 있는 블록 */}
           <div data-frame="1" data-r="lead" className="answer-box">
