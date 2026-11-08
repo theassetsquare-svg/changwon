@@ -5,6 +5,7 @@ import { AD_VENUES } from "@/lib/adnight-data";
 import { nightPath } from "@/lib/adnight";
 import { HALL_VENUES } from "@/lib/hall-data";
 import { hallPath } from "@/lib/hall";
+import { 검색제외인가 } from "@/lib/search-exclude";
 import sitemap from "../sitemap";
 
 export const dynamic = "force-static";
@@ -27,14 +28,15 @@ export function GET() {
   }).join(String.fromCharCode(10));
 
   // 전국 나이트 광고 페이지 13개 — URL · 업소명 · 지역 · 한 줄 설명
-  const adPages = AD_VENUES.map((v) => {
+  /* [네이버70-1나 · 2026-11-08] 대표 쪽이 따로 있는 가게 쪽(noindex)은 이 목록에서도 뺀다 · lib/search-exclude.ts */
+  const adPages = AD_VENUES.filter((v) => !검색제외인가(nightPath(v.slug))).map((v) => {
     const url = `${SITE.url}${nightPath(v.slug)}`;
     const age = v.ageFull ? ` ${v.ageFull}만 출입 가능.` : "";
     return `- ${url} — ${v.spaced} — ${v.areaLabel} — ${v.answer2}${age}`;
   }).join("\n");
 
   // 전국 나이트 홀 도감 40 — URL · 업소명 · 지역 · 홀 유형 · 확인된 핵심 한 줄
-  const hallPages = HALL_VENUES.map((v) => {
+  const hallPages = HALL_VENUES.filter((v) => !검색제외인가(hallPath(v.slug))).map((v) => {
     const url = `${SITE.url}${hallPath(v.slug)}`;
     const age = v.ageFull ? ` ${v.ageFull}만 출입 가능.` : "";
     return `- ${url} — ${v.spaced} — ${v.areaLabel} — ${v.hallType} — ${v.answer3[0]}${age}`;

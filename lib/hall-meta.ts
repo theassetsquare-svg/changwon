@@ -3,6 +3,7 @@ import type { HallVenue } from "./hall";
 import { hallPath } from "./hall";
 import { thumb } from "./og";
 import { SITE } from "./site";
+import { 검색제외인가 } from "./search-exclude";
 
 /** 고정바가 홈 인디케이터에 가리지 않도록 cover 를 얹는다 */
 export const hallViewport: Viewport = {
@@ -17,8 +18,11 @@ export function hallMetadata(v: HallVenue): Metadata {
   const path = hallPath(v.slug);
   const url = `${SITE.url}${path}`;
   const t = thumb({ pathname: path, alt: v.ogAlt, v: (v as any).ogV });
+  /* [네이버70-1나 · 2026-11-08] 대표 쪽이 따로 있는 가게 쪽 — 검색 제외(링크는 따라감) · lib/search-exclude.ts */
+  const 제외 = 검색제외인가(path);
 
   return {
+    ...(제외 ? { robots: { index: false, follow: true, googleBot: { index: false, follow: true } } } : {}),
     title: v.title,
     description: v.description,
     keywords: [

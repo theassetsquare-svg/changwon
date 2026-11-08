@@ -18,6 +18,7 @@ import { ADS } from "@/lib/venues";
 import GuideExtra from '@/components/GuideExtra';
 import { ledgerOf } from "@/lib/ledger";
 import { Salted } from "@/lib/salt";
+import { 대표로가는쪽찾기 } from "@/lib/search-exclude";
 
 /* ★ 2026-08-31 — 연령·관계 고지가 없어 신고에 취약했다(설계도 4장 · 점검표 #121·#122).
    광고(담당자 전화)를 싣는 쪽과 아닌 쪽의 문구가 달라야 한다.
@@ -255,6 +256,8 @@ export default function HallPage({ venue: v }: { venue: HallVenue }) {
   if (장?.parking) 사실줄.push(["주차", 장.parking]);
   if (장?.ageLimit) 사실줄.push(["출입 연령", 장.ageLimit]);
   if (광고) { 사실줄.push(["전화", 번호]); if (담당) 사실줄.push(["담당", 담당]); }
+  /* [네이버70-1나 · 2026-11-08] 대표 쪽이 따로 있는 가게면 맨 위에 그쪽으로 가는 한 줄 · lib/search-exclude.ts */
+  const 대표줄 = 대표로가는쪽찾기(hallPath(v.slug));
 
   return (
     <Salted seed={hallPath(v.slug) + "/"}>
@@ -299,6 +302,13 @@ export default function HallPage({ venue: v }: { venue: HallVenue }) {
                 <time dateTime={HALL_UPDATED}>2026년 8월 17일</time>
               </p>
             </header>
+            {대표줄 ? (
+              <p className="mb-7 text-[15px] text-[#C9AFA8]">
+                {대표줄.앞}
+                <a className="text-gold underline" href={대표줄.대표}>{대표줄.링크}</a>
+                {대표줄.뒤}
+              </p>
+            ) : null}
 
             <div className="space-y-4 text-[15px] sm:text-base">
               {v.lead.map((p, i) => (

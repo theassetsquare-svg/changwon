@@ -6,6 +6,7 @@ import { AD_VENUES } from "@/lib/adnight-data";
 import { nightPath } from "@/lib/adnight";
 import { HALL_VENUES } from "@/lib/hall-data";
 import { hallPath } from "@/lib/hall";
+import { 검색제외인가 } from "@/lib/search-exclude";
 
 /* ★★ 2026-09-02 (A2 묶음①) — 사이트맵에 **파일 없는 주소(유령)** 를 두지 않는다.
  *
@@ -174,5 +175,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...indexTest,
   ]);
   const 본 = new Set<string>();
-  return 전부.filter((x) => { const k = String(x.url); if (본.has(k)) return false; 본.add(k); return true; });
+  /* [네이버70-1나 · 2026-11-08] 대표 쪽이 따로 있는 가게 쪽(noindex)은 사이트맵에 싣지 않는다 · lib/search-exclude.ts */
+  return 전부.filter((x) => { const k = String(x.url); if (본.has(k)) return false; 본.add(k); return !검색제외인가(new URL(k).pathname); });
 }
