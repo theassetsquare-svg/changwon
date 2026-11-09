@@ -130,7 +130,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/contact",
+  "route": "/contact-9",
   "slug": "contact",
   "img": "O",
   "same": "O",
@@ -150,7 +150,7 @@
   "verdict": "PASS"
  },
  {
-  "route": "/hall-guide/",
+  "route": "/hall-guide-9/",
   "slug": "hall",
   "img": "O",
   "same": "O",

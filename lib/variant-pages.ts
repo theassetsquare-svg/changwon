@@ -897,7 +897,7 @@ export const 변형쪽들: Record<string, 변형쪽> = {
       "차를 가져갔다면 대리 이용을 권한다."
     ]
   },
-  "/contact": {
+  "/contact-9": {
     "slug": "sillim-grandprix-night-5",
     "각도": "문의",
     "title": "신림그랑프리나이트 연락 전에 정리할 것",

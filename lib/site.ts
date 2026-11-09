@@ -170,7 +170,7 @@ export const NAV = [
   { href: "/around", label: "주변" },
   { href: "/event", label: "이벤트" },
   { href: "/vip", label: "VIP" },
-  { href: "/contact", label: "문의" },
+  { href: "/contact-9", label: "문의" },
 ] as const;
 // NAV 는 창원 사이트 본 메뉴 전용이다.
 // /night(전국 나이트) 는 창원 페이지의 헤더 메뉴·본문 링크 구성을 바꾸지 않기 위해
@@ -292,7 +292,7 @@ export const PAGE_META: Record<
     capsule:
       "전국 나이트 예약 문의 페이지는 지역별 업소의 예약 담당자 전화·카카오톡 연락처를 모아둔 안내 페이지입니다.",
   },
-  "/contact": {
+  "/contact-9": {
     title: "창원룰루랄라나이트 문의 안내 — 업소와 제휴 관계 없음",
     description:
       "창원룰루랄라나이트는 이 사이트와 제휴 관계가 없어 문의를 대신 받지 않습니다. 예약·가격·길 안내는 현장에서 확인하세요.",

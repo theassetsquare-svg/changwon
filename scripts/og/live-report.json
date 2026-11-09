@@ -156,7 +156,7 @@
   "same": "O"
  },
  {
-  "route": "/contact",
+  "route": "/contact-9",
   "slug": "contact",
   "http": 200,
   "ctype": "image/png",
@@ -180,7 +180,7 @@
   "same": "O"
  },
  {
-  "route": "/hall-guide/",
+  "route": "/hall-guide-9/",
   "slug": "hall",
   "http": 200,
   "ctype": "image/png",

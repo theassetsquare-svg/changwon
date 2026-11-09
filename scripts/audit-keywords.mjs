@@ -24,7 +24,7 @@ const PAGES = [
   { route: "/around", file: "app/around/page.tsx" },
   { route: "/event", file: "app/event/page.tsx" },
   { route: "/vip", file: "app/vip/page.tsx" },
-  { route: "/contact", file: "app/contact/page.tsx" },
+  { route: "/contact-9", file: "app/contact/page.tsx" },
 ];
 
 const KEYWORDS = [

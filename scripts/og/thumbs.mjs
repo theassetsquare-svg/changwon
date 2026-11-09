@@ -251,7 +251,7 @@ async function buildRegistry() {
   const changwonPaths = [
     ...site.NAV.map((n) => n.href),
     "/night-guide/",
-    "/hall-guide/",
+    "/hall-guide-9/",
   ];
   for (const p of changwonPaths) {
     pages.push({

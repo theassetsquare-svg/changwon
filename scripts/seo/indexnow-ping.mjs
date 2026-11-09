@@ -28,10 +28,10 @@ const FALLBACK_ROUTES = [
   "/around",
   "/event",
   "/vip",
-  "/contact",
+  "/contact-9",
   "/night-guide/",
   // 전국 나이트 홀 도감 (lib/hall/group-*.ts 의 slug 와 동일해야 함)
-  "/hall-guide/",
+  "/hall-guide-9/",
   "/hall-guide/sillim-grandprix-guide",
   "/hall-guide/sangbong-hangukgwan",
   "/hall-guide/suyu-shampoo",

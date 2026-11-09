@@ -81,7 +81,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   /* ★ 같은 이유 — /hall 은 app/hall-guide/page.tsx 로 옮겨졌다(2026-08-22). */
   const hallHub: MetadataRoute.Sitemap = [
     {
-      url: `${SITE.url}/hall-guide`,
+      url: `${SITE.url}/hall-guide-9`,
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.9,

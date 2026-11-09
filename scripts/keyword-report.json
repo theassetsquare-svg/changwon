@@ -535,7 +535,7 @@
       "verdict": "OK"
     },
     {
-      "route": "/contact",
+      "route": "/contact-9",
       "file": "app/contact/page.tsx",
       "totalLength": 1370,
       "keywords": {

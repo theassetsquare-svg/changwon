@@ -15,7 +15,7 @@ const DESCRIPTION =
   "전국 나이트 40곳을 공간 축으로 정리한 홀 도감입니다. 입구·플로어·테이블 구역·부스 구역을 같은 순서로 읽고, 확인된 사실과 일반적인 홀 기준을 적었습니다.";
 
 const THUMB = thumb({
-  pathname: "/hall-guide/",
+  pathname: "/hall-guide-9/",
   alt: `${SITE.nameNoSpace} 전국 나이트 홀 도감 40 — 입구·플로어·테이블·부스`,
 });
 
@@ -32,12 +32,12 @@ export const metadata: Metadata = {
     "나이트 테이블",
     ...HALL_VENUES.slice(0, 12).map((v) => v.keyword),
   ],
-  alternates: { canonical: "/hall-guide" },
+  alternates: { canonical: "/hall-guide-9" },
   openGraph: {
     images: THUMB.images,   /* 2026-09-24 쪽마다 고유 카드 */
     type: "website",
     locale: "ko_KR",
-    url: `${SITE.url}/hall-guide`,   /* ★ /hall 은 주소교체로 버려져 404 다 */
+    url: `${SITE.url}/hall-guide-9`,   /* ★ /hall 은 주소교체로 버려져 404 다 */
     siteName: SITE.name,
     title: TITLE,
     description: DESCRIPTION,
@@ -64,16 +64,16 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "CollectionPage",
-      "@id": `${SITE.url}/hall-guide#collection`,
+      "@id": `${SITE.url}/hall-guide-9#collection`,
       name: "전국 나이트 홀 도감 40",
       description: DESCRIPTION,
-      url: `${SITE.url}/hall-guide`,   /* ★ /hall 은 주소교체로 버려져 404 다 */
+      url: `${SITE.url}/hall-guide-9`,   /* ★ /hall 은 주소교체로 버려져 404 다 */
       inLanguage: "ko-KR",
       dateModified: HALL_UPDATED,
     },
     {
       "@type": "ItemList",
-      "@id": `${SITE.url}/hall-guide#itemlist`,
+      "@id": `${SITE.url}/hall-guide-9#itemlist`,
       name: "전국 나이트 홀 도감 40",
       numberOfItems: HALL_VENUES.length,
       itemListElement: HALL_VENUES.map((v, i) => ({
@@ -85,14 +85,14 @@ const jsonLd = {
     },
     {
       "@type": "BreadcrumbList",
-      "@id": `${SITE.url}/hall-guide#breadcrumb`,
+      "@id": `${SITE.url}/hall-guide-9#breadcrumb`,
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "창원에서 성공하는 방법", item: SITE.url },
         {
           "@type": "ListItem",
           position: 2,
           name: "전국 나이트 홀 도감 40",
-          item: `${SITE.url}/hall-guide`,
+          item: `${SITE.url}/hall-guide-9`,
         },
       ],
     },
@@ -101,7 +101,7 @@ const jsonLd = {
 
 export default function HallHubPage() {
   return (
-    <Salted seed="/hall-guide/">
+    <Salted seed="/hall-guide-9/">
       <style dangerouslySetInnerHTML={{ __html: HALL_CSS }} />
       <script
         type="application/ld+json"
@@ -126,7 +126,7 @@ export default function HallHubPage() {
               무엇을 바꾸는지 같은 순서로 정리했습니다.
             </p>
           </header>
-        <OgThumb pathname="/hall-guide" alt={THUMB.alt} />
+        <OgThumb pathname="/hall-guide-9" alt={THUMB.alt} />
           <p className="mt-4 text-[15px] sm:text-base">전국 나이트 40곳을 자리에 따라 달라지는 밤이라는 한 가지 기준으로 읽는 도감입니다.</p>
 
 

@@ -38,7 +38,7 @@ export default function Footer() {
           </Link>
         </p>
         <p>
-          <Link href="/hall-guide" className="text-gold underline">
+          <Link href="/hall-guide-9" className="text-gold underline">
             전국 나이트 홀 도감 40 →
           </Link>
         </p>
