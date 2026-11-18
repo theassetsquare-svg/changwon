@@ -303,7 +303,7 @@ export default function NightIndexPage() {
         <h3 style={{ fontSize: ".95rem", margin: "16px 0 8px", opacity: .75 }}>호남·제주</h3>
         <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(190px,1fr))", gap: "8px 16px", fontSize: ".92rem" }}>
           <li><a href="/hall/gwangju-sangmu/">광주상무나이트</a></li>
-          <li><a href="/hall/gwangju-cheomdan-night-1/">광주첨단나이트</a></li>
+          <li><a href="/hall/gwangju-cheomdan-night-3/">광주첨단나이트</a></li>
           <li><a href="/hall/jeju-night/">제주도나이트</a></li>
         </ul>
         <h3 style={{ fontSize: ".95rem", margin: "16px 0 8px", opacity: .75 }}>그 밖의 지역</h3>

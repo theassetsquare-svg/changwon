@@ -114,7 +114,7 @@ export const HALL_URL_MAP: Record<string, string> = {
   "27-1": "ulsan-newworld-night",
   "seosan-hobak": "seosan-hobak-night-1",
   "28-1": "gumi-hobak-night",
-  "gwangju-cheomdan": "gwangju-cheomdan-night-1",
+  "gwangju-cheomdan": "gwangju-cheomdan-night-3",
   "29-1": "jeju-night",
 };
 export const HALL_SLUG_BY_URL: Record<string, string> = Object.fromEntries(
