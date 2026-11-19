@@ -250,7 +250,7 @@ export default function NightIndexPage() {
           <li><a href="/hall/sangbong-hangukgwan-night-3/">상봉동한국관나이트</a></li>
           <li><a href="/hall/sangbong-hangukgwan-night-3/">상봉동한국관나이트</a></li>
           <li><a href="/hall/seongnam-shampoo-night-2/">성남샴푸나이트</a></li>
-          <li><a href="/club/suyu-shampoo-night-4/">수유샴푸나이트</a></li>
+          <li><a href="/club/suyu-shampoo-night-5/">수유샴푸나이트</a></li>
           <li><a href="/hall/suyu-shampoo-night-4/">수유샴푸나이트</a></li>
           <li><a href="/hall/sillim-grandprix-night-3/">신림그랑프리나이트</a></li>
           <li><a href="/hall/sillim-grandprix-night-3/">신림그랑프리나이트</a></li>

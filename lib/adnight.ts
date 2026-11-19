@@ -74,7 +74,7 @@ const NIGHT_KEEP_OLD = new Set(["sillim-grandprix-night", "sangbong-hangukgwan-n
 /** 폴더를 옮기면서 이름이 바뀐 것들 — 데이터의 슬러그는 그대로라 여기서 이어 준다 */
 const NIGHT_URL_MAP: Record<string, string> = {
   "1-1": "cheongdam-night",
-  "2-1": "suyu-shampoo-night-4",
+  "2-1": "suyu-shampoo-night-5",
   "3-1": "suwon-chancedome-night-6",
   "4-1": "ilsan-shampoo-night-6",
 };
