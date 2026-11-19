@@ -3,7 +3,7 @@ import AdNightPage from "@/components/AdNightPage";
 import { AD_BY_SLUG } from "@/lib/adnight-data";
 import { adMetadata, adViewport } from "@/lib/adnight-meta";
 
-const VENUE = AD_BY_SLUG["sangbong-hangukgwan-night-5"];
+const VENUE = AD_BY_SLUG["sangbong-hangukgwan-night-6"];
 
 export const metadata: Metadata = adMetadata(VENUE);
 export const viewport: Viewport = adViewport;

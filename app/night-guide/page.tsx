@@ -262,7 +262,7 @@ export default function NightIndexPage() {
         <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(190px,1fr))", gap: "8px 16px", fontSize: ".92rem" }}>
           <li><a href="/hall/guri-hobak-night-3/">구리호박나이트</a></li>
           <li><a href="/hall/bucheon-gorae-night/">부천고래나이트</a></li>
-          <li><a href="/club/suwon-chancedome-night-5/">수원찬스돔나이트</a></li>
+          <li><a href="/club/suwon-chancedome-night-6/">수원찬스돔나이트</a></li>
           <li><a href="/hall/suwon-chancedome-night-4/">수원찬스돔나이트</a></li>
           <li><a href="/hall/suwon-korea-night-2/">수원코리아나이트</a></li>
           <li><a href="/club/ansan-hit-night/">안산히트나이트</a></li>
@@ -272,7 +272,7 @@ export default function NightIndexPage() {
           <li><a href="/hall/uijeongbu-hangukgwan-night-2/">의정부한국관나이트</a></li>
           <li><a href="/hall/indeogwon-gukbingwan-night-2/">인덕원국빈관나이트</a></li>
           <li><a href="/hall/incheon-arabian-night-2/">인천아라비안나이트</a></li>
-          <li><a href="/club/ilsan-shampoo-night-5/">일산샴푸나이트</a></li>
+          <li><a href="/club/ilsan-shampoo-night-6/">일산샴푸나이트</a></li>
           <li><a href="/hall/ilsan-shampoo-night-4/">일산샴푸나이트</a></li>
           <li><a href="/hall/paju-skydome-night-3/">파주야당스카이돔나이트</a></li>
           <li><a href="/hall/pyeongtaek-hobak-night-2/">평택호박나이트</a></li>
@@ -283,7 +283,7 @@ export default function NightIndexPage() {
           <li><a href="/hall/daejeon-seven-night-3/">대전세븐나이트</a></li>
           <li><a href="/club/daejeon-one-night-4/">대전원나이트</a></li>
           <li><a href="/hall/daejeon-one/">대전원나이트</a></li>
-          <li><a href="/hall/seosan-hobak-night-1/">서산호박나이트</a></li>
+          <li><a href="/hall/seosan-hobak-night-2/">서산호박나이트</a></li>
           <li><a href="/hall/cheonan-stardome-night-4/">천안스타돔나이트</a></li>
           <li><a href="/hall/cheonan-korea-night/">천안코리아나이트</a></li>
           <li><a href="/hall/cheongju-hobak-night/">청주호박나이트</a></li>

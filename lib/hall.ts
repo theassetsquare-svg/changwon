@@ -112,7 +112,7 @@ export const HALL_URL_MAP: Record<string, string> = {
   "cheonan-korea": "cheonan-korea-night",
   "cheongju-hobak": "cheongju-hobak-night",
   "27-1": "ulsan-newworld-night",
-  "seosan-hobak": "seosan-hobak-night-1",
+  "seosan-hobak": "seosan-hobak-night-2",
   "28-1": "gumi-hobak-night",
   "gwangju-cheomdan": "gwangju-cheomdan-night-3",
   "29-1": "jeju-night",

@@ -7,7 +7,7 @@ import { 변형쪽들 } from "@/lib/variant-pages";
 /**
  * ★★ 2026-09-02 대표님 지시로 바꾼 쪽 — 상봉동한국관나이트 정보 페이지.
  *
- *  주소(/review-3/)는 **그대로 두고** 안에 든 내용만 바꿨다.
+ *  주소(/review-4/)는 **그대로 두고** 안에 든 내용만 바꿨다.
  *  색인된 주소는 자산이라 버리지 않는다 · 301 리디렉션도 걸지 않는다.
  *
  *  ★ canonical·og:url·설명문은 반드시 **이 쪽 자신의 것**이어야 한다.
@@ -17,9 +17,9 @@ import { 변형쪽들 } from "@/lib/variant-pages";
  *  ★ AdNightPage 가 신원(이름·번호·고정 전화바·관계 고지·JSON-LD)을 쪽 단위로 넣는다.
  *    사이트 전역 렌더로 남의 번호가 새는 사고를 막는다.
  */
-const VENUE = AD_BY_SLUG["sangbong-hangukgwan-night-5"];
-const 이주소 = "/review-3";
-const 변형 = 변형쪽들["/review-3"];
+const VENUE = AD_BY_SLUG["sangbong-hangukgwan-night-6"];
+const 이주소 = "/review-4";
+const 변형 = 변형쪽들["/review-4"];
 
 export const metadata: Metadata = adVariantMetadata(VENUE, 이주소, 변형);
 export const viewport: Viewport = adViewport;

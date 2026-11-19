@@ -207,7 +207,7 @@
       "verdict": "OK"
     },
     {
-      "route": "/reserve-3",
+      "route": "/reserve-4",
       "file": "app/reserve/page.tsx",
       "totalLength": 1853,
       "keywords": {
@@ -248,7 +248,7 @@
       "verdict": "OK"
     },
     {
-      "route": "/review-3",
+      "route": "/review-4",
       "file": "app/review/page.tsx",
       "totalLength": 1804,
       "keywords": {

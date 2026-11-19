@@ -25,12 +25,12 @@
   "kind": "changwon"
  },
  {
-  "route": "/reserve-3",
+  "route": "/reserve-4",
   "slug": "reserve",
   "kind": "changwon"
  },
  {
-  "route": "/review-3",
+  "route": "/review-4",
   "slug": "review",
   "kind": "changwon"
  },
@@ -105,12 +105,12 @@
   "kind": "venue"
  },
  {
-  "route": "/club/sillim-grandprix-night-5",
+  "route": "/club/sillim-grandprix-night-6",
   "slug": "club-sillim-grandprix-night",
   "kind": "venue"
  },
  {
-  "route": "/club/sangbong-hangukgwan-night-5",
+  "route": "/club/sangbong-hangukgwan-night-6",
   "slug": "club-sangbong-hangukgwan-night",
   "kind": "venue"
  },
@@ -120,12 +120,12 @@
   "kind": "venue"
  },
  {
-  "route": "/club/busan-asiad-night-7",
+  "route": "/club/busan-asiad-night-8",
   "slug": "club-busan-asiad-night",
   "kind": "venue"
  },
  {
-  "route": "/club/suwon-chancedome-night-5",
+  "route": "/club/suwon-chancedome-night-6",
   "slug": "club-suwon-chancedome-night",
   "kind": "venue"
  },
@@ -135,12 +135,12 @@
   "kind": "venue"
  },
  {
-  "route": "/club/daejeon-seven-night-6",
+  "route": "/club/daejeon-seven-night-7",
   "slug": "club-daejeon-seven-night",
   "kind": "venue"
  },
  {
-  "route": "/club/ilsan-shampoo-night-5",
+  "route": "/club/ilsan-shampoo-night-6",
   "slug": "club-ilsan-shampoo-night",
   "kind": "venue"
  },
@@ -325,7 +325,7 @@
   "kind": "venue"
  },
  {
-  "route": "/hall/seosan-hobak-night-1",
+  "route": "/hall/seosan-hobak-night-2",
   "slug": "hall-seosan-hobak-night",
   "kind": "venue"
  },
